@@ -1,0 +1,161 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Hornsey Central Pharmacy</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Yearly overview</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Monthly overview</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Weekly overview</a></li>
+          
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+          <a class="nhsuk-breadcrumb__backlink" href="#">
+            <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            Level three
+          </a>
+        </p>
+      </nav>
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">26 August to 1 September 2024</h1>
+      
+      
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+             Day
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Capacity
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Booked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Free
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Covid bookings
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Flu bookings
+            </th>
+            <th role="columnheader" class="" scope="col">
+              RSV bookings
+            </th>
+            <th role="columnheader" class="" scope="col">
+            </th>
+
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Monday 26 August</td>
+            <td class="nhsuk-table__cell ">300</td>
+            <td class="nhsuk-table__cell ">225</td>
+            <td class="nhsuk-table__cell ">75</td>
+            <td class="nhsuk-table__cell ">195</td>
+            <td class="nhsuk-table__cell ">15</td>
+            <td class="nhsuk-table__cell ">10</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Tuesday 27 August</td>
+            <td class="nhsuk-table__cell ">300</td>
+            <td class="nhsuk-table__cell ">225</td>
+            <td class="nhsuk-table__cell ">75</td>
+            <td class="nhsuk-table__cell ">195</td>
+            <td class="nhsuk-table__cell ">15</td>
+            <td class="nhsuk-table__cell ">10</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Wednesday 28 August</td>
+            <td class="nhsuk-table__cell ">300</td>
+            <td class="nhsuk-table__cell ">225</td>
+            <td class="nhsuk-table__cell ">75</td>
+            <td class="nhsuk-table__cell ">195</td>
+            <td class="nhsuk-table__cell ">15</td>
+            <td class="nhsuk-table__cell ">10</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Thursday 29 August</td>
+            <td class="nhsuk-table__cell ">300</td>
+            <td class="nhsuk-table__cell ">225</td>
+            <td class="nhsuk-table__cell ">75</td>
+            <td class="nhsuk-table__cell ">195</td>
+            <td class="nhsuk-table__cell ">15</td>
+            <td class="nhsuk-table__cell ">10</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Friday 30 August</td>
+            <td class="nhsuk-table__cell ">300</td>
+            <td class="nhsuk-table__cell ">225</td>
+            <td class="nhsuk-table__cell ">75</td>
+            <td class="nhsuk-table__cell ">195</td>
+            <td class="nhsuk-table__cell ">15</td>
+            <td class="nhsuk-table__cell ">10</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Saturday 31 August</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">Add availability</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sunday 1 September</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell ">0</td>
+            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">Add availability</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
