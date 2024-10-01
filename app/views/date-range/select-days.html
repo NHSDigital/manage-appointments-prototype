@@ -29,7 +29,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-column-two-thirds">
 
       <div class="nhsuk-back-link">
 
@@ -40,9 +40,11 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-      <h1 class="nhsuk-heading-xl">Select days of the week</h1>
+      <h1 class="nhsuk-heading-l">Create repeat sessions</h1>
 
-
+      <div class="nhsuk-hint" id="contact-hint">
+        Select all days that you want to add repeat sessions to. You can add multiple sessions to this availability period, to cover part time work or different service types.
+      </div>
       <form action="session-time" class="form">
         <div class="nhsuk-form-group">
 

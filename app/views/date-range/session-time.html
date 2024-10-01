@@ -43,7 +43,7 @@
       <h1 class="nhsuk-heading-xl">Create availability</h1>
 
 
-      <form action="services-capacity" class="form">
+      <form action="services" class="form">
         <div class="nhsuk-form-group">
           
 
@@ -56,7 +56,7 @@
                         </h5>
                       </legend>
                           <label class="nhsuk-label" for="startTime">Start time</label>
-                          <input class="nhsuk-input  nhsuk-input--width-5" label="Start time" id="start-time" name="start-time">
+                          <input class="nhsuk-input  nhsuk-input--width-5" label="Start time" id="start-time" type="time" name="start-time">
                         <label class="nhsuk-label">End time</label>
                           <input class="nhsuk-input  nhsuk-input--width-5" label="End time" id="end-time" type="time" name="end-time">
 
@@ -111,8 +111,32 @@
       
           </div>
         </fieldset><br><br>
-      
+
+        <h5 class="nhsuk-heading-s">Capacity</h5>
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="simultaneous-appointments">
+            Maximum simultaneous appointments
+          </label>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This could be based on the number of vaccinators or spaces you have available.
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="appointment-length">
+            Appointment length in minutes
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text">
+        </div>
+        </fieldset>
+
       </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span><p>Session capacity:[number] appointments</p>
+        </div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Save and continue
         </button>

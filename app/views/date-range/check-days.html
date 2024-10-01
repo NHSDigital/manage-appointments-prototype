@@ -40,10 +40,10 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-      <h1 class="nhsuk-heading-xl">Check days and sessions</h1>
+      <h1 class="nhsuk-heading-xl">Check availability period</h1>
 
 
-      <form action="week-day-created" class="form">
+      <form action="availability-overview" class="form">
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading">Dates</h3>
@@ -83,23 +83,6 @@
             </dd>
         
           </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Days
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {{data['days']}}
-            </dd>
-        
-            <dd class="nhsuk-summary-list__actions">
-        
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> session date</span>
-              </a>
-        
-            </dd>
-        
-          </div>
         
         </dl>
 
@@ -108,87 +91,150 @@
 
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">Monday</h3>
+              <h3 class="nhsuk-card__heading">Repeat sessions</h3>
         <form action="week-day-created" class="form">
-          <table class="nhsuk-table">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Session times
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Available services
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Capacity
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{data['start-time']}} - {{data['end-time']}}</td>
-                <td class="nhsuk-table__cell ">Covid 75+</td>
-                <td class="nhsuk-table__cell ">{{data['simultaneous-appointments']}}</td>
-                <td style="text-align: right;" class="nhsuk-table__cell ">
-                  <a href="check-session">
-                    View or edit<span class="nhsuk-u-visually-hidden"> session 1</span>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>       
-            <p><a href="session-time.html" class="nhsuk-link">Add another session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
 
-        </div>
-        </div>
+          <dl class="nhsuk-summary-list">
 
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading">Tuesday</h3>
-      <form action="week-day-created" class="form">
-        <table class="nhsuk-table">
-          <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                Session times
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Available services
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Capacity
-              </th>
-              <th role="columnheader" class="" scope="col">
-                
-              </th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">{{data['start-time']}} - {{data['end-time']}}</td>
-              <td class="nhsuk-table__cell ">Covid 75+</td>
-              <td class="nhsuk-table__cell ">{{data['simultaneous-appointments']}}</td>
-              <td style="text-align: right;" class="nhsuk-table__cell ">
-                <a href="check-session">
-                  View or edit<span class="nhsuk-u-visually-hidden"> session 1</span>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Dates
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['session-start-day']}} {{data['session-start-month']}} - {{data['session-start-year']}} {{data['session-end-day']}} {{data['session-end-month']}} {{data['session-end-year']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> session date</span>
                 </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>       
-        
-        <p><a href="session-time.html" class="nhsuk-link">Add another session<span class="nhsuk-u-visually-hidden"> to Tuesday</span></a></p>
+          
+              </dd>
+          
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Days
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['days']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> session date</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Time
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['start-time']}} - {{data['end-time']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> session time</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Breaks
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['break-start']}} - {{data['break-end']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> session breaks</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Services available
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> services availability</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Maximum simultaneous appointments
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['simultaneous-appointments']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Appointment length in minutes
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['appointment-length']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+   
+  
+          </dl>
+              <p><a href="session-time.html" class="nhsuk-link">Add another repeat session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
 
-      </div>
-      </div>
+        </div>
+        </div>
+
 
           <p><a href="session-time.html" class="nhsuk-link">Add more days</a></p>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Create campaign
+          Save and publish
         </button>
+        <a class="nhsuk-button nhsuk-button--secondary" href="#">
+          Save without publishing
+        </a>
       </form>
       
 
