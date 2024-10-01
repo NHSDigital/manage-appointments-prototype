@@ -40,18 +40,35 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-      <h1 class="nhsuk-heading-xl">Check your session details</h1>
+      <h1 class="nhsuk-heading-xl">Check session details</h1>
 
 
-      <form action="week-day-created" class="form">
+      <form action="check-days" class="form">
         <dl class="nhsuk-summary-list">
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Date
+              Dates
             </dt>
             <dd class="nhsuk-summary-list__value">
-              {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
+              {{data['session-start-day']}} {{data['session-start-month']}} - {{data['session-start-year']}} {{data['session-end-day']}} {{data['session-end-month']}} {{data['session-end-year']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session date</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Days
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['days']}}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
