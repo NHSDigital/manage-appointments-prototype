@@ -45,7 +45,7 @@
 
 
 
-        <h3 class="nhsuk-heading-m">Repeat session</h3>
+        <h3 class="nhsuk-heading-m">Repeat sessions</h3>
 
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
@@ -147,7 +147,7 @@
                 Maximum simultaneous appointments
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['simultaneous-appointments']}}
+                5
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -165,7 +165,7 @@
                 Appointment length in minutes
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['appointment-length']}}
+                10
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -184,8 +184,197 @@
 
         </div>
         </div>
-              <p><a href="select-days2" class="nhsuk-link">Add a repeat session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
 
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+      <form action="week-day-created" class="form">
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Dates
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1 November 2024 - 31 January 2025
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session dates</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Days
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Tuesday, Thursday
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session date</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              09:00 - 13:00
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session time</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Breaks
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              No break
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session breaks</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              RSV 75+ 
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> services availability</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Maximum simultaneous appointments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length in minutes
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              10
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+ 
+
+        </dl>
+        <p>[number] appointments available. <br>[number] appointments per hour</p>
+
+      </div>
+      </div>
+      <p><a href="select-days" class="nhsuk-link">Add a repeat session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
+
+              <h3 class="nhsuk-heading-m">Single session</h3>
+
+              <div class="nhsuk-card">
+                <div class="nhsuk-card__content">
+            <form action="week-day-created" class="form">
+    
+              <dl class="nhsuk-summary-list">
+    
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Dates
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    20 November 2024
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Change<span class="nhsuk-u-visually-hidden"> session dates</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Time
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Closed
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Change<span class="nhsuk-u-visually-hidden"> session time</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+      
+              </dl>
+              <p>[number] appointments available. <br>[number] appointments per hour</p>
+    
+            </div>
+            </div>
+          
 
           <p><a href="session-date2" class="nhsuk-link">Add a single session</a></p>
           <a class="nhsuk-button" href="availability-overview-published">

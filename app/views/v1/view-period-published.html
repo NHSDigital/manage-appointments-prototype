@@ -44,19 +44,21 @@
 
       <p>Unpublish this availability period to make changes.  You will need to reschedule or cancel any appointments that have been booked.</p>
 
-        <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">Dates</h3>
-            <dl class="nhsuk-summary-list">
+      <h3 class="nhsuk-heading-m">Repeat sessions</h3>
+
+      <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+      <form action="week-day-created" class="form">
+
+        <dl class="nhsuk-summary-list">
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Start date
+              Dates
             </dt>
             <dd class="nhsuk-summary-list__value">
-                {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
-              </dd>
-  
+              1 November 2024 - 31 January 2025
+            </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
@@ -66,10 +68,10 @@
           </div>
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              End date
+              Days
             </dt>
             <dd class="nhsuk-summary-list__value">
-              {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
+              Monday, Tuesday, Wednesday, Thursday, Friday
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
@@ -79,129 +81,312 @@
         
           </div>
         
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              09:00 - 17:00
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Breaks
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              12:00 - 13:00
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Flu 65+, RSV 75+ 
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Maximum simultaneous appointments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length in minutes
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              10
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+        
+            </dd>
+        
+          </div>
+ 
+
         </dl>
+        <p>[number] appointments available. <br>[number] appointments per hour</p>
 
+      </div>
+      </div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+    <form action="week-day-created" class="form">
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Dates
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1 November 2024 - 31 January 2025
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
         </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Days
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Tuesday, Thursday
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Time
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            09:00 - 13:00
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Breaks
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No break
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Services available
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            RSV 75+ 
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
         </div>
 
-        <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">Repeat sessions</h3>
-        <form action="week-day-created" class="form">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Maximum simultaneous appointments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
+        </div>
 
-          <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Appointment length in minutes
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            10
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+      
+          </dd>
+      
+        </div>
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Dates
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['session-start-day']}} {{data['session-start-month']}} - {{data['session-start-year']}} {{data['session-end-day']}} {{data['session-end-month']}} {{data['session-end-year']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Days
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['days']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Time
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['start-time']}} - {{data['end-time']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Breaks
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['break-start']}} - {{data['break-end']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Services available
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
+
+      </dl>
+      <p>[number] appointments available. <br>[number] appointments per hour</p>
+
+    </div>
+    </div>
+
+            <h3 class="nhsuk-heading-m">Single sessions</h3>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+          <form action="week-day-created" class="form">
   
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Maximum simultaneous appointments
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['simultaneous-appointments']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
+            <dl class="nhsuk-summary-list">
   
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Appointment length in minutes
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['appointment-length']}}
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-          
-              </dd>
-          
-            </div>
-   
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Dates
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  20 November 2024
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+            
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Time
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  09:00 - 17:00
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+            
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Breaks
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  12:00 - 13:00
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+            
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Services available
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Flu 65+, RSV 75+ 
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Maximum simultaneous appointments
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                 1
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Appointment length in minutes
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  10
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+            
+                </dd>
+            
+              </div>
+     
+    
+            </dl>
+            <p>[number] appointments available. <br>[number] appointments per hour</p>
   
-          </dl>
-
-        </div>
-        </div>
+          </div>
+          </div>
 
 
-          <a class="nhsuk-button" href="availability-overview-unpublished">
+          <a class="nhsuk-button" href="check-days3">
             Unpublish
           </a>
       

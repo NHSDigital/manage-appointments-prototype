@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -33,12 +33,10 @@
 
       <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Site list</a></li>
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Hornsey Central Pharmacy</a></li>
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Yearly overview</a></li>
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Monthly overview</a></li>
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Weekly overview</a></li>
-          
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-overview">Hornsey Central Pharmacy</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="year">Yearly overview</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="month">Monthly overview</a></li>         
         </ol>
         <p class="nhsuk-breadcrumb__back">
           <a class="nhsuk-breadcrumb__backlink" href="#">
@@ -50,195 +48,209 @@
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-xl">26 August to 1 September 2024</h1>
 
-      <h2 class="nhsuk-heading-m">Monday 26 August</h2>
-
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-half">
-          <p><span class="nhsuk-u-font-weight-bold">Full capacity:</span> 300 slots
-            <br><span class="nhsuk-u-font-weight-bold">Booked:</span> 225 slots
-            <br><span class="nhsuk-u-font-weight-bold">Free:</span> 75 slots</p>
-      </div>
-      <div class="nhsuk-grid-column-one-half">
-        <p><span class="nhsuk-u-font-weight-bold">Covid:</span> 195 bookings
-          <br><span class="nhsuk-u-font-weight-bold">Flu:</span> 15 bookings
-          <br><span class="nhsuk-u-font-weight-bold">Coadmin:</span> 10 bookings</p>
-      </div>
-      <div class="nhsuk-grid-column-full">
-        <p><a class="nhsuk-link" href="#">Edit Tuesday</a></p>
-    </div>
-  </div>
-  <hr>
-
-        <h2 class="nhsuk-heading-m">Tuesday 27 August</h2>
-
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <p><span class="nhsuk-u-font-weight-bold">Full capacity:</span> 300 slots
-              <br><span class="nhsuk-u-font-weight-bold">Booked:</span> 225 slots
-              <br><span class="nhsuk-u-font-weight-bold">Free:</span> 75 slots</p>
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+      
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+      
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-card__link" href="month">Monday 26</a>
+            
+                </h5>
+                <p><span class="nhsuk-u-font-weight-bold">09:00 - 12:00</span><br>
+                  Covid 5-75+ | Flu 18-65+ | Flu and Covid 18-75+ 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">12:00 - 13:00</span><br>
+                  Break 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">13:00 - 17:00 </span><br>
+                  Flu 18-65+ 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">17:00 - 20:00</span><br>
+                  Covid 5-75+
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><a class="nhsuk-link" href="#">Edit</a> | <a class="nhsuk-link" href="#">Copy</a></p>              
+            </div>
+            </div>
+        
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+      
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-card__link" href="month">Tuesday 27</a>            
+                </h5>
+                  <p><span class="nhsuk-u-font-weight-bold">09:00 - 12:00</span><br>
+                    Covid 5-75+ | Flu 18-65+ | Flu and Covid 18-75+ 
+                  </p>
+                  <hr style="margin-top: 16px; margin-bottom: 16px;">
+                  <p><span class="nhsuk-u-font-weight-bold">12:00 - 13:00</span><br>
+                    Break 
+                  </p>
+                  <hr style="margin-top: 16px; margin-bottom: 16px;">
+                  <p><span class="nhsuk-u-font-weight-bold">13:00 - 17:00 </span><br>
+                    Flu 18-65+ 
+                  </p>
+                  <hr style="margin-top: 16px; margin-bottom: 16px;">
+                  <p><span class="nhsuk-u-font-weight-bold">17:00 - 20:00</span><br>
+                    Covid 5-75+
+                  </p>
+                  <hr style="margin-top: 16px; margin-bottom: 16px;">
+                  <p><a class="nhsuk-link" href="#">Edit</a> | <a class="nhsuk-link" href="#">Copy</a></p>              
+                  </div>
+            </div>
+        
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+      
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-card__link" href="month">Wednesday 28</a>
+            
+                </h5>
+                <p><span class="nhsuk-u-font-weight-bold">09:00 - 12:00</span><br>
+                  Covid 5-75+ | Flu 18-65+ | Flu and Covid 18-75+ 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">12:00 - 13:00</span><br>
+                  Break 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">13:00 - 17:00 </span><br>
+                  Flu 18-65+ 
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><span class="nhsuk-u-font-weight-bold">17:00 - 20:00</span><br>
+                  Covid 5-75+
+                </p>
+                <hr style="margin-top: 16px; margin-bottom: 16px;">
+                <p><a class="nhsuk-link" href="#">Edit</a> | <a class="nhsuk-link" href="#">Copy</a></p>              
+            </div>
+            </div>
+        
+          </div>
         </div>
-        <div class="nhsuk-grid-column-one-half">
-          <p><span class="nhsuk-u-font-weight-bold">Covid:</span> 195 bookings
-            <br><span class="nhsuk-u-font-weight-bold">Flu:</span> 15 bookings
-            <br><span class="nhsuk-u-font-weight-bold">Coadmin:</span> 10 bookings</p>
-        </div>
-        <div class="nhsuk-grid-column-full">
-          <p><a class="nhsuk-link" href="#">Edit Tuesday</a></p>
-      </div>
-    </div>
-    <hr>
-
-    <h2 class="nhsuk-heading-m">Wednesday 28 August</h2>
-
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half">
-        <p><span class="nhsuk-u-font-weight-bold">Full capacity:</span> 300 slots
-          <br><span class="nhsuk-u-font-weight-bold">Booked:</span> 225 slots
-          <br><span class="nhsuk-u-font-weight-bold">Free:</span> 75 slots</p>
-    </div>
-    <div class="nhsuk-grid-column-one-half">
-      <p><span class="nhsuk-u-font-weight-bold">Covid:</span> 195 bookings
-        <br><span class="nhsuk-u-font-weight-bold">Flu:</span> 15 bookings
-        <br><span class="nhsuk-u-font-weight-bold">Coadmin:</span> 10 bookings</p>
-    </div>
-    <div class="nhsuk-grid-column-full">
-      <p><a class="nhsuk-link" href="#">Edit Wednesday</a></p>
-  </div>
-</div>
-<hr>
-
-<h2 class="nhsuk-heading-m">Thursday 29 August</h2>
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-one-half">
-    <p><span class="nhsuk-u-font-weight-bold">Full capacity:</span> 300 slots
-      <br><span class="nhsuk-u-font-weight-bold">Booked:</span> 225 slots
-      <br><span class="nhsuk-u-font-weight-bold">Free:</span> 75 slots</p>
-</div>
-<div class="nhsuk-grid-column-one-half">
-  <p><span class="nhsuk-u-font-weight-bold">Covid:</span> 195 bookings
-    <br><span class="nhsuk-u-font-weight-bold">Flu:</span> 15 bookings
-    <br><span class="nhsuk-u-font-weight-bold">Coadmin:</span> 10 bookings</p>
-</div>
-<div class="nhsuk-grid-column-full">
-  <p><a class="nhsuk-link" href="#">Edit Thursday</a></p>
-</div>
-</div>
-<hr>
-
-<h2 class="nhsuk-heading-m">Friday 30 August</h2>
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-one-half">
-    <p><span class="nhsuk-u-font-weight-bold">Full capacity:</span> 300 slots
-      <br><span class="nhsuk-u-font-weight-bold">Booked:</span> 225 slots
-      <br><span class="nhsuk-u-font-weight-bold">Free:</span> 75 slots</p>
-</div>
-<div class="nhsuk-grid-column-one-half">
-  <p><span class="nhsuk-u-font-weight-bold">Covid:</span> 195 bookings
-    <br><span class="nhsuk-u-font-weight-bold">Flu:</span> 15 bookings
-    <br><span class="nhsuk-u-font-weight-bold">Coadmin:</span> 10 bookings</p>
-</div>
-<div class="nhsuk-grid-column-full">
-  <p><a class="nhsuk-link" href="#">Edit Friday</a></p>
-</div>
-</div>
-<hr>
-
-<h2 class="nhsuk-heading-m">Saturday 31 August</h2>
-
-<div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-full">
-  <p><a class="nhsuk-link" href="#">Add availability for Saturday</a></p>
-</div>
-</div>
-
-<hr>
-<h2 class="nhsuk-heading-m">Sunday 1 Septamber</h2>
-
-<div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-full">
-  <p><a class="nhsuk-link" href="#">Add availability for Sunday</a></p>
-</div>
-</div>
-
-      <!--<table class="nhsuk-table">
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            <th role="columnheader" class="" scope="col">
-             Day
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Available appointments AM
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Booked appointments AM
-            </th>
-
-            <th role="columnheader" class="" scope="col">
-              Available appointments PM
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Booked appointments PM
-            </th>
-
-            <th role="columnheader" class="" scope="col">
-              
-            </th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Monday 26 August</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Tuesday 27 August</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Wednesday 28 August</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">16 September to 22 Septamber</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">23 September to 29 September</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">30 September to 6 October</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell ">750</td>
-            <td class="nhsuk-table__cell ">650</td>
-            <td class="nhsuk-table__cell "><a href="week" class="nhsuk-link">View</a></td>
-          </tr>
-        </tbody>
-      </table>-->
-
+        <div class="nhsuk-grid-row nhsuk-card-group">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+          
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-card__link" href="month">May 2024</a>
+                
+                    </h5>
+                    <p><span class="nhsuk-u-font-weight-bold">09:00 - 12:00</span><br>
+                      Covid 5-75+ | Flu 18-65+ | Flu and Covid 18-75+ 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">12:00 - 13:00</span><br>
+                      Break 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">13:00 - 17:00 </span><br>
+                      Flu 18-65+ 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">17:00 - 20:00</span><br>
+                      Covid 5-75+
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><a class="nhsuk-link" href="#">Edit</a> | <a class="nhsuk-link" href="#">Copy</a></p>              
+                    </div>
+                </div>
+            
+              </div>
+              <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+          
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-card__link" href="month">June 2024</a>
+                
+                    </h5>
+                    <p><span class="nhsuk-u-font-weight-bold">09:00 - 12:00</span><br>
+                      Covid 5-75+ | Flu 18-65+ | Flu and Covid 18-75+ 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">12:00 - 13:00</span><br>
+                      Break 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">13:00 - 17:00 </span><br>
+                      Flu 18-65+ 
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><span class="nhsuk-u-font-weight-bold">17:00 - 20:00</span><br>
+                      Covid 5-75+
+                    </p>
+                    <hr style="margin-top: 16px; margin-bottom: 16px;">
+                    <p><a class="nhsuk-link" href="#">Edit</a> | <a class="nhsuk-link" href="#">Copy</a></p>              
+                    </div>
+                </div>
+            
+              </div>
+              <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+          
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-card__link" href="month">July 2024</a>
+                
+                    </h5>
+                    <p class="nhsuk-card__description">No availability</p>
+                  </div>
+                </div>
+            
+              </div>
+              <div class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+          
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-card__link" href="month">August 2024</a>
+                
+                    </h5>
+                    <p class="nhsuk-card__description">No availability</p>
+                        </div>
+                </div>
+            
+              </div>
+            </div>
+      
+      <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--previous">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+              <span class="nhsuk-pagination__title">Previous</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">19 to 25 August 2024</span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+              <span class="nhsuk-pagination__title">Next</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">2 to 8 September 2024</span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
       <!-- End of content -->
 
     </div>

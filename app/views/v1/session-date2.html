@@ -40,17 +40,16 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Create availability period</span>
-            <h1 class="nhsuk-heading-l">Add start and end dates for your availability period</h1>
+      <h1 class="nhsuk-heading-xl">Create availability</h1>
 
 
-      <form action="select-days" class="form">
+      <form action="siteOpen" class="form">
         <div class="nhsuk-form-group">
           
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-              <h5 class="nhsuk-heading-s">
-                Start date
+    <h5 class="nhsuk-heading-s">
+                Session date
               </h5>
             </legend>
             <div class="nhsuk-hint" id="session-hint">
@@ -60,74 +59,63 @@
             <div class="nhsuk-date-input" id="session">
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-start-day">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="session-day">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-start-day" name="session-start-day" type="text" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-day" name="session-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-start-month">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="session-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-start-month" name="session-start-month" type="text" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-month" name="session-month" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-start-year">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="session-year">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="session-start-year" name="session-start-year" type="text" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-          </fieldset><br><br>
-
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-              <h5 class="nhsuk-heading-s">
-                End date
-              </h5>
-            </legend>
-            <div class="nhsuk-hint" id="session-hint">
-              For example, 15 3 1984
-            </div>
-        
-            <div class="nhsuk-date-input" id="session">
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-end-day">
-                    Day
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-end-day" name="session-end-day" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-end-month">
-                    Month
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="session-end-month" name="session-end-month" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="session-end-year">
-                    Year
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="session-end-year" name="session-end-year" type="text" inputmode="numeric">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="session-year" name="session-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
           </fieldset>
 
-        
+          <div class="nhsuk-form-group">
+
+            <br><br><fieldset class="nhsuk-fieldset">
+              
+              <h5 class="nhsuk-heading-s">
+                Is the site open on this date?
+                </h5>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="site-open" name="radioGroup" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="site-open-1">
+                    Yes, add sessions to this date
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="site-open-2" name="radioGroup" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="site-open-2">
+                    No, overwrite existing sessions on this date
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
       
       </div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
+          Save and continue
         </button>
       </form>
       
