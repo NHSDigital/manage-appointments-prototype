@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get(/addSessionType/, function (req, res) {
     if (req.query.radioGroup === "Repeat" ) {
-        res.redirect('availability-date-range');
+        res.redirect('select-days');
     }
     else {
         res.redirect('session-date');
