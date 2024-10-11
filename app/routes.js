@@ -25,5 +25,8 @@ router.get(/siteOpen/, function (req, res) {
     }
 });
 
+// V2 routes //
+
+
 module.exports = router;
 
