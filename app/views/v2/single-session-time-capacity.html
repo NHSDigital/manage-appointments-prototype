@@ -29,7 +29,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <div class="nhsuk-back-link">
 
@@ -43,11 +43,8 @@
             <span class="nhsuk-caption-l">Create availability period</span>
             <h1 class="nhsuk-heading-l">Set time and capacity for your session</h1>
 
-            <div class="nhsuk-hint" id="contact-hint">
-              You can add multiple sessions to this availability period, to cover part time work or different service types.            </div>
-    
 
-      <form action="services" class="form">
+      <form action="single-services" class="form">
         <div class="nhsuk-form-group">
           
 
@@ -122,26 +119,30 @@
           </div>
         </fieldset><br><br>
 
-        <h5 class="nhsuk-heading-m" style="margin-bottom: 8px;">Capacity</h5>
-        <div class="nhsuk-hint" id="contact-hint">
-          Enter your capacity to calculate appointment numbers for this session.
-        </div>
-        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How many vaccinators or spaces do you have?</h5>
+        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">Capacity</h5>
                 <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="simultaneous-appointments">
+            Maximum simultaneous appointments
+          </label>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This could be based on the number of vaccinators or spaces you have available.
+          </div>
           <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text">
         </div>
 
-        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How long are your appointments?</h5>
         <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
+          <label class="nhsuk-label" for="appointment-length">
+            Appointment length in minutes
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text">
         </div>
         </fieldset>
 
       </div>
 
       <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span><p>[number] appointments per day<br>[number] appointments per hour</p>
+        <span class="nhsuk-u-visually-hidden">Information: </span><p>Session capacity:[number] appointment slots</p>
         </div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue

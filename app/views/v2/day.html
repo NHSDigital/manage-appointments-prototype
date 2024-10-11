@@ -1,0 +1,194 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-overview">Hornsey Central Pharmacy</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="year">Yearly overview</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="month">Monthly overview</a></li>         
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+          <a class="nhsuk-breadcrumb__backlink" href="#">
+            <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            Level three
+          </a>
+        </p>
+      </nav>
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">Monday 26 August</h1>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Filter by
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="all" selected>all</option>
+          <option value="booked">Booked</option>
+          <option value="empty">Empty</option>
+        </select>
+      </div>
+
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Time
+             </th>
+            <th role="columnheader" class="" scope="col">
+             Availability
+            </th>
+            <th role="columnheader" class="" scope="col">
+                Duration
+              </th>
+              <th role="columnheader" class="" scope="col" style="text-align: right;">
+              Services
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">8:00 - 8:10</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">5 appointments, 3 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">10 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">8:10 - 9:50</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">50 appointments, 0 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">1 hour 40 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">9:50 - 10:00</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">5 appointments, 5 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">10 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">10:00 - 10:10</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">5 appointments, 4 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">10 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">10:10 - 10:20</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">5 appointments, 0 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">10 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">10:20 - 11:00</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">20 appointments, 16 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">40 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">11:00 - 12:00</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">30 appointments, 10 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">1 hour</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">12:00 - 12:30</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">No availability</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">30 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">12:30 - 14:00</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">75 appointments, 0 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">1 hour 30 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">14:00 - 14:10</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">5 appointments, 1 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">10 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;"><a class="nhsuk-link" href="day">14:10 - 17:00</a></td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">95 appointments, 0 booked</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 24px 8px 1px;">2 hours 50 minutes</td>
+            <td class="nhsuk-table__cell " style="padding: 8px 1px 8px 24px; text-align: right;">              
+              <strong class="nhsuk-tag nhsuk-tag--purple">RSV</strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!--<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--previous">
+          </li>
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+              <span class="nhsuk-pagination__title">Next page</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page"></span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>-->
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

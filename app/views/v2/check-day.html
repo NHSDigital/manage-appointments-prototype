@@ -40,59 +40,13 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Create availability period</span>
             <h1 class="nhsuk-heading-l">Check availability period</h1>
 
-            <p>We've saved the sessions you've added so far.  You can add more sessions to this availability period.</p>
+            <p>Check the sessions you've added so far.  You can add more sessions to this availability period if you need to.</p>
 
-            <div class="nhsuk-card">
-              <div class="nhsuk-card__content">
-          <form action="week-day-created" class="form">
-  
-            <dl class="nhsuk-summary-list">
-  
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Start date
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  1 November 2024
-                </dd>
-            
-                <dd class="nhsuk-summary-list__actions">
-            
-                  <a href="#">
-                    Change<span class="nhsuk-u-visually-hidden"> session dates</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  End date
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  31 January 2025
-                </dd>
-            
-                <dd class="nhsuk-summary-list__actions">
-            
-                  <a href="#">
-                    Change<span class="nhsuk-u-visually-hidden"> session dates</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-            
-     
-    
-            </dl>
-  
-          </div>
-          </div>
-  
-        <h3 class="nhsuk-heading-m">Repeat sessions</h3>
+
+        <h3 class="nhsuk-heading-m">Single session</h3>
 
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
@@ -102,10 +56,27 @@
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
+                Date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> session date</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
                 Days
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Monday, Tuesday, Wednesday, Thursday, Friday
+                {{data['days']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -123,7 +94,7 @@
                 Time
               </dt>
               <dd class="nhsuk-summary-list__value">
-                09:00 - 17:00
+                {{data['start-time']}} - {{data['end-time']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -141,7 +112,7 @@
                 Breaks
               </dt>
               <dd class="nhsuk-summary-list__value">
-                12:00 - 13:00
+                {{data['break-start']}} - {{data['break-end']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -159,7 +130,6 @@
                 Services available
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Flu 65+, RSV 75+ 
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -177,7 +147,7 @@
                 Maximum simultaneous appointments
               </dt>
               <dd class="nhsuk-summary-list__value">
-                5
+                {{data['simultaneous-appointments']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -195,7 +165,7 @@
                 Appointment length in minutes
               </dt>
               <dd class="nhsuk-summary-list__value">
-                10
+                {{data['appointment-length']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -214,21 +184,12 @@
 
         </div>
         </div>
-              <p><a href="select-days2" class="nhsuk-link">Add another repeat session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
-          <!--<p>You can remove availability by <a href="session-date2" class="nhsuk-link">telling us the days your site is closed</a></p>-->
+              <p><a href="select-days" class="nhsuk-link">Add a repeat session<span class="nhsuk-u-visually-hidden"> to Monday</span></a></p>
 
-              <h3 class="nhsuk-heading-m">Single sessions</h3>
-              <!--<div class="nhsuk-card">
-                <div class="nhsuk-card__content">
 
-                  <p>No single sessions have been added to this availability period</p>
-            </div>
-            </div>-->
-  
-
-          <p>No single sessions have been added to this availability period. <a href="session-date2" class="nhsuk-link">Add a single session</a></p>
+          <p><a href="session-date" class="nhsuk-link">Add a single session</a></p>
           <a class="nhsuk-button" href="availability-overview-published">
-            Publish
+            Save and publish
           </a>
           <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
           Save without publishing

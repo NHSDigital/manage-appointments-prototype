@@ -29,25 +29,21 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Create availability period</span>
-            <h1 class="nhsuk-heading-l">Set time and capacity for your session</h1>
+      <h1 class="nhsuk-heading-xl">Create availability</h1>
 
-            <div class="nhsuk-hint" id="contact-hint">
-              You can add multiple sessions to this availability period, to cover part time work or different service types.            </div>
-    
 
-      <form action="services" class="form">
+      <form action="services-capacity" class="form">
         <div class="nhsuk-form-group">
           
 
@@ -55,24 +51,21 @@
           <fieldset class="nhsuk-fieldset" aria-describedby="time-hint" role="group">
 
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-              <h5 class="nhsuk-heading-s" style="margin-bottom: 0px;">
+              <h5 class="nhsuk-heading-s">
                           Session times
                         </h5>
                       </legend>
-                      <div class="nhsuk-hint" id="contact-hint">
-                        For example, 14:30
-                      </div>
                           <label class="nhsuk-label" for="startTime">Start time</label>
-                          <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+                          <input class="nhsuk-input  nhsuk-input--width-5" label="Start time" id="start-time" name="start-time">
                         <label class="nhsuk-label">End time</label>
-                          <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time">
+                          <input class="nhsuk-input  nhsuk-input--width-5" label="End time" id="end-time" name="end-time">
 
       </fieldset><br><br>
       
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h5 class="nhsuk-heading-s" style="margin-bottom: 0px;">
+            <h5 class="nhsuk-heading-s">
               Add a break to this session?
             </h5>
           </legend>
@@ -88,14 +81,11 @@
             </div>
       
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-              <div class="nhsuk-hint" id="contact-hint">
-                For example, 14:30
-              </div>
-
+      
               <label class="nhsuk-label" for="startTime">Start time</label>
-              <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start" name="break-start"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start" name="break-start">
+              <input class="nhsuk-input  nhsuk-input--width-5" label="Start time" id="break-start" type="time" name="break-start">
             <label class="nhsuk-label">End time</label>
-              <input class="nhsuk-input  nhsuk-input--width-2" label="End time"  id="break-end" name="break-end"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time"  id="break-end" name="break-end">
+              <input class="nhsuk-input  nhsuk-input--width-5" label="End time"  id="break-end" type="time" name="break-end">
 
               <!--<div class="nhsuk-grid-row" style="margin: 0%;">
                 <div class="nhsuk-form-group ">
@@ -121,30 +111,10 @@
       
           </div>
         </fieldset><br><br>
-
-        <h5 class="nhsuk-heading-m" style="margin-bottom: 8px;">Capacity</h5>
-        <div class="nhsuk-hint" id="contact-hint">
-          Enter your capacity to calculate appointment numbers for this session.
-        </div>
-        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How many vaccinators or spaces do you have?</h5>
-                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-        <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text">
-        </div>
-
-        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How long are your appointments?</h5>
-        <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
-        </div>
-        </fieldset>
-
+      
       </div>
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span><p>[number] appointments per day<br>[number] appointments per hour</p>
-        </div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
+          Save and continue
         </button>
       </form>
       
