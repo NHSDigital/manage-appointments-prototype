@@ -30,10 +30,17 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-back-link">
 
-      <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+      <!-- <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
           
         </ol>
         <p class="nhsuk-breadcrumb__back">
@@ -42,7 +49,7 @@
             Level three
           </a>
         </p>
-      </nav>
+      </nav> -->
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-xl">Hornsey Central Pharmacy</h1>
 
@@ -79,7 +86,7 @@
           <div class="nhsuk-card nhsuk-card--clickable">
             <div class="nhsuk-card__content nhsuk-card__content--primary">
               <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="year3">View and manage availability</a>
+                <a class="nhsuk-card__link" href="month">View and manage availability</a>
               </h2>
               <p class="nhsuk-card__description">View and manage availability and appointments for your site</p>
       
