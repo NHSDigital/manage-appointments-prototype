@@ -28,7 +28,7 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<script src='js.js'></script>
+</html>
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -130,12 +130,12 @@
         <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How many vaccinators or spaces do you have?</h5>
                 <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text">
+          <input class="nhsuk-input nhsuk-input--width-3" id="maths1" name="simultaneous-appointments" type="text">
         </div>
 
         <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How long are your appointments?</h5>
         <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
+          <input class="nhsuk-input nhsuk-input--width-3" id="maths2" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
         </div>
         </fieldset>
 
@@ -143,29 +143,47 @@
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span><p><strong>0</strong> total appointments in the session<br>
+          <strong>84</strong> appointments per hour<br>
           <!-- <strong>84</strong> appointments per day<br> -->
-          <strong>0</strong> appointments per hour</p>
+          <!-- <strong><input type="text" style="border: 0; width: 35px; font-size: large; font-weight: bold; color: black;" placeholder="0" disabled="disabled" id="MathsResult"></strong>appointments per hour</p> -->
+
         </div>
+<!-- 
+        <script type="text/javascript">
+          const maths1= document.getElementById('maths1');
+          const maths2 = document.getElementById('maths2');
+          const MathsResult = document.getElementById('MathsResult');
+          maths1.addEventListener('keyup', e => {
+            MathsResult.value = Number(e.target.value) * Number(maths2.value);
+          });
+          maths2.addEventListener('keyup', e => {
+            MathsResult.value = Number(e.target.value) * Number(maths1.value);
+          });
+            </script> -->
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
       </form>
 
-      
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-    $(".input").keyup(function(){
-          var val1 = +$(".value1").val();
-          var val2 = +$(".value2").val();
-          $("#result").val(val1+val2);
-    });
-});
-</script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <input type="text" class="input value1">
-<input type="text" class="input value2">
-<input type="text" disabled="disabled" id="result"> -->
+
+
+<!-- <input type="text" id="value1">
+<input type="text" id="value2">
+<input type="text" disabled="disabled" id="result">
+
+<script type="text/javascript">
+const value1 = document.getElementById('value1');
+const value2 = document.getElementById('value2');
+const result = document.getElementById('result');
+value1.addEventListener('keyup', e => {
+  result.value = Number(e.target.value) + Number(value2.value);
+});
+value2.addEventListener('keyup', e => {
+  result.value = Number(e.target.value) + Number(value1.value);
+});
+  </script> -->
       
 
       <!-- End of content -->
