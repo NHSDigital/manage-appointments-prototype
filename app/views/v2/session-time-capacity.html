@@ -28,6 +28,7 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+<script src='js.js'></script>
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -141,14 +142,30 @@
       </div>
 
       <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span><p><strong>1680</strong> total appointments in the session<br>
+        <span class="nhsuk-u-visually-hidden">Information: </span><p><strong>0</strong> total appointments in the session<br>
           <!-- <strong>84</strong> appointments per day<br> -->
-          <strong>12</strong> appointments per hour</p>
+          <strong>0</strong> appointments per hour</p>
         </div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
       </form>
+
+      
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+    $(".input").keyup(function(){
+          var val1 = +$(".value1").val();
+          var val2 = +$(".value2").val();
+          $("#result").val(val1+val2);
+    });
+});
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <input type="text" class="input value1">
+<input type="text" class="input value2">
+<input type="text" disabled="disabled" id="result"> -->
       
 
       <!-- End of content -->
