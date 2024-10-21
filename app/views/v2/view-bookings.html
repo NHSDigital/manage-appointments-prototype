@@ -1,0 +1,257 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-xl">1 November 2024</h1>
+            <!-- <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+              <ul class="nhsuk-list nhsuk-pagination__list">
+                <li class="nhsuk-pagination-item--previous">
+                  <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+                    <span class="nhsuk-pagination__title">Previous</span>
+                    <span class="nhsuk-u-visually-hidden">:</span>
+                    <span class="nhsuk-pagination__page">31 October 2024</span>
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                      <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nhsuk-pagination-item--next">
+                  <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+                    <span class="nhsuk-pagination__title">Next</span>
+                    <span class="nhsuk-u-visually-hidden">:</span>
+                    <span class="nhsuk-pagination__page">2 November 2024</span>
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul> -->
+            <!-- <span class="nhsuk-caption-l">Create availability period</span>
+            <h1 class="nhsuk-heading-l">What type of session do you want to create?</h1> -->
+            <!-- <div class="nhsuk-hint" id="contact-hint">
+              You can add multiple sessions to this availability period, to cover: <br><br>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Vaccinator availability</li>
+                <li>Type of vaccines available</li> -->
+           </div>
+           
+
+           <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="session-start-year">
+                Date
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-6" placeholder="01/11/2024" id="session-start-year" name="session-start-year" type="text" inputmode="date">
+            </div>
+          </div>
+           <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="session-start-year">
+                Search by name or booking reference
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-6" id="session-start-year" name="session-start-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+
+           <div>
+            <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Time
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Last name
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      First name
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    DOB
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Service
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Contact No.
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Email
+                  </th>
+                  <!-- <th role="columnheader" class="" scope="col">
+                      Status
+                  </th>
+                  <th style="text-align: right;" role="columnheader" class="" scope="col">
+                      Actions
+                  </th> -->
+                  </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">08:30</td>
+                  <td class="nhsuk-table__cell">Aric</td>
+                  <td class="nhsuk-table__cell">Clifton</td>
+                  <td class="nhsuk-table__cell">05/12/1957</td>
+                  <td class="nhsuk-table__cell">Covid & RSV</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                  <!-- <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--grey">Unpublished</strong></td>
+                  <td style="text-align: right;" class="nhsuk-table__cell "><a class="nhsuk-link" href="check-days">Edit</a> | <a class="nhsuk-link" href="availability-overview-confirm-delete1">Delete</a></td> -->
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">08:45</td>
+                  <td class="nhsuk-table__cell">Trishna</td>
+                  <td class="nhsuk-table__cell">Jervis</td>
+                  <td class="nhsuk-table__cell">12/07/1972</td>
+                  <td class="nhsuk-table__cell">Covid & RSV</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">09:00</td>
+                  <td class="nhsuk-table__cell">Jeana</td>
+                  <td class="nhsuk-table__cell">Cody</td>
+                  <td class="nhsuk-table__cell">03/02/2001</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">09:15</td>
+                  <td class="nhsuk-table__cell">Lora</td>
+                  <td class="nhsuk-table__cell">Norma</td>
+                  <td class="nhsuk-table__cell">26/08/1978</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">09:30</td>
+                  <td class="nhsuk-table__cell">Lochan</td>
+                  <td class="nhsuk-table__cell">Clive</td>
+                  <td class="nhsuk-table__cell">04/06/1989</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">09:45</td>
+                  <td class="nhsuk-table__cell">Trishna</td>
+                  <td class="nhsuk-table__cell">Jervis</td>
+                  <td class="nhsuk-table__cell">12/07/1972</td>
+                  <td class="nhsuk-table__cell">Covid & RSV</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">10:00</td>
+                  <td class="nhsuk-table__cell">Jeana</td>
+                  <td class="nhsuk-table__cell">Cody</td>
+                  <td class="nhsuk-table__cell">03/02/2001</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">10:15</td>
+                  <td class="nhsuk-table__cell">Lora</td>
+                  <td class="nhsuk-table__cell">Norma</td>
+                  <td class="nhsuk-table__cell">26/08/1978</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">10:30</td>
+                  <td class="nhsuk-table__cell">Lochan</td>
+                  <td class="nhsuk-table__cell">Clive</td>
+                  <td class="nhsuk-table__cell">04/06/1989</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">10:45</td>
+                  <td class="nhsuk-table__cell">Trishna</td>
+                  <td class="nhsuk-table__cell">Jervis</td>
+                  <td class="nhsuk-table__cell">12/07/1972</td>
+                  <td class="nhsuk-table__cell">Covid & RSV</td>
+                  <td class="nhsuk-table__cell">07912345678</td>
+                  <td class="nhsuk-table__cell "><a class="#" href="#">Email</a></td>
+                </tr>
+              </tbody>
+            </table>  
+
+          </div>
+        </div>
+           
+
+
+           </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
