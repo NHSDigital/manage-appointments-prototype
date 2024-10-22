@@ -7,9 +7,19 @@ const router = express.Router();
 
 // v1 create availability routes //
 
+// router.get(/addSessionType/, function (req, res) {
+//     if (req.query.radioGroup === "Repeat" ) {
+//         res.redirect('select-days');
+//     }
+//     else {
+//         res.redirect('session-date');
+//     }
+// });
+
+
 router.get(/addSessionType/, function (req, res) {
     if (req.query.radioGroup === "Repeat" ) {
-        res.redirect('select-days');
+        res.redirect('availability-date-range');
     }
     else {
         res.redirect('session-date');
