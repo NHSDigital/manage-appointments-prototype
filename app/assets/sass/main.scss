@@ -9,3 +9,13 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
   
+// header links active state //
+
+.nhsuk-header__navigation-link-active {
+    border-bottom: 4px solid #ffff;
+    box-shadow: none;
+    color: #212b32;
+    outline: 4px solid rgba(0,0,0,0);
+    outline-offset: 4px;
+    text-decoration: none
+}
