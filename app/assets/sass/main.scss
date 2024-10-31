@@ -11,11 +11,11 @@
   
 // header links active state //
 
-.nhsuk-header__navigation-link-active {
-    border-bottom: 4px solid #f0f4f5;
-    box-shadow: none;
-    color: #212b32;
-    outline: 4px solid rgba(0,0,0,0);
-    outline-offset: 4px;
-    text-decoration: none
-}
+.nhsuk-header__navigation-link[aria-current]:not(:focus):not(:active) {
+    border-bottom: nhsuk-spacing(1) solid $nhsuk-border-color;
+    text-decoration: none;
+
+    .nhsuk-header__drop-down & {
+      border-bottom-color: transparent;
+    }
+  }
