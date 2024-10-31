@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav-v3.html' %}
+{% extends 'layout-top-nav.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -46,33 +46,38 @@
       </nav>-->
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-xl">Create availability</h1>
+            <h1 class="nhsuk-heading-xl">Availability periods</h1>
 
-      <p>You can create availability with multiple days and repeating sessions, to accurately reflect your site's capacity.</p>
+            <p>You can create availability with multiple days and repeating sessions, to accurately reflect your site's capacity.</p>
 
-      <table class="nhsuk-table">
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            <th role="columnheader" class="" scope="col">
-              Dates
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Services
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Session type
-            </th>
-            </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell ">21 Apr 2025 - 15 Jun 2025</td>
-            <td class="nhsuk-table__cell">Covid</td>
-            <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--grey">Repeat session</strong></td>
-          </tr>
-  </tbody>
-      </table>      
-
+            <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Dates
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Services
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Session type
+                  </th>
+                  </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">21 Apr 2025 - 15 Jun 2025</td>
+                  <td class="nhsuk-table__cell">Covid</td>
+                  <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--grey">Repeat session</strong></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">1 Nov 2024</td>
+                  <td class="nhsuk-table__cell">Covid<br> RSV adult</td>
+                  <td class="nhsuk-table__cell"><strong class="nhsuk-tag">Single session</strong></td>
+                </tr>
+              </tbody>
+            </table>      
+            
       <a class="nhsuk-button" href="session-type">Create availability</a>
 
       <!-- End of content -->
