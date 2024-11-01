@@ -46,5 +46,23 @@ router.get(/cancelBooking/, function (req, res) {
     }
 });
 
+router.get(/deleteSession/, function (req, res) {
+    if (req.query.radioGroup === "Yes" ) {
+        res.redirect('week-session-bookings-cancelled');
+    }
+    else {
+        res.redirect('week-session-bookings-honoured');
+    }
+});
+
+router.get(/deleteDay/, function (req, res) {
+    if (req.query.radioGroup === "Yes" ) {
+        res.redirect('week-day-bookings-cancelled');
+    }
+    else {
+        res.redirect('week-day-bookings-honoured');
+    }
+});
+
 module.exports = router;
 
