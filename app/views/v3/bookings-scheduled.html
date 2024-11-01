@@ -33,7 +33,7 @@
 
       <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+        <a class="nhsuk-back-link__link" href="week">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -62,7 +62,40 @@
               </div>
             </div>-->
 
+            <nav class="x-govuk-secondary-navigation" aria-label="Secondary menu">
+                <ul class="x-govuk-secondary-navigation__list">
+                
+                                
+                
+                  
+                  <li class="x-govuk-secondary-navigation__list-item  x-govuk-secondary-navigation__list-item--current">
+                    <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled">
+                      Scheduled
+                    </a>
+                  </li>
+                  
+                
+                  
+                  <li class="x-govuk-secondary-navigation__list-item ">
+                    <a class="x-govuk-secondary-navigation__link" href="bookings-completed">
+                      Completed
+                    </a>
+                  </li>
+                  
+                
+                  
+                  <li class="x-govuk-secondary-navigation__list-item ">
+                    <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled">
+                      Cancelled
+                    </a>
+                  </li>
+                  
+                
+                </ul>
+              </nav>
 
+              <!--<div class="nhsuk-table__panel-with-heading-tab">
+                <h3 class="nhsuk-table__heading-tab">600 booked appointments</h3>-->
             <table role="table" class="nhsuk-table-responsive">
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
@@ -73,13 +106,16 @@
                    Name
                   </th>
                   <th role="columnheader" class="" scope="col">
-                      Date of birth
-                    </th>
-                    <th role="columnheader" class="" scope="col">
+                    Date of birth
+                   </th>
+                     <th role="columnheader" class="" scope="col">
                       Contact details
                     </th>
-                    <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    <th role="columnheader" class="" scope="col">
                     Services
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Action
                   </th>
                 </tr>
               </thead>
@@ -89,144 +125,165 @@
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>John Smith</td>
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>1 January 1954</td>
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>07712345678<br>john.smith@email.com</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="bookings-scheduled-checkedin">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>8:35</td>
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Martin Lincoln</td>
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>7 June 1958</td>
                   <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>martin.lincoln@email.com</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">8:45</td>
                   <td class="nhsuk-table__cell">Mike Jones</td>
                   <td class="nhsuk-table__cell">15 October 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">8:45</td>
                   <td class="nhsuk-table__cell">Norma Davies</td>
                   <td class="nhsuk-table__cell">26 August 1978</td>
                   <td class="nhsuk-table__cell">norma.davies78@email.com</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">8:50</td>
                   <td class="nhsuk-table__cell">Clive Lochan</td>
                   <td class="nhsuk-table__cell">4 June 1947</td>
                   <td class="nhsuk-table__cell">07712345678<br>Clive1@email.com</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">8:50</td>
                   <td class="nhsuk-table__cell">Dylan Barton</td>
                   <td class="nhsuk-table__cell">25 May 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">8:55</td>
                   <td class="nhsuk-table__cell">Jacob Blick</td>
                   <td class="nhsuk-table__cell">3 May 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">9:00</td>
                   <td class="nhsuk-table__cell">Tobias Boehm</td>
                   <td class="nhsuk-table__cell">1 February 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">9:05</td>
                   <td class="nhsuk-table__cell">Jonathan Carroll</td>
                   <td class="nhsuk-table__cell">29 January 1940</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">9:05</td>
                   <td class="nhsuk-table__cell">Connie Corkery</td>
                   <td class="nhsuk-table__cell">1 September 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">9:15</td>
                   <td class="nhsuk-table__cell">Mohamed Bartoletti</td>
                   <td class="nhsuk-table__cell">6 November 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">9:15</td>
                   <td class="nhsuk-table__cell">Elijah Anderson</td>
                   <td class="nhsuk-table__cell">4 July 1958</td>
                   <td class="nhsuk-table__cell">07712345678<br>ea58@email.co.uk</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row" style="background-color: #d8dde0;">
                   <td class="nhsuk-table__cell">9:20 - 10:00</td>
                   <td class="nhsuk-table__cell">8 available appointments</td>
                   <td class="nhsuk-table__cell"></td>
                   <td class="nhsuk-table__cell"></td>
-                  <td class="nhsuk-table__cell" style="text-align: right;"></td>
+                  <td class="nhsuk-table__cell"></td>
+                  <td class="nhsuk-table__cell"></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:00</td>
                   <td class="nhsuk-table__cell">Hattie Beer</td>
                   <td class="nhsuk-table__cell">8 August 1951</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:05</td>
                   <td class="nhsuk-table__cell">Felicity Bergstrom</td>
                   <td class="nhsuk-table__cell">17 April 1949</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:05</td>
                   <td class="nhsuk-table__cell">Ibrahim Hessel</td>
                   <td class="nhsuk-table__cell">3 April 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
-                </tr>
+                  <td class="nhsuk-table__cell">RSV</td>
+                 <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
+               </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:10</td>
                   <td class="nhsuk-table__cell">Syed Johnson</td>
                   <td class="nhsuk-table__cell">9 February 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:15</td>
                   <td class="nhsuk-table__cell">Jakob Marquardt-Runolfsdottir</td>
                   <td class="nhsuk-table__cell">7 February 1950</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:15</td>
                   <td class="nhsuk-table__cell">Violet Mosciski</td>
                   <td class="nhsuk-table__cell">26 October 1954</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">10:20</td>
                   <td class="nhsuk-table__cell">David Anderson</td>
-                  <td class="nhsuk-table__cell">15 Deember 1951</td>
+                  <td class="nhsuk-table__cell">15 December 1951</td>
                   <td class="nhsuk-table__cell">07712345678</td>
-                  <td class="nhsuk-table__cell" style="text-align: right;">RSV</td>
+                  <td class="nhsuk-table__cell">RSV</td>
+                  <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Check in</a> | <a class="nhsuk-link" href="#">Cancel</a></td>
                 </tr>
 
               </tbody>
             </table>
+            </div>
       <br>
             <nav class="govuk-pagination" aria-label="Pagination">
   
@@ -311,7 +368,7 @@
               
             </nav>
 
-            <p class="nhsuk-body">Showing <b>1</b> to <b>20</b> of <b>600</b> bookings</p>
+            <p class="nhsuk-body">Showing <b>1</b> to <b>20</b> of <b>600</b> scheduled appointments</p>
 
             <!--<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
               <ul class="nhsuk-list nhsuk-pagination__list">

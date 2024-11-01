@@ -40,16 +40,21 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <h1 class="nhsuk-heading-l">Check single date session</h1>
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-l">Edit availability for 26 August 2024</h1>
 
+        
 
 
         
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+        <h3 class="nhsuk-heading-m">Single session - Covid 18-75+</h3>
       <form action="week-day-created" class="form">
 
         <dl class="nhsuk-summary-list">
 
-          <div class="nhsuk-summary-list__row">
+          <!--<div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Dates
             </dt>
@@ -59,13 +64,13 @@
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> session date</span>
-              </a>
+               <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session dates</span>
+              </a> 
         
             </dd>
         
-          </div>
+          </div>-->
         
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
@@ -77,8 +82,8 @@
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> session time</span>
+              <a href="edit-single-session">
+                Edit<span class="nhsuk-u-visually-hidden"> session time</span>
               </a>
         
             </dd>
@@ -95,26 +100,27 @@
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> session breaks</span>
+              <a href="edit-single-session">
+                Edit<span class="nhsuk-u-visually-hidden"> session breaks</span>
               </a>
         
             </dd>
         
           </div>
-          
+        
+
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Vaccinators or spaces available
             </dt>
             <dd class="nhsuk-summary-list__value">
-              5
+              1
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+              <a href="single-session-time-capacit">
+                Edit<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
               </a>
         
             </dd>
@@ -123,53 +129,55 @@
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Appointment length
+              Appointment length in minutes
             </dt>
             <dd class="nhsuk-summary-list__value">
-              10 minutes
+              10
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
+              <a href="single-session-time-capacit">
+                Edit<span class="nhsuk-u-visually-hidden"> appointment length</span>
               </a>
         
             </dd>
         
           </div>
- 
-          <div class="nhsuk-summary-list__row">
+          <!--<div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Services available
             </dt>
             <dd class="nhsuk-summary-list__value">
-              RSV Adult
+              Covid 18-75+
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> services availability</span>
-              </a>
         
             </dd>
         
-          </div>
-
+          </div>-->
+ 
+          
         </dl>
         <p>[number] appointments available <br>[number] appointments per hour</p>
 
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-        
-          <p>Saving and publishing will allow people to book appointments for the availability you've created. Make sure the information is accurate before publishing</p>
-        </div>
-        
+      </div>
+      </div>
 
-          <a class="nhsuk-button" href="availability-overview3">
-            Save and publish
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+      
+        <p>Saving and publishing will allow people to book appointments for the availability you've created. Make sure the information is accurate before publishing</p>
+      </div>
+
+
+          <a class="nhsuk-button" href="week">
+            Save and update
           </a>
+
           <!-- <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
           Save without publishing
         </a> -->

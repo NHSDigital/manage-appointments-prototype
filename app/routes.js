@@ -35,8 +35,16 @@ router.get(/siteOpen/, function (req, res) {
     }
 });
 
-// V2 routes //
+// V3 routes //
 
+router.get(/cancelBooking/, function (req, res) {
+    if (req.query.radioGroup === "Yes" ) {
+        res.redirect('bookings-scheduled-cancelled');
+    }
+    else {
+        res.redirect('bookings-scheduled-checkedin');
+    }
+});
 
 module.exports = router;
 
