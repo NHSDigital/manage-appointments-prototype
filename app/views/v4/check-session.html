@@ -40,50 +40,42 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-l">Edit availability for 26 August 2024</h1>
-
-        
+      <h1 class="nhsuk-heading-xl">Check your session details</h1>
 
 
-        
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-        <h3 class="nhsuk-heading-m">Single session - Covid 18-75+</h3>
       <form action="week-day-created" class="form">
-
         <dl class="nhsuk-summary-list">
 
-          <!--<div class="nhsuk-summary-list__row">
+          <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Dates
+              Date
             </dt>
             <dd class="nhsuk-summary-list__value">
-              1 November 2024
+              {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-               <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> session dates</span>
-              </a> 
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session date</span>
+              </a>
         
             </dd>
         
-          </div>-->
+          </div>
         
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Time
             </dt>
             <dd class="nhsuk-summary-list__value">
-              09:00 - 17:00
+              {{data['start-time']}} - {{data['end-time']}}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="edit-single-session">
-                Edit<span class="nhsuk-u-visually-hidden"> session time</span>
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session time</span>
               </a>
         
             </dd>
@@ -95,32 +87,48 @@
               Breaks
             </dt>
             <dd class="nhsuk-summary-list__value">
-              12:00 - 13:00
+              {{data['break-start']}} - {{data['break-end']}}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="edit-single-session">
-                Edit<span class="nhsuk-u-visually-hidden"> session breaks</span>
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session breaks</span>
               </a>
         
             </dd>
         
           </div>
         
-
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Vaccinators or spaces available
+              Services available
             </dt>
             <dd class="nhsuk-summary-list__value">
-              1
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="single-session-time-capacit">
-                Edit<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> services availability</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Maximum simultaneous appointments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['simultaneous-appointments']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
               </a>
         
             </dd>
@@ -132,56 +140,27 @@
               Appointment length in minutes
             </dt>
             <dd class="nhsuk-summary-list__value">
-              10
+              {{data['appointment-length']}}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
-              <a href="single-session-time-capacit">
-                Edit<span class="nhsuk-u-visually-hidden"> appointment length</span>
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
               </a>
         
             </dd>
         
           </div>
-          <!--<div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Services available
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Covid 18-75+
-            </dd>
-        
-            <dd class="nhsuk-summary-list__actions">
-        
-        
-            </dd>
-        
-          </div>-->
  
-          
+
         </dl>
-        <p>[number] appointments available <br>[number] appointments per hour</p>
-
-      </div>
-      </div>
-
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
+    
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Create session
+        </button>
+      </form>
       
-        <p>Saving will allow people to book appointments for the availability you've created. Make sure the information is accurate before saving.</p>
-      </div>
-      
-
-        <a class="nhsuk-button" href="availability-overview3">
-          Save session
-        </a>
-
-          <!-- <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
-          Save without publishing
-        </a> -->
-          
 
       <!-- End of content -->
 

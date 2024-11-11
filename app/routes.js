@@ -64,5 +64,31 @@ router.get(/deleteDay/, function (req, res) {
     }
 });
 
+// v4 routes //
+
+router.get(/editSession/, function (req, res) {
+    if (req.query.radioGroup === "stop" ) {
+        res.redirect('week-session-bookings-honoured');
+    }
+    else  if (req.query.radioGroup === "shorten" ) {
+        res.redirect('edit-session-length');
+    }
+    else  if (req.query.radioGroup === "reduce" ) {
+        res.redirect('edit-session-capacity');
+    }    else {
+        res.redirect('week-session-bookings-cancelled');
+    }
+});
+
+router.get(/removeAvailability/, function (req, res) {
+    if (req.query.radioGroup === "shorten" ) {
+        res.redirect('edit-session-length');
+    }
+    else {
+        res.redirect('edit-session-capacity');
+    }
+});
+
+
 module.exports = router;
 
