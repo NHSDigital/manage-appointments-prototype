@@ -44,7 +44,14 @@
             <h1 class="nhsuk-heading-l">Set time and capacity for your session</h1>
 
 
-      <form action="check-day1" class="form">
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+            
+              <p>420 booked appointments in this session.<br>
+                0 unbooked appointments in this session.</p>
+            </div>
+  
+      <form action="affected-bookings" class="form">
         <div class="nhsuk-form-group">
           
 
@@ -67,57 +74,6 @@
       </fieldset><br><br>
       
 
-        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h5 class="nhsuk-heading-s" style="margin-bottom: 0px;">
-              Add a break to this session?
-            </h5>
-          </legend>
-      
-      
-          <div class="nhsuk-radios nhsuk-radios--conditional">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-1" name="break" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false" checked="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-                Yes
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-              <div class="nhsuk-hint" id="contact-hint">
-                For example, 14:30
-              </div>
-
-              <label class="nhsuk-label" for="startTime">Start time</label>
-              <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start" name="break-start" placeholder="12"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start" name="break-start" placeholder="00">
-            <label class="nhsuk-label">End time</label>
-              <input class="nhsuk-input  nhsuk-input--width-2" label="End time"  id="break-end" name="break-end" placeholder="13"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time"  id="break-end" name="break-end" placeholder="00">
-
-              <!--<div class="nhsuk-grid-row" style="margin: 0%;">
-                <div class="nhsuk-form-group ">
-                  <div class="nhsuk-grid-column-one-quarter" style="margin: 0%; padding: 0;">
-                  <label class="nhsuk-label" for="startTime">Start time</label>
-                  <input class="nhsuk-input  nhsuk-input--width-5" label="Start time" id="startTime" type="time" name="startTime" style="width: 250px;">
-                </div>
-                <div class="nhsuk-grid-column-one-quarter" style="margin: 0%; padding: 0;">
-                <label class="nhsuk-label">End time</label>
-                  <input class="nhsuk-input  nhsuk-input--width-5" label="End time" type="time" name="endTime" style="width: 250px;">
-                </div>
-              </div>
-              </div>-->
-      
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-2" name="break" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-                No
-              </label>
-            </div>      
-      
-          </div>
-        </fieldset><br><br>
 
         <h5 class="nhsuk-heading-m" style="margin-bottom: 8px;">Capacity</h5>
         <div class="nhsuk-hint" id="contact-hint">
@@ -128,21 +84,10 @@
         <div class="nhsuk-form-group">
           <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text" placeholder="5">
         </div>
-
-        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How long are your appointments?</h5>
-        <div class="nhsuk-form-group">
-          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text" placeholder="5"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
-        </div>
         </fieldset>
 
       </div>
 
-      <div class="nhsuk-inset-text">
-        <strong><p style="margin-bottom: 0px;">Capacity calculator</p></strong>
-        <span class="nhsuk-u-visually-hidden">Information: </span><p><strong>0</strong> total appointments in the session<br>
-          <strong>0</strong> appointments per hour<br>
-
-        </p></div>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>

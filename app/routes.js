@@ -70,15 +70,12 @@ router.get(/editSession/, function (req, res) {
     if (req.query.radioGroup === "stop" ) {
         res.redirect('week-session-bookings-honoured');
     }
-    else  if (req.query.radioGroup === "shorten" ) {
-        res.redirect('edit-session-length');
+    else  if (req.query.radioGroup === "remove" ) {
+        res.redirect('edit-single-session');
     }
-    else  if (req.query.radioGroup === "reduce" ) {
-        res.redirect('edit-session-capacity');
-    }    else {
         res.redirect('week-session-bookings-cancelled');
     }
-});
+);
 
 router.get(/removeAvailability/, function (req, res) {
     if (req.query.radioGroup === "shorten" ) {
