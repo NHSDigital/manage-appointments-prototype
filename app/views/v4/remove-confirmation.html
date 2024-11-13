@@ -41,7 +41,7 @@
       </div>
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-l">Edit availability for 26 August 2024</h1>
+            <h1 class="nhsuk-heading-l">Check session details for 26 August 2024</h1>
 
         
 
@@ -81,7 +81,7 @@
               Vaccinators or spaces available
             </dt>
             <dd class="nhsuk-summary-list__value">
-              5
+              4
             </dd>
         
         
@@ -97,7 +97,7 @@
         
         
           </div>
-          
+
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Services
@@ -110,61 +110,18 @@
           </div>
           
         </dl>
-        <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-          
-            <p>420 booked appointments in this session.<br>
-              0 unbooked appointments in this session.</p>
-          </div>
 
-        <form action="editSession" method="get" class="form">
-          
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">What do you want to do?
-              </legend>
-              <div class="nhsuk-form-group">
-                  <div class="nhsuk-radios">
-              
-                    <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="stop">
-                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                        Stop taking bookings for this session
-                      </label>
-                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                        Remove unbooked appointments for this session
-                      </div>
-                    </div>
+        <p>We've automatically cancelled 72 appointments.  </p>
 
-              
-                    <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="remove">
-                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                        Change the length or capacity of this session
-                      </label>
-                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                        Shorten session length or remove capacity
-                      </div>
-                   </div>
+        <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>-->
+            <p>12 people didn't give a mobile number or email, and we could not automatically cancel their appointments.</p> 
+        
+        <p><a class="nhsuk-link" href="affected-bookings">Cancel these appointments manually</a></p>
+        
 
-                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      Cancel this session
-                    </label>
-                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                        Cancel all booked appointments, and remove this session
-                      </div>
-                 </div>
-            
-                  </div>
-                  </div>
-            </fieldset>
-          
-          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
-          </button>
-        </form>
-  
+
+        <a class="nhsuk-button" href="week-session-edited">Finish</a>
 
           
 

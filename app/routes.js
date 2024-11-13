@@ -73,9 +73,10 @@ router.get(/editSession/, function (req, res) {
     else  if (req.query.radioGroup === "remove" ) {
         res.redirect('edit-single-session');
     }
-        res.redirect('week-session-bookings-cancelled');
+    else {
+        res.redirect('cancel-sure');
     }
-);
+});
 
 router.get(/removeAvailability/, function (req, res) {
     if (req.query.radioGroup === "shorten" ) {
@@ -83,6 +84,24 @@ router.get(/removeAvailability/, function (req, res) {
     }
     else {
         res.redirect('edit-session-capacity');
+    }
+});
+
+router.get(/affectedBookings/, function (req, res) {
+    if (req.query.radioGroup === "cancel" ) {
+        res.redirect('remove-confirmation');
+    }
+    else {
+        res.redirect('week');
+    }
+});
+
+router.get(/cancelSure/, function (req, res) {
+    if (req.query.radioGroup === "cancel" ) {
+        res.redirect('cancel-confirmation');
+    }
+    else {
+        res.redirect('edit-session');
     }
 });
 
