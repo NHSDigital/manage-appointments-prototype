@@ -1,0 +1,115 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!--<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-overview">Hornsey Central Pharmacy</a></li>
+          
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+          <a class="nhsuk-breadcrumb__backlink" href="#">
+            <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            Level three
+          </a>
+        </p>
+      </nav>-->
+            <!-- Change the page title here -->
+            <h1 class="nhsuk-heading-xl">Agree to the EULA User Agreement
+              
+            </h1>
+
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+            
+              <p>You must read the End-User Licence Agreement before using this application.</p>
+            </div>
+
+            <p><a href="https://digital.nhs.uk/coronavirus/vaccinations/booking-systems/terms-of-use" title="External website">Read the full user agreement set out in the end-user licence agreement</a></p>
+
+              <p>By continuing, you agree to the full <a href="#" title="terms of use">terms of use</a>  and <a href="#" title="privacy policy">privacy policy</a>.</p>
+            </div>
+
+            <!-- <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  End user licence agreement
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>Please read this EULA carefully, as it sets out the basis upon which we license the
+                  Software for use.
+                  Before you use this application, we will ask you to give your express agreement
+                  to the provisions of this EULA.
+                  By agreeing to be bound by this EULA, you further agree that other members of
+                  your organisation with whom we authorise you to share this software will comply
+                  with the provision of this EULA.
+
+                
+                  </p>
+                  <ul>
+                    <li>1. Definitions</li>
+                    <li>1.1 Except to the extent expressly provided otherwise, in this EULA:
+                      "Charges" means those amounts that the parties have agreed shall be
+                      payable by the User to the Licensor in respect of this EULA;
+                      "Documentation" means the documentation for the Software produced by
+                      the Licensor and made available together with the software by the Licensor
+                      to the User];
+                      "EULA" means this end user licence agreement, including any amendments
+                      to this end user licence agreement from time to time;
+                      "Effective Date" means the date upon which the User gives the User's
+                      express consent to this EULA, following the issue of this EULA by the
+                      Licensor;</li> 
+                    
+                  </ul>
+
+              </div>
+            </details> -->
+
+            <!-- <p>You can create availability with multiple days and repeating sessions, to accurately reflect your site's capacity.</p> -->
+
+            
+
+      <!-- <a class="nhsuk-button nhsuk-button--disabled" href="session-type">I agree</a> -->
+       <br>
+       <br>
+       <div>      
+        <a class="nhsuk-button" href="session-type">Accept and continue</a>
+      </div>
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
