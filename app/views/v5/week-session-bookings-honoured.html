@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav-v3.html' %}
+{% extends 'layout-top-nav-v5.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -103,35 +103,49 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
             </tbody>
           </table>
           
 
-        <table class="nhsuk-table">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 610
-                </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 600
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                  Unbooked: 10
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
+
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
                 </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
+              <tr role="row">
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
+                </th>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
+              </tr>
             </thead>
             </tbody>
           </table>
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
@@ -162,21 +176,21 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">420 booked </td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <!--<tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</th>
@@ -197,23 +211,36 @@
           </table>
           
 
-        <table class="nhsuk-table">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 610
-                </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 600
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                  Unbooked: 10
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
+
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
                 </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
+              <tr role="row">
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
+                </th>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
+              </tr>
             </thead>
             </tbody>
           </table>
-          <!-- <p><a class="nhsuk-link" href="#">View bookings <span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a> | <a class="nhsuk-link" href="#">Copy day<span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a></p>               -->
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
@@ -244,21 +271,21 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">420 booked </td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <!--<tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</th>
@@ -279,23 +306,36 @@
           </table>
           
 
-        <table class="nhsuk-table">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 610
-                </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 600
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                  Unbooked: 10
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
+
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
                 </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
+              <tr role="row">
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
+                </th>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
+              </tr>
             </thead>
             </tbody>
           </table>
-          <!-- <p><a class="nhsuk-link" href="#">View bookings <span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a> | <a class="nhsuk-link" href="#">Copy day<span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a></p>               -->
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
@@ -326,21 +366,21 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">420 booked </td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <!--<tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</th>
@@ -361,23 +401,36 @@
           </table>
           
 
-        <table class="nhsuk-table">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 610
-                </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 600
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                  Unbooked: 10
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
+
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
                 </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
+              <tr role="row">
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
+                </th>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
+              </tr>
             </thead>
             </tbody>
           </table>
-          <!-- <p><a class="nhsuk-link" href="#">View bookings <span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a> | <a class="nhsuk-link" href="#">Copy day<span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a></p>               -->
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
@@ -408,21 +461,21 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">420 booked </td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <!--<tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</th>
@@ -442,24 +495,36 @@
             </tbody>
           </table>
           
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
 
-        <table class="nhsuk-table">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 610
-                </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 600
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                  Unbooked: 10
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
                 </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
+              <tr role="row">
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
+                </th>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
+              </tr>
             </thead>
             </tbody>
           </table>
-          <!-- <p><a class="nhsuk-link" href="#">View bookings <span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a> | <a class="nhsuk-link" href="#">Copy day<span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a></p>               -->
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
@@ -490,36 +555,49 @@
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">19:00 - 12:00</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Edit</a></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
               </tr>
             </tbody>
           </table>
           
 
-        <table class="nhsuk-table">
+          <p><a class="nhsuk-link" href="add-availability">Add session <span class="nhsuk-u-visually-hidden"></span></a></p>
+          
+
+          <table class="nhsuk-table">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
+                    Total appointments: 610
+                  </th>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
+                    Booked: 600
+                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
+                   Unbooked: 10
+                </tr>
+              </thead>
+              </tbody>
+            </table>
+            <table class="nhsuk-table">
               <tr role="row">
-                <th role="columnheader" class="" scope="col" style="padding: 8px 24px 8px 1px;">
-                  Total appointments: 200
+                <td class="nhsuk-table__cell" style="padding: 0px 1px 8px 0px;">   
+                  <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a></p>
                 </th>
-                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px;">
-                  Booked: 180
-                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 24px;">
-                 Unbooked: 20
+                <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 0px;">                
+                 <td class="nhsuk-table__cell nhsuk-table__cell--numeric" style="padding: 8px 1px 8px 0px;">
+                  <a class="nhsuk-link" style="text-align: right;" href="cancel-sure">Cancel day</a>
               </tr>
             </thead>
             </tbody>
           </table>
-          <!-- <p><a class="nhsuk-link" href="#">View bookings <span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a> | <a class="nhsuk-link" href="#">Copy day<span class="nhsuk-u-visually-hidden">for Monday 26 August</span></a></p>               -->
-          <p><a class="nhsuk-link" href="bookings-scheduled">View daily appointments</a> | <a class="nhsuk-link" href="add-availability">Add availability to this day <span class="nhsuk-u-visually-hidden">To Monday 26 August</span></a></p>
+          </div>
         </div>
-      </div>
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">

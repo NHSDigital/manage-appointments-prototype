@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav-v3.html' %}
+{% extends 'layout-top-nav-v5.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -120,7 +120,14 @@
         <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
         </div>-->
 
-        <div class="nhsuk-warning-callout">
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>12 people did not provide a mobile number or email, and we could not automatically cancel these appointments</p>
+
+            <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+        </div>
+
+        <!-- <div class="nhsuk-warning-callout">
           <h3 class="nhsuk-warning-callout__label">
             <span role="text">
               <span class="nhsuk-u-visually-hidden">Important: </span>
@@ -130,7 +137,7 @@
           <p>12 people did not provide a mobile number or email, and we could not automatically cancel their appointments.</p> 
         
           <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
-          </div>
+          </div> -->
         <!--<a class="nhsuk-button" href="week-session-bookings-cancelled">Finish</a>-->
 
           
