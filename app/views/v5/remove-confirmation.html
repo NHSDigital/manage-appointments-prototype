@@ -29,7 +29,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <div class="nhsuk-back-link">
 
@@ -44,11 +44,43 @@
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
             <h1 class="nhsuk-heading-l">Check session details for 26 August 2024</h1>
 
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Monday 26 August</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Time
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Break
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Services
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Booked
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Unbooked
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">420 booked<br>200 booked</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
+                </tr>
+              </tbody>
+            </table>
+
         
 
 
         
-
+<!-- 
 
         <dl class="nhsuk-summary-list">
 
@@ -110,7 +142,7 @@
         
           </div>
           
-        </dl>
+        </dl> -->
 
         <p>We've automatically cancelled 72 of 84 appointments</p>
 
@@ -118,7 +150,7 @@
           <span class="nhsuk-u-visually-hidden">Information: </span>
           <p>12 people did not provide a mobile number or email, and we could not automatically cancel these appointments</p>
 
-            <p><a class="nhsuk-link" href="affected-bookings">Cancel these appointments manually</a></p>
+            <p><a class="nhsuk-link" href="bookings-list-manual-cancellation">Cancel these appointments manually</a></p>
         </div>
 
         <!-- <p>We've automatically cancelled 72 appointments.  </p>

@@ -105,6 +105,26 @@ router.get(/cancelSure/, function (req, res) {
     }
 });
 
+// v5 routes //
+
+router.get(/cancelDaySure/, function (req, res) {
+    if (req.query.radioGroup === "cancel" ) {
+        res.redirect('cancel-day-confirmation');
+    }
+    else {
+        res.redirect('week');
+    }
+});
+
+router.get(/cancelAffectedBooking/, function (req, res) {
+    if (req.query.radioGroup === "Yes" ) {
+        res.redirect('bookings-cancelled3');
+    }
+    else {
+        res.redirect('bookings-list-manual-cancellation');
+    }
+});
+
 
 module.exports = router;
 
