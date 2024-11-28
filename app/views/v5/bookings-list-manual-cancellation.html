@@ -33,7 +33,7 @@
 
       <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="week">
+        <a class="nhsuk-back-link__link" href="week-session-edited">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -62,44 +62,38 @@
               </div>
             </div>-->
 
+            <p>These 12 people did not provide a mobile number or email, and we could not automatically cancel their appointments. If they left a landline number, you can use this to contact them.</p>
+
             <nav class="x-govuk-secondary-navigation" aria-label="Secondary menu">
-                <ul class="x-govuk-secondary-navigation__list">
+              <ul class="x-govuk-secondary-navigation__list">
+              
+                              
+              
                 
-                                
+                <li class="x-govuk-secondary-navigation__list-item">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled-affected">
+                    Scheduled
+                  </a>
+                </li>
                 
-                  
-                  <li class="x-govuk-secondary-navigation__list-item " >
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled">
-                      Scheduled
-                    </a>
-                  </li>
-                  <li class="x-govuk-secondary-navigation__list-item ">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-completed">
-                      Checked in
-                    </a>
-                  </li>                
-
-                  <li class="x-govuk-secondary-navigation__list-item ">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled3">
-                      Cancelled
-                    </a>
-                  </li>
-                  <li class="x-govuk-secondary-navigation__list-item  x-govuk-secondary-navigation__list-item--current">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-list-manual-cancellation">
-                      Manual Cancellations
-                    </a>
-                  </li>
-                  
+                <li class="x-govuk-secondary-navigation__list-item ">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled-affected">
+                    Cancelled
+                  </a>
+                </li>
                 
-                </ul>
-              </nav>
-              <br>
-              <div>            <p>These 12 people did not provide a mobile number or email, and we could not automatically cancel their appointments. If they left a landline number, you can use this to contact them.</p>
-              </div>
+                <li class="x-govuk-secondary-navigation__list-item  x-govuk-secondary-navigation__list-item--current"">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-completed">
+                    Manual cancellations
+                  </a>
+                </li>                
+              </ul>
+            </nav>
 
-              <!--<div class="nhsuk-table__panel-with-heading-tab">
-                <h3 class="nhsuk-table__heading-tab">600 booked appointments</h3>-->
 
+
+            <!--<div class="nhsuk-table__panel-with-heading-tab">
+              <h3 class="nhsuk-table__heading-tab">600 booked appointments</h3>-->
               <table role="table" class="nhsuk-table-responsive">
                 <thead role="rowgroup" class="nhsuk-table__head">
                   <tr role="row">
@@ -111,9 +105,6 @@
                     </th>
                     <th role="columnheader" class="" scope="col">
                       Date of birth
-                     </th>
-                    <th role="columnheader" class="" scope="col">
-                      NHS number
                      </th>
                        <th role="columnheader" class="" scope="col">
                         Contact details
@@ -129,117 +120,101 @@
                 <tbody class="nhsuk-table__body">
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>8:30</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>John Smith</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>John Smith<br>999 123 4567</td>
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>1 January 1954</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01234 567 890</td>
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>8:35</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Martin Lincoln</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Martin Lincoln<br>999 123 4568</td>
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>7 June 1958</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01234 567 890</td>
                     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">8:45</td>
-                    <td class="nhsuk-table__cell">Mike Jones</td>
+                    <td class="nhsuk-table__cell">Mike Jones<br>999 123 4569</td>
                     <td class="nhsuk-table__cell">15 October 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:45</td>
+                    <td class="nhsuk-table__cell">Norma Davies<br>999 123 4570</td>
+                    <td class="nhsuk-table__cell">26 August 1978</td>
                     <td class="nhsuk-table__cell"></td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td class="nhsuk-table__cell">8:45</td>
-                    <td class="nhsuk-table__cell">Norma Davies</td>
-                    <td class="nhsuk-table__cell">26 August 1978</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
-                    <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">8:50</td>
-                    <td class="nhsuk-table__cell">Clive Lochan</td>
+                    <td class="nhsuk-table__cell">Clive Lochan<br>999 123 4571</td>
                     <td class="nhsuk-table__cell">4 June 1947</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">8:50</td>
-                    <td class="nhsuk-table__cell">Dylan Barton</td>
+                    <td class="nhsuk-table__cell">Dylan Barton<br>999 123 4572</td>
                     <td class="nhsuk-table__cell">25 May 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">8:55</td>
-                    <td class="nhsuk-table__cell">Jacob Blick</td>
+                    <td class="nhsuk-table__cell">Jacob Blick<br>999 123 4573</td>
                     <td class="nhsuk-table__cell">3 May 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-
-                    <td class="nhsuk-table__cell"></td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">9:00</td>
-                    <td class="nhsuk-table__cell">Tobias Boehm</td>
+                    <td class="nhsuk-table__cell">Tobias Boehm<br>999 123 4574</td>
                     <td class="nhsuk-table__cell">1 February 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
                     <td class="nhsuk-table__cell"></td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">9:05</td>
-                    <td class="nhsuk-table__cell">Jonathan Carroll</td>
+                    <td class="nhsuk-table__cell">Jonathan Carroll<br>999 123 4575</td>
                     <td class="nhsuk-table__cell">29 January 1940</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">9:05</td>
-                    <td class="nhsuk-table__cell">Connie Corkery</td>
+                    <td class="nhsuk-table__cell">Connie Corkery<br>999 123 4576</td>
                     <td class="nhsuk-table__cell">1 September 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">9:15</td>
-                    <td class="nhsuk-table__cell">Mohamed Bartoletti</td>
+                    <td class="nhsuk-table__cell">Mohamed Bartoletti<br>999 123 4577</td>
                     <td class="nhsuk-table__cell">6 November 1950</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
                     <td class="nhsuk-table__cell"></td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">9:15</td>
-                    <td class="nhsuk-table__cell">Elijah Anderson</td>
+                    <td class="nhsuk-table__cell">Elijah Anderson<br>999 123 4578</td>
                     <td class="nhsuk-table__cell">4 July 1958</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">NHS number </span>454354861234</td>
-                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01643174827</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
                     <td class="nhsuk-table__cell">RSV</td>
-                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel-affected">Cancel</a></td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
                   </tr>
+  
                 </tbody>
               </table>
 

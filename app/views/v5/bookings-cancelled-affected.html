@@ -65,98 +65,77 @@
             <nav class="x-govuk-secondary-navigation" aria-label="Secondary menu">
                 <ul class="x-govuk-secondary-navigation__list">
                 
-                  
-                  <!--<li class="x-govuk-secondary-navigation__list-item">
-                    <a class="x-govuk-secondary-navigation__link" href="/sessions" aria-current="page">
-                      Today
-                    </a>
-                  </li>
-                  
+                                
                 
                   
-                  <li class="x-govuk-secondary-navigation__list-item ">
-                    <a class="x-govuk-secondary-navigation__link" href="/sessions/unplanned">
-                      Unscheduled
-                    </a>
-                  </li>-->
-                  
-                
-                  
-                  <li class="x-govuk-secondary-navigation__list-item ">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled-cancelled">
+                  <li class="x-govuk-secondary-navigation__list-item">
+                    <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled-affected">
                       Scheduled
                     </a>
                   </li>
                   
                 
-                  
-                  <!--<li class="x-govuk-secondary-navigation__list-item ">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-completed-cancelled">
-                        Checked in
-                    </a>
-                  </li>-->
-                  
+                          
                 
                   
                   <li class="x-govuk-secondary-navigation__list-item  x-govuk-secondary-navigation__list-item--current">
-                    <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled2">
+                    <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled-affected">
                       Cancelled
                     </a>
                   </li>
                   
+                  <li class="x-govuk-secondary-navigation__list-item">
+                    <a class="x-govuk-secondary-navigation__link" href="affected-bookings-cancel-session">
+                      Manual cancellations
+                    </a>
+                  </li>                
+
                 
                 </ul>
               </nav>
 
               <!--<div class="nhsuk-table__panel-with-heading-tab">
                 <h3 class="nhsuk-table__heading-tab">600 booked appointments</h3>-->
-                <table role="table" class="nhsuk-table-responsive">
-                    <thead role="rowgroup" class="nhsuk-table__head">
-                      <tr role="row">
-                        <th role="columnheader" class="" scope="col">
-                          Time
-                         </th>
-                         <th role="columnheader" class="" scope="col">
-                          Name and NHS number
-                         </th>
-                         <th role="columnheader" class="" scope="col">
-                           Date of birth
-                          </th>
-                           <th role="columnheader" class="" scope="col">
-                            Contact details
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                          Services
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">8:30</td>
-                            <td class="nhsuk-table__cell">John Smith<br>999 123 4567</td>
-                            <td class="nhsuk-table__cell">1 January 1954</td>
-                            <td class="nhsuk-table__cell">07712345678<br>john.smith@email.com</td>
-                            <td class="nhsuk-table__cell">RSV</td>
-                          </tr>
-                      <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>11:20</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Eliza Fritsch<br>999 123 4566</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>13 August 1948</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>07712345678</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
-                      </tr>
-                      <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>15:25</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Elias Erdman<br>999 123 4565</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>5 October 1950</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>eliaserdman.50@email.co.uk</td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
-                      </tr>
-        
-        
-                    </tbody>
-                  </table>
-                  </div>
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Time
+                   </th>
+                   <th role="columnheader" class="" scope="col">
+                    Name and NHS number
+                   </th>
+                   <th role="columnheader" class="" scope="col">
+                     Date of birth
+                    </th>
+                     <th role="columnheader" class="" scope="col">
+                      Contact details
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                    Services
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>11:20</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Eliza Fritsch<br>999 123 4566</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>13 August 1948</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>07712345678</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>15:25</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Elias Erdman<br>999 123 4565</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>5 October 1950</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>eliaserdman.50@email.co.uk</td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                </tr>
+  
+  
+              </tbody>
+            </table>
+            </div>
       <br>
             
       <!--<nav class="govuk-pagination" aria-label="Pagination">

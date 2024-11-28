@@ -42,7 +42,7 @@ router.get(/cancelBooking/, function (req, res) {
         res.redirect('bookings-scheduled-cancelled');
     }
     else {
-        res.redirect('bookings-scheduled-checkedin');
+        res.redirect('bookings-scheduled');
     }
 });
 

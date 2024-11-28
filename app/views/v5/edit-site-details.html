@@ -1,0 +1,125 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- Change the page title here -->
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="site-details">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+      <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+      <h1 class="nhsuk-heading-xl">Edit site details</h1>
+
+      <h3>Site name</h3><div class="nhsuk-form-group">
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="Hornsey Central pharmacy">
+      </div>
+
+      <h3>Site address</h3>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Address line 1
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="151 Park road">
+
+      <label class="nhsuk-label" for="input-width-20">
+        Address line 2 (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+
+    <label class="nhsuk-label" for="input-width-10">
+        Town or city
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="London">
+
+    <label class="nhsuk-label" for="input-width-10">
+        County (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="Greater London">
+
+    <label class="nhsuk-label" for="input-width-5">
+        Postcode
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="test-width-5" type="text" value="N8 8JB">
+    </div>
+
+
+    <h3>Latitude and longitude</h3>
+    <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Latitude
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="51.58437455856056">
+
+      <label class="nhsuk-label" for="input-width-20">
+        Longitude
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="-0.1310363693114145">
+    </div>
+
+    <h3>Site type</h3>
+    <div class="nhsuk-form-group">
+        <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="1" checked="true">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Pharmacy
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="2">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Type 2
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="3">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  Type 3
+                </label>
+              </div>
+  
+          </div>
+    </div>
+
+    <a class="nhsuk-button" href="site-details">Save and continue</a>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
