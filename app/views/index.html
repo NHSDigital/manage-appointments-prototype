@@ -4,9 +4,9 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
@@ -35,6 +35,28 @@
       <h1>
         Manage appointments
       </h1>
+      <h2>
+        V6_30012025 - 30 January 2025
+      </h2>
+
+      <p>Includes:</p>
+
+<h3>Changes to site details</h3>
+<ul>
+            <li>Removed site type, added phone number and changed address format to a single string in a textarea (tech debt).</li>
+            <li>Removed ODS code, ICB and Region from the details editable by site staff.</li> <li>Added separate panel for NHSE admin staff for managing these items.
+            </li>
+
+            </ul>
+<h3>Joint bookings</h3>
+      <ul>
+                  <li>30 January 2025 - alternative treatment of joint bookings added. </li>
+                  <li>The iteration below in v6 (using shading) and the alternative (borders) used in UR to experiment with visual styling for showing the daily bookings list with both single and joint bookings.</li>
+      </ul>
+
+      <a class="nhsuk-button" href="v6/site-selector">Version 6_30012025</a>
+
+
       <hr>
       <h2>
         V6 - 15 January 2025
@@ -48,7 +70,7 @@
         </li>
       </ul>
 
-      <a class="nhsuk-button" href="v6/site-selector">Version 5</a>
+      <a class="nhsuk-button" href="v6/site-selector">Version 6</a>
 
 
       <hr>

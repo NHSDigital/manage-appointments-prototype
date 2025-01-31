@@ -68,3 +68,4 @@ Thumbs.db
 
 # Code coverage
 coverage
+*.zip
