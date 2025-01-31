@@ -1,0 +1,127 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+In /views/layout.html you can:
+- change the header and footer
+- add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Option 2 Edit site details (admin)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{% set region = ['East of England','London','Midlands','North East and Yorkshire','North West','South East','South West'] %}
+
+{% set ICBlist = ['NHS Bath and North East Somerset, Swindon and Wiltshire ICB','NHS Bedfordshire, Luton and Milton Keynes ICB','NHS Birmingham and Solihull ICB','NHS Black Country ICB','NHS Bristol, North Somerset and South Gloucestershire ICB','NHS Buckinghamshire, Oxfordshire and Berkshire West ICB','NHS Cambridgeshire and Peterborough ICB','NHS Cheshire and Merseyside Integrated Care,Board','NHS Cornwall and the Isles of Scilly ICB','NHS Coventry and Warwickshire ICB','NHS Derby and Derbyshire ICB','NHS Devon ICB','NHS Dorset ICB','NHS Frimley ICB','NHS Gloucestershire ICB','NHS Greater Manchester ICB','NHS Hampshire and Isle of Wight ICB','NHS Herefordshire and Worcestershire ICB','NHS Hertfordshire and West Essex ICB','NHS Humber and North Yorkshire ICB','NHS Kent and Medway ICB','NHS Lancashire and South Cumbria ICB','NHS Leicester, Leicestershire and Rutland ICB','NHS Lincolnshire ICB','NHS Mid and South Essex ICB','NHS Norfolk and Waveney ICB','NHS North Central London ICB','NHS North East and North Cumbria ICB','NHS North East London ICB','NHS North West London ICB','NHS Northamptonshire ICB','NHS Nottingham and Nottinghamshire ICB','NHS Shropshire, Telford and Wrekin ICB','NHS Somerset ICB','NHS South East London ICB','NHS South West London ICB','NHS South Yorkshire ICB','NHS Staffordshire and Stoke-on-Trent ICB','NHS Suffolk and North East Essex ICB','NHS Surrey Heartlands ICB','NHS Sussex ICB','NHS West Yorkshire ICB'] %}
+
+{% set selectedICB = 'NHS North East and North Cumbria ICB' %}
+{% set selectedRegion = 'North East and Yorkshire' %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="site-details">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back</a>
+      </div>
+      <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+      <h1 class="nhsuk-heading-xl">Edit site reference details</h1>
+
+
+
+<h3>ODS code</h3><div class="nhsuk-form-group">
+  <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="FA1234">
+</div>
+
+<div id ="locationICB" class="nhsuk-form-group">
+  <label  class="filterLabel nhsuk-label" for="locationICB">
+    <h3>ICB</h3>
+  </label>
+  <select style="width:41%" class="nhsuk-select" id="locationICB" name="locationICB">
+
+    {% for icb in ICBlist %}
+
+
+    {% if icb == selectedICB %}
+    <option id="{{icbitem}}" selected value="{{selectedICB}}">{{selectedICB}}</option>
+    {% endif %}
+
+    <option id="{{icbitem}}" value="{{icb}}">{{icb}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<div  id ="locationRegion" class="nhsuk-form-group">
+  <label  class="filterLabel nhsuk-label" for="locationRegion">
+    <h3>Region</h3>
+  </label>
+  <select class="nhsuk-select" style="min-width:41%" id="locationRegion" name="locationRegion">
+
+
+    {% for entry in region %}
+    {% if entry == selectedRegion %}
+    <option id="{{entry}}" selected value="{{entry}}">{{entry}}</option>
+    {% endif %}
+    <option id="{{entry}}" value="{{entry}}">{{entry}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<!-- <h3>Site type</h3>
+<div class="nhsuk-form-group">
+<div class="nhsuk-radios">
+
+<div class="nhsuk-radios__item">
+<input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="1" checked="true">
+<label class="nhsuk-label nhsuk-radios__label" for="example-1">
+Pharmacy
+</label>
+</div>
+
+<div class="nhsuk-radios__item">
+<input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="2">
+<label class="nhsuk-label nhsuk-radios__label" for="example-2">
+Type 2
+</label>
+</div>
+
+<div class="nhsuk-radios__item">
+<input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="3">
+<label class="nhsuk-label nhsuk-radios__label" for="example-2">
+Type 3
+</label>
+</div>
+
+</div>
+</div> -->
+
+<a class="nhsuk-button nhsuk-u-margin-top-6" href="site-details-admin-odspanel">Save and continue</a>
+
+<!-- End of content -->
+
+</div>
+</div>
+{% endblock %}
