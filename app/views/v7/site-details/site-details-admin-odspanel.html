@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav-v3.html' %}
+{% extends 'layout-designHistory-demo.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Manage site (citizen)
+  Option 2 Manage site (admin)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -44,6 +44,56 @@
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-card__heading">
+            Site reference details
+
+          </h3>
+      <dl class="nhsuk-summary-list">
+
+
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            ODS code
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            FA1234
+          </dd>
+        </div>
+        <!-- <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Site type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Pharmacy
+          </dd>
+        </div> -->
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            ICB
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            NHS North East and North Cumbria ICB
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Region
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            North East and Yorkshire
+          </dd>
+        </div>
+
+
+
+
+      </dl>
+      <p><a class="nhsuk-link" href="edit-site-ods-details">Edit site reference details</a></p>
+      </div></div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
             Site details
 
           </h3>
@@ -54,10 +104,10 @@
             Address
           </dt>
           <dd class="nhsuk-summary-list__value">
-151 Park road,<BR>
-London,<BR>
-Greater London,<BR>
-N8 8JD
+      151 Park road,<BR>
+      London,<BR>
+      Greater London,<BR>
+      N8 8JD
           </dd>
         </div>
 
@@ -95,10 +145,15 @@ N8 8JD
 
 
 
-
       </dl>
-      <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>
+      <p><a class="nhsuk-link" href="edit-site-details-ods">Edit site details</a></p>
       </div></div>
+
+      <dl class="nhsuk-summary-list">
+
+
+
+
 
 
       <div class="nhsuk-card">

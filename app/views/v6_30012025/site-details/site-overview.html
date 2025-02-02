@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends 'layout-designHistory-demo.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -28,6 +28,7 @@ Site overview Hornsey Central Pharmacy
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!-- Change the page title here -->
@@ -99,7 +100,7 @@ Site overview Hornsey Central Pharmacy
           <div class="nhsuk-card nhsuk-card--clickable">
             <div class="nhsuk-card__content nhsuk-card__content--primary">
               <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="month">View availability and manage appointments for your site</a>
+                <a class="nhsuk-card__link" href="../month">View availability and manage appointments for your site</a>
               </h2>
               <!-- <p class="nhsuk-card__description">View and manage availability and appointments for your site</p> -->
 
@@ -120,7 +121,7 @@ Site overview Hornsey Central Pharmacy
           <div class="nhsuk-card nhsuk-card--clickable">
             <div class="nhsuk-card__content nhsuk-card__content--primary">
               <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="availability-overview">Create availability</a>
+                <a class="nhsuk-card__link" href="../availability-overview">Create availability</a>
               </h2>
               <!-- <p class="nhsuk-card__description">Create and edit available dates and sessions for your site</p> -->
 
@@ -140,9 +141,15 @@ Site overview Hornsey Central Pharmacy
 
           <div class="nhsuk-card nhsuk-card--clickable">
             <div class="nhsuk-card__content nhsuk-card__content--primary">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="site-details">Change site details and accessibility information</a>
-              </h2>
+
+            {% if data['admin'] == "false" %}
+            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="site-details">Change site details and accessibility information</a></h2>
+            {% elif data['admin'] == "true" %}
+            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="site-details-admin-odspanel">Change site details and accessibility information</a></h2>
+            {% elif data['admin'] == "trueB" %}
+            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="site-details-admin">Change site details and accessibility information</a></h2>
+            {% endif %}
+
               <!-- <p class="nhsuk-card__description">Assign accessibility attributes to this site</p> -->
 
               <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false">

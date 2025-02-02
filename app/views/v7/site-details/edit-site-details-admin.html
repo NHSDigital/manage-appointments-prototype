@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-designHistory-demo.html' %}
 <!--
 In /views/layout.html you can:
 - change the header and footer
@@ -12,7 +12,7 @@ In /views/layout.html you can:
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Option 2 Edit site details (admin)
+Option 1: Edit site details (admin)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -48,9 +48,76 @@ Option 2 Edit site details (admin)
         Go back</a>
       </div>
       <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-      <h1 class="nhsuk-heading-xl">Edit site reference details</h1>
+      <h1 class="nhsuk-heading-xl">Edit site details</h1>
+
+      <h3>Site name</h3><div class="nhsuk-form-group">
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="Hornsey Central Pharmacy">
+      </div>
 
 
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="site-address-textarea">
+          <h3 class="nhsuk-u-margin-bottom-3">Site address</h3>
+        </label>
+        <!-- <div class="nhsuk-hint" id="site-address-hint">
+        Does the user need to be given instruction given that the structural bits are gone?
+      </div> -->
+      <textarea class="nhsuk-textarea nhsuk-input--width-20" id="site-address-textarea" name="site-address-textarea" rows="4" aria-describedby="example-hint">
+151 Park Road,
+London,
+Greater London,
+N8 8JB</textarea>
+      </div>
+
+
+
+
+      <!-- <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="input-width-20">
+      Address line 1
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="151 Park road">
+
+    <label class="nhsuk-label" for="input-width-20">
+    Address line 2 (optional)
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+
+  <label class="nhsuk-label" for="input-width-10">
+  Town or city
+</label>
+<input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="London">
+
+<label class="nhsuk-label" for="input-width-10">
+County (optional)
+</label>
+<input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="Greater London">
+
+<label class="nhsuk-label" for="input-width-5">
+Postcode
+</label>
+<input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="test-width-5" type="text" value="N8 8JB">
+</div> -->
+
+
+<h3>Latitude and longitude</h3>
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="input-width-20">
+    Latitude
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="51.58437455856056">
+
+  <label class="nhsuk-label" for="input-width-20">
+    Longitude
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="-0.1310363693114145">
+</div>
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone-number">
+    <h3 class="nhsuk-u-margin-bottom-3">Phone number</h3>
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-20" id="phone-number" name="phoneNumber" type="tel" autocomplete="tel" value="0208 889 8056">
+</div>
 
 <h3>ODS code</h3><div class="nhsuk-form-group">
   <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="FA1234">
@@ -118,7 +185,7 @@ Type 3
 </div>
 </div> -->
 
-<a class="nhsuk-button nhsuk-u-margin-top-6" href="site-details-admin-odspanel">Save and continue</a>
+<a class="nhsuk-button nhsuk-u-margin-top-6" href="site-details-admin">Save and continue</a>
 
 <!-- End of content -->
 

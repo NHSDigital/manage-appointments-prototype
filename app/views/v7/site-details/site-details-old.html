@@ -4,15 +4,15 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-top-nav-v3.html' %}
-<!--
+<!-- 
   In /views/layout.html you can:
-    - change the header and footer
+    - change the header and footer 
     - add custom CSS and JavaScript
 -->
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Manage site (citizen)
+  Manage appointments
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -36,7 +36,7 @@
 
       <!-- <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-
+      
         <p>151 Park road, <br>London, <br>Greater London, <br>N8 8JD</p>
       </div> -->
 
@@ -45,57 +45,54 @@
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-card__heading">
             Site details
-
+      
           </h3>
-      <dl class="nhsuk-summary-list">
-
+      <dl class="nhsuk-summary-list">       
+        
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Address
           </dt>
           <dd class="nhsuk-summary-list__value">
-151 Park road,<BR>
-London,<BR>
-Greater London,<BR>
-N8 8JD
-          </dd>
+            151 Park road, <br>London, <br>Greater London, <br>N8 8JD
+          </dd>    
         </div>
-
-        <div class="nhsuk-summary-list__row" styl>
-          <dt class="nhsuk-summary-list__key">
-            Latitude<BR>Longitude
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            51.58437455856056<BR>-0.1310363693114145
-          </dd>
-
-        </div>
-
-        <!-- <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Longitude
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            -0.1310363693114145
-          </dd>
-        </div> -->
-
-
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Phone number
+            ODS code
           </dt>
           <dd class="nhsuk-summary-list__value">
-            0208 889 8056
-          </dd>
+            FA1234
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Site type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Pharmacy
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            ICB
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            NHS North East and North Cumbria ICB
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Region
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            North East and Yorkshire
+          </dd>    
         </div>
 
-
-
-
-
-
-
+      
+      
+        
       </dl>
       <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>
       </div></div>
@@ -105,17 +102,17 @@ N8 8JD
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-card__heading">
            Access needs
-
+      
           </h3>
-      <dl class="nhsuk-summary-list">
-
+      <dl class="nhsuk-summary-list">       
+        
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Accessible toilet
           </dt>
           <dd class="nhsuk-summary-list__value">
             No
-          </dd>
+          </dd>    
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -123,7 +120,7 @@ N8 8JD
           </dt>
           <dd class="nhsuk-summary-list__value">
             Yes
-          </dd>
+          </dd>    
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -131,7 +128,7 @@ N8 8JD
           </dt>
           <dd class="nhsuk-summary-list__value">
             Yes
-          </dd>
+          </dd>    
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -139,7 +136,7 @@ N8 8JD
           </dt>
           <dd class="nhsuk-summary-list__value">
            Yes
-          </dd>
+          </dd>    
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -147,7 +144,7 @@ N8 8JD
           </dt>
           <dd class="nhsuk-summary-list__value">
             No
-          </dd>
+          </dd>    
         </div>
         <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
@@ -155,7 +152,7 @@ N8 8JD
             </dt>
             <dd class="nhsuk-summary-list__value">
               Yes
-            </dd>
+            </dd>    
           </div>
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
@@ -163,7 +160,7 @@ N8 8JD
             </dt>
             <dd class="nhsuk-summary-list__value">
               No
-            </dd>
+            </dd>    
           </div>
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
@@ -171,7 +168,7 @@ N8 8JD
             </dt>
             <dd class="nhsuk-summary-list__value">
               Yes
-            </dd>
+            </dd>    
           </div>
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
@@ -179,12 +176,12 @@ N8 8JD
             </dt>
             <dd class="nhsuk-summary-list__value">
               No
-            </dd>
+            </dd>    
           </div>
-
-
-
-
+        
+      
+      
+        
       </dl>
       <p><a class="nhsuk-link" href="#">Edit access needs</a></p>
       </div></div>
@@ -194,7 +191,7 @@ N8 8JD
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-card__heading">
            Information for citizens
-
+      
           </h3>
           <p>Information for people visiting the site</p>
       <p><a class="nhsuk-link" href="#">Edit information for citizens</a></p>
