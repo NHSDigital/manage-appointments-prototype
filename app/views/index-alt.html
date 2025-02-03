@@ -1,0 +1,786 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-index-alt.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1>
+        Prototype iterations
+      </h1>
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="nhsuk-tabs__list">
+
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#latest">
+              Latest
+            </a>
+          </li>
+
+
+
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#all-iterations">
+              All iterations
+            </a>
+          </li>
+
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#experimental">
+              Experimental
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="nhsuk-tabs__panel" style="" id="latest">
+
+                <h2>
+                  V7 - 31 January 2025
+                </h2>
+
+                <h3>Joint bookings</h3>
+
+                <ul>
+                            <li>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders).</li>
+
+                            <li>Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure. This was determined in an earlier iteration during UR and has been removed for completeness.</li>
+
+                </ul>
+
+                <a class="nhsuk-button" href="v7/site-selector">Version 7</a>
+
+                <a class="nhsuk-button nhsuk-button--secondary" href="v7/bookings-scheduled">View changed page</a>
+
+          <!-- <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Past day</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Case manager
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases opened
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases closed
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">David Francis</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Paul Farmer</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Rita Patel</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+              </tr>
+            </tbody>
+          </table> -->
+
+        </div>
+
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="all-iterations">
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">list of all iterations</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th style="width:20%" role="columnheader" class="" scope="col">
+                  Version
+                </th>
+                <th style="width:15%" role="columnheader" class="" scope="col">
+                  Date
+                </th>
+                <th style="width:50%" role="columnheader" class="" scope="col">
+                  Summary
+                </th>
+                <th style="width:15%" role="columnheader" class="" scope="col">
+                  Prototype link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body" style="">
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">7</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">31 Jan 2025</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+                </td>
+
+                  <!-- Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></td> -->
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v7/site-selector">Launch v7</a><BR><a href="v7/bookings-scheduled">View changed page</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">6_30012025</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">30 Jan 2025</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+
+
+
+                </td>
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v6_30012025/site-selector">Launch v6_30012025</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">6</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">15 Jan 2025</td>
+
+                <td class="nhsuk-table__cell">
+
+                    <p>Iterations to joint bookings design in daily bookings list.</p>
+
+
+
+                </td>
+
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v6/site-selector">Launch v6</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">5</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">21 Nov 2024</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+
+
+
+                </td>
+
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v5/site-selector">Launch v5</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">4</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">8 Nov 2024</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+
+
+
+                </td>
+
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v4/site-selector">Launch v4</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">3</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">30 Oct 2024</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+
+
+
+                </td>
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v4/site-selector">Launch v3</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">2</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">11 Oct 2024</td>
+                <td class="nhsuk-table__cell">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">Decision taken to switch the visual...</span></summary>
+                    <div class="nhsuk-details__text"><p>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders). Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure.</p></div>
+                  </details>
+
+
+
+                </td>
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v2/site-selector">Launch v2</a></td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row" style="">
+                <td style='font-size:17px' class="nhsuk-table__cell">1</td>
+                <td style='font-size:17px' class="nhsuk-table__cell">1 Oct 2024</td>
+
+                <td class="nhsuk-table__cell">
+                  <ul>
+                      <li>
+                        Availability period creation
+                      </li>
+                      <li>
+                        Repeat session creation
+                      </li>
+                      <li>
+                        Single session creation
+                      </li>
+                    </ul>
+
+
+
+                </td>
+                <td style='font-size:17px' class="nhsuk-table__cell">
+                  <a class="nhsuk-link" style="" href="v1/site-selector">Launch v1</a></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+                <h2>
+                  V7 - 31 January 2025
+                </h2>
+
+                <h3>Joint bookings</h3>
+
+                <ul>
+                            <li>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders).</li>
+
+                            <li>Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure (perhaps this is an assumption that ought to be confirmed the next time UR happens?)</li>
+
+                </ul>
+
+                <a class="nhsuk-button" href="v7/site-selector">Version 7</a>
+
+                <a class="nhsuk-button nhsuk-button--secondary" href="v7/bookings-scheduled">View changed page</a>
+
+                <hr>
+
+                <h2>
+                  V6_30012025 - 30 January 2025
+                </h2>
+
+                <p>Includes:</p>
+
+
+              <h3>Joint bookings</h3>
+                <ul>
+                            <li>30 January 2025 - alternative treatment of joint bookings added. </li>
+                            <li>Iteration using shading and the alternative with borders were used in UR to experiment with how to distinguish single Vs. joint bookings in the daily list.</li>
+
+              <ul class="nhsuk-list"
+              <LI>View options:</li>
+              <li style="nhsuk-list-">        <a class="nhsuk-link" href="v6_30012025/bookings-scheduled">A - bookings scheduled</a></li>
+                  <li><a class="nhsuk-link" href="v6_30012025/bookings-scheduled-alt">B - alternative bookings scheduled</a></li>
+              </ul>
+              </ul>
+                <h3>Changes to manage site details</h3>
+                <ul>
+                            <li>Removed site type, added phone number and changed address format to a single string in a textarea (tech debt).</li>
+                            <li>Removed ODS code, ICB and Region from the details editable by site staff.</li> <li>Added separate panel for NHSE admin staff for managing these items.
+              <ul class="nhsuk-list">
+              <LI>View changes:</li>
+              <li>                    <a class="nhsuk-link" href="v6_30012025/site-details/index">View manage site details changes</a>
+
+                            </li>
+              </ul>
+                            </ul>
+                            <a class="nhsuk-button" href="v6_30012025/site-selector">Version 6_30012025</a><BR>
+
+
+                <hr>
+                <h2>
+                  V6 - 15 January 2025
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Iterations to joint bookings design in daily bookings list
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v6/site-selector">Version 6</a>
+
+
+                <hr>
+                <h2>
+                  V5 - 21 November 2024
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Updated content on landing page and top nav
+                  </li>
+                  <li>
+                    Content updates to help users complete tasks (Changes to existing availability)
+                  </li>
+                  <li>
+                    List of appointments affected by change incorporated into daily bookings view
+                  </li>
+                  <li>
+                    Changes to weekly overview page, to help users understand if changes have been made to availability, and appointments have been cancelled
+                  </li>
+                  <li>
+                    Show joint bookings in daily bookings list (up to 2 people)
+                  </li>
+                  <li>
+                    Add multiple breaks (up to 3 per session)
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v5/site-selector">Version 5</a>
+
+
+                <hr>
+                <h2>
+                  V4 - 8 November 2024
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Update navigation to include landing page with cards
+                  </li>
+                  <li>
+                    Edit/remove availability of existing sessions
+                  </li>
+                  <li>
+                    Bulk cancellation of appointments via removing availability
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v4/site-selector">Version 4</a>
+
+                <h2>
+                  V3 - 30 October 2024
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Remove edit/publish/unpublish features from 'create availability' UI
+                  </li>
+                  <li>
+                    Content tweaks in 'create' and 'manage' journeys to help with readability/completing tasks and understanding availability info
+                  </li>
+                  <li>
+                    Edit nav to reflect correct task structure, and add in site and user management pages
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v3/site-selector">Version 3</a>
+
+                <h2>
+                  V2 - 11 October 2024
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Updated navigation to help users move around the site more easily
+                  </li>
+                  <li>
+                    Updated view and manage availability pages as well as new content
+                  </li>
+                  <li>
+                    Delete availability functionality added
+                  </li>
+                  <li>
+                    View daily appointments functionality added
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v2/site-selector">Version 2</a>
+                <h2>
+                  V1 - 1 October 2024
+                </h2>
+
+                <p>Includes:</p>
+
+                <ul>
+                  <li>
+                    Availability period creation
+                  </li>
+                  <li>
+                    Repeat session creation
+                  </li>
+                  <li>
+                    Single session creation
+                  </li>
+                </ul>
+
+                <a class="nhsuk-button" href="v1/site-selector">Version 1</a>
+
+
+          <!-- <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Past week</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Case manager
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases opened
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases closed
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">David Francis</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">18</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Paul Farmer</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">16</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">20</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Rita Patel</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">27</td>
+              </tr>
+            </tbody>
+          </table> -->
+
+        </div>
+
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="experimental">
+
+          <!-- <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Past month</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Case manager
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases opened
+                </th>
+                <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                  Cases closed
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">David Francis</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">98</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">95</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Paul Farmer</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">122</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">131</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Rita Patel</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">126</td>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">142</td>
+              </tr>
+            </tbody>
+          </table> -->
+
+        </div>
+
+
+
+      </div>
+      <!-- Change the page title here -->
+
+
+      <!-- <h2>
+        V7 - 31 January 2025
+      </h2>
+
+      <h3>Joint bookings</h3>
+
+      <ul>
+                  <li>Decision taken to switch the visual treatment of joint bookings on the daily bookings list to the alternative design (borders).</li>
+
+                  <li>Agreed that the inclusion of the booking reference doesn't appear to support any user need on the daily bookings schedule, therefore decision taken to remove it from the table structure (perhaps this is an assumption that ought to be confirmed the next time UR happens?)</li>
+
+      </ul>
+
+      <a class="nhsuk-button" href="v7/site-selector">Version 7</a>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="v7/bookings-scheduled">View changed page</a>
+
+      <hr>
+
+      <h2>
+        V6_30012025 - 30 January 2025
+      </h2>
+
+      <p>Includes:</p>
+
+
+<h3>Joint bookings</h3>
+      <ul>
+                  <li>30 January 2025 - alternative treatment of joint bookings added. </li>
+                  <li>Iteration using shading and the alternative with borders were used in UR to experiment with how to distinguish single Vs. joint bookings in the daily list.</li>
+
+<ul class="nhsuk-list"
+<LI>View options:</li>
+<li style="nhsuk-list-">        <a class="nhsuk-link" href="v6_30012025/bookings-scheduled">A - bookings scheduled</a></li>
+        <li><a class="nhsuk-link" href="v6_30012025/bookings-scheduled-alt">B - alternative bookings scheduled</a></li>
+    </ul>
+</ul>
+      <h3>Changes to manage site details</h3>
+      <ul>
+                  <li>Removed site type, added phone number and changed address format to a single string in a textarea (tech debt).</li>
+                  <li>Removed ODS code, ICB and Region from the details editable by site staff.</li> <li>Added separate panel for NHSE admin staff for managing these items.
+<ul class="nhsuk-list">
+  <LI>View changes:</li>
+<li>                    <a class="nhsuk-link" href="v6_30012025/site-details/index">View manage site details changes</a>
+
+                  </li>
+</ul>
+                  </ul>
+                  <a class="nhsuk-button" href="v6_30012025/site-selector">Version 6_30012025</a><BR>
+
+
+      <hr>
+      <h2>
+        V6 - 15 January 2025
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Iterations to joint bookings design in daily bookings list
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v6/site-selector">Version 6</a>
+
+
+      <hr>
+      <h2>
+        V5 - 21 November 2024
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Updated content on landing page and top nav
+        </li>
+        <li>
+          Content updates to help users complete tasks (Changes to existing availability)
+        </li>
+        <li>
+          List of appointments affected by change incorporated into daily bookings view
+        </li>
+        <li>
+          Changes to weekly overview page, to help users understand if changes have been made to availability, and appointments have been cancelled
+        </li>
+        <li>
+          Show joint bookings in daily bookings list (up to 2 people)
+        </li>
+        <li>
+          Add multiple breaks (up to 3 per session)
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v5/site-selector">Version 5</a>
+
+
+      <hr>
+      <h2>
+        V4 - 8 November 2024
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Update navigation to include landing page with cards
+        </li>
+        <li>
+          Edit/remove availability of existing sessions
+        </li>
+        <li>
+          Bulk cancellation of appointments via removing availability
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v4/site-selector">Version 4</a>
+
+      <h2>
+        V3 - 30 October 2024
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Remove edit/publish/unpublish features from 'create availability' UI
+        </li>
+        <li>
+          Content tweaks in 'create' and 'manage' journeys to help with readability/completing tasks and understanding availability info
+        </li>
+        <li>
+          Edit nav to reflect correct task structure, and add in site and user management pages
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v3/site-selector">Version 3</a>
+
+      <h2>
+        V2 - 11 October 2024
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Updated navigation to help users move around the site more easily
+        </li>
+        <li>
+          Updated view and manage availability pages as well as new content
+        </li>
+        <li>
+          Delete availability functionality added
+        </li>
+        <li>
+          View daily appointments functionality added
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v2/site-selector">Version 2</a>
+      <h2>
+        V1 - 1 October 2024
+      </h2>
+
+      <p>Includes:</p>
+
+      <ul>
+        <li>
+          Availability period creation
+        </li>
+        <li>
+          Repeat session creation
+        </li>
+        <li>
+          Single session creation
+        </li>
+      </ul>
+
+      <a class="nhsuk-button" href="v1/site-selector">Version 1</a> -->
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption">Past month</caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Version
+      </th>
+      <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+        Date
+      </th>
+      <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+        Summary of changes
+      </th>
+      <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+        Link
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 2</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 3</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 4</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 5</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Ver 6</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Date 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Summary 1</td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Link 1</td>
+    </tr>
+  </tbody>
+</table>
