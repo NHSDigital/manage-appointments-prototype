@@ -1,0 +1,238 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-cookie.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Cookie policy - Manage your appointments {% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="nhsuk-back-link nhsuk-u-margin-top-3">
+
+  <a class="nhsuk-back-link__link" href="cookie-banner">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">Cookie policy</h1>
+
+<h2 class="nhsuk-heading-l">What are cookies?</h2>
+<p class="nhsuk-body-m">
+  Cookies are files saved on your phone, tablet, or computer when you visit a website or service.
+
+  They store information about how you use the website or service, such as the pages you visit.
+
+  Cookies are not viruses or computer programs. They are very small so do not take up much space.
+</p>
+
+<h2 class="nhsuk-heading-l">How we use cookies</h2>
+<p class="nhsuk-body-m">
+We only use cookies to:</p>
+<ul class="nhsuk-list-bullet">
+<li>make our service work</li>
+<li>measure how you use our website, such as which links you click on (analytics cookies), if you give us permission</li>
+
+</ul>
+
+<p class="nhsuk-body-m">We do not use any other cookies, for example, cookies that remember your settings or cookies that help with health campaigns.</p>
+
+<h2 class="nhsuk-heading-l">Cookies that make our service work</h2>
+<p class="nhsuk-body-m">We use cookies to keep our service secure and fast.</p>
+
+
+      <details class="nhsuk-details" style="width:150%">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            List of cookies that make our website work
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Cookie name and purpose</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Cookie name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Purpose
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Expiry
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">token</td>
+                <td class="nhsuk-table__cell ">Tracks your authorisation during a session</td>
+                <td class="nhsuk-table__cell ">When you close the browser</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">ams-notification</td>
+                <td class="nhsuk-table__cell ">Provides you with information when actions are taken (for example, a notification)</td>
+                <td class="nhsuk-table__cell ">After 15 seconds</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">previousPage</td>
+                <td class="nhsuk-table__cell ">Allows you to return to the page you were on after you have been logged out and back in again</td>
+                <td class="nhsuk-table__cell ">When you close the browser</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-l">Cookies that measure website use</h2>
+
+<p class="nhsuk-body-m">We also like to use analytics cookies. These cookies store anonymous information about how you use our website, such as which pages you visit or what you click on.</p>
+
+<details class="nhsuk-details" style="width:150%">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      List of cookies that measure website use
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Cookie name and purpose</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Cookie name
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Purpose
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Expiry
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">AMCV_#</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Tells us if you've used our site before.</td>
+          <td class="nhsuk-table__cell ">2 years</td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">AMCVS_#AdobeOrg</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Tells us how you use our site.</td>
+          <td class="nhsuk-table__cell ">When you close the browser</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">com.adobe.reactor.dataElementCookiesMigrated</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Includes data elements set to capture usage of our website.</td>
+          <td class="nhsuk-table__cell ">No expiry</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">demdex</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Allows cross-domain analytics of NHS properties.</td>
+          <td class="nhsuk-table__cell ">180 days</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">s_cc</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Checks if cookies work in your web browser.</td>
+          <td class="nhsuk-table__cell ">When you close the browser</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">s_getNewRepeat</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Tells us if you've used our website before.</td>
+          <td class="nhsuk-table__cell ">30 days</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">s_ppn</td>
+          <td class="nhsuk-table__cell ">d by Adobe Analytics. Tells us how you use our website by reading the previous page you visited.</td>
+          <td class="nhsuk-table__cell ">1 day</td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">s_sq</td>
+          <td class="nhsuk-table__cell ">Used by Adobe Analytics. Remembers the last link you clicked on.</td>
+          <td class="nhsuk-table__cell ">When you close the browser</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<p class="nhsuk-body-m">We'll only use these cookies if you say it's okay. We'll use a cookie to save your settings.</p>
+
+
+
+
+
+
+      <div class="nhsuk-form-group nhsuk-u-margin-top-3">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 style="font-size:1.625rem" class="nhsuk-fieldset__heading">
+              Tell us if we can use analytics cookies
+            </h3>
+          </legend>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Use cookies to measure my website use
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" checked="checked" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Do not use cookies to measure my website use
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button nhsuk-u-margin-top-3" data-module="nhsuk-button" type="submit">
+        Save my cookie settings
+      </button>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,205 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-top-nav-v3.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- Change the page title here -->
+      <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+      <h1 class="nhsuk-heading-xl">Manage site</h1>
+
+      <!-- <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+      
+        <p>151 Park road, <br>London, <br>Greater London, <br>N8 8JD</p>
+      </div> -->
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Site details
+      
+          </h3>
+      <dl class="nhsuk-summary-list">       
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            151 Park road, <br>London, <br>Greater London, <br>N8 8JD
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            ODS code
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            FA1234
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Site type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Pharmacy
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            ICB
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            NHS North East and North Cumbria ICB
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Region
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            North East and Yorkshire
+          </dd>    
+        </div>
+
+      
+      
+        
+      </dl>
+      <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>
+      </div></div>
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+           Access needs
+      
+          </h3>
+      <dl class="nhsuk-summary-list">       
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accessible toilet
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Braille translation service
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Disabled car parking
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Car parking
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+           Yes
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Induction loop
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>    
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Sign language service
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>    
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Step free access
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              No
+            </dd>    
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+             Text relay
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>    
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Wheelchair access
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              No
+            </dd>    
+          </div>
+        
+      
+      
+        
+      </dl>
+      <p><a class="nhsuk-link" href="#">Edit access needs</a></p>
+      </div></div>
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+           Information for citizens
+      
+          </h3>
+          <p>Information for people visiting the site</p>
+      <p><a class="nhsuk-link" href="#">Edit information for citizens</a></p>
+      </div></div>
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
