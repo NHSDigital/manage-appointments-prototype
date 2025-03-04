@@ -1,0 +1,336 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-top-nav-v5.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="week-session-edited">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back to week view</a>
+      </div>
+      <div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-xl">26 August 2024</h1>
+            
+            <!--<div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="session-start-year">
+                  Date
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-6" placeholder="01/11/2024" id="session-start-year" name="session-start-year" type="text" inputmode="date">
+              </div>
+            </div>
+
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="session-start-year">
+                  Search by name or booking reference
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-6" id="session-start-year" name="session-start-year" type="text" inputmode="numeric">
+              </div>
+            </div>-->
+
+            <p>These 12 people did not provide a mobile number or email, and we could not automatically cancel their appointments. If they left a landline number, you can use this to contact them.</p>
+
+            <nav class="x-govuk-secondary-navigation" aria-label="Secondary menu">
+              <ul class="x-govuk-secondary-navigation__list">
+              
+                              
+              
+                
+                <li class="x-govuk-secondary-navigation__list-item">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-scheduled-affected">
+                    Scheduled
+                  </a>
+                </li>
+                
+                <li class="x-govuk-secondary-navigation__list-item ">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-cancelled-affected">
+                    Cancelled
+                  </a>
+                </li>
+                
+                <li class="x-govuk-secondary-navigation__list-item  x-govuk-secondary-navigation__list-item--current"">
+                  <a class="x-govuk-secondary-navigation__link" href="bookings-completed">
+                    Manual cancellations
+                  </a>
+                </li>                
+              </ul>
+            </nav>
+
+
+
+            <!--<div class="nhsuk-table__panel-with-heading-tab">
+              <h3 class="nhsuk-table__heading-tab">600 booked appointments</h3>-->
+              <table role="table" class="nhsuk-table-responsive">
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Time
+                     </th>
+                    <th role="columnheader" class="" scope="col">
+                     Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Date of birth
+                     </th>
+                       <th role="columnheader" class="" scope="col">
+                        Contact details
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                      Services
+                    </th>
+                    <th role="columnheader" class="" scope="col" style="text-align: right;">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>8:30</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>John Smith<br>999 123 4567</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>1 January 1954</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01234 567 890</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="cancel">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Time </span>8:35</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Martin Lincoln<br>999 123 4568</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>7 June 1958</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Contact details </span>01234 567 890</td>
+                    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Services </span>RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:45</td>
+                    <td class="nhsuk-table__cell">Mike Jones<br>999 123 4569</td>
+                    <td class="nhsuk-table__cell">15 October 1950</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:45</td>
+                    <td class="nhsuk-table__cell">Norma Davies<br>999 123 4570</td>
+                    <td class="nhsuk-table__cell">26 August 1978</td>
+                    <td class="nhsuk-table__cell"></td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:50</td>
+                    <td class="nhsuk-table__cell">Clive Lochan<br>999 123 4571</td>
+                    <td class="nhsuk-table__cell">4 June 1947</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:50</td>
+                    <td class="nhsuk-table__cell">Dylan Barton<br>999 123 4572</td>
+                    <td class="nhsuk-table__cell">25 May 1950</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">8:55</td>
+                    <td class="nhsuk-table__cell">Jacob Blick<br>999 123 4573</td>
+                    <td class="nhsuk-table__cell">3 May 1950</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">9:00</td>
+                    <td class="nhsuk-table__cell">Tobias Boehm<br>999 123 4574</td>
+                    <td class="nhsuk-table__cell">1 February 1950</td>
+                    <td class="nhsuk-table__cell"></td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">9:05</td>
+                    <td class="nhsuk-table__cell">Jonathan Carroll<br>999 123 4575</td>
+                    <td class="nhsuk-table__cell">29 January 1940</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">9:05</td>
+                    <td class="nhsuk-table__cell">Connie Corkery<br>999 123 4576</td>
+                    <td class="nhsuk-table__cell">1 September 1950</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">9:15</td>
+                    <td class="nhsuk-table__cell">Mohamed Bartoletti<br>999 123 4577</td>
+                    <td class="nhsuk-table__cell">6 November 1950</td>
+                    <td class="nhsuk-table__cell"></td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">9:15</td>
+                    <td class="nhsuk-table__cell">Elijah Anderson<br>999 123 4578</td>
+                    <td class="nhsuk-table__cell">4 July 1958</td>
+                    <td class="nhsuk-table__cell">01234 567 890</td>
+                    <td class="nhsuk-table__cell">RSV</td>
+                    <td class="nhsuk-table__cell" style="text-align: right;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span><a class="nhsuk-link" href="#">Cancel</a></td>
+                  </tr>
+  
+                </tbody>
+              </table>
+
+
+
+
+              
+
+
+
+            </div>
+      <br>
+            <!-- <nav class="govuk-pagination" aria-label="Pagination">
+  
+  
+              <ul class="govuk-pagination__list">
+              
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=1&amp;limit=200" aria-label="Page 1" aria-current="page">
+                    1
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=2&amp;limit=200" aria-label="Page 2">
+                    2
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=3&amp;limit=200" aria-label="Page 3">
+                    3
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=4&amp;limit=200" aria-label="Page 4">
+                    4
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=5&amp;limit=200" aria-label="Page 5">
+                    5
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=6&amp;limit=200" aria-label="Page 6">
+                    6
+                  </a>
+                
+                </li>
+              
+                <li class="govuk-pagination__item">
+                
+                  <a class="govuk-link govuk-pagination__link" href="?page=7&amp;limit=200" aria-label="Page 7">
+                    7
+                  </a>
+                
+                </li>
+              
+              </ul>
+              
+                
+              
+              <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="?page=2&amp;limit=200" rel="next">
+                  
+                  <span class="govuk-pagination__link-title">
+                    Next<span class="govuk-visually-hidden"> page</span>
+                  </span>
+                  
+                      
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                  
+                </a>
+              </div>
+            
+              
+            </nav>
+
+            <p class="nhsuk-body">Showing <b>1</b> to <b>20</b> of <b>600</b> scheduled appointments</p> -->
+
+            <!--<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+              <ul class="nhsuk-list nhsuk-pagination__list">
+                <li class="nhsuk-pagination-item--next">
+                  <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+                    <span class="nhsuk-pagination__title">Next</span>
+                    <span class="nhsuk-u-visually-hidden">:</span>
+                    <span class="nhsuk-pagination__page">11:00 - 13:30</span>
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>            
+
+
+           </div></nav>-->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

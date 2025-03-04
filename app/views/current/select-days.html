@@ -1,0 +1,139 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Create weekly session</span>
+            <h1 class="nhsuk-heading-l">Select days to add to your weekly session</h1>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              You can create multiple weekly sessions, to cover: <br><br>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Vaccinator availability</li>
+                <li>Type of vaccines available</li>
+           </div>
+                 <form action="session-time-capacity" class="form">
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+
+            <form>
+
+              <div class="nhsuk-form-group">
+            
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            </legend>
+                        
+                  <div class="nhsuk-checkboxes">
+            
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-1" name="days" type="checkbox" value=" Monday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-1">
+                             Monday
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-2" name="days" type="checkbox" value=" Tuesday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-2">
+                              Tuesday
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-3" name="days" type="checkbox" value=" Wednesday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-3">
+                              Wednesday
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-4" name="days" type="checkbox" value=" Thursday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-4">
+                              Thursday
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-5" name="days" type="checkbox" value=" Friday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-5">
+                              Friday
+                            </label>
+                          </div>
+                  
+                                      <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-6" name="days" type="checkbox" value=" Saturday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-6">
+                              Saturday
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-7" name="days" type="checkbox" value=" Sunday">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-7">
+                            Sunday
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__divider">or</div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="days-8" name="days" type="checkbox" value=" All days">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="days-8">
+                            Select all days
+                            </label>
+                          </div>
+
+                  
+                  
+                        </div>
+                </fieldset><br><br>
+
+        
+        </div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,169 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+            <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">Check your session details</h1>
+
+
+      <form action="week-day-created" class="form">
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['session-day']}} {{data['session-month']}} {{data['session-year']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session date</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['start-time']}} - {{data['end-time']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session time</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Breaks
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['break-start']}} - {{data['break-end']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session breaks</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> services availability</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Maximum simultaneous appointments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['simultaneous-appointments']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length in minutes
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{data['appointment-length']}}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+ 
+
+        </dl>
+    
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Create session
+        </button>
+      </form>
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
