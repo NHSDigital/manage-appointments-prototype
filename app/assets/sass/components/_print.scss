@@ -1,0 +1,100 @@
+/* Add this to your CSS file or within a <style> tag in the head section */
+
+/* Print-specific styles */
+@media print {
+    /* Hide elements not needed in print version */
+    .nhsuk-header, 
+    .nhsuk-back-link, 
+    .x-govuk-secondary-navigation,
+    .moj-button-group,
+    .govuk-pagination,
+    nav {
+      display: none !important;
+    }
+    
+    /* Ensure the whole page prints well */
+    body {
+      font-size: 12pt;
+      color: #000;
+      background-color: #fff;
+    }
+    
+    /* Style the table for printing */
+    .nhsuk-table-responsive {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    /* Blue header for the table */
+    .nhsuk-table__head {
+      background-color: #005eb8 !important;
+      color: white !important;
+      print-color-adjust: exact; /* For Chrome */
+      -webkit-print-color-adjust: exact; /* For Safari */
+    }
+    
+    .nhsuk-table__head th {
+      color: white !important;
+      padding: 10px;
+      font-weight: bold;
+      text-align: left;
+      border: 1px solid #d8dde0;
+    }
+    
+    .nhsuk-table__body td {
+      padding: 10px;
+      border: 1px solid #d8dde0;
+    }
+    
+    /* Format the joint appointment styling for print */
+    .jointTopBot, .jointMid {
+      border-color: #768692 !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    /* Make sure the "Joint" tag is visible */
+    .nhsuk-tag {
+      background-color: #1d70b8 !important;
+      color: white !important;
+      padding: 2px 5px;
+      font-size: 10pt;
+      font-weight: bold;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    /* Hide cancel links in print view */
+    .nhsuk-link[href*="cancel"] {
+      display: none;
+    }
+    
+    /* Add a heading at the top of the print */
+    .nhsuk-heading-xl::before {
+      content: "Hornsey Central Pharmacy - Appointments";
+      display: block;
+      font-size: 18pt;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    /* Add page break control */
+    .nhsuk-table__row {
+      page-break-inside: avoid;
+    }
+    
+    /* Hide responsive table headers that are only for mobile */
+    .nhsuk-table-responsive__heading {
+      display: none !important;
+    }
+    
+    /* Add footer with page numbers */
+    @page {
+      margin: 2cm;
+    }
+    
+    @page :footer {
+      content: "Page " counter(page) " of " counter(pages);
+    }
+  }
