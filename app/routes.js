@@ -224,6 +224,15 @@ router.get(/cancelAffectedBooking/, function (req, res) {
     }
 });
 
-
+// Add to your routes.js file
+router.get('/test-filters', function (req, res) {
+    // Add some test data
+    res.locals.testDate = new Date();
+    res.locals.testDuration = 90;
+    
+    // Render a test template
+    res.render('test-filters');
+  });
+  
 module.exports = router;
 

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <h1>Date Filter Examples</h1>
+
+        <!-- 8 March 2025 -->
+<p>Current date: {{ "tomorrow" | nhsDate }}</p>
+<!-- Friday 7 March 2025 -->
+<p>Current date with day: {{ "now" | nhsDateWithDay }}</p>
+<!-- 7 March 2025 at 15:15 -->
+<p>Current date and time: {{ "now" | nhsDateTime }}</p>
+<!-- 1 hour 3o mins -->
+<p>Duration: {{ 90 | nhsDuration }}</p>
+<!-- 7 March 2025 -->
+
+<p>Specific date: {{ "2025-03-07" | nhsDate }}</p>
+
+<!-- 6 Aril 2025 -->
+
+<p>30 days from today: {{ "now" | addDays(30) | nhsDate }}</p>
+
+
+{# Display the current time in 24-hour format (14:30) #}
+<p>Current time: {{ "now" | nhsTime }}</p>
+
+{# Display the current time in 12-hour format (2:30pm) #}
+<p>Current time: {{ "now" | nhsTime12Hour }}</p>
+
+{# Display a specific date's time #}
+<p>Appointment time: {{ appointmentDate | nhsTime }}</p>
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

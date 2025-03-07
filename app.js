@@ -63,8 +63,17 @@ const nunjucksConfig = {
 
 nunjucksConfig.express = app;
 
+// Find this section in your app.js (around line 66-68)
+
 let nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
+// Add Nunjucks filters
+var filters = require('./app/filters')(nunjucksAppEnv);
 nunjucksAppEnv.addGlobal('version', packageInfo.version);
+
+// Remove or comment out the line below if it exists elsewhere
+// utils.addNunjucksFilters(nunjucksAppEnv);
+
+
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv);
