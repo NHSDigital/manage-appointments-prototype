@@ -1,0 +1,404 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+{% block style %}
+  <style>
+    .calendar-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+  /* NHS Frontend core styles */
+  :root {
+    --nhs-blue: #005eb8;
+    --nhs-bright-blue: #0072ce;
+    --nhs-dark-blue: #003087;
+    --nhs-bright-blue-10: #e6f1f9;
+    --nhs-black: #212b32;
+    --nhs-grey-1: #4c6272;
+    --nhs-grey-2: #768692;
+    --nhs-grey-3: #aeb7bd;
+    --nhs-grey-4: #d8dde0;
+    --nhs-grey-5: #f0f4f5;
+    --nhs-white: #ffffff;
+    --nhs-green: #007f3b;
+    --nhs-red: #d5281b;
+    --nhs-yellow: #ffeb3b;
+    --nhs-font: "Frutiger W01", Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--nhs-font);
+    color: var(--nhs-black);
+    background-color: var(--nhs-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .nhsuk-width-container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .nhsuk-main-wrapper {
+    padding: 40px 0;
+  }
+
+  .nhsuk-heading-l {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    color: var(--nhs-black);
+  }
+
+  .nhsuk-button {
+    font-weight: 600;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    background-color: var(--nhs-green);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #00401e;
+    box-sizing: border-box;
+    color: var(--nhs-white);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 12px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    width: auto;
+  }
+
+  .nhsuk-button--secondary {
+    background-color: var(--nhs-grey-4);
+    box-shadow: 0 4px 0 var(--nhs-grey-2);
+    color: var(--nhs-black);
+  }
+
+  .nhsuk-button:hover {
+    background-color: #00662f;
+  }
+
+  .nhsuk-button--secondary:hover {
+    background-color: var(--nhs-grey-3);
+  }
+
+  .nhsuk-button:active {
+    margin-top: 4px;
+    box-shadow: none;
+  }
+
+  /* Calendar specific styles */
+  .calendar-container {
+    border: 1px solid var(--nhs-grey-4);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--nhs-white);
+    box-shadow: 0 2px 4px rgba(33, 43, 50, 0.1);
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--nhs-blue);
+    color: var(--nhs-white);
+  }
+
+  .calendar-month-year {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .calendar-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .calendar-nav-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--nhs-white);
+    font-size: 1rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendar-nav-btn:hover {
+    background-color: var(--nhs-dark-blue);
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: var(--nhs-grey-4);
+  }
+
+  .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--nhs-grey-5);
+  }
+
+  .calendar-weekday {
+    padding: 12px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--nhs-grey-1);
+  }
+
+  .calendar-day {
+    background-color: var(--nhs-white);
+    padding: 12px 8px;
+    text-align: center;
+    border: none;
+    height: 44px;
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .calendar-day.other-month {
+    color: var(--nhs-grey-3);
+  }
+
+  .calendar-day.today {
+    background-color: var(--nhs-bright-blue-10);
+    font-weight: 600;
+    color: var(--nhs-blue);
+  }
+
+  .calendar-day.today::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--nhs-blue);
+  }
+
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    .calendar-weekday {
+      font-size: 0.75rem;
+      padding: 8px 4px;
+    }
+
+    .calendar-day {
+      padding: 8px 4px;
+      font-size: 0.875rem;
+      height: 36px;
+    }
+
+    .calendar-month-year {
+      font-size: 1rem;
+    }
+
+    .nhsuk-heading-l {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="main-content">
+      <h1 class="nhsuk-heading-l">NHS Calendar</h1>
+      
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <div class="calendar-nav">
+            <button id="prevMonth" class="calendar-nav-btn" aria-label="Previous month">
+              &lsaquo;
+            </button>
+          </div>
+          <div class="calendar-month-year" id="monthYear"></div>
+          <div class="calendar-nav">
+            <button id="nextMonth" class="calendar-nav-btn" aria-label="Next month">
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+        
+        <div class="calendar-weekdays" id="weekdays">
+          <div class="calendar-weekday">Sun</div>
+          <div class="calendar-weekday">Mon</div>
+          <div class="calendar-weekday">Tue</div>
+          <div class="calendar-weekday">Wed</div>
+          <div class="calendar-weekday">Thu</div>
+          <div class="calendar-weekday">Fri</div>
+          <div class="calendar-weekday">Sat</div>
+        </div>
+        
+        <div class="calendar-grid" id="calendarDays"></div>
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+
+    </div>  
+
+  </div>
+{% endblock %}
+
+{% block script %}
+  
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentDate = new Date();
+      let currentMonth = currentDate.getMonth();
+      let currentYear = currentDate.getFullYear();
+      
+      const monthYearElement = document.getElementById('monthYear');
+      const calendarDaysElement = document.getElementById('calendarDays');
+      const prevMonthButton = document.getElementById('prevMonth');
+      const nextMonthButton = document.getElementById('nextMonth');
+      
+      // Event listeners for navigation buttons
+      prevMonthButton.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        updateCalendar();
+      });
+      
+      nextMonthButton.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        updateCalendar();
+      });
+      
+      function updateCalendar() {
+        // Update month/year display
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+        monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        // Clear previous days
+        calendarDaysElement.innerHTML = '';
+        
+        // Get first day of month and total days in month
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+        const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
+        const totalDaysInMonth = lastDayOfMonth.getDate();
+        
+        // Get starting day of the week (0 = Sunday, 1 = Monday, etc.)
+        const startingDayOfWeek = firstDayOfMonth.getDay();
+        
+        // Get previous month's last days
+        const prevMonthLastDay = new Date(currentYear, currentMonth, 0).getDate();
+        
+        // Get today's date for highlighting
+        const today = new Date();
+        const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
+        
+        // Create days from previous month
+        for (let i = startingDayOfWeek - 1; i >= 0; i--) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day', 'other-month');
+          dayElement.textContent = prevMonthLastDay - i;
+          calendarDaysElement.appendChild(dayElement);
+        }
+        
+        // Create days for current month
+        for (let day = 1; day <= totalDaysInMonth; day++) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day');
+          
+          // Check if it's today
+          if (isCurrentMonth && day === today.getDate()) {
+            dayElement.classList.add('today');
+          }
+          
+          dayElement.textContent = day;
+          calendarDaysElement.appendChild(dayElement);
+        }
+        
+        // Calculate how many days to show from next month
+        const totalCalendarCells = 42; // 6 rows × 7 days
+        const daysFromCurrentMonth = startingDayOfWeek + totalDaysInMonth;
+        const daysFromNextMonth = totalCalendarCells - daysFromCurrentMonth;
+        
+        // Create days from next month
+        for (let day = 1; day <= daysFromNextMonth; day++) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day', 'other-month');
+          dayElement.textContent = day;
+          calendarDaysElement.appendChild(dayElement);
+        }
+      }
+      
+      // Initialize calendar
+      updateCalendar();
+    });
+  </script>
+{% endblock %}
