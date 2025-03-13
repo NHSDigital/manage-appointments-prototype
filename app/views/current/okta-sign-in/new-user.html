@@ -59,18 +59,18 @@ text: "Users"
     <div class="nhsuk-grid-column-two-thirds">
       
 
-      <h1 class="nhsuks-heading-xl">Add user</h1>
+      <h1 class="nhsuks-heading-l">Additional details</h1>
 
-      <form action="check-and-add" method="post" novalidate="true">
+
 
         
-
+      <form action="check-and-add" method="post" novalidate="true">
 
 <div class="nhsuk-form-group">
   <label class="nhsuk-label" for="first-name">
     First name
   </label>
-    <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="firstName" type="text">
+    <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
 </div> 
 
 
@@ -81,7 +81,7 @@ text: "Users"
   <label class="nhsuk-label" for="last-name">
     Last name
   </label>
-    <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="lastName" type="text">
+    <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="surname" type="text">
 </div> 
 
 
@@ -96,128 +96,51 @@ text: "Users"
 </div> 
 
 
+{% from 'checkboxes/macro.njk' import checkboxes %}
+
+  {{ checkboxes({
+    idPrefix: "roles",
+    name: "roles",
+    fieldset: {
+      legend: {
+        text: "Roles",
+        classes: "nhsuk-fieldset__legend--m",
+        isPageHeading: true
+      }
+    },
+
+    items: [
+      {
+        value: "appointment-manager",
+        text: "Appointment manager",
+        hint: {
+          text: "A user can view and cancel appointments"
+        }
+      },
+      {
+        value: "availability-manager",
+        text: "Availability manager",
+        hint: {
+          text: "A user can create, view and manage site availability"
+        }
+      },
+      {
+        value: "site-details-manager",
+        text: "Site details manager",
+        hint: {
+          text: "A user can edit site details and accessibility information"
+        }
+      },
+      {
+        value: "user-manager",
+        text: "User manager",
+        hint: {
+          text: "A user can view and manage user role assignments"
+        }
         
-
-
-
-
-
-
-  
-
-  
-<div class="nhsuk-form-group">
-
-  
-
-<fieldset class="nhsuk-fieldset" aria-describedby="clinician-hint">
-  <legend class="nhsuk-fieldset__legend">
-    Are they a registered clinician?
-  </legend>
-
-  <div class="nhsuk-hint" id="clinician-hint">
-    Only registered clinicians can assess the patient and record their consent
-  </div>
-
-  <div class="nhsuk-radios">
-    
-    
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="clinician" name="clinician" type="radio" value="yes">
-      <label class="nhsuk-label nhsuk-radios__label" for="clinician">
-        Yes
-      </label>
-    </div>
-    
-    
-    
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="clinician-2" name="clinician" type="radio" value="no">
-      <label class="nhsuk-label nhsuk-radios__label" for="clinician-2">
-        No
-      </label>
-    </div>
-    
-  </div>
-  </fieldset>
-
-</div>
-
-
-
-        
-
-
-
-
-
-
-  
-
-  
-
-  
-<div class="nhsuk-form-group">
-
-  
-
-<fieldset class="nhsuk-fieldset">
-  <legend class="nhsuk-fieldset__legend">
-    Permission level
-  </legend>
-
-  <div class="nhsuk-radios">
-    
-    
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="permission-level-1" name="permissionLevel" type="radio" value="Recorder" aria-describedby="permission-level-1-item-hint">
-      <label class="nhsuk-label nhsuk-radios__label" for="permission-level-1">
-        Recorder
-      </label>
-      <div class="nhsuk-hint nhsuk-radios__hint" id="permission-level-1-item-hint">
-        Record vaccinations only
-      </div>
-    </div>
-    
-    
-    
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="permission-level-2" name="permissionLevel" type="radio" value="Administrator" aria-describedby="permission-level-2-item-hint">
-      <label class="nhsuk-label nhsuk-radios__label" for="permission-level-2">
-        Administrator
-      </label>
-      <div class="nhsuk-hint nhsuk-radios__hint" id="permission-level-2-item-hint">
-        Record vaccinations, create reports and manage vaccines
-      </div>
-    </div>
-    
-    
-    
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="permission-level-3" name="permissionLevel" type="radio" value="Lead administrator" aria-describedby="permission-level-3-item-hint">
-      <label class="nhsuk-label nhsuk-radios__label" for="permission-level-3">
-        Lead administrator
-      </label>
-      <div class="nhsuk-hint nhsuk-radios__hint" id="permission-level-3-item-hint">
-        Record vaccinations, create reports, manage vaccines and users
-      </div>
-    </div>
-    
-  </div>
-  </fieldset>
-
-</div>
-
-
-
-        
-
-
-
-
-  
-    
-  
+      }
+    ]
+  }) }}
 
 
 
@@ -225,10 +148,9 @@ text: "Users"
 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
   Continue
 </button>
+</form>
 
-
-
-      </form>
+      
 
 
     </div>

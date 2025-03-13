@@ -30,26 +30,6 @@ Site overview Hornsey Central Pharmacy
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-
-    {% if data ['user-added'] == 'yes' %}
-    
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          You have added a new user to MYA
-        </h3>
-
-        <p>The user will be sent an email confirmation</p>
-      
-      </div>
-    </div>
-
-{% endif %}
     <div class="moj-page-header-actions">
       <div class="moj-page-header-actions__title">
         <h1 class="nhsuk-heading-xl">Manage staff roles</h1>
@@ -61,8 +41,8 @@ Site overview Hornsey Central Pharmacy
 
           {{ button({
             text: "Add user",
-            href: "search-user"
-            
+            href: "new-user",
+            classes: "app-button--small"
           }) }}
 
         </div>

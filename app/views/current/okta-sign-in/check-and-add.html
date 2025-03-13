@@ -61,7 +61,7 @@ text: "New user"
 
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-xl">Check and add user</h1>
+    <h1 class="nhsuk-heading-l">Check and add user</h1>
   
     <dl class="nhsuk-summary-list">
   
@@ -71,7 +71,7 @@ text: "New user"
           Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          gerg grgr
+          {{data['first-name']}}   {{data['surname']}}
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
@@ -91,7 +91,7 @@ text: "New user"
           Email address
         </dt>
         <dd class="nhsuk-summary-list__value">
-          ghjghg@nhs.net
+          {{data['email']}}
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
@@ -108,10 +108,10 @@ text: "New user"
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Clinical
+          Roles
         </dt>
         <dd class="nhsuk-summary-list__value">
-          No
+          {{data['name']}}
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
@@ -126,23 +126,7 @@ text: "New user"
   
   
   
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Permission level
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Recorder
-        </dd>
   
-        <dd class="nhsuk-summary-list__actions">
-  
-          <a href="/user-admin/add-user">
-            Change<span class="nhsuk-u-visually-hidden"> permission level</span>
-          </a>
-  
-        </dd>
-  
-      </div>
   
   
     </dl>
@@ -150,15 +134,9 @@ text: "New user"
   
   
   
-    <p>gerg will be sent this welcome email with information about activating an account:</p>
+    <p>  {{data['first-name']}} will be sent a welcome email with information about activating an account.</p>
   
-  
-    <div class="app-email-preview">
-  
-      {% include "current/okta-sign-in/welcome-email.html" %}
-  
-  
-    </div>
+
   
   
     <form action="manage-users" method="post">
@@ -166,6 +144,8 @@ text: "New user"
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Confirm and send
       </button>
+
+      <input type="hidden" name="user-added" value="yes">
   
   
   

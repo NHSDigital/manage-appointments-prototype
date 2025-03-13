@@ -233,6 +233,24 @@ router.get('/test-filters', function (req, res) {
     // Render a test template
     res.render('test-filters');
   });
+
+  // In app/routes.js
+router.get('/current/index', (req, res) => {
+    res.redirect('/'); // Redirect to the home page
+  });
+
+
+  // Add this to your routes.js file
+router.get('/test-page', function (req, res) {
+    res.render('test-page.html');
+  });
+  
+  router.post('/test-page', function (req, res) {
+    // Show the submitted data
+    res.render('test-page.html', {
+      submittedData: req.body
+    });
+  });
   
 module.exports = router;
 
