@@ -49,9 +49,12 @@ app.locals.serviceName = config.serviceName;
 app.use(cookieParser());
 
 // Nunjucks configuration for application
+// Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
+  // Add this line to include the macros directory
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
   path.join(__dirname, 'docs/views/'),
   path.join(__dirname, 'lib/prototype-admin/'),
 ];
