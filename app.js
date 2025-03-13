@@ -21,7 +21,7 @@ const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
-const documentationRoutes = require('./docs/documentation_routes');
+// const documentationRoutes = require('./docs/documentation_routes');
 const utils = require('./lib/utils');
 
 const prototypeAdminRoutes = require('./middleware/prototype-admin-routes');
@@ -63,11 +63,33 @@ const nunjucksConfig = {
 
 nunjucksConfig.express = app;
 
+// Find this section in your app.js (around line 66-68)
+
+// Find this section in your app.js (around line 66-68)
 let nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
-nunjucksAppEnv.addGlobal('version', packageInfo.version);
 
 // Add Nunjucks filters
+var filters = require('./app/filters')(nunjucksAppEnv);
+
+// Add stringify filter for JSON handling (needed for autocomplete)
+nunjucksAppEnv.addFilter('stringify', function(obj) {
+  return JSON.stringify(obj);
+});
+
+// Add dump filter as an alternative to stringify
+nunjucksAppEnv.addFilter('dump', function(obj) {
+  return JSON.stringify(obj);
+});
+
+nunjucksAppEnv.addGlobal('version', packageInfo.version);
+
+// Add Nunjucks filters from utils (only need this once)
 utils.addNunjucksFilters(nunjucksAppEnv);
+
+
+
+
+
 
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = `nhsuk-prototype-kit-${(Buffer.from(config.serviceName, 'utf8')).toString('hex')}`;
@@ -238,7 +260,11 @@ app.use((err, req, res) => {
   res.send(err.message);
 });
 
+
+
 // Run the application
 app.listen(port);
+
+
 
 module.exports = app;

@@ -12,7 +12,7 @@ const nodemon = require('gulp-nodemon');
 const config = require('./app/config');
 
 // Set configuration variables
-const port = process.env.PORT || config.port;
+const port = parseInt(process.env.PORT) || config.port;
 
 // Delete all the files in /public build directory
 function cleanPublic() {
@@ -24,7 +24,7 @@ sass.compiler = require('sass');
 // Compile SASS to CSS
 function compileStyles() {
   return gulp
-    .src(['app/assets/sass/**/*.scss', 'docs/assets/sass/**/*.scss'])
+    .src(['app/assets/sass/**/*.scss'])
     .pipe(sass())
     .pipe(gulp.dest('public/css'))
     .on('error', (err) => {
@@ -36,7 +36,7 @@ function compileStyles() {
 // Compile JavaScript (with ES6 support)
 function compileScripts() {
   return gulp
-    .src(['app/assets/javascript/**/*.js', 'docs/assets/javascript/**/*.js'])
+    .src(['app/assets/javascript/**/*.js'])
     .pipe(babel())
     .pipe(gulp.dest('public/js'));
 }
@@ -46,10 +46,9 @@ function compileAssets() {
   return gulp
     .src([
       'app/assets/**/**/*.*',
-      'docs/assets/**/**/*.*',
       '!**/assets/**/**/*.js', // Don't copy JS files
       '!**/assets/**/**/*.scss', // Don't copy SCSS files
-    ])
+    ], { encoding: false })
     .pipe(gulp.dest('public'));
 }
 
@@ -92,7 +91,7 @@ function startBrowserSync(done) {
       proxy: 'localhost:' + port,
       port: port + 1000,
       ui: false,
-      files: ['app/views/**/*.*', 'docs/views/**/*.*'],
+      files: ['app/views/**/*.*', 'lib/example-templates/**/*.*'],
       ghostMode: false,
       open: false,
       notify: true,
@@ -108,18 +107,21 @@ function watch() {
   gulp.watch('app/assets/sass/**/*.scss', compileStyles);
   gulp.watch('app/assets/javascript/**/*.js', compileScripts);
   gulp.watch('app/assets/**/**/*.*', compileAssets);
-  gulp.watch('docs/assets/sass/**/*.scss', compileStyles);
-  gulp.watch('docs/assets/javascript/**/*.js', compileScripts);
-  gulp.watch('docs/assets/**/**/*.*', compileAssets);
+}
+
+function setWatchEnv(done) {
+  process.env.WATCH = 'true';
+  done();
 }
 
 exports.watch = watch;
 exports.compileStyles = compileStyles;
 exports.compileScripts = compileScripts;
 exports.cleanPublic = cleanPublic;
+exports.setWatchEnv = setWatchEnv;
 
 gulp.task(
   'build',
   gulp.series(cleanPublic, compileStyles, compileScripts, compileAssets)
 );
-gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch));
+gulp.task('default', gulp.series(setWatchEnv, startNodemon, startBrowserSync, watch));

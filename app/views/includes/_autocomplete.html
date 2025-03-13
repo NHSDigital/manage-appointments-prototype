@@ -1,0 +1,28 @@
+<!-- File: app/views/includes/_autocomplete.html -->
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="{{ id }}-hidden">
+    {{ label }}
+  </label>
+  
+  {% if hint %}
+  <div class="nhsuk-hint" id="{{ id }}-hint">
+    {{ hint }}
+  </div>
+  {% endif %}
+  
+  <div id="{{ id }}-container">
+    <div id="{{ id }}" data-module="autocomplete"></div>
+    <input type="hidden" name="{{ name|default(id) }}" id="{{ id }}-hidden">
+  </div>
+</div>
+
+<script>
+  // When using this include, you must define a variable called 'autocompleteOptions'
+  // in your parent template before including this file
+  document.addEventListener('DOMContentLoaded', function() {
+    var element = document.getElementById('{{ id }}');
+    if (element && typeof autocompleteOptions !== 'undefined') {
+      element.setAttribute('data-source', JSON.stringify(autocompleteOptions));
+    }
+  });
+</script>

@@ -8,10 +8,33 @@
 @import 'components/govuk';
 @import 'components/header-actions';
 @import 'components/print';
+@import 'components/app-search';
+// Add this line to import your autocomplete styles
+@import "components/autocomplete";
+@import "components/notification-banner";
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+/// 
+/// 
+.govuk-notification-banner{
+  border-color: #212b32;
+}
+.govuk-notification-banner__heading {
+  
+
+  margin: 0 0;
+
+  padding: 0;
+}
+
+
+.govuk-notification-banner--success {
+  border-color: #00703c;
+  background-color: #00703c;
+
+}
   
 // header links active state //
 

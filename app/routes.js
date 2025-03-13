@@ -224,6 +224,33 @@ router.get(/cancelAffectedBooking/, function (req, res) {
     }
 });
 
+// Add to your routes.js file
+router.get('/test-filters', function (req, res) {
+    // Add some test data
+    res.locals.testDate = new Date();
+    res.locals.testDuration = 90;
+    
+    // Render a test template
+    res.render('test-filters');
+  });
 
+  // In app/routes.js
+router.get('/current/index', (req, res) => {
+    res.redirect('/'); // Redirect to the home page
+  });
+
+
+  // Add this to your routes.js file
+router.get('/test-page', function (req, res) {
+    res.render('test-page.html');
+  });
+  
+  router.post('/test-page', function (req, res) {
+    // Show the submitted data
+    res.render('test-page.html', {
+      submittedData: req.body
+    });
+  });
+  
 module.exports = router;
 
