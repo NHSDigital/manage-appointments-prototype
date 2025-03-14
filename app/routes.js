@@ -224,6 +224,17 @@ router.get(/cancelAffectedBooking/, function (req, res) {
     }
 });
 
+// /Current routes //
+
+router.get(/cancelWeekSure/, function (req, res) {
+    if (req.query.radioGroup === "cancel" ) {
+        res.redirect('cancel-week-confirmation');
+    }
+    else {
+        res.redirect('week');
+    }
+});
+
 // Add to your routes.js file
 router.get('/test-filters', function (req, res) {
     // Add some test data
@@ -251,6 +262,32 @@ router.get('/test-page', function (req, res) {
       submittedData: req.body
     });
   });
+  
+
+
+
+// GET route for the first page (add user form)
+router.get('/add-user', function (req, res) {
+  res.render('add-user')
+})
+
+// POST route to handle form submission from first page and render the second page
+router.post('/new-user', function (req, res) {
+  // Get the email from the form submission
+  const email = req.body.email
+  
+  // Render the second page with the email data passed to the template
+  res.render('new-user', {
+    email: email // This makes the email available in the template
+  })
+})
+
+// POST route for the second page form submission
+router.post('/check-and-add', function (req, res) {
+  // Process the second form data here
+  res.redirect('/confirmation') // Or wherever you want to go next
+})
+
   
 module.exports = router;
 

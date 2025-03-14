@@ -89,6 +89,16 @@
     .nhsuk-table-responsive__heading {
       display: none !important;
     }
+    .govuk-visually-hidden{
+      display: block !important;
+    }
+  </style>
+
+  <style>
+    /* Add custom styles here */
+    .govuk-visually-hidden {
+      display: none;
+    }
   </style>
 {% endblock %}
 
@@ -137,7 +147,7 @@
       
       <div class="moj-page-header-actions">
         <div class="moj-page-header-actions__title">
-          <h1 class="nhsuk-heading-xl">26 August 2024</h1>
+          <h1 class="nhsuk-heading-xl">{{ date() }} </h1>
         </div>
         
         <div class="moj-page-header-actions__actions">
@@ -150,6 +160,14 @@
           </div>
         </div>
       </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full govuk-visually-hidden">
+
+          <p> It is your responsibility to ensure private data from this page is not shared and is treated in accordance with the data protection act.</p>
+
+          </div>
+          </div>
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
