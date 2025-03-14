@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav-v5.html' %}
+{% extends 'layout-top-nav.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -15,6 +15,97 @@
   Manage appointments
 {% endblock %}
 
+{% block head %}
+  <!-- Print styles -->
+  <style media="print">
+    /* Hide elements not needed in print version */
+    .nhsuk-header, 
+    .nhsuk-back-link, 
+    .x-govuk-secondary-navigation,
+    .moj-button-group,
+    .govuk-pagination,
+    nav {
+      display: none !important;
+    }
+    
+    /* Ensure the whole page prints well */
+    body {
+      font-size: 12pt;
+      color: #000;
+      background-color: #fff;
+    }
+    
+    /* Style the table for printing */
+    .nhsuk-table-responsive {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    /* Blue header for the table */
+    .nhsuk-table__head {
+      background-color: #005eb8 !important;
+      color: white !important;
+      print-color-adjust: exact; /* For Chrome */
+      -webkit-print-color-adjust: exact; /* For Safari */
+    }
+    
+    .nhsuk-table__head th {
+      color: white !important;
+      padding: 10px;
+      font-weight: bold;
+      text-align: left;
+      border: 1px solid #d8dde0;
+    }
+    
+    .nhsuk-table__body td {
+      padding: 10px;
+      border: 1px solid #d8dde0;
+    }
+    
+    /* Format the joint appointment styling for print */
+    .jointTopBot, .jointMid {
+      border-color: #768692 !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    /* Make sure the "Joint" tag is visible */
+    .nhsuk-tag {
+      background-color: #1d70b8 !important;
+      color: white !important;
+      padding: 2px 5px;
+      font-size: 10pt;
+      font-weight: bold;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    /* Hide cancel links in print view */
+    .nhsuk-link[href*="cancel"] {
+      display: none;
+    }
+    
+    /* Add page break control */
+    .nhsuk-table__row {
+      page-break-inside: avoid;
+    }
+    
+    /* Hide responsive table headers that are only for mobile */
+    .nhsuk-table-responsive__heading {
+      display: none !important;
+    }
+    .govuk-visually-hidden{
+      display: block !important;
+    }
+  </style>
+
+  <style>
+    /* Add custom styles here */
+    .govuk-visually-hidden {
+      display: none;
+    }
+  </style>
+{% endblock %}
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
@@ -42,7 +133,29 @@
       <div>
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-xl">26 August 2024</h1>
+            <div class="moj-page-header-actions">
+              <div class="moj-page-header-actions__title">
+                <h1 class="nhsuk-heading-xl">{{ date() }} </h1>
+              </div>
+              
+              <div class="moj-page-header-actions__actions">
+                <div class="moj-button-group">
+                  <form method="post">
+                  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                    Print page
+                  </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full govuk-visually-hidden">
+      
+                <p> It is your responsibility to ensure private data from this page is not shared and is treated in accordance with the data protection act.</p>
+      
+                </div>
+                </div>
             
             <!--<div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
@@ -258,4 +371,21 @@
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the print button
+      const printButton = document.querySelector('button.nhsuk-button--secondary');
+      
+      // Add click event listener to the print button
+      if (printButton) {
+        printButton.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent default button behavior
+          window.print();
+        });
+      }
+    });
+  </script>
 {% endblock %}

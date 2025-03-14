@@ -1,0 +1,164 @@
+
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-top-nav.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="main-content">
+      <h1 class="nhsuk-heading-l">View availability</h1>
+      
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <div class="calendar-nav">
+            <button id="prevMonth" class="calendar-nav-btn" aria-label="Previous month">
+              &lsaquo;
+            </button>
+          </div>
+          <div class="calendar-month-year" id="monthYear"></div>
+          <div class="calendar-nav">
+            <button id="nextMonth" class="calendar-nav-btn" aria-label="Next month">
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+        
+        <div class="calendar-weekdays" id="weekdays">
+          <div class="calendar-weekday">Sun</div>
+          <div class="calendar-weekday">Mon</div>
+          <div class="calendar-weekday">Tue</div>
+          <div class="calendar-weekday">Wed</div>
+          <div class="calendar-weekday">Thu</div>
+          <div class="calendar-weekday">Fri</div>
+          <div class="calendar-weekday">Sat</div>
+        </div>
+        
+        <div class="calendar-grid" id="calendarDays"></div>
+      </div>
+    </main>
+  </div>
+  </div>
+    </div>
+
+    {% endblock %}
+{% block scripts %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentDate = new Date();
+      let currentMonth = currentDate.getMonth();
+      let currentYear = currentDate.getFullYear();
+      
+      const monthYearElement = document.getElementById('monthYear');
+      const calendarDaysElement = document.getElementById('calendarDays');
+      const prevMonthButton = document.getElementById('prevMonth');
+      const nextMonthButton = document.getElementById('nextMonth');
+      
+      // Event listeners for navigation buttons
+      prevMonthButton.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        updateCalendar();
+      });
+      
+      nextMonthButton.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        updateCalendar();
+      });
+      
+      function updateCalendar() {
+        // Update month/year display
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+        monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        // Clear previous days
+        calendarDaysElement.innerHTML = '';
+        
+        // Get first day of month and total days in month
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+        const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
+        const totalDaysInMonth = lastDayOfMonth.getDate();
+        
+        // Get starting day of the week (0 = Sunday, 1 = Monday, etc.)
+        const startingDayOfWeek = firstDayOfMonth.getDay();
+        
+        // Get previous month's last days
+        const prevMonthLastDay = new Date(currentYear, currentMonth, 0).getDate();
+        
+        // Get today's date for highlighting
+        const today = new Date();
+        const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
+        
+        // Create days from previous month
+        for (let i = startingDayOfWeek - 1; i >= 0; i--) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day', 'other-month');
+          dayElement.textContent = prevMonthLastDay - i;
+          calendarDaysElement.appendChild(dayElement);
+        }
+        
+        // Create days for current month
+        for (let day = 1; day <= totalDaysInMonth; day++) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day');
+          
+          // Check if it's today
+          if (isCurrentMonth && day === today.getDate()) {
+            dayElement.classList.add('today');
+          }
+          
+          dayElement.textContent = day;
+          calendarDaysElement.appendChild(dayElement);
+        }
+        
+        // Calculate how many days to show from next month
+        const totalCalendarCells = 42; // 6 rows × 7 days
+        const daysFromCurrentMonth = startingDayOfWeek + totalDaysInMonth;
+        const daysFromNextMonth = totalCalendarCells - daysFromCurrentMonth;
+        
+        // Create days from next month
+        for (let day = 1; day <= daysFromNextMonth; day++) {
+          const dayElement = document.createElement('div');
+          dayElement.classList.add('calendar-day', 'other-month');
+          dayElement.textContent = day;
+          calendarDaysElement.appendChild(dayElement);
+        }
+      }
+      
+      // Initialize calendar
+      updateCalendar();
+    });
+  </script>
+{% endblock %}

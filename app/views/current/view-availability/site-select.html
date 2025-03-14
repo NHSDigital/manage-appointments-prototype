@@ -18,11 +18,9 @@
             <label class="nhsuk-label" for="location">
               Enter your location
             </label>
-            
             <div class="nhsuk-hint" id="location-hint">
               Start typing to see suggestions
             </div>
-            
             <div id="location-container"></div>
             <input type="hidden" name="location" id="location-hidden">
           </div>
@@ -38,23 +36,45 @@
 {% block bodyEnd %}
 <!-- Include the accessible-autocomplete JS from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+{% endblock %}
 
-<script>
+{% block pageScripts %}
+<script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
     if (typeof accessibleAutocomplete !== 'undefined') {
-      // Initialize the autocomplete directly
+      // NHS site data
+      const nhsSites = [
+        'Hornsey Central Pharmacy',
+        'St Ann\'s Hospital',
+        'North Middlesex University Hospital',
+        'Finchley Memorial Hospital',
+        'Barnet Hospital',
+        'Royal Free Hospital',
+        'University College Hospital',
+        'Whittington Hospital',
+        'Chase Farm Hospital',
+        'Edgware Community Hospital',
+        'Central Middlesex Hospital',
+        'Barnet Community Clinic',
+        'East Barnet Health Centre',
+        'Crouch End Health Centre',
+        'Wood Green Community Clinic'
+      ];
+      
+      // Initialize the autocomplete in the container div
       accessibleAutocomplete({
-        element: document.getElementById('location-container'),
+        element: document.querySelector('#location-container'),
         id: 'location',
-        source: ['London', 'Manchester', 'Birmingham', 'Hornsea Central Pharmacy', 'Leeds', 'Liverpool'],
-        displayMenu: 'overlay',
-        confirmOnBlur: true,
-        onConfirm: function(selectedItem) {
-          document.getElementById('location-hidden').value = selectedItem;
+        source: nhsSites,
+        name: 'location-autocomplete',
+        defaultValue: '',
+        onConfirm: function(selectedValue) {
+          // Update the hidden field with the selected value
+          document.querySelector('#location-hidden').value = selectedValue;
         }
       });
     } else {
-      console.error('Accessible Autocomplete library not loaded');
+      console.error('Accessible autocomplete is not defined');
     }
   });
 </script>
