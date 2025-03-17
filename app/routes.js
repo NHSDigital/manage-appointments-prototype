@@ -288,6 +288,37 @@ router.post('/check-and-add', function (req, res) {
   res.redirect('/confirmation') // Or wherever you want to go next
 })
 
+
+// Add these routes to your app/routes.js file
+
+// Update these routes in your app/routes.js file
+
+// GET - Date of birth page
+router.get('/date-of-birth', function (req, res) {
+  res.render('current/date-of-birth'); // Specify the subfolder
+});
+
+// POST - Process the date of birth form
+router.post('/check-date-of-birth', function (req, res) {
+  // Store the form data in the session
+  req.session.data['dob-day'] = req.body['dob-day'];
+  req.session.data['dob-month'] = req.body['dob-month'];
+  req.session.data['dob-year'] = req.body['dob-year'];
+  
+  // Redirect to the check page
+  res.redirect('/check-date-of-birth');
+});
+
+// GET - Check date of birth page
+router.get('/check-date-of-birth', function (req, res) {
+  res.render('current/check-date-of-birth'); // Specify the subfolder
+});
+
+// POST - Process the confirmation
+router.post('/confirmation', function (req, res) {
+  // Process the confirmation and move to the next step
+  res.redirect('/next-page');
+});
   
 module.exports = router;
 

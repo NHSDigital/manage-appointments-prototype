@@ -164,6 +164,35 @@ module.exports = function (env) {
     // Add the specified number of days and return the moment object
     return date.add(daysToAdd, 'days');
   }
+//
+// Add this filter to your app/filters.js file
+
+// Combine date parts into a single date and format
+filters.formatDateInput = function(data, fieldName) {
+  // Check if we have the necessary data
+  if (!data || !fieldName) return '';
+  
+  // Get the day, month, and year values
+  const day = data[fieldName + '-day'];
+  const month = data[fieldName + '-month'];
+  const year = data[fieldName + '-year'];
+  
+  // Check if all values are present
+  if (!day || !month || !year) return '';
+  
+  // Create a date string in ISO format (YYYY-MM-DD)
+  const dateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  
+  // Use moment to create and format the date
+  const date = moment(dateString, 'YYYY-MM-DD');
+  
+  // Check if the date is valid
+  if (!date.isValid()) return '';
+  
+  // Return formatted date with day and full month name
+  return date.format('DD MMMM YYYY');
+}
+
 
   /* ------------------------------------------------------------------
     Register filters with nunjucks environment
