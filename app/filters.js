@@ -181,35 +181,7 @@ module.exports = function (env) {
     return pad + val;
   }
 
-  // Combine date parts into a single date and format
-  filters.formatDateInput = function(data, fieldName) {
-    // Check if we have the necessary data
-    if (!data || !fieldName) return '';
-    
-    // Get the day, month, and year values
-    var day = data[fieldName + '-day'];
-    var month = data[fieldName + '-month'];
-    var year = data[fieldName + '-year'];
-    
-    // Check if all values are present
-    if (!day || !month || !year) return '';
-    
-    // Pad the values if needed
-    day = filters.padStart(day, 2, '0');
-    month = filters.padStart(month, 2, '0');
-    
-    // Create a date string in ISO format (YYYY-MM-DD)
-    var dateString = year + '-' + month + '-' + day;
-    
-    // Use moment to create and format the date
-    var date = moment(dateString, 'YYYY-MM-DD');
-    
-    // Check if the date is valid
-    if (!date.isValid()) return '';
-    
-    // Return formatted date with day and full month name
-    return date.format('DD MMMM YYYY');
-  }
+
 
   /* ------------------------------------------------------------------
     Register filters with nunjucks environment
