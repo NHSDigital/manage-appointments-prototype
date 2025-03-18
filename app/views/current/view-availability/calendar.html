@@ -31,110 +31,28 @@ Site overview Hornsey Central Pharmacy
 {% block content %}
 
 
-<div class="moj-page-header-actions">
-
-  <div class="moj-page-header-actions__title">
-    <span class="moj-identity-bar__title">
     
       <h1 class="govuk-heading-l">View availability
     </h1>
-    </span>
-
-   
-  </div>
-
-  
-
-</div>
 
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-     Matching details
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <dl class="govuk-summary-list" data-cy-person-info="true">
+
+{% from 'details/macro.njk' import details %}
+
+{{ details({
+  text: "Matching criteria",
+  HTML: "
+  <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+    <p>Criteria:</p>
+    <ul>
+        <li>RSV</li>
+        <li>9.00am - 11.00am</li>
+        <li>{{date}}</li>
       
-        
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Expected arrival date
-        </dt>
-        <dd class="govuk-summary-list__value">
-        9 December 2024
-        </dd>
-        
-      </div>
-    
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Expected departure date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          3 February 2025
-        </dd>
-        
-      </div>
-    
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Length of stay
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 weeks
-        </dd>
-        
-      </div>
-    
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Release type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Standard determinate
-        </dd>
-        
-      </div>
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-      Essential criteria
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Sexual offences against children
-          Room suitable for a person with sexual offences
-        </dd>
-        
-      </div>
-    
-  
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Total capacity
-        </dt>
-        <dd class="govuk-summary-list__value">
-          24 spaces
-        </dd>
-        
-      </div>
-    
-    
-    
-  
-</dl>
-
-  
-  </div>
-</details>
+    </ul>
+    <p>Ask your GP surgery for help if you can't find your NHS number.</p>
+  "
+}) }}
 
 
 <h3 class="govuk-heading-m">Availability for 12 weeks from 9 December 2024</h3>
@@ -282,7 +200,7 @@ Site overview Hornsey Central Pharmacy
           <div class="date day_cell">Mon 09 Dec</div>
           <div class="show-info">0 spaces</div>
       </li>
-      <li class="out_of_range calendar-day">
+      <li class="calendar-day available">
         <div class="date day_cell">Tues 10 Dec</div>
         <div class="show-info">0 spaces</div>
       </li>            
