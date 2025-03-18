@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends '../../current/bulk-cancellation/layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -40,7 +40,7 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Cancel    {{date({ year: 'numeric' }, {day: +7})}}</span>
+            <span class="nhsuk-caption-l">Cancel  {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} </span>
             <h1 class="nhsuk-heading-l">Are you sure you want to cancel this week?</h1>
 
             <table class="nhsuk-table">
