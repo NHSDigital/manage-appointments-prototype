@@ -1,5 +1,5 @@
 <!-- File: app/views/test-page.html -->
-{% extends 'layout.html' %}
+{% extends '../../current/bulk-cancellation/layout.html' %}
 
 {% block head %}
 <!-- Include the accessible-autocomplete CSS from CDN -->
@@ -46,7 +46,28 @@
       accessibleAutocomplete({
         element: document.getElementById('location-container'),
         id: 'location',
-        source: ['London', 'Manchester', 'Birmingham', 'Hornsea Central Pharmacy', 'Leeds', 'Liverpool'],
+        source: [
+  'Highland Health Pharmacy',
+  'Wellness Corner Chemist',
+  'City Centre Dispensary',
+  'Oakridge Family Pharmacy',
+  'Royal Care Apothecary',
+  'Bridgeview Medical Supplies',
+  'Greenleaf Prescription Center',
+  'Riverside Healthcare Pharmacy',
+  'Sunrise Community Chemist',
+  'Parkside Wellness Dispensary',
+  'Heritage Health Solutions',
+  'Meadowbrook Family Pharmacy',
+  'Lakeview Prescription Services',
+  'Northside Healthcare Center',
+  'Unity Medical Pharmacy',
+  'Guardian Health Dispensary',
+  'Harmony Wellness Chemist',
+  'Westfield Care Pharmacy',
+  'Landmark Medical Supplies',
+  'Crescent Health Apothecary'
+],
         displayMenu: 'overlay',
         confirmOnBlur: true,
         onConfirm: function(selectedItem) {

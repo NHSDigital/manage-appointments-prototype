@@ -22,6 +22,8 @@ router.get('*', function (req, res, next) {
   // {{ date({day: 'numeric'}, {'day': -1}) }} shows just the date of yesterday
   // {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} shows todays date in the format Tuesday, 5 July 2022.
   // {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}, {'day': +2}) }}
+
+  
   res.locals.date = function (
     format = { day: 'numeric', month: 'long', year: 'numeric' },
     diff = { year: 0, month: 0, day: 0 },

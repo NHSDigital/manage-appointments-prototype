@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends '../../current/create-availability/layout.html' %}
 
 <!--
   In /views/layout.html you can:
@@ -73,6 +73,9 @@ Site overview Hornsey Central Pharmacy
 
             <p>You can create availability with multiple days and repeating sessions, to accurately reflect your site's capacity.</p>
 
+
+            {% if data ['availability-created'] == 'yes' %}
+
             <table class="nhsuk-table">
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
@@ -98,7 +101,8 @@ Site overview Hornsey Central Pharmacy
                   <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Repeat</td>
                 </tr>
               </tbody>
-            </table>      
+            </table>     
+            {% endif %}
 
       <a class="nhsuk-button" href="session-type">Create availability</a>
 
