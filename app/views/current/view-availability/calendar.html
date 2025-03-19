@@ -32,73 +32,103 @@ Site overview Hornsey Central Pharmacy
 
 
     
-      <h1 class="govuk-heading-l">View availability
+      <h1 class="nhsuk-heading-l">View availability for  {{ date({month: 'long'}) }} 2025</h1>
     </h1>
 
 
 
-{% from 'details/macro.njk' import details %}
+<h2 class="nhsuk-heading-m">Filter</h2>
 
-{{ details({
-  text: "Matching criteria",
-  HTML: "
-  <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-    <p>Criteria:</p>
-    <ul>
-        <li>RSV</li>
-        <li>9.00am - 11.00am</li>
-        <li>{{date}}</li>
-      
-    </ul>
-    <p>Ask your GP surgery for help if you can't find your NHS number.</p>
-  "
-}) }}
-
-
-<h3 class="govuk-heading-m">Availability for 12 weeks from 9 December 2024</h3>
-
-<h3 class="govuk-heading-m">Filter</h3>
-
-<div class="govuk-grid-row">
+<div class="nhsuk-grid-row">
   
-  <div class="govuk-grid-column-one-quarter">
+ 
+<div class="nhsuk-grid-column-one-quarter">
 
-[datepicker]
+<h3 class="nhsuk-heading-m">Date range</h3>
+
+<div class="moj-datepicker" data-module="moj-date-picker">
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="date">
+      Date
+    </label>
+    <div id="date-hint" class="nhsuk-hint">
+      For example, 17/5/2024.
+    </div>
+    <input class="nhsuk-input moj-js-datepicker-input" id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+  </div>
+  <div class="datepicker" id="datepicker">
+    <div class="datepicker-header">
+      <div class="datepicker-controls">
+        <button class="prev-month">&lt;</button>
+      </div>
+      <div class="datepicker-month-selector"></div>
+      <div class="datepicker-controls">
+        <button class="next-month">&gt;</button>
+      </div>
+    </div>
+    <div class="datepicker-grid">
+      <!-- Day headers will be inserted here -->
+    </div>
+  </div>
 </div>
-<div class="govuk-grid-column-one-quarter">
+
+<div class="moj-datepicker" data-module="moj-date-picker">
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="date">
+      Date
+    </label>
+
+    <div id="date-hint" class="nhsuk-hint">
+      For example, 17/5/2024.
+    </div>
+
+    <input class="nhsuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+
+  </div>
+
+</div>
 
 
-
-    {% from 'select/macro.njk' import select %}
-
-    {{ select({
-      id: "select-1",
-      name: "select-1",
-      label: {
-        text: "Choose calendar view"
-      },
-      items: [
-        {
-          value: 1,
-          text: "1 month"
-        },
-        {
-          value: 2,
-          text: "2 months",
-          selected: true
-        },
-        {
-          value: 3,
-          text: "3 months",
-          disabled: true
-        }
-      ]
-    }) }}
   
 
 </div>
+
+<div class="nhsuk-grid-column-one-quarter">
+
+  <h3 class="nhsuk-heading-m">Date range</h3>
+  
+  <div class="moj-datepicker" data-module="moj-date-picker">
+  
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="date">
+        Date
+      </label>
+  
+      <div id="date-hint" class="nhsuk-hint">
+        For example, 17/5/2024.
+      </div>
+  
+      <input class="nhsuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+  
+    </div>
+  
+  </div>
+  
+  
+    
+  
+  </div>
+
+
 </div>
 
+
+
+<div class="nhsuk-grid-row">
+  
+ 
+  <div class="nhsuk-grid-column-one-quarter">
 {% from 'checkboxes/macro.njk' import checkboxes %}
 
 <form>
@@ -107,45 +137,44 @@ Site overview Hornsey Central Pharmacy
     name: "example",
     fieldset: {
       legend: {
-        text: "Select criteria",
-        classes: "nhsuk-fieldset__legend--l",
+        text: "Services",
+        classes: "nhsuk-fieldset__legend--m",
         isPageHeading: true
       }
     },
-    hint: {
-      text: "Select all options that are relevant to you."
-    },
+
     items: [
       {
         value: "email",
-        text: "Email"
+        text: "RSV"
       },
       {
         value: "phone",
-        text: "Phone"
+        text: "Covid"
       },
       {
         value: "text message",
-        text: "Text message"
+        text: "RSV adult"
       }
     ]
   }) }}
 </form>
 
+
 {% from 'button/macro.njk' import button %}
 
 {{ button({
-  text: "Save and continue"
+  text: "Apply filters"
 }) }}
 
+</div>
+</div>
 
-
-  <p class="govuk-notification-banner__heading">
-  Important
-    
-  </p>
-
-<h3 class="govuk-heading-m">Available on</h3>
+<div class="nhsuk-grid-row">
+  
+ 
+  <div class="nhsuk-grid-column-one-half">
+<h3 class="nhsuk-heading-m">Sessions available on</h3>
 
 <ul>
 
@@ -154,22 +183,16 @@ Site overview Hornsey Central Pharmacy
     <li>Sunday 29 December 2024 - 1 day</li>
   <li>Thursday 31 December 2024 to Saturday 3 February 2025 - 4 weeks and 6 days</li>
 </ul>
+</div>
+</div>
 
-<h3 class="govuk-heading-m">Overbooked on</h3>
-<ul><li>Thursday 12 December 2024 to Saturday 28 December 2024 - 2 weeks and 2 days</li>
-<li>Monday 30 December 2024 - 1 day</li></ul>
   
-
-
-
-
-[page header actions]
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
 
     <div class="moj-scrollable-pane">
 
-      <p class="govuk-body govuk-body--l">Key</p>
+      <p class="nhsuk-body nhsuk-body--l">Key</p>
   
       <div class="calendar">
   
@@ -391,11 +414,165 @@ Site overview Hornsey Central Pharmacy
 {% endblock %}
 
 {% block pageScripts %}
+<script>
 <!-- Add any javascript files here. Include javascript files only on the pages
 that need them. Excessive javascript files loaded on other pages may slow down
 the response times of the prototype. -->
+document.addEventListener('DOMContentLoaded', function() {
+  const datePicker = {
+    inputElement: document.querySelector('.moj-js-datepicker-input'),
+    datePickerElement: document.getElementById('datepicker'),
+    monthSelectorElement: document.querySelector('.datepicker-month-selector'),
+    gridElement: document.querySelector('.datepicker-grid'),
+    prevButton: document.querySelector('.prev-month'),
+    nextButton: document.querySelector('.next-month'),
+    selectedDate: null,
+    currentMonth: new Date().getMonth(),
+    currentYear: new Date().getFullYear(),
+    dayNames: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    monthNames: [
+      'January', 'February', 'March', 'April', 'May', 'June', 
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ],
+    
+    init: function() {
+      this.renderCalendar();
+      this.attachEventListeners();
+    },
+    
+    renderCalendar: function() {
+      // Clear grid
+      this.gridElement.innerHTML = '';
+      
+      // Add day headers
+      this.dayNames.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'datepicker-day-header';
+        dayHeader.textContent = day;
+        this.gridElement.appendChild(dayHeader);
+      });
+      
+      // Update month and year display
+      this.monthSelectorElement.textContent = `${this.monthNames[this.currentMonth]} ${this.currentYear}`;
+      
+      // Get first day of month and total days
+      const firstDay = new Date(this.currentYear, this.currentMonth, 1).getDay();
+      const daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
+      
+      // Previous month days
+      const prevMonthDays = new Date(this.currentYear, this.currentMonth, 0).getDate();
+      for (let i = firstDay - 1; i >= 0; i--) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell inactive';
+        dayCell.textContent = prevMonthDays - i;
+        this.gridElement.appendChild(dayCell);
+      }
+      
+      // Current month days
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell';
+        dayCell.textContent = i;
+        
+        // Check if this date is selected
+        if (this.selectedDate && 
+            this.selectedDate.getDate() === i && 
+            this.selectedDate.getMonth() === this.currentMonth && 
+            this.selectedDate.getFullYear() === this.currentYear) {
+          dayCell.classList.add('selected');
+        }
+        
+        dayCell.addEventListener('click', () => this.selectDate(i));
+        this.gridElement.appendChild(dayCell);
+      }
+      
+      // Fill remaining slots with next month days
+      const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+      let nextMonthDay = 1;
+      for (let i = firstDay + daysInMonth; i < totalCells; i++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell inactive';
+        dayCell.textContent = nextMonthDay++;
+        this.gridElement.appendChild(dayCell);
+      }
+    },
+    
+    attachEventListeners: function() {
+      // Handle input field focus
+      this.inputElement.addEventListener('focus', () => {
+        this.datePickerElement.classList.add('active');
+      });
+      
+      // Handle clicking outside the datepicker
+      document.addEventListener('click', (e) => {
+        if (!this.datePickerElement.contains(e.target) && 
+            e.target !== this.inputElement) {
+          this.datePickerElement.classList.remove('active');
+        }
+      });
+      
+      // Handle month navigation
+      this.prevButton.addEventListener('click', () => {
+        this.currentMonth--;
+        if (this.currentMonth < 0) {
+          this.currentMonth = 11;
+          this.currentYear--;
+        }
+        this.renderCalendar();
+      });
+      
+      this.nextButton.addEventListener('click', () => {
+        this.currentMonth++;
+        if (this.currentMonth > 11) {
+          this.currentMonth = 0;
+          this.currentYear++;
+        }
+        this.renderCalendar();
+      });
+      
+      // Parse date from input if already has value
+      if (this.inputElement.value) {
+        this.parseInputDate();
+      }
+    },
+    
+    selectDate: function(day) {
+      this.selectedDate = new Date(this.currentYear, this.currentMonth, day);
+      this.inputElement.value = this.formatDate(this.selectedDate);
+      this.datePickerElement.classList.remove('active');
+      this.renderCalendar(); // Re-render to show selection
+    },
+    
+    formatDate: function(date) {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    },
+    
+    parseInputDate: function() {
+      const value = this.inputElement.value;
+      const parts = value.split('/');
+      
+      if (parts.length === 3) {
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        
+        if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+          this.selectedDate = new Date(year, month, day);
+          this.currentMonth = month;
+          this.currentYear = year;
+          this.renderCalendar();
+        }
+      }
+    }
+  };
+  
+  // Initialize the date picker
+  datePicker.init();
+});
 
-
-
+</script>
 
 {% endblock %}

@@ -30,7 +30,7 @@
       <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href="/"></image></svg> <span class="nhsuk-header__service-name">Manage Your Appointments</span></a>
     </div>
     <div class="nhsuk-header__content" id="content-header">
-      <nav aria-label="primary navigation" class="nhsuk-header__navigation" id="header-navigation" role="navigation">
+      <nav class="nhsuk-navigation nhsuk-width-container" id="header-navigation" role="navigation" aria-label="Primary navigation"></nav>
         <ul class="nhsuk-header__navigation-list" style="border:0">
           <li class="nhsuk-header__navigation-item">
             <a class="nhsuk-header__navigation-link" href="#">user.test1@nhs.net</a>
@@ -45,6 +45,31 @@
       </nav>
     </div>
   </div>
+  <div class="nhsuk-navigation-container"></div>
+  <nav class="nhsuk-navigation nhsuk-width-container" id="header-navigation" role="navigation" aria-label="Primary navigation">
+    <ul class="nhsuk-header__navigation-list" style="justify-content: flex-start;">
+    <li class="nhsuk-header__navigation-item">
+    <a class="nhsuk-header__navigation-link" href="month">
+      View bookings
+    </a>
+  </li>
+  <li class="nhsuk-header__navigation-item">
+    <a class="nhsuk-header__navigation-link" href="availability-overview">
+      Create availability
+    </a>
+  </li>
+  <li class="nhsuk-header__navigation-item">
+    <a class="nhsuk-header__navigation-link" href="site-details">
+      Change site details
+    </a>
+</li>
+    <li class="nhsuk-header__navigation-item">
+      <a class="nhsuk-header__navigation-link" href="#">
+        Manage users
+      </a>
+    </li>
+</ul>
+</div>
 </header>{% endblock %}
 
 <!-- Edit the footer -->
@@ -57,18 +82,9 @@
         "label": "Home"
       },
       {
-        "URL": "/accessibility-statement",
-        "label": "Accessibility statement"
-      },
-      {
-        "URL": "/cookies",
-        "label": "Cookies"
-      },
-      {
-        "URL": "/examples/passing-data/clear-data",
-        "label": "Clear data"
+        "URL": "/page-example",
+        "label": "Example page"
       }
-      
     ]
   })}}
 {% endblock %}

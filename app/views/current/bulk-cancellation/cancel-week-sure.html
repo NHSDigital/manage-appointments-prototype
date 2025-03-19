@@ -40,7 +40,7 @@
           Go back</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Cancel  {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} </span>
+            <span class="nhsuk-caption-l">Cancel     1 {{ date({month: 'long'}) }} to 7 {{ date({month: 'long'}) }} </span>
             <h1 class="nhsuk-heading-l">Are you sure you want to cancel this week?</h1>
 
             <table class="nhsuk-table">
@@ -48,11 +48,9 @@
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
-                    Day
+                    Date
                   </th>
-                  <th role="columnheader" class="" scope="col">
-                    Times
-                  </th>
+               
                   <th role="columnheader" class="" scope="col">
                     Services
                   </th>
@@ -66,50 +64,45 @@
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Monday</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">1 {{ date({month: 'long'}) }}</td>
+               
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Tuesday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">2 {{ date({month: 'long'}) }}</td>
+                  
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">7 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Wednesday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">3 {{ date({month: 'long'}) }}</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Thursday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">4 {{ date({month: 'long'}) }}</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Friday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">5 {{ date({month: 'long'}) }}</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Saturday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">6 {{ date({month: 'long'}) }}</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Sunday</td>
-                    <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">09:00 - 12:00, 13:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">7 {{ date({month: 'long'}) }}</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
