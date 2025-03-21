@@ -32,123 +32,135 @@ Site overview Hornsey Central Pharmacy
 
 
     
-      <h1 class="nhsuk-heading-l">View availability for  {{ date({month: 'long'}) }} 2025</h1>
+      <h1 class="nhsuk-heading-l">View bookings for  {{ date({month: 'long'}) }} 2025</h1>
     </h1>
 
-
-
-<h2 class="nhsuk-heading-m">Filter</h2>
-
-<div class="nhsuk-grid-row">
-  
- 
-<div class="nhsuk-grid-column-one-quarter">
-
-<h3 class="nhsuk-heading-m">Date from</h3>
-
-<div class="moj-datepicker" data-module="moj-date-picker">
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="date">
-      Date
-    </label>
-    <div id="date-hint" class="nhsuk-hint">
-      For example, 17/5/2024.
-    </div>
-    <input class="nhsuk-input moj-js-datepicker-input" id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
-  </div>
-
-</div>
-</div>
-
-<div class="nhsuk-grid-column-one-quarter">
-
-  <h3 class="nhsuk-heading-m">Date to</h3>
-  
-  <div class="moj-datepicker" data-module="moj-date-picker">
-  
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="date">
-        Date
-      </label>
-  
-      <div id="date-hint" class="nhsuk-hint">
-        For example, 17/5/2024.
-      </div>
-  
-      <input class="nhsuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
-  
-    </div>
-  
-  </div>
-  
-  
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Filter again
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
     
+        <div class="nhsuk-grid-row">
   
-  </div>
+ 
+          <div class="nhsuk-grid-column-one-quarter">
+          
+          <h3 class="nhsuk-heading-m">Date from</h3>
+          
+          <div class="moj-datepicker" data-module="moj-date-picker">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="date">
+                Date
+              </label>
+              <div id="date-hint" class="nhsuk-hint">
+                For example, 17/5/2024.
+              </div>
+              <input class="nhsuk-input moj-js-datepicker-input" id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+            </div>
+          
+          </div>
+          </div>
+          
+          <div class="nhsuk-grid-column-one-quarter">
+          
+            <h3 class="nhsuk-heading-m">Date to</h3>
+            
+            <div class="moj-datepicker" data-module="moj-date-picker">
+            
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="date">
+                  Date
+                </label>
+            
+                <div id="date-hint" class="nhsuk-hint">
+                  For example, 17/5/2024.
+                </div>
+            
+                <input class="nhsuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+            
+              </div>
+            
+            </div>
+            
+            
+              
+            
+            </div>
+          
+          
+          </div>
+          
+          
+          
+          <div class="nhsuk-grid-row">
+            
+           
+            <div class="nhsuk-grid-column-one-quarter">
+          
+          
+          
+            {{ radios({
+              idPrefix: "example",
+              name: "example",
+              fieldset: {
+                legend: {
+                  text: "Services",
+                  classes: "nhsuk-fieldset__legend--m",
+                  isPageHeading: true
+                }
+              },
+          
+              items: [
+                {
+                  value: "rsv",
+                  text: "RSV adult"
+                },
+                {
+                  value: "rsv adult",
+                  text: "Covid"
+                },
+                {
+                  value: "flu",
+                  text: "Flu"
+                }
+              ]
+            }) }}
+          
+          
+          
+          {% from 'button/macro.njk' import button %}
+          
+          {{ button({
+            text: "Apply filters"
+          }) }}
+          
+          </div>
+          </div>
+      </div>
+    </details>
 
 
-</div>
 
 
+<!-- INFO BANNER -->
 
 <div class="nhsuk-grid-row">
   
  
-  <div class="nhsuk-grid-column-one-quarter">
-{% from 'checkboxes/macro.njk' import checkboxes %}
+  <div class="nhsuk-grid-column-full">
 
-<form>
-  {{ checkboxes({
-    idPrefix: "example",
-    name: "example",
-    fieldset: {
-      legend: {
-        text: "Services",
-        classes: "nhsuk-fieldset__legend--m",
-        isPageHeading: true
-      }
-    },
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
 
-    items: [
-      {
-        value: "email",
-        text: "RSV"
-      },
-      {
-        value: "phone",
-        text: "Covid"
-      },
-      {
-        value: "text message",
-        text: "RSV adult"
-      }
-    ]
-  }) }}
-</form>
+<h3 class="nhsuk-heading-m">223 Vaccines needed for these sessions</h3>
+    
+      
+    </div>
 
 
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  text: "Apply filters"
-}) }}
-
-</div>
-</div>
-
-<div class="nhsuk-grid-row">
-  
- 
-  <div class="nhsuk-grid-column-one-half">
-<h3 class="nhsuk-heading-m">Sessions available on</h3>
-
-<ul>
-
-  <li>
-    Monday 9 December 2024 to Wednesday 11 December 2024 - 3 days</li>
-    <li>Sunday 29 December 2024 - 1 day</li>
-  <li>Thursday 31 December 2024 to Saturday 3 February 2025 - 4 weeks and 6 days</li>
-</ul>
 </div>
 </div>
 
@@ -186,111 +198,126 @@ Site overview Hornsey Central Pharmacy
   <ul class="days">
   <!-- add filler at beginning of month -->
       <li class="out_of_range calendar-day selected">
-          <div class="date day_cell">Mon 09 Dec</div>
-          <div class="show-info">0 spaces</div>
+          <div class="date day_cell">Mon 09 Mar</div>
+          <div class="show-info">44 spaces</div>
       </li>
       <li class="calendar-day available">
-        <div class="date day_cell">Tues 10 Dec</div>
+        <div class="date day_cell">Tues 10 Mar</div>
         <div class="show-info">0 spaces</div>
       </li>            
       <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 11 Dec</div>
+        <div class="date day_cell">Wed 11 Mar</div>
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Thur 12 Dec</div>
+        <div class="date day_cell">Thur 12 Mar</div>
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Fri 13 Dec</div>
+        <div class="date day_cell">Fri 13 Mar</div>
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="out_of_range calendar-day available">
+        <div class="date day_cell">Mon 09 Mar</div>
+        <div class="show-info">44 spaces</div>
+    </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sun 15 Mar</div>
+        
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day available">
+        <div class="date day_cell">Mon 16 Mar</div>
+        
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Sat 14 Dec</div>
+        <div class="date day_cell">Tue 17 Mar</div>
+        
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 15 Dec</div>
+        <div class="date day_cell">Wed 18 Mar</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Thu 19 Mar</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day available">
+        <div class="date day_cell">Fri 20 Mar</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sat 21 Mar</div>
         
           <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 16 Dec</div>
+        <div class="date day_cell">Sun 22 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 17 Dec</div>
+        <div class="date day_cell">Mon 23 Mar</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day available">
+        <div class="date day_cell">Tue 24 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 18 Dec</div>
+        <div class="date day_cell">Wed 25 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Thu 19 Dec</div>
+        <div class="date day_cell">Thur 26 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Fri 20 Dec</div>
+        <div class="date day_cell">Fri 27 Mar</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day available">
+        <div class="date day_cell">Sat 28 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Sat 21 Dec</div>
-        
-          <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 22 Dec</div>
+        <div class="date day_cell">Sun 29 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 23 Dec</div>
+        <div class="date day_cell">Mon 30 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 24 Dec</div>
+        <div class="date day_cell">Tue 31 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 25 Dec</div>
+        <div class="date day_cell">Tue 31 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Thur 26 Dec</div>
+        <div class="date day_cell">Tue 31 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
       <li class="calendar-day occupied">
-        <div class="date day_cell">Fri 27 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sat 28 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 29 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 30 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 31 Dec</div>
+        <div class="date day_cell">Tue 31 Mar</div>
         
         <div class="show-info">0 spaces</div>
       </li>
@@ -298,75 +325,6 @@ Site overview Hornsey Central Pharmacy
 </ul>
 </div>
 
-<div class="calendar">
-  
-  
-  <ul class="days">
-  <!-- add filler at beginning of month -->
-
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-          <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-          <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 09 Dec</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      
-              
-  <!-- add filler at end of month -->
-      <li class="out_of_range calendar-day">
-          <div class="date day_cell"></div>
-      </li>
-      <li class="out_of_range calendar-day">
-          <div class="date day_cell"></div>
-      </li>
-  </ul>
-  
-
-</div>
 
 
   </div>
@@ -398,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dayNames: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     monthNames: [
       'January', 'February', 'March', 'April', 'May', 'June', 
-      'July', 'August', 'September', 'October', 'November', 'December'
+      'July', 'August', 'September', 'October', 'November', 'March'
     ],
     
     init: function() {
