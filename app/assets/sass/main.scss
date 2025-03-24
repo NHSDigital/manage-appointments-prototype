@@ -16,10 +16,22 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
 /// 
+///
 /// 
+/// 
+// .app-width-container{
+ // max-width: 1200px;
+   //margin: 0 auto;
 
+// }
   
 // header links active state //
+
+.nhsuk-buttons--small{
+  padding: 6px 8px !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+}
 
 .nhsuk-header__navigation-link[aria-current]:not(:focus):not(:active) {
     border-bottom: nhsuk-spacing(1) solid $nhsuk-border-color;

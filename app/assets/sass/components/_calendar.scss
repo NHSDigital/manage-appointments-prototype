@@ -49,6 +49,7 @@ $color-nhsuk-grey-5: #f0f4f5;
            margin: 0;
            padding:0;
            list-style-image: none;
+           display: flex;
        }
   
     li{
@@ -95,14 +96,13 @@ $color-nhsuk-grey-5: #f0f4f5;
               list-style: none;
               padding: 0;
               margin: 0;
-              clear: both;
-              width: 100%;
+              display: flex;
               li{
                   display: block;
                   float: left;
                   height: auto;
-                  max-height: 150px;
-                  width: 14.2857142857%;
+                  min-height: 150px;
+                  width: 14%;
                   padding: 10px;
   
                   &.out_of_range {
@@ -115,11 +115,12 @@ $color-nhsuk-grey-5: #f0f4f5;
   
   }
   .available{
-    background-color:$color_nhsuk-white;
+    background-color:#cce5d8;
 
   }
   .occupied{
 background-color: $color-nhsuk-grey-2;
+color: $color-nhsuk-white;
   }
   .selected{
     background-color:$color_nhsuk-pale-yellow;
