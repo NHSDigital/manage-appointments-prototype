@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends '../../current/view-availability/layout.html' %}
 
 <!--
   In /views/layout.html you can:
@@ -96,12 +96,17 @@ Site overview Hornsey Central Pharmacy
   </div>
 
   <div class="nhsuk-grid-column-one-third" style="border-right:solid lightgray 1px">
+
+
+
+
+
     {{ radios({
     idPrefix: "example",
     name: "example",
     fieldset: {
     legend: {
-    text: "Services",
+    text: "Site",
     classes: "nhsuk-fieldset__legend--m",
     isPageHeading: true
     }
@@ -109,16 +114,17 @@ Site overview Hornsey Central Pharmacy
 
     items: [
     {
-    value: "rsv",
-    text: "RSV adult"
+    value: "current",
+    text: "Current"
     },
+  
     {
-    value: "rsv adult",
-    text: "Covid"
+    value: "",
+    text: "North Middlesex Hospital"
     },
     {
     value: "flu",
-    text: "Flu"
+    text: "Finchley Memorial Hospital"
     }
     ]
     }) }}
@@ -129,38 +135,35 @@ Site overview Hornsey Central Pharmacy
 
 
 
-    {% from 'checkboxes/macro.njk' import checkboxes %}
+
 
     <form>
-      {{ checkboxes({
-      idPrefix: "example",
-      name: "example",
-      fieldset: {
-      legend: {
-      text: "Demographic",
-      classes: "nhsuk-fieldset__legend--m"
-      }
-      },
-     
-      items: [
-      {
-      value: "rsv",
-      text: "0-4 years"
-      },
-      {
-      value: "covid",
-      text: "5-11 years"
-      },
-      {
-      value: "flu",
-      text: "12-15 years"
-      },
-      {
-      value: "flu",
-      text: "16-21 years"
-      }
-      ]
-      }) }}
+      {{ radios({
+        idPrefix: "service",
+        name: "service",
+        fieldset: {
+        legend: {
+        text: "Service type",
+        classes: "nhsuk-fieldset__legend--m",
+        isPageHeading: true
+        }
+        },
+    
+        items: [
+        {
+        value: "rsv",
+        text: "RSV adult"
+        },
+        {
+        value: "rsv adult",
+        text: "Covid"
+        },
+        {
+        value: "flu",
+        text: "Flu"
+        }
+        ]
+        }) }}
     </form>
   </div>
 
@@ -173,9 +176,11 @@ Site overview Hornsey Central Pharmacy
     {% from 'button/macro.njk' import button %}
 
     {{ button({
-    text: "Find bookings",
-    href:'calendar'
+    text: "Continue",
+    href:'calendar-filter-cohort'
     }) }}
+
+
 
 
   </div>

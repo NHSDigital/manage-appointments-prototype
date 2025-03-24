@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends '../../current/view-availability/layout.html' %}
 
 <!--
   In /views/layout.html you can:
@@ -170,19 +170,19 @@ Site overview Hornsey Central Pharmacy
 
     <div class="moj-scrollable-pane">
 
-      <p class="nhsuk-body nhsuk-body--l">Key</p>
+      <h3 class="nhsuk-heading-s">Key</h3>
   
       <div class="calendar">
   
       <ul class="days">
       <!-- add filler at beginning of month -->
-          <li class="out_of_range calendar-day">
+          <li class="out_of_range calendar-day available">
             
-              <div class="date day_cell">Available</div>
+              <div class="date day_cell">Availability</div>
           </li>
           <li class="out_of_range calendar-day occupied">
           
-            <div class="date day_cell">Occupied</div>
+            <div class="date day_cell">Full</div>
           </li>            
           <li class="calendar-day selected">
               <div class="date day_cell">Selected</div>
@@ -190,140 +190,210 @@ Site overview Hornsey Central Pharmacy
           </li>
           </ul>
           </div>
+
+
+          <div class="calendar"  style="display: flex;justify-content: space-between">
+
+
+          
+
+
+            <button class="nhsuk-button nhsuk-button--reverse nhsuk-buttons--small">
+          
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M15,4 L7,12 L15,20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Prev
+            </button>
+
+            <button class="nhsuk-button nhsuk-button--reverse nhsuk-buttons--small">
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9,4 L17,12 L9,20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+
+
+
+
+            </div>
         
 
-<div class="calendar">
-  
-  
-  <ul class="days">
-  <!-- add filler at beginning of month -->
-      <li class="out_of_range calendar-day selected">
-          <div class="date day_cell">Mon 09 Mar</div>
-          <div class="show-info">44 spaces</div>
-      </li>
-      <li class="calendar-day available">
-        <div class="date day_cell">Tues 10 Mar</div>
-        <div class="show-info">0 spaces</div>
-      </li>            
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 11 Mar</div>
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Thur 12 Mar</div>
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Fri 13 Mar</div>
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="out_of_range calendar-day available">
-        <div class="date day_cell">Mon 09 Mar</div>
-        <div class="show-info">44 spaces</div>
-    </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 15 Mar</div>
-        
-          <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day available">
-        <div class="date day_cell">Mon 16 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 17 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 18 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Thu 19 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day available">
-        <div class="date day_cell">Fri 20 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sat 21 Mar</div>
-        
-          <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 22 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 23 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day available">
-        <div class="date day_cell">Tue 24 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Wed 25 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Thur 26 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Fri 27 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day available">
-        <div class="date day_cell">Sat 28 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Sun 29 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Mon 30 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 31 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 31 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 31 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
-      <li class="calendar-day occupied">
-        <div class="date day_cell">Tue 31 Mar</div>
-        
-        <div class="show-info">0 spaces</div>
-      </li>
+          <div class="calendar">
+            <ul class="days">
+            <!-- add filler at beginning of month -->
+                <li class="out_of_range calendar-day occupied">
+                  <div class="date day_cell">Sun 23 Feb</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">Mon 24 Feb</div>
+                  <div class="show-info">22 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">Tue 25 Feb</div>
+                  <div class="show-info">18 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day occupied">
+                  <div class="date day_cell">Wed 26 Feb</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">Thu 27 Feb</div>
+                  <div class="show-info">23 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">Fri 28 Feb</div>
+                  <div class="show-info">12 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Sat 01 Mar</div>
+                  <div class="show-info">40 bookings</div>
+                </li>
+                </ul>
+                <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">Sun 02 Mar</div>
+                  <div class="show-info">29 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Mon 03 Mar</div>
+                  <div class="show-info">65 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Tue 04 Mar</div>
+                  <div class="show-info">11 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Wed 05 Mar</div>
+                  <div class="show-info">14 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Thu 06 Mar</div>
+                  <div class="show-info">52 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Fri 07 Mar</div>
+                  <div class="show-info">65 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Sat 08 Mar</div>
+                  <div class="show-info">42 bookings</div>
+                </li>
+                </ul>
 
-</ul>
-</div>
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">Sun 09 Mar</div>
+                  <div class="show-info">22 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Mon 10 Mar</div>
+                  <div class="show-info">10 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Tue 11 Mar</div>
+                  <div class="show-info">43 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Wed 12 Mar</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Thu 13 Mar</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Fri 14 Mar</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+              
+              
+            
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Sat 15 Mar</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                </ul>
+
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Sun 16 Mar</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Mon 17 Mar</div>
+                  <div class="show-info">16 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Tue 18 Mar</div>
+                  <div class="show-info">17 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Wed 19 Mar</div>
+                  <div class="show-info">10 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Thu 20 Mar</div>
+                  <div class="show-info">16 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Fri 21 Mar</div>
+                  <div class="show-info">3 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Sat 22 Mar</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                </ul>
+
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">Sun 23 Mar</div>
+                  <div class="show-info">11 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Mon 24 Mar</div>
+                  <div class="show-info">19 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Tue 25 Mar</div>
+                  <div class="show-info">18 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Wed 26 Mar</div>
+                  <div class="show-info">56 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Thu 27 Mar</div>
+                  <div class="show-info">32 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">Fri 28 Mar</div>
+                  <div class="show-info">0 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Sat 29 Mar</div>
+                  <div class="show-info">54 bookings</div>
+                </li>
+                </ul>
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Sun 30 Mar</div>
+                  <div class="show-info">57 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">Mon 31 Mar</div>
+                  <div class="show-info">58 bookings</div>
+                </li>
+            </ul>
+          </div>
 
 
 
@@ -350,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gridElement: document.querySelector('.datepicker-grid'),
     prevButton: document.querySelector('.prev-month'),
     nextButton: document.querySelector('.next-month'),
-    selectedDate: null,
+    availableDate: null,
     currentMonth: new Date().getMonth(),
     currentYear: new Date().getFullYear(),
     dayNames: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
@@ -398,12 +468,12 @@ document.addEventListener('DOMContentLoaded', function() {
         dayCell.className = 'datepicker-cell';
         dayCell.textContent = i;
         
-        // Check if this date is selected
-        if (this.selectedDate && 
-            this.selectedDate.getDate() === i && 
-            this.selectedDate.getMonth() === this.currentMonth && 
-            this.selectedDate.getFullYear() === this.currentYear) {
-          dayCell.classList.add('selected');
+        // Check if this date is available
+        if (this.availableDate && 
+            this.availableDate.getDate() === i && 
+            this.availableDate.getMonth() === this.currentMonth && 
+            this.availableDate.getFullYear() === this.currentYear) {
+          dayCell.classList.add('available');
         }
         
         dayCell.addEventListener('click', () => this.selectDate(i));
@@ -461,8 +531,8 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     
     selectDate: function(day) {
-      this.selectedDate = new Date(this.currentYear, this.currentMonth, day);
-      this.inputElement.value = this.formatDate(this.selectedDate);
+      this.availableDate = new Date(this.currentYear, this.currentMonth, day);
+      this.inputElement.value = this.formatDate(this.availableDate);
       this.datePickerElement.classList.remove('active');
       this.renderCalendar(); // Re-render to show selection
     },
@@ -484,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = parseInt(parts[2], 10);
         
         if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
-          this.selectedDate = new Date(year, month, day);
+          this.availableDate = new Date(year, month, day);
           this.currentMonth = month;
           this.currentYear = year;
           this.renderCalendar();
