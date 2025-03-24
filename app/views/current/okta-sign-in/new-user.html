@@ -84,14 +84,8 @@ text: "Users"
     <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="surname" type="text">
 </div> 
 
-
-        
-<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
-    Email address
-  </label>
-  <input class="nhsuk-input" id="email" name="email" type="email" value="{{ email }}">
-</div>
+<h2 class="nhsuk-heading-m">Email</h2>
+<p>{{data['email']}}</p>
 
 
 {% from 'checkboxes/macro.njk' import checkboxes %}
@@ -145,6 +139,11 @@ text: "Users"
 
 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
   Continue
+</button>
+
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+  Cancel
 </button>
 </form>
 
