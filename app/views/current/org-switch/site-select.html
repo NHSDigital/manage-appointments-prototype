@@ -1,5 +1,5 @@
 <!-- File: app/views/test-page.html -->
-{% extends '../../current/create-availability/layout.html' %}
+{% extends 'layout.html' %}
 
 {% block head %}
 <!-- Include the accessible-autocomplete CSS from CDN -->
@@ -18,11 +18,9 @@
             <label class="nhsuk-label" for="location">
               Enter your location
             </label>
-            
             <div class="nhsuk-hint" id="location-hint">
               Start typing to see suggestions
             </div>
-            
             <div id="location-container"></div>
             <input type="hidden" name="location" id="location-hidden">
           </div>
@@ -38,44 +36,45 @@
 {% block bodyEnd %}
 <!-- Include the accessible-autocomplete JS from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+{% endblock %}
 
-<script>
+{% block pageScripts %}
+<script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
     if (typeof accessibleAutocomplete !== 'undefined') {
-      // Initialize the autocomplete directly
+      // NHS site data
+      const nhsSites = [
+        'Hornsey Central Pharmacy',
+        'St Ann\'s Hospital',
+        'North Middlesex University Hospital',
+        'Finchley Memorial Hospital',
+        'Barnet Hospital',
+        'Royal Free Hospital',
+        'University College Hospital',
+        'Whittington Hospital',
+        'Chase Farm Hospital',
+        'Edgware Community Hospital',
+        'Central Middlesex Hospital',
+        'Barnet Community Clinic',
+        'East Barnet Health Centre',
+        'Crouch End Health Centre',
+        'Wood Green Community Clinic'
+      ];
+      
+      // Initialize the autocomplete in the container div
       accessibleAutocomplete({
-        element: document.getElementById('location-container'),
+        element: document.querySelector('#location-container'),
         id: 'location',
-        source: [
-  'Highland Health Pharmacy',
-  'Wellness Corner Chemist',
-  'City Centre Dispensary',
-  'Oakridge Family Pharmacy',
-  'Royal Care Apothecary',
-  'Bridgeview Medical Supplies',
-  'Greenleaf Prescription Center',
-  'Riverside Healthcare Pharmacy',
-  'Sunrise Community Chemist',
-  'Parkside Wellness Dispensary',
-  'Heritage Health Solutions',
-  'Meadowbrook Family Pharmacy',
-  'Lakeview Prescription Services',
-  'Northside Healthcare Center',
-  'Unity Medical Pharmacy',
-  'Guardian Health Dispensary',
-  'Harmony Wellness Chemist',
-  'Westfield Care Pharmacy',
-  'Landmark Medical Supplies',
-  'Crescent Health Apothecary'
-],
-        displayMenu: 'overlay',
-        confirmOnBlur: true,
-        onConfirm: function(selectedItem) {
-          document.getElementById('location-hidden').value = selectedItem;
+        source: nhsSites,
+        name: 'location-autocomplete',
+        defaultValue: '',
+        onConfirm: function(selectedValue) {
+          // Update the hidden field with the selected value
+          document.querySelector('#location-hidden').value = selectedValue;
         }
       });
     } else {
-      console.error('Accessible Autocomplete library not loaded');
+      console.error('Accessible autocomplete is not defined');
     }
   });
 </script>

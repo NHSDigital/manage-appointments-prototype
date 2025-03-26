@@ -1,0 +1,17 @@
+
+/* ==========================================================================
+   #ORGANISATION SWITCHER
+   ========================================================================== */
+
+.nhsuk-organisation-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $nhsuk-border-color;
+  padding: 10px 0;
+  max-height: 50px; 
+}
+
+
+.nhsuk-organisation-nav__link {
+    float: right;
+}
