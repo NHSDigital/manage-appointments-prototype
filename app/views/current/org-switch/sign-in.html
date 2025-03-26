@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends '../../current/view-availability/layout.html' %}
+{% extends 'layout.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -12,37 +12,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Add a user
+Site overview Hornsey Central Pharmacy
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{{ breadcrumb({
-    items: [
-    {
-    href: "#",
-    text: "Home"
-    },
-    {
-    href: "#",
-    text: "Hornsey Central Pharmacy"
-    }
-    ],
-    href: "#",
-    text: "Users"
-    },
-    
-    {
-        href: "#",
-        text: "New user"
-        }
-    
-    
-    
-    )
-    
-    }}
 
 {% endblock %}
 
@@ -56,31 +31,36 @@ Add a user
 {% block content %}
 
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l">Add a user</h1>
 
 
-<form action="new-user" method="post">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-xl">Manage your appointments</h1>
+  
+  
+  
+  
+  
+    <p>You are currently not signed in. You must sign in to access to access this service.</p>
+  
+ 
+  
+  
+    <form action="manage-users" method="post">
+  
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+       Sign in to service with NHS Mail
+      </button>
 
 
 
-{{ input({
-  label: {
-    text: "Enter email address"
-  },
-  id: "email",
-  name: "email"
-}) }}
-
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  text: "Continue"
-}) }}
-
-</form>
-
-    </div>
+    <p><a href="okta-sign-in">Sign in another way</a></p>
+  
+  
+    </form>
+  
+  
+  </div>
 </div>
 
-    {% endblock %}
+{% endblock %}
