@@ -21,9 +21,9 @@ Site overview Hornsey Central Pharmacy
 {% block beforeContent %}
 {% endblock %}
 
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+{% include '../../current/org-switch/includes/org-switcher.html' %}
+
 {% endblock %}
 
 <!-- For adding page content -->
@@ -54,15 +54,15 @@ Site overview Hornsey Central Pharmacy
 
   
 
-    <h3 class="nhsuk-heading-s">Date from</h3>
+  
 
  
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="date">
-          Date
+          Date from
         </label>
         <div id="date-hint" class="nhsuk-hint">
-          For example, 17/5/2024.
+          For example, 17/05/2024.
         </div>
 
         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value=" {{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
@@ -73,14 +73,14 @@ Site overview Hornsey Central Pharmacy
 
     
 
-    <h3 class="nhsuk-heading-m">Date to</h3>
+ 
 
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="date">
-        Date
+        Date to
       </label>
       <div id="date-hint" class="nhsuk-hint">
-        For example, 17/5/2024.
+        For example, 17/05/2024.
       </div>
 
       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value="date()" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
