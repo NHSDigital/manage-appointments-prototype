@@ -59,7 +59,7 @@ Site overview Hornsey Central Pharmacy
  
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="date">
-          Date from
+         Start date
         </label>
         <div id="date-hint" class="nhsuk-hint">
           For example, 17/05/2024.
@@ -77,7 +77,7 @@ Site overview Hornsey Central Pharmacy
 
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="date">
-        Date to
+        End date
       </label>
       <div id="date-hint" class="nhsuk-hint">
         For example, 17/05/2024.
@@ -176,8 +176,8 @@ Site overview Hornsey Central Pharmacy
     {% from 'button/macro.njk' import button %}
 
     {{ button({
-    text: "Continue",
-    href:'calendar-filter-cohort'
+    text: "View bookings",
+    href:'calendar'
     }) }}
 
 
