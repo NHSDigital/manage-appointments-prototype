@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends '../../current/bulk-cancellation/layout.html' %}
+{% extends 'layout-top-nav-v5.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -29,22 +29,23 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <!-- <div class="nhsuk-grid-column-two-thirds"> -->
+    <div class="nhsuk-grid-column-two-thirds">
 
       <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+        <a class="nhsuk-back-link__link" href="week-session-bookings-cancelled">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
-          Go back</a>
+         Back to week view</a>
       </div>
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Cancel </span>
-            <h1 class="nhsuk-heading-l">Are you sure you want to cancel this day?</h1>
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-l">Cancelled day for 1 {{ date({month: 'long'}) }}</h1>
 
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Sessions this week</caption>
+              <caption class="nhsuk-table__caption">Sessions cancelled</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
@@ -56,12 +57,7 @@
                   <th role="columnheader" class="" scope="col">
                     Services
                   </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Booked
-                  </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Unbooked
-                  </th>
+
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
@@ -69,66 +65,50 @@
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked<br>200 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">7 unbooked</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
                 </tr>
               </tbody>
             </table>
 
-            <div class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-              
-                <p>600 booked appointments will be cancelled.</p>
-              </div>
-  
-          
+        <p>We've automatically cancelled 588 of 600 booked appointments.  </p>
 
-
-      <form action="cancelDaySure" method="get" class="form">
-          
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            </legend>
-            <div class="nhsuk-form-group">
-                <div class="nhsuk-radios">
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                     Yes, I want to cancel the appointments
-                    </label>
-                  </div>
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="keep">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      No, I don't want to cancel the appointments
-                    </label>
-                 </div>
-            
-                </div>
-                </div>
-          </fieldset>
+        <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>12 people didn't give a mobile number or email, and we could not automatically cancel their appointments.</p> 
         
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
-      
+        <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+        </div>-->
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>12 people did not provide a mobile number or email, and we could not automatically cancel these appointments</p>
+
+            <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+        </div>
+
+        <!-- <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Some appointments could not be cancelled
+            </span>
+          </h3>
+          <p>12 people did not provide a mobile number or email, and we could not automatically cancel their appointments.</p> 
+        
+          <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+          </div> -->
+        <!--<a class="nhsuk-button" href="week-session-bookings-cancelled">Finish</a>-->
+
+          
 
       <!-- End of content -->
 
