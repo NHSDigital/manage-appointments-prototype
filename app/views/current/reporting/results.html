@@ -1,0 +1,176 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../../current/view-availability/layout.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+{% include '../../current/org-switch/includes/org-switcher.html' %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+
+
+
+    <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <h1 class="nhsuk-heading-l">Results</h1>
+      </div>
+      
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group">
+          <form method="post">
+          <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+            Print page
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    {% from 'tables/macro.njk' import table %}
+
+{{ table({
+  responsive: true,
+  panel: false,
+  caption: "For 1 March - 30 March, 3 selected sites, RSV",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Site"
+    },
+    {
+      text: "Booked"
+    },
+    {
+      text: "Unbooked"
+    }
+  ],
+  rows: [
+    [
+      {
+        header: "Hornsea Central Pharmacy",
+        text: "Hornsea Central Pharmacy"
+      },
+      {
+        header: "How much",
+        text: "200"
+      },
+      {
+        header: "How often",
+        text: "17"
+      }
+    ],
+    [
+      {
+        header: "Age",
+        text: "Peterborough University Hospital"
+      },
+      {
+        header: "How much",
+        text: "345"
+      },
+      {
+        header: "How often",
+        text: "11"
+      }
+    ],
+        [
+      {
+        header: "Age",
+        text: "Skegness University Hospital"
+      },
+      {
+        header: "How much",
+        text: "12"
+      },
+      {
+        header: "How often",
+        text: "22"
+      }
+    ]
+  ]
+}) }}
+    </h1>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- END SERVICES-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-06-01";
+console.log(dateControl.value); // prints "2017-06-01"
+console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
+
+</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the print button
+      const printButton = document.querySelector('button.nhsuk-button--secondary');
+      
+      // Add click event listener to the print button
+      if (printButton) {
+        printButton.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent default button behavior
+          window.print();
+        });
+      }
+    });
+  </script>
+{% endblock %}
