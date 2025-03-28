@@ -39,13 +39,30 @@
           </svg>
           Go back</a>
       </div>
+
+      <!-- BANNER -->
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="">
+            Saving will allow people to book appointments for the availability you've created. Make sure the information is accurate before saving
+            
+          </p>
+          <p><a class="govuk-notification-banner__link" href="#">Close this message</a>.</p>
+        </div>
+      </div>
             <!-- Change the page title here -->
             <h1 class="nhsuk-heading-l">Check single date session</h1>
 
 
 
         
-      <form action="week-day-created" class="form">
+
 
         <dl class="nhsuk-summary-list">
 
@@ -167,9 +184,14 @@
         </div>
         
 
-          <a class="nhsuk-button" href="availability-overview3">
-            Save session
-          </a>
+
+<form action="site-overview">
+  {{ button({
+    text: "Save session"
+  }) }}
+  <input type="hidden" name="availability-created" value="yes">
+</form>
+
           <!-- <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
           Save without publishing
         </a> -->
@@ -179,4 +201,31 @@
 
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the close link
+    const closeLink = document.querySelector('.govuk-notification-banner__link');
+    
+    // Find the entire notification banner
+    const notificationBanner = document.querySelector('.govuk-notification-banner');
+    
+    // Add click event listener to the close link
+    if (closeLink && notificationBanner) {
+      closeLink.addEventListener('click', function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+        
+        // Hide the notification banner
+        notificationBanner.style.display = 'none';
+        
+        // Alternative: remove the element completely from the DOM
+        // notificationBanner.remove();
+      });
+    }
+  });
+</script>
 {% endblock %}
