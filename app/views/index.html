@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Manage appointments
+Manage appointments
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -28,175 +28,286 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
 
-      <!-- Change the page title here -->
-      <h1 class="nhsuk-heading-l">
-        Private beta
-      </h1>
-
-
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-l">
+      Private beta
+    </h1>
 
 
-      <h2 class="govuk-heading-m">Feb 2025 -   {{ date() }}</h2>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--l">
-          Sprint 10,11
-        
-        </caption>
 
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            <th role="columnheader" class="" scope="col">
-              Epic / story
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Version
-            </th>
-            <th role="columnheader" class="" scope="col">
-              Change
-            </th>
 
-            <th role="columnheader" class="" scope="col">
-              Status
-            </th>
+    <h2 class="govuk-heading-m">Feb 2025 - {{ date() }}</h2>
 
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Sprint 10,11
+
+      </caption>
+
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Epic / story
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Version
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Change
+          </th>
+
+          <th role="columnheader" class="" scope="col">
+            Status
+          </th>
+
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
             <a href="current/bookings-scheduled"> Print appointments - APPT-685</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
 
-              Page added
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <strong class="nhsuk-tag nhsuk-tag--red">
+            Page added
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--red">
               Blocked
-              </strong>
-              
-            </td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <a href="current/accessibility-statement">Accessibility statement - APPT-688</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
+            </strong>
 
-              Accessibility statement added
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <strong class="nhsuk-tag nhsuk-tag--red">
-                Blocked
-              </strong>
-              
-            </td>
-          </tr>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/accessibility-statement">Accessibility statement - APPT-688</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
 
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <a href="current/okta-sign-in/site-select">Non NHS email flows - APPT-704</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
+            Accessibility statement added
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--red">
+              Blocked
+            </strong>
 
-              Flow added
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              
-              <strong class="nhsuk-tag nhsuk-tag--green">
-                Done
-              </strong>
-              
-            </td>
-          </tr>
+          </td>
+        </tr>
 
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <a href="current/bulk-cancellation/site-select">Bulk cancellation APPT-709</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/okta-sign-in/site-select">Non NHS email flows - APPT-704</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
 
-              Flow for testing
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <strong class="nhsuk-tag nhsuk-tag--blue">
-                In progress
-              </strong>
-              
-            </td>
-          </tr>
+            Flow added
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
 
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <a href="current/create-availability/site-select">Create availability APPT-710</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--green">
+              Done
+            </strong>
 
-              Flow for testing
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <strong class="nhsuk-tag nhsuk-tag--blue">
-             In progress
-              </strong>
-              
-            </td>
-          </tr>
+          </td>
+        </tr>
 
-          <tr role="row" class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <a href="current/view-availability/site-overview">View availability calendar APPT-730</a>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              version 1 
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              Calendar added
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <strong class="nhsuk-tag nhsuk-tag--blue">
-            In progress
-              </strong>
-              
-            </td>
-          </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/bulk-cancellation/site-select">Bulk cancellation APPT-709</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
 
-  
-          
-        
-        </tbody>
-      </table>
+            Flow for testing
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              In progress
+            </strong>
+
+          </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/create-availability/site-select">Create availability APPT-710</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+
+            Flow for testing
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              In progress
+            </strong>
+
+          </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/view-availability/site-overview">View availability calendar APPT-730</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            Calendar added
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              In progress
+            </strong>
+
+          </td>
+        </tr>
 
 
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="emails/">Email templates APPT-711</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            -
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            Template crated
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--green">
+              Done
+            </strong>
 
-  <h2 class="nhsuk-heading-m nhsuk-u-margin-top-5">Alpha/discovery</h2>
+          </td>
+        </tr>
 
-  <p><a href="archived">All alpha and discovery work upto January 2025</a></p>
 
 
-  <h2 class="nhsuk-heading-m nhsuk-u-margin-top-5">Experimentation</h2>
 
-  <p><a href="experiments">All experimental pages/styles and ideas.</a></p>
+
+
+
+
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Sprint 10,11
+
+      </caption>
+
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Epic / story
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Version
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Change
+          </th>
+
+          <th role="columnheader" class="" scope="col">
+            Status
+          </th>
+
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/reporting/site-select">Reporting APPT-272</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version 1
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            Initial reporting flow created
+
+
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              In progress
+            </strong>
+
+          </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/site-name-header/site-overview">New header APPT-723, APPT-724</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            Experimentation
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              Just started
+            </strong>
+
+          </td>
+
+
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <a href="current/site-onboarding/site-select">Regional site onboarding</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            version
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            Experimentation
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              Just started
+            </strong>
+
+          </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-top-5">Alpha/discovery</h2>
+
+    <p><a href="archived">All alpha and discovery work upto January 2025</a></p>
+
+
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-top-5">Experimentation</h2>
+
+    <p><a href="experiments">All experimental pages/styles and ideas.</a></p>
 
   </div>
-  </div>
-    
+</div>
+
 
 {% endblock %}

@@ -1,0 +1,12 @@
+router.get('/email-preview', function(req, res) {
+  res.render('email-template', {
+    emailSubject: "Your NHS Appointment Confirmation",
+    recipientName: "John Smith",
+    emailDate: "Sent: 2 April 2025",
+    senderName: "Dr. Sarah Johnson",
+    senderDepartment: "NHS General Practice",
+    ctaLink: "/confirm-appointment",
+    ctaText: "Confirm Your Appointment",
+    emailContent: "<p>We are pleased to confirm your appointment at...</p>"
+  });
+});

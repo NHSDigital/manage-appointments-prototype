@@ -2,6 +2,7 @@
 {%- from 'action-link/macro.njk' import actionLink %}
 {%- from 'breadcrumb/macro.njk' import breadcrumb %}
 {%- from 'card/macro.njk' import card %}
+{%- from 'character-count/macro.njk' import characterCount %}
 {%- from 'contents-list/macro.njk' import contentsList %}
 {%- from 'details/macro.njk' import details %}
 {%- from 'header/macro.njk' import header %}
@@ -27,8 +28,10 @@
 {%- from 'radios/macro.njk' import radios %}
 {%- from 'select/macro.njk' import select %}
 {%- from 'summary-list/macro.njk' import summaryList %}
+{%- from 'tabs/macro.njk' import tabs %}
 {%- from 'tag/macro.njk' import tag %}
 {%- from 'textarea/macro.njk' import textarea %}
+{%- from 'panel/macro.njk' import panel %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
-    <title>{% block pageTitle %}NHS appointment booking{% endblock %}</title>
+    <title>{% block pageTitle %}NHS.UK prototype kit{% endblock %}</title>
 
     <link href="https://www.nhs.uk/" rel="preconnect">
     <link href="https://assets.nhs.uk/" rel="preconnect" crossorigin>
@@ -69,7 +72,7 @@
     {% endblock %}
 
     {% block head %}{% endblock %}
-    
+
   </head>
 
   <body class="{{ bodyClasses }}">
@@ -88,16 +91,9 @@
         {{ header({}) }}
       {% endblock %}
 
-      {% block beforeContent %}
-      <div class="nhsuk-width-container {{ containerClasses }}">
-        {% block innerContent %}{% endblock %}
-      </div>
-      
-      {% endblock %}
-
       {% block main %}
         <div class="nhsuk-width-container {{ containerClasses }}">
-          {% block outerContent %}{% endblock %}
+          {% block beforeContent %}{% endblock %}
           <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
             {% block content %}{% endblock %}
           </main>

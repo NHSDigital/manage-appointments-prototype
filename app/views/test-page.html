@@ -1,5 +1,5 @@
 <!-- File: app/views/test-page.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-ravs.html' %}
 
 <!-- Set the page title -->
 {% block pageTitle %}
@@ -8,15 +8,8 @@ Site overview Hornsey Central Pharmacy
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %} 
-
-
-{% endblock %}
-
-{% block outerContent %}
-
+{% block beforeContent %}
 {% include 'current/org-switch/includes/org-switcher.html' %}
-
 
 {% endblock %}
 
@@ -25,7 +18,8 @@ Site overview Hornsey Central Pharmacy
   <main class="nhsuk-main-wrapper" id="main-content">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
-        <h1>Change test</h1>
+        <h1>Test stuff</h1>
+        <p>Page for testing if things work or are broken</p>
         
         <form method="post" action="#">
           <script>
