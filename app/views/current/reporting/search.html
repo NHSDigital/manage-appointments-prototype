@@ -101,7 +101,7 @@ Site overview Hornsey Central Pharmacy
 
 
 
-    {{ checkboxes ({
+    {{ radios({
     idPrefix: "example",
     name: "example",
     fieldset: {
@@ -134,64 +134,37 @@ Site overview Hornsey Central Pharmacy
   <div class="nhsuk-grid-column-one-third">
 
 
-    {{ checkboxes({
-      idPrefix: "vaccines",
-      name: "vaccines",
-      fieldset: {
+
+
+
+    <form>
+      {{ radios({
+        idPrefix: "service",
+        name: "service",
+        fieldset: {
         legend: {
-          text: "Vaccines",
-          classes: "nhsuk-fieldset__legend--m",
-          isPageHeading: true
+        text: "Service type",
+        classes: "nhsuk-fieldset__legend--m",
+        isPageHeading: true
         }
-      },
-      items: [
-        {
-          value: "covid-5-11",
-          text: "COVID 5-11"
         },
-        {
-          value: "covid-12-15",
-          text: "COVID 12-15"
-        },
-        {
-          value: "covid-16-17",
-          text: "COVID 16-17"
-        },
-        {
-          value: "covid-18-74",
-          text: "COVID 18-74"
-        },
-        {
-          value: "covid-75-plus",
-          text: "COVID 75+"
-        },
-        {
-          value: "flu-18-64",
-          text: "Flu 18-64"
-        },
-        {
-          value: "flu-65-plus",
-          text: "Flu 65+"
-        },
-        {
-          value: "flu-covid-18-64",
-          text: "Flu and COVID 18-64"
-        },
-        {
-          value: "flu-covid-85-74",
-          text: "Flu and COVID 85-74"
-        },
-        {
-          value: "flu-covid-75-plus",
-          text: "Flu and COVID 75+"
-        },
-        {
-          value: "rsv-adult",
-          text: "RSV:Adult"
-        }
-      ]
-    }) }}
     
+        items: [
+        {
+        value: "rsv",
+        text: "RSV adult"
+        },
+        {
+        value: "rsv adult",
+        text: "Covid"
+        },
+        {
+        value: "flu",
+        text: "Flu"
+        }
+        ]
+        }) }}
+    </form>
   </div>
 
 </div>
@@ -203,8 +176,8 @@ Site overview Hornsey Central Pharmacy
     {% from 'button/macro.njk' import button %}
 
     {{ button({
-    text: "Continue",
-    href:'search-data-types'
+    text: "Generate results",
+    href:'results'
     }) }}
 
 
