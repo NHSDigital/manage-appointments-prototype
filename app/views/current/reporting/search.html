@@ -101,12 +101,12 @@ Site overview Hornsey Central Pharmacy
 
 
 
-    {{ radios({
-    idPrefix: "example",
-    name: "example",
+    {{ checkboxes({
+    idPrefix: "sites",
+    name: "sites",
     fieldset: {
     legend: {
-    text: "Site",
+    text: "Sites",
     classes: "nhsuk-fieldset__legend--m",
     isPageHeading: true
     }
@@ -138,7 +138,7 @@ Site overview Hornsey Central Pharmacy
 
 
     <form>
-      {{ radios({
+      {{ checkboxes({
         idPrefix: "service",
         name: "service",
         fieldset: {
