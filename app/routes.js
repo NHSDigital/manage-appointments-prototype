@@ -291,5 +291,26 @@ router.post('/check-and-add', function (req, res) {
 })
 
 
+//
+// ADD DATES REDIRECT
+
+router.post('/add-breaks', function(request, response) {
+
+  var hso = request.session.data['hso'];//
+  
+  
+
+  if (hso === "yes"){
+    response.redirect("current/create-availability-v2/add-yes") // Initial redirect
+
+  }
+  else if (hso === "no"){
+    response.redirect("current/create-availability-v2-add-no") // Initial redirect
+
+  }
+  
+})
+// END 
+
 module.exports = router;
 
