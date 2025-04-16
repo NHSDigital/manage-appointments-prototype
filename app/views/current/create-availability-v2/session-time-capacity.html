@@ -248,9 +248,7 @@ display: block;
                             </div>
                                 
                 <div class="nhsuk-grid-column-full" style="padding: 0;"><br>
-                    <div id="add-2" style="display: block;">
-                        <p><a class="nhsuk-link" href="javascript:showitem2(); hideadd1()">Add a break</a></p>
-                    </div>
+                
                 </div>
                 
                 <!-- 1st break -->
@@ -372,6 +370,29 @@ display: block;
         </fieldset>
 
       </div>
+
+      {% from 'radios/macro.njk' import radios %}
+
+{{ radios({
+  idPrefix: "example",
+  name: "example",
+  fieldset: {
+    legend: {
+      text: "Do you want to add any breaks to these sessions?",
+      classes: "nhsuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
 
       <div class="nhsuk-inset-text">
         <strong><p style="margin-bottom: 0px;">Capacity calculator</p></strong>
