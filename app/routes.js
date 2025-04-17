@@ -305,7 +305,7 @@ router.post('/add-breaks', function(request, response) {
 
   }
   else if (hso === "no"){
-    response.redirect("current/create-availability-v2-add-no") // Initial redirect
+    response.redirect("current/create-availability-v2/check-days") // Initial redirect
 
   }
   
