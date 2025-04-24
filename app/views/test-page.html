@@ -38,7 +38,7 @@ Site overview Hornsey Central Pharmacy
           {% set label = "Enter your location" %}
           {% set hint = "Start typing to see suggestions" %}
           
-          {% include 'includes/_autocomplete.html' %}
+          {% include '/includes/sites.html' %}
           
           <button class="nhsuk-button" type="submit">Continue</button>
         </form>
@@ -46,4 +46,14 @@ Site overview Hornsey Central Pharmacy
     </div>
   </main>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
 {% endblock %}
