@@ -57,20 +57,32 @@ Add a user
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l">Add a user</h1>
+        <h1 class="nhsuk-heading-l">Enter name</h1>
 
 
-<form action="name" method="post">
+<form action="new-user" method="post">
+
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="first-name">
+      First name
+    </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
+  </div> 
+  
+  
+          
+  
+  
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="last-name">
+      Last name
+    </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="surname" type="text">
+  </div> 
 
 
 
-{{ input({
-  label: {
-    text: "Enter email address"
-  },
-  id: "email",
-  name: "email"
-}) }}
 
 {% from 'button/macro.njk' import button %}
 
