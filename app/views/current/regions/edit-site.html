@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Add a user
+Edit site details
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -21,16 +21,45 @@ Add a user
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
 {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+
+
+
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l">Aldeburgh Pharmacy</span>Manage Site</h1>
+
+    <div class="nhsuk-page-header-actions">
+      <div class="nhsuk-page-header-actions__title">
+        <h1 class="nhsuk-heading-l"> <span class="nhsuk-caption-l">Aldeburgh Pharmacysss</span>Manage site</h1>
+      </div>
+    
+      <div class="nhsuk-page-header-actions__actions">
+        <div class="nhsuk-button-group nhsuk-button-group--inline">
+    
+          <form method="post" action="close-site">
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+              Close site
+            </button>
+            </form>
+    
+    
+        </div>
+      </div>
+    
+    </div>
+  
     <div class="nhsuk-card nhsuk-card--primary ">
       <div class="nhsuk-card__content nhsuk-card__content--primary">
         <h2 class="nhsuk-card__heading nhsuk-heading-m">Site reference details</h2>
