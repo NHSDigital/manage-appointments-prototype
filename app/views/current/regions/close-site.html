@@ -20,12 +20,13 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Close this site</h1>
+      <h1 class="nhsuk-heading-xl">Close this site</h1>
       
       {% from 'date-input/macro.njk' import dateInput %}
 
 {{ dateInput({
   id: "close-site-date",
+  name: "close-site-date",
   namePrefix: "close-site-date",
   fieldset: {
     legend: {
@@ -54,7 +55,8 @@
 
 <form method="post" action="check-and-close">
   {{ button({
-    text: "Save and continue"
+    text: "Close site",
+    classes: "nhsuk-button--warning"
   }) }}
 
 </form>
