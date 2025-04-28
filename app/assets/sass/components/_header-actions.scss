@@ -23,3 +23,32 @@
       margin-bottom: 0;
     }
   }
+
+  // NHS Version
+
+  .nhsuk-page-header-actions {
+    display: flex;
+    min-height: nhsuk-spacing(7); // Match button height
+    margin-bottom: nhsuk-spacing(7);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: nhsuk-spacing(2);
+  }
+  
+  .nhsuk-page-header-actions__title {
+    [class^="nhsuk-heading-"] {
+      margin-bottom: 0;
+    }
+  }
+  
+  .nhsuk-page-header-actions__actions {
+    .nhsuk-button-group {
+      margin-bottom: 0;
+    }
+  
+    .nhsuk-button {
+      margin-bottom: 0;
+    }
+  }
+

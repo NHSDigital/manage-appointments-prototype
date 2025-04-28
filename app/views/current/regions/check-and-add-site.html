@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -18,33 +18,12 @@ Site overview Hornsey Central Pharmacy
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
 
-{{ breadcrumb({
-items: [
-{
-href: "#",
-text: "Home"
-},
-{
-href: "#",
-text: "Hornsey Central Pharmacy"
-}
-],
-href: "#",
-text: "Users"
-},
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 
-{
-href: "#",
-text: "New user"
-}
-
-
-
-)
-
-}}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -152,7 +131,7 @@ text: "New user"
   
   
   
-    <p>  {{data['first-name']}} will be sent a welcome email with information about activating an account.</p>
+
   
 
   

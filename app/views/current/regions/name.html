@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -12,37 +12,17 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Add a user
+Enter name
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{{ breadcrumb({
-    items: [
-    {
-    href: "#",
-    text: "Home"
-    },
-    {
-    href: "#",
-    text: "Hornsey Central Pharmacy"
-    }
-    ],
-    href: "#",
-    text: "Users"
-    },
-    
-    {
-        href: "#",
-        text: "New user"
-        }
-    
-    
-    
-    )
-    
-    }}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 
 {% endblock %}
 

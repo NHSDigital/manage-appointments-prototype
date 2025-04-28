@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-top-nav.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -12,39 +12,18 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Site overview Hornsey Central Pharmacy
+Manage site
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
 
-{{ breadcrumb({
-items: [
-{
-href: "#",
-text: "Home"
-},
-{
-href: "#",
-text: "Hornsey Central Pharmacy"
-}
-],
-href: "#",
-text: "Users"
-},
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 
-{
-    href: "#",
-    text: "New user"
-    }
-
-
-
-)
-
-}}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -58,21 +37,29 @@ text: "Users"
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <div class="moj-page-header-actions">
-        <div class="moj-page-header-actions__title">
-          <h1 class="nhsuk-heading-xl">Add and manage sites </h1>
+
+
+      <div class="nhsuk-page-header-actions">
+        <div class="nhsuk-page-header-actions__title">
+          <h1 class="nhsuk-heading-l">Add and manage sites</h1>
         </div>
-        
-        <div class="moj-page-header-actions__actions">
-          <div class="moj-button-group">
+      
+        <div class="nhsuk-page-header-actions__actions">
+          <div class="nhsuk-button-group nhsuk-button-group--inline">
+      
             <form method="post" action="choose-site">
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-              Add a site
-            </button>
-            </form>
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Add a site
+              </button>
+              </form>
+      
+      
           </div>
         </div>
+      
       </div>
+
+    
     
       <table class="nhsuk-table">
         <caption class="nhsuk-table__caption">Listing all sites in your region</caption>
