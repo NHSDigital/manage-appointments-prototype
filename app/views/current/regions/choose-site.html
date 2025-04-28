@@ -24,13 +24,12 @@
         
         <form method="post" action="check-and-add-site">
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="location">
-             Enter a site name or ODS code
-            </label>
+          
+
             
-            <div class="nhsuk-hint" id="location-hint">
-              Start typing to see suggestions
-            </div>
+            {% include "current/regions/includes/sites.html" %}
+
+
             
             <div id="location-container"></div>
             <input type="hidden" name="location" id="location-hidden">
@@ -48,23 +47,13 @@
 <!-- Include the accessible-autocomplete JS from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (typeof accessibleAutocomplete !== 'undefined') {
-      // Initialize the autocomplete directly
-      accessibleAutocomplete({
-        element: document.getElementById('location-container'),
-        id: 'location',
-        source: ['London', 'Manchester', 'Birmingham', 'Hornsea Central Pharmacy', 'Leeds', 'Liverpool'],
-        displayMenu: 'overlay',
-        confirmOnBlur: true,
-        onConfirm: function(selectedItem) {
-          document.getElementById('location-hidden').value = selectedItem;
-        }
-      });
-    } else {
-      console.error('Accessible Autocomplete library not loaded');
-    }
-  });
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#site-picker')
+  })
 </script>
+
+
 {% endblock %}
