@@ -1,0 +1,245 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-top-nav.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "#",
+text: "Home"
+},
+{
+href: "#",
+text: "Hornsey Central Pharmacy"
+}
+],
+href: "#",
+text: "Users"
+},
+
+{
+    href: "#",
+    text: "New user"
+    }
+
+
+
+)
+
+}}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="moj-page-header-actions">
+        <div class="moj-page-header-actions__title">
+          <h1 class="nhsuk-heading-xl">Add and manage sites </h1>
+        </div>
+        
+        <div class="moj-page-header-actions__actions">
+          <div class="moj-button-group">
+            <form method="post" action="choose-site">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+              Add a site
+            </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Listing all sites in your region</caption>
+        <thead class="nhsuk-table__head">
+          <tr>
+            <th scope="col" class="nhsuk-table__header">Name</th>
+            <th scope="col" class="nhsuk-table__header">ICB</th>
+            <th scope="col" class="nhsuk-table__header">ODS</th>
+            <th scope="col" class="nhsuk-table__header">Contact</th>
+            <th scope="col" class="nhsuk-table__header"><span aria-hidden="true" class="nhsuk-u-visually-hidden">Action</span></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Lloyds Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">5PLE9</td>
+            <td class="nhsuk-table__cell">glenn.tidings@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="edit-site">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Boots Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">6FBP3</td>
+            <td class="nhsuk-table__cell">sarah.johnson@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="edit-site">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Phillips Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">4PLP7</td>
+            <td class="nhsuk-table__cell">david.phillips@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Wellcare Chemist</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">3WLC2</td>
+            <td class="nhsuk-table__cell">rebecca.smith@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sutton Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">2STP5</td>
+            <td class="nhsuk-table__cell">james.sutton@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Healthwise Chemist</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">7HWC8</td>
+            <td class="nhsuk-table__cell">emma.rogers@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Green Cross Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">9GCP1</td>
+            <td class="nhsuk-table__cell">michael.green@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Superdrug Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">8SDP4</td>
+            <td class="nhsuk-table__cell">lisa.cooper@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Village Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">1VLP6</td>
+            <td class="nhsuk-table__cell">robert.wilson@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Rowlands Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">6RLP5</td>
+            <td class="nhsuk-table__cell">jennifer.rowland@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Morrisons Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">3MRP7</td>
+            <td class="nhsuk-table__cell">thomas.baker@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Tesco Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">4TCP2</td>
+            <td class="nhsuk-table__cell">karen.davies@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Asda Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">5ADP9</td>
+            <td class="nhsuk-table__cell">paul.thompson@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Day Lewis Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">2DLP8</td>
+            <td class="nhsuk-table__cell">susan.lewis@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cohens Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">7CHP3</td>
+            <td class="nhsuk-table__cell">brian.cohen@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Medipharm Chemist</td>
+            <td class="nhsuk-table__cell">South Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">9MPC4</td>
+            <td class="nhsuk-table__cell">olivia.patel@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cornerstone Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">1CSP6</td>
+            <td class="nhsuk-table__cell">richard.stone@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Abbey Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria ICB</td>
+            <td class="nhsuk-table__cell">3ABP2</td>
+            <td class="nhsuk-table__cell">helen.abbey@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Park View Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">8PVP7</td>
+            <td class="nhsuk-table__cell">mark.parker@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Hillside Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">4HSP1</td>
+            <td class="nhsuk-table__cell">natalie.hill@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sunrise Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire ICB</td>
+            <td class="nhsuk-table__cell">5SRP8</td>
+            <td class="nhsuk-table__cell">daniel.morris@nhs.net</td>
+            <td class="nhsuk-table__cell"><a href="">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+    </div>
+  </div>
+{% endblock %}
