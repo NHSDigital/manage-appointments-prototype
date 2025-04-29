@@ -297,8 +297,6 @@ router.post('/check-and-add', function (req, res) {
 router.post('/add-breaks', function(request, response) {
 
   var hso = request.session.data['hso'];//
-  
-  
 
   if (hso === "yes"){
     response.redirect("current/create-availability-v2/add-yes") // Initial redirect
@@ -310,7 +308,19 @@ router.post('/add-breaks', function(request, response) {
   }
   
 })
-// END 
+// END
+
+
+// ADD DATES REDIRECT
+router.post('/site-answer', function(request, response) {
+  var site = request.session.data['site']
+  if (site == "single"){
+    response.redirect("/current/regions/single-site")
+  } else {
+    response.redirect("/current/regions/multiple-site")
+  }
+})
+// END
 
 module.exports = router;
 

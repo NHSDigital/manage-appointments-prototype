@@ -1,5 +1,9 @@
 <!-- Use this page as the index for your project -->
 
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
@@ -47,7 +51,7 @@ Manage site
         <div class="nhsuk-page-header-actions__actions">
           <div class="nhsuk-button-group nhsuk-button-group--inline">
       
-            <form method="post" action="choose-site">
+            <form method="post" action="upload-single">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                 Add a site
               </button>
@@ -59,7 +63,9 @@ Manage site
       
       </div>
 
-    
+      <!-- SEARCH -->
+
+      {% include "current/regions/includes/sites.html" %}
     
       <table class="nhsuk-table">
         <caption class="nhsuk-table__caption">Listing all sites in your region</caption>
@@ -229,4 +235,19 @@ Manage site
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#site-picker')
+  })
+</script>
+
+
 {% endblock %}
