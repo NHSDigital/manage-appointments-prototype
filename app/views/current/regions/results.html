@@ -2,8 +2,7 @@
 
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-<!-- Extends the layout from /views/layout.html -->
-{% extends '../../current/view-availability/layout.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 
 <!--
   In /views/layout.html you can:
@@ -15,10 +14,14 @@
 {% block pageTitle %}
 Results
 {% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+<!-- Backlink -->
 {% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
 {% endblock %}
 
 {% block outerContent %}
