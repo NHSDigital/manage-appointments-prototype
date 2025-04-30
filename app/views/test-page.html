@@ -27,23 +27,23 @@ Site overview Hornsey Central Pharmacy
       <div class="nhsuk-grid-column-two-thirds">
         <h1>Change test</h1>
         
-        <form method="post" action="#">
-          <script>
-            // Define the options array
-            var autocompleteOptions = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Liverpool'];
-          </script>
-          
-          {% set id = "location" %}
-          {% set name = "location" %}
-          {% set label = "Enter your location" %}
-          {% set hint = "Start typing to see suggestions" %}
-          
-          {% include '/includes/sites.html' %}
-          
-          <button class="nhsuk-button" type="submit">Continue</button>
-        </form>
+      
       </div>
     </div>
+    <p>Site: {{ "royal london" | siteName }}</p>
+<!-- Outputs: "Royal London Hospital" -->
+
+<p>ODS Code: {{ "rqm" | odsCode }}</p>
+<!-- Outputs: "RQM" -->
+
+<p>ICB: {{ "North West London" | icb }}</p>
+<!-- Outputs: "NHS North West London ICB" -->
+
+<p>Region: {{ "london" | region }}</p>
+<!-- Outputs: "London" -->
+
+<p>Trust: {{ "Guy's and St Thomas'" | trustName }}</p>
+<!-- Outputs: "Guy's and St Thomas' NHS Foundation Trust" -->
   </main>
 </div>
 {% endblock %}
