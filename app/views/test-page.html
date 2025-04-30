@@ -20,40 +20,40 @@ Site overview Hornsey Central Pharmacy
 
 {% endblock %}
 
+
 {% block content %}
-<div class="nhsuk-width-container">
-  <main class="nhsuk-main-wrapper" id="main-content">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <h1>Change test</h1>
-        
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="main-content">
       
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1>Patient summary</h1>
+          
+          <div class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Patient name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ name }}
+              </dd>
+            </div>
+            
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth / Age
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ age }}
+              </dd>
+            </div>
+          </div>
+          
+          <h2>Appointment details</h2>
+          <p>You have a transfer scheduled between {{ location }} and {{ arrival }}.</p>
+        </div>
       </div>
-    </div>
-    <p>Site: {{ "royal london" | siteName }}</p>
-<!-- Outputs: "Royal London Hospital" -->
 
-<p>ODS Code: {{ "rqm" | odsCode }}</p>
-<!-- Outputs: "RQM" -->
-
-<p>ICB: {{ "North West London" | icb }}</p>
-<!-- Outputs: "NHS North West London ICB" -->
-
-<p>Region: {{ "london" | region }}</p>
-<!-- Outputs: "London" -->
-
-<p>Trust: {{ "Guy's and St Thomas'" | trustName }}</p>
-<!-- Outputs: "Guy's and St Thomas' NHS Foundation Trust" -->
-  </main>
-</div>
-{% endblock %}
-
-{% block pageScripts %}
-<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
-<script type="text/javascript">
-  accessibleAutocomplete.enhanceSelectElement({
-    defaultValue: '',
-    selectElement: document.querySelector('#school-picker')
-  })
-</script>
+    </main>
+  </div>
 {% endblock %}

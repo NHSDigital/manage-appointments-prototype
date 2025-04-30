@@ -3,6 +3,19 @@
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
+{% set firstName =  data['first-name'] or "Kelvin" %}
+{% set surname =  data['surname'] or "Phillips" %}
+{% set name =  firstName + " " + surname %}
+
+{% set dob = data['dob'] or "18 Oct 1988" %}
+{% set yrs = data['yrs'] or "(36)" %}
+{% set age =  dob + " " + yrs %}
+
+
+{% set site = data['site'] or "Hornsey Central Pharmacy" %}
+{% set region = data['region'] or "North East and Yorkshire" %}
+{% set icb = data['icb'] or "NHS North East and North Cumbria" %}
+{% set ods = data['ods'] or "FA1234" %}
 
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template.html" %}
@@ -78,21 +91,18 @@ Manage your appointments
         "label": "Home"
       },
       {
-        "URL": "/page-example",
+        "URL": "/accessibility-statement",
         "label": "Accessibility statement"
       },
       {
-        "URL": "/page-example",
+        "URL": "/cookies",
         "label": "Cookies"
       },
       {
-        "URL": "/page-example",
-        "label": "Privacy policy"
-      },
-      {
-        "URL": "/page-example",
-        "label": "Terms and conditions"
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
       }
+      
     ]
   })}}
 {% endblock %}
