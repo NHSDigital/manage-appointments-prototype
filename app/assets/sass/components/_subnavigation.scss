@@ -1,0 +1,31 @@
+.nhsuk-organisation-nav {
+    min-width: 100%; /* Set a fixed width */
+    background-color: #fff;
+    padding: 8px 0;
+    border-bottom: 1px solid #d8dde0;
+    margin: 0 auto; /* Center the navigation */
+
+  }
+  
+  .nhsuk-organisation-nav__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 960px; /* Set a fixed width */
+    padding: 0 16px;
+    margin: auto;
+    /* Removed margin: 0 auto that was causing central alignment */
+  }
+  
+  .nhsuk-organisation-nav__title {
+    margin: 0;
+    color: #212b32;
+    font-weight: bold;
+    text-align: left; /* Explicitly set left alignment */
+  }
+  
+  .nhsuk-organisation-nav__link {
+    color: #005eb8;
+    text-decoration: underline;
+    margin-left: auto; /* Pushes the link to the right */
+  }

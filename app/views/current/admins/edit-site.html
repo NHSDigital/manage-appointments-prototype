@@ -1,0 +1,170 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Edit site details
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-page-header-actions">
+      <div class="nhsuk-page-header-actions__title">
+        <h1 class="nhsuk-heading-l"> <span class="nhsuk-caption-l">Aldeburgh Pharmacysss</span>Manage site</h1>
+      </div>
+    
+      <div class="nhsuk-page-header-actions__actions">
+        <div class="nhsuk-button-group nhsuk-button-group--inline">
+    
+          <form method="post" action="close-site">
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+              Close site
+            </button>
+            </form>
+    
+    
+        </div>
+      </div>
+    
+    </div>
+  
+    <div class="nhsuk-card nhsuk-card--primary ">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">Site reference details</h2>
+        <dl class="nhsuk-summary-list " role="list">
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="ODS code-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="ODS code-term">ODS code</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="ODS code-description">FWN85</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="ICB-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="ICB-term">ICB</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="ICB-description">Suffolk And North East Essex Integrated
+              Care Board</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Region-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Region-term">Region</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Region-description">East Of England Region</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="nhsuk-card nhsuk-card--primary ">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">Site details</h2>
+        <dl class="nhsuk-summary-list " role="list">
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Address-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Address-term">Address</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Address-description">
+              <div>125 High Street,</div>
+              <div> Aldeburgh,</div>
+              <div> Suffolk,</div>
+              <div> IP15 5AR</div>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Latitude-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Latitude-term">Latitude</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Latitude-description">52.15214157</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Longitude-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Longitude-term">Longitude</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Longitude-description">1.601192713</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Phone Number-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Phone Number-term">Phone Number</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Phone Number-description">01728 452763</dd>
+          </div>
+        </dl><a class="nhsuk-link"
+          href="edit-site-details">Edit site
+          details</a>
+      </div>
+    </div>
+    <div class="nhsuk-card nhsuk-card--primary ">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">Access needs</h2>
+        <dl class="nhsuk-summary-list " role="list">
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Accessible toilet-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Accessible toilet-term">Accessible toilet</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Accessible toilet-description">Yes</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Braille translation service-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Braille translation service-term">Braille translation
+              service</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Braille translation service-description">Yes</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Disabled car parking-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Disabled car parking-term">Disabled car parking</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Disabled car parking-description">Yes</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Car parking-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Car parking-term">Car parking</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Car parking-description">No</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Induction loop-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Induction loop-term">Induction loop</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Induction loop-description">No</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Sign language service-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Sign language service-term">Sign language service</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Sign language service-description">No</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Step free access-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Step free access-term">Step free access</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Step free access-description">Yes</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Text relay-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Text relay-term">Text relay</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Text relay-description">Yes</dd>
+          </div>
+          <div class="nhsuk-summary-list__row" role="listitem" aria-label="Wheelchair access-listitem">
+            <dt class="nhsuk-summary-list__key" aria-label="Wheelchair access-term">Wheelchair access</dt>
+            <dd class="nhsuk-summary-list__value" aria-label="Wheelchair access-description">No</dd>
+          </div>
+        </dl><a class="nhsuk-link"
+          href="/manage-your-appointments/site/a159171c-b896-4a70-a3b9-8c9ffdbde945/details/edit-accessibilities">Edit
+          access needs</a>
+      </div>
+    </div>
+    <div class="nhsuk-card nhsuk-card--primary ">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">Information for citizens</h2>
+        <p>Information for people visiting the site</p><a class="nhsuk-link"
+          href="/manage-your-appointments/site/a159171c-b896-4a70-a3b9-8c9ffdbde945/details/edit-information-for-citizens">Edit
+          information for citizens</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

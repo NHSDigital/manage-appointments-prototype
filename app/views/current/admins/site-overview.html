@@ -18,6 +18,7 @@ Site overview Hornsey Central Pharmacy
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+{% include "current/admins/includes/org-switcher.html" %}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -103,7 +104,7 @@ Site overview Hornsey Central Pharmacy
           <div class="nhsuk-card nhsuk-card--clickable">
             <div class="nhsuk-card__content nhsuk-card__content--primary">
               <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="month">View bookings</a>
+                <a class="nhsuk-card__link" href="month">View availability for your site</a>
               </h2>
               <!-- <p class="nhsuk-card__description">View and manage availability and appointments for your site</p> -->
 
