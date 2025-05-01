@@ -37,47 +37,35 @@ Enter name
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l">Enter the name</h1>
+        <h1 class="nhsuk-heading-l">Single or multi site upload</h1>
 
+        <form action="/site-answer" method="post">
 
-<form action="new-user" method="post">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          </legend>
+          <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="site-single" name="site" type="radio" value="single">
+          <label class="nhsuk-label nhsuk-radios__label" for="site-single">
+           Single
+          </label>
+          </div>
+          <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="site-multiple" name="site" type="radio" value="multiple">
+          <label class="nhsuk-label nhsuk-radios__label" for="site-multiple">
+           Multiple
+          </label>
+          </div>
+          </div>
+          </div>
+          </fieldset>
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+           Continue
+          </button>
+          </form>
 
-
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="first-name">
-      First name
-    </label>
-      <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
-  </div> 
-  
-  
-          
-  
-  
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="last-name">
-      Last name
-    </label>
-      <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="surname" type="text">
-  </div> 
-
-
-
-
-{% from 'button/macro.njk' import button %}
-
-{{ button({
-  text: "Continue"
-}) }}
-
-{{ button({
-  text: "Cancel",
-  classes: "nhsuk-button--secondary"
-}) }}
-
-
-
-</form>
 
     </div>
 </div>

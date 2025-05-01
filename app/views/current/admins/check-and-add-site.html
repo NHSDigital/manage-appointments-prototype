@@ -12,22 +12,25 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Check and add user
+Site overview Hornsey Central Pharmacy
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 
-{% include "current/admins/includes/org-switcher.html" %}
-
 {{ backLink({
   href: "javascript:history.back()",
   text: "Back"
 }) }}
 
+{% endblock %}
 
- 
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+
+  {% include "current/admins/includes/org-switcher.html" %}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -39,14 +42,50 @@ Check and add user
 
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-l">Check and add user</h1>
+    <h1 class="nhsuk-heading-l">Check and add site</h1>
   
     <dl class="nhsuk-summary-list">
   
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Name
+          Site name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{data['first-name']}}   {{data['surname']}}
+        </dd>
+  
+        <dd class="nhsuk-summary-list__actions">
+  
+          <a href="/user-admin/add-user">
+            Change<span class="nhsuk-u-visually-hidden"> name</span>
+          </a>
+  
+        </dd>
+  
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         ODS
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          
+        </dd>
+  
+        <dd class="nhsuk-summary-list__actions">
+  
+          <a href="/user-admin/add-user">
+            Change<span class="nhsuk-u-visually-hidden"> name</span>
+          </a>
+  
+        </dd>
+  
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          ICB
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{data['first-name']}}   {{data['surname']}}
@@ -66,7 +105,7 @@ Check and add user
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Email address
+         Contact
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{data['email']}}
@@ -82,25 +121,7 @@ Check and add user
   
       </div>
   
-  
-  
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Roles
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          {{data['roles']}}
-        </dd>
-  
-        <dd class="nhsuk-summary-list__actions">
-  
-          <a href="/user-admin/add-user">
-            Change<span class="nhsuk-u-visually-hidden"> clinical role</span>
-          </a>
-  
-        </dd>
-  
-      </div>
+
   
   
   
@@ -112,15 +133,15 @@ Check and add user
   
   
   
-    <p>  {{data['first-name']}} will be sent a welcome email with information about activating an account.</p>
+
   
 
   
   
-    <form action="manage-sites" method="post">
+    <form action="search-user" method="post">
   
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Confirm and send
+        Continue
       </button>
 
       <input type="hidden" name="user-added" value="yes">

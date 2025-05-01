@@ -1,0 +1,91 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-back-link"><a role="link" class="nhsuk-back-link__link"
+        href="/manage-your-appointments/site/a159171c-b896-4a70-a3b9-8c9ffdbde945/details"><svg
+          class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>Go back</a></div>
+    <h1 class="nhsuk-heading-l"></h1>
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l">Aldeburgh Pharmacy</span>Edit site details</h1>
+    <form>
+      <div class="nhsuk-form-group ">
+        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="name">Site name</label>
+          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="name" name="name"></div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group ">
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-form-group"><label class="nhsuk-label" for="address">Site address</label><textarea
+              class="nhsuk-textarea" type="text" rows="5" id="address" label="Site address" name="address"
+              aria-label="Site address"></textarea></div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group ">
+        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="latitude">Latitude</label>
+          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="latitude" value="52.15214157"
+              name="latitude"></div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group ">
+        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="longitude">Longitude</label>
+          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="longitude" value="1.601192713"
+              name="longitude"></div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group ">
+        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="phoneNumber">Phone number</label>
+          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="phoneNumber" type="tel" value="01728 452763"
+              name="phoneNumber"></div>
+        </fieldset>
+      </div>
+      <ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0">
+        <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-3 nhsuk-a-to-z-min-width"><button
+            class="nhsuk-button" data-module="nhsuk-button" type="submit">Save and continue</button></li>
+      </ol>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

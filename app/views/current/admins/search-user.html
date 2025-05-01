@@ -18,31 +18,10 @@ Add a user
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{{ breadcrumb({
-    items: [
-    {
-    href: "#",
-    text: "Home"
-    },
-    {
-    href: "#",
-    text: "Hornsey Central Pharmacy"
-    }
-    ],
-    href: "#",
-    text: "Users"
-    },
-    
-    {
-        href: "#",
-        text: "New user"
-        }
-    
-    
-    
-    )
-    
-    }}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 
 {% endblock %}
 

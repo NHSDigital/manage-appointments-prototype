@@ -19,15 +19,18 @@ Check and add user
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 
-{% include "current/admins/includes/org-switcher.html" %}
-
 {{ backLink({
   href: "javascript:history.back()",
   text: "Back"
 }) }}
 
+{% endblock %}
 
- 
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+
+  {% include "current/admins/includes/org-switcher.html" %}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -39,17 +42,17 @@ Check and add user
 
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-l">Check and add user</h1>
+    <h1 class="nhsuk-heading-l">Check and close this site</h1>
   
     <dl class="nhsuk-summary-list">
   
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Name
+         Date of closure
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{data['first-name']}}   {{data['surname']}}
+          {{data['day']}}   {{data['month']}}   {{data['year']}}
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
