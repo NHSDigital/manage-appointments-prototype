@@ -1,0 +1,274 @@
+
+/* ==========================================================================
+   COMPONENTS / #PAGINATION
+   ========================================================================== */
+/**
+ * 1. Padding to give the icon spacing.
+ * 2. Append the word 'page' after next and
+ *    previous on print stylesheets to make it easier
+ *    to understand in print context.
+ */
+ .nhsuk-pagination {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination {
+      margin-top: 48px;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination {
+      margin-bottom: 48px;
+    }
+  }
+  
+  .nhsuk-pagination__list::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  
+  .nhsuk-pagination-item--previous {
+    float: left;
+    text-align: left;
+    width: 50%;
+  }
+  .nhsuk-pagination-item--previous .nhsuk-icon {
+    left: -6px;
+  }
+  .nhsuk-pagination-item--previous .nhsuk-pagination__title {
+    padding-left: 32px; /* [1] */
+  }
+  
+  .nhsuk-pagination-item--next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
+  .nhsuk-pagination-item--next .nhsuk-icon {
+    right: -6px;
+  }
+  .nhsuk-pagination-item--next .nhsuk-pagination__title {
+    padding-right: 32px; /* [1] */
+  }
+  
+  .nhsuk-pagination__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+  }
+  @media print {
+    .nhsuk-pagination__link {
+      color: #212b32;
+    }
+  }
+  .nhsuk-pagination__link .nhsuk-icon {
+    position: absolute;
+    top: -2px;
+  }
+  @media print {
+    .nhsuk-pagination__link .nhsuk-icon {
+      color: #212b32;
+      margin-top: 0;
+    }
+  }
+  .nhsuk-pagination__link:hover {
+    color: #7c2855;
+  }
+  .nhsuk-pagination__link:hover .nhsuk-icon {
+    fill: #7c2855;
+  }
+  .nhsuk-pagination__link:hover .nhsuk-pagination__page {
+    text-decoration: none;
+  }
+  .nhsuk-pagination__link:focus {
+    background-color: #ffeb3b;
+    box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+    color: #212b32;
+    outline: 4px solid transparent;
+    text-decoration: none;
+  }
+  .nhsuk-pagination__link:focus .nhsuk-pagination__page {
+    text-decoration: none;
+  }
+  .nhsuk-pagination__link:focus:visited .nhsuk-icon, .nhsuk-pagination__link:focus:hover .nhsuk-icon, .nhsuk-pagination__link:focus:active .nhsuk-icon {
+    fill: #212b32;
+  }
+  .nhsuk-pagination__link:visited .nhsuk-icon {
+    fill: #330072;
+  }
+  .nhsuk-pagination__link:visited:hover .nhsuk-icon {
+    fill: #7c2855;
+  }
+  .nhsuk-pagination__link:visited:focus .nhsuk-icon {
+    fill: #212b32;
+  }
+  
+  .nhsuk-pagination__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    display: block;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination__title {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.29167;
+    }
+  }
+  @media print {
+    .nhsuk-pagination__title {
+      font-size: 16pt;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .nhsuk-pagination__title:after {
+      content: " page"; /* [2] */
+    }
+  }
+  
+  .nhsuk-pagination__page {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.71429;
+    display: block;
+    text-decoration: underline;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination__page {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+  @media print {
+    .nhsuk-pagination__page {
+      font-size: 12pt;
+      line-height: 1.3;
+    }
+  }
+  
+  .nhsuk-pagination--numbered::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  
+  .nhsuk-pagination--numbered__prev,
+  .nhsuk-pagination--numbered__next,
+  .nhsuk-pagination--numbered__item {
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-sizing: border-box;
+    position: relative;
+    min-width: 45px;
+    min-height: 45px;
+    padding: 8px 8px;
+    text-align: center;
+    margin: 0;
+    float: left;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination--numbered__prev,
+    .nhsuk-pagination--numbered__next,
+    .nhsuk-pagination--numbered__item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368;
+    }
+  }
+  @media print {
+    .nhsuk-pagination--numbered__prev,
+    .nhsuk-pagination--numbered__next,
+    .nhsuk-pagination--numbered__item {
+      font-size: 13pt;
+      line-height: 1.25;
+    }
+  }
+  
+  .nhsuk-pagination--numbered__link:visited:hover,
+  .nhsuk-pagination--numbered__item a:hover {
+    color: #7c2855;
+  }
+  
+  .nhsuk-pagination--numbered__prev:hover,
+  .nhsuk-pagination--numbered__next:hover,
+  .nhsuk-pagination--numbered__item:hover {
+    background-color: #d8dde0;
+    color: #005eb8;
+  }
+  
+  .nhsuk-pagination__list--numbered {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nhsuk-pagination--numbered__item--current,
+  .nhsuk-pagination--numbered__item--current:hover {
+    background-color: #005eb8;
+    font-weight: 600;
+  }
+  .nhsuk-pagination--numbered__item--current .nhsuk-pagination--numbered__link,
+  .nhsuk-pagination--numbered__item--current:hover .nhsuk-pagination--numbered__link {
+    color: #ffffff;
+  }
+  .nhsuk-pagination--numbered__item--current .nhsuk-pagination--numbered__link:focus,
+  .nhsuk-pagination--numbered__item--current:hover .nhsuk-pagination--numbered__link:focus {
+    color: #212b32;
+  }
+  
+  .nhsuk-pagination--numbered__item--ellipses {
+    font-weight: 600;
+    color: #4c6272;
+  }
+  .nhsuk-pagination--numbered__item--ellipses:hover {
+    background-color: transparent;
+  }
+  
+  .nhsuk-pagination--numbered__link {
+    min-width: 16px;
+    vertical-align: middle;
+    color: #005eb8;
+  }
+  @media screen {
+    .nhsuk-pagination--numbered__link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  
+  .nhsuk-pagination--numbered .nhsuk-icon {
+    margin-top: 0;
+    margin-bottom: -12px;
+    fill: #005eb8;
+  }
+  
+  .nhsuk-pagination--numbered__link:visited .nhsuk-icon {
+    fill: #330072;
+  }
+  
+  .nhsuk-pagination--numbered__link:hover .nhsuk-icon {
+    fill: #7c2855;
+  }
+  
+  .nhsuk-pagination--numbered .nhsuk-icon__arrow-left {
+    margin-left: -13px;
+    margin-right: 8px;
+  }
+  
+  .nhsuk-pagination--numbered .nhsuk-icon__arrow-right {
+    margin-left: 8px;
+    margin-right: -13px;
+  }
+  

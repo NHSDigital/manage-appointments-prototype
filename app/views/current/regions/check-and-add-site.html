@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'current/regions/layout-top-nav-sites.html' %}
+{% extends 'current/regions/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -52,7 +52,7 @@ Check and add site
           Site name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{data['first-name']}}   {{data['surname']}}
+          {{data['site-picker']}} 
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
@@ -70,6 +70,7 @@ Check and add site
          ODS
         </dt>
         <dd class="nhsuk-summary-list__value">
+         {{ods}}
           
         </dd>
   
@@ -88,7 +89,7 @@ Check and add site
           ICB
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{data['first-name']}}   {{data['surname']}}
+          {{icb}} 
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
