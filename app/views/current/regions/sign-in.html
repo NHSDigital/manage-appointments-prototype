@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'current/regions/layout-top-nav-signed-out.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -33,9 +33,9 @@ Site overview Hornsey Central Pharmacy
 <div class="nhsuk-grid-row">
 
 
-  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-full">
 
-    <h1 class="nhsuk-heading-xl">Manage your appointments</h1>
+    <h1 class="nhsuk-heading-l">Manage your appointments</h1>
   
   
   
@@ -46,7 +46,7 @@ Site overview Hornsey Central Pharmacy
  
   
   
-    <form action="region-overview" method="post">
+    <form action="manage-sites" method="post">
   
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
        Sign in to service with NHS Mail
