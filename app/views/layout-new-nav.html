@@ -38,7 +38,7 @@
 <!-- NHS Header with account and navigation tabs -->
 <header class="nhsuk-header app-header" role="banner">
   <div class="nhsuk-header__container">
-    <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/" aria-label="NHS homepage">
+    <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/home" aria-label="NHS homepage">
         
   <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
     <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
@@ -60,7 +60,7 @@
 
   <span class="app-header__account-item">
   
-    <a class="app-header__account-link" href="manage-sites">Change site</a>
+    <a class="app-header__account-link" href="/account/change-role">Change site</a>
   
   </span>
 
@@ -80,11 +80,20 @@
   <nav class="nhsuk-navigation" id="header-navigation" role="navigation" aria-label="Primary navigation">
     <ul class="nhsuk-header__navigation-list nhsuk-header__navigation-list--left-aligned">
       
-      
+      <li class="nhsuk-header__navigation-item">
+        <a class="nhsuk-header__navigation-link" href="/programmes">Home
+        </a>
+      </li>
       
       
       <li class="nhsuk-header__navigation-item">
-        <a class="nhsuk-header__navigation-link" href="search">Reports
+        <a class="nhsuk-header__navigation-link" href="/sessions">Sites
+        </a>
+      </li>
+      
+      
+      <li class="nhsuk-header__navigation-item">
+        <a class="nhsuk-header__navigation-link" href="/patients">Reports
         </a>
       </li>
       

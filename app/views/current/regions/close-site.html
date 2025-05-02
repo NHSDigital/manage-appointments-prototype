@@ -1,5 +1,5 @@
 <!-- File: app/views/test-page.html -->
-{% extends 'current/regions/layout-top-nav-regions.html' %}
+{% extends 'current/regions/layout-top-nav-sites.html' %}
 
 {% block head %}
 <!-- Include the accessible-autocomplete CSS from CDN -->
@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "current/regions/includes/org-switcher.html" %}
+
 
 {{ backLink({
   href: "javascript:history.back()",

@@ -1,0 +1,80 @@
+/* Header content styles */
+.app-header__content {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 16px; /* nhsuk-spacing(2) is typically 16px */
+  }
+  
+  @media (max-width: 768px) {
+    .app-header__content {
+      margin-top: 24px; /* nhsuk-spacing(3) is typically 24px */
+    }
+  }
+  
+  /* Current navigation item styles */
+  .app-header__navigation-item--current {
+    box-shadow: inset 0 -4px #d8dde0; /* $nhsuk-focus-width is typically 4px, $nhsuk-border-color is #d8dde0 */
+  }
+  
+  .nhsuk-header__drop-down .app-header__navigation-item--current {
+    box-shadow: inset 4px 0 #005eb8; /* $nhsuk-link-color is #005eb8 */
+  }
+  
+  /* Navigation item with count styles */
+  .app-header__navigation-item--with-count .app-count {
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 6px;
+    min-width: 32px; /* nhsuk-spacing(4) is typically 32px */
+    padding-bottom: 3px;
+    padding-top: 5px;
+    text-decoration: none;
+  }
+  
+  /* Account section styles */
+  .app-header__account {
+    border-radius: 4px; /* $nhsuk-border-radius is typically 4px */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    overflow: hidden;
+  }
+  
+  .app-header__account-item {
+    align-items: start;
+    background-color: #00477e; /* This is an approximation of color.scale($nhsuk-link-color, $lightness: -20%) */
+    color: #fff;
+    display: inline-flex;
+    flex-grow: 1;
+    gap: 8px; /* nhsuk-spacing(2) is typically 16px */
+    padding: 8px 12px; /* nhsuk-spacing(2) and nhsuk-spacing(3) are typically 16px and 24px */
+  }
+  
+  .app-header__account-item:first-child {
+    flex-grow: 999;
+  }
+  
+  .app-header__account-icon {
+    flex-shrink: 0;
+    position: relative;
+    top: 1px;
+  }
+  
+  .app-header__account-link {
+    color: #ffffff; /* $color_nhsuk-white is #ffffff */
+    display: block;
+    margin: -16px -24px; /* nhsuk-spacing(2) * -1 and nhsuk-spacing(3) * -1 */
+    padding: 16px 24px; /* nhsuk-spacing(2) and nhsuk-spacing(3) */
+  }
+  
+  .app-header__account-link:visited {
+    color: #ffffff; /* $color_nhsuk-white is #ffffff */
+  }
+  
+  .app-header__account-link:active,
+  .app-header__account-link:focus {
+    background-color: #ffeb3b; /* $nhsuk-focus-color is #ffeb3b */
+    border-bottom: 4px solid #212b32; /* $nhsuk-focus-width is 4px, $nhsuk-focus-text-color is #212b32 */
+    color: #212b32; /* $nhsuk-focus-text-color is #212b32 */
+    padding-bottom: 8px; /* nhsuk-spacing(1) is typically 8px */
+  }
