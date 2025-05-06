@@ -1,0 +1,129 @@
+
+ 
+// nhsuk calendar styles //
+
+
+.nhsuk-calendar-header {
+  width: 14%;
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+
+.nhsuk-calendar-header__content {
+  margin-bottom: 0px;
+}
+@media (max-width: 48.0525em) {
+  .nhsuk-calendar-header {
+    display: none;
+  }
+}
+  .nhsuk-calendar-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    padding: 0;
+  }
+  @media (max-width: 48.0525em) {
+    .nhsuk-calendar-group {
+      margin-bottom: 0px;
+    }
+  }
+  .nhsuk-calendar-group + h2,
+  .nhsuk-calendar-group + .nhsuk-heading-l,
+  .nhsuk-calendar-group + h3,
+  .nhsuk-calendar-group + .nhsuk-heading-m {
+    padding-top: 0; /* [4] */
+  }
+  
+  .nhsuk-calendar-group__item {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 14%;
+  }
+  @media (max-width: 48.0525em) {
+    .nhsuk-calendar-group__item {
+      flex: 0 0 100%;
+    }
+  }
+  .nhsuk-calendar-group__item .nhsuk-calendar {
+    margin-bottom: 32px;
+  }
+  @media (max-width: 48.0525em) {
+    .nhsuk-calendar-group__item .nhsuk-calendar {
+      margin-bottom: 16px;
+    }
+    .nhsuk-calendar-group__item:last-child .nhsuk-calendar {
+      margin-bottom: 0;
+    }
+  }
+
+  .nhsuk-calendar-day {
+    margin-bottom: 0;
+    background: #ffffff;
+    border: 1px solid #d8dde0;
+    position: relative; /* [1] */
+    width: 100%;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-calendar-day {
+      margin-bottom: 0;
+    }
+  }
+
+  .nhsuk-calendar-day__inactive {
+    display: none;
+  }
+
+  @media (min-width: 40.0625em) {
+    .nhsuk-calendar-day__inactive {
+      margin-bottom: 0;
+      background: #f0f4f5;
+      border: 1px solid #d8dde0;
+      position: relative; /* [1] */
+      width: 100%;
+      color: #aeb7bd;  
+      display: flex;
+    }
+  }
+
+  .nhsuk-calendar-day__content {
+    padding: 16px;
+  }
+  .nhsuk-calendar-day__content > *:first-child {
+    margin-top: 0;
+  }
+  .nhsuk-calendar-day__content > *:last-child {
+    margin-bottom: 0;
+  }
+  @media (min-width: 40.0625em) {
+    .nhsuk-calendar-day__content {
+      padding: 16px;
+    }
+  }
+
+  .nhsuk-calendar__heading,
+.nhsuk-calendar__metadata,
+.nhsuk-calendar__description {
+  margin-bottom: 16px;
+}
+
+.nhsuk-u-visually-hidden-calendar {
+  overflow: visible;
+}
+
+@media (min-width: 48.0525em) {
+  .nhsuk-u-visually-hidden-calendar {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px
+  }}
