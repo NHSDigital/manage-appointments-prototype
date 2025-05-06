@@ -38,52 +38,113 @@ Site overview Hornsey Central Pharmacy
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-back-link"><a role="link" class="nhsuk-back-link__link"
-        href="/manage-your-appointments/site/a159171c-b896-4a70-a3b9-8c9ffdbde945/details"><svg
-          class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          aria-hidden="true" height="24" width="24">
-          <path
-            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-          </path>
-        </svg>Go back</a></div>
-    <h1 class="nhsuk-heading-l"></h1>
-    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l">Aldeburgh Pharmacy</span>Edit site details</h1>
-    <form>
-      <div class="nhsuk-form-group ">
-        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="name">Site name</label>
-          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="name" name="name"></div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group ">
-        <fieldset class="nhsuk-fieldset">
-          <div class="nhsuk-form-group"><label class="nhsuk-label" for="address">Site address</label><textarea
-              class="nhsuk-textarea" type="text" rows="5" id="address" label="Site address" name="address"
-              aria-label="Site address"></textarea></div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group ">
-        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="latitude">Latitude</label>
-          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="latitude" value="52.15214157"
-              name="latitude"></div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group ">
-        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="longitude">Longitude</label>
-          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="longitude" value="1.601192713"
-              name="longitude"></div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group ">
-        <fieldset class="nhsuk-fieldset"><label class="nhsuk-label" for="phoneNumber">Phone number</label>
-          <div class="nhsuk-input__wrapper"><input class="nhsuk-input " id="phoneNumber" type="tel" value="01728 452763"
-              name="phoneNumber"></div>
-        </fieldset>
-      </div>
-      <ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0">
-        <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-3 nhsuk-a-to-z-min-width"><button
-            class="nhsuk-button" data-module="nhsuk-button" type="submit">Save and continue</button></li>
-      </ol>
-    </form>
+    <!-- Change the page title here -->
+    
+    <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+    <h1 class="nhsuk-heading-xl">Edit site details</h1>
+
+    <h3>Site name</h3><div class="nhsuk-form-group">
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="Hornsey Central Pharmacy">
+    </div>
+
+
+    <div class="nhsuk-form-group">
+<label class="nhsuk-label" for="site-address-textarea">
+  <h3 class="nhsuk-u-margin-bottom-3">Site address</h3>
+</label>
+<!-- <div class="nhsuk-hint" id="site-address-hint">
+  Does the user need to be given instruction given that the structural bits are gone?
+</div> -->
+<textarea class="nhsuk-textarea nhsuk-input--width-20" id="site-address-textarea" name="site-address-textarea" rows="4" aria-describedby="example-hint">
+  151 Park road,
+Greenley,
+Feldon,Cumbia,
+CA8 8JD
+</textarea>
+</div>
+
+
+
+
+    <!-- <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="input-width-20">
+        Address line 1
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="151 Park road">
+
+    <label class="nhsuk-label" for="input-width-20">
+      Address line 2 (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+
+  <label class="nhsuk-label" for="input-width-10">
+      Town or city
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="London">
+
+  <label class="nhsuk-label" for="input-width-10">
+      County (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="Greater London">
+
+  <label class="nhsuk-label" for="input-width-5">
+      Postcode
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="test-width-5" type="text" value="N8 8JB">
+  </div> -->
+
+
+  <h3>Latitude and longitude</h3>
+  <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="input-width-20">
+        Latitude
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="51.58437455856056">
+
+    <label class="nhsuk-label" for="input-width-20" style="margin-top:20px">
+      Longitude
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="-0.1310363693114145">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="phone-number">
+      <h3 class="nhsuk-u-margin-bottom-3">Phone number</h3>
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="phone-number" name="phoneNumber" type="tel" autocomplete="tel" value="0208 889 8056">
+  </div>
+  <!-- <h3>Site type</h3>
+  <div class="nhsuk-form-group">
+      <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="1" checked="true">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Pharmacy
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="2">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Type 2
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="3">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Type 3
+              </label>
+            </div>
+
+        </div>
+  </div> -->
+
+  <a class="nhsuk-button nhsuk-u-margin-top-6" href="site-details">Save and continue</a>
+
+    <!-- End of content -->
+
   </div>
 </div>
 
