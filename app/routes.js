@@ -312,6 +312,14 @@ router.post('/add-breaks', function(request, response) {
 })
 // END
 
+// reset data route
+router.get('/clear-data', function (req, res) {
+  req.session.data = {}
+  
+  // Redirect to confirmation page
+  res.redirect('/clear-data-confirmation')
+})
+
 
 // ADD DATES REDIRECT
 router.post('/site-answer', function(request, response) {
