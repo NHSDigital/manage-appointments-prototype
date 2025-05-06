@@ -1,0 +1,118 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Enter name
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+      <h1 class="nhsuks-heading-l">Add user roles</h1>
+
+
+
+        
+      <form action="check-and-add" method="post" novalidate="true">
+
+
+
+<h2 class="nhsuk-heading-m">Email</h2>
+<p>{{data['email']}}</p>
+
+
+{% from 'checkboxes/macro.njk' import checkboxes %}
+
+  {{ checkboxes({
+    idPrefix: "roles",
+    name: "roles",
+    fieldset: {
+      legend: {
+        text: "Roles",
+        classes: "nhsuk-fieldset__legend--m",
+        isPageHeading: true
+      }
+    },
+
+    items: [
+      {
+        value: "appointment-manager",
+        text: "Appointment manager",
+        hint: {
+          text: "A user can view and cancel appointments"
+        }
+      },
+      {
+        value: "availability-manager",
+        text: "Availability manager",
+        hint: {
+          text: "A user can create, view and manage site availability"
+        }
+      },
+      {
+        value: "site-details-manager",
+        text: "Site details manager",
+        hint: {
+          text: "A user can edit site details and accessibility information"
+        }
+      },
+      {
+        value: "user-manager",
+        text: "User manager",
+        hint: {
+          text: "A user can view and manage user role assignments"
+        }
+        
+      }
+    ]
+  }) }}
+
+
+
+
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+  Continue
+</button>
+
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+  Cancel
+</button>
+</form>
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}
