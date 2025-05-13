@@ -35,7 +35,7 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-<!-- NHS Header with account and navigation tabs -->
+<!-- NHS Header with account and navigation tabs 
 <header class="nhsuk-header app-header" role="banner">
   <div class="nhsuk-header__container">
     <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/home" aria-label="NHS homepage">
@@ -118,8 +118,31 @@
   </nav>
 </div>
 
-</header>
+</header> -->
 
+ {% include 'components/header/account-basic/macro.njk' %}
+        {{ header({
+    logo: {
+      href: "#",
+      ariaLabel: "Manage patients homepage"
+    },
+    service: {
+      text: "Manage patients",
+      href: "#"
+    },
+    account: {
+      items: [
+        {
+          text: "Florence Nightingale",
+          icon: true
+        },
+        {
+          href: "#",
+          text: "Log out"
+        }
+      ]
+    }
+  }) }}
 
 {% endblock %}
 
