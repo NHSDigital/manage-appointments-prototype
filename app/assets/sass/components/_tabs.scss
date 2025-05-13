@@ -1,0 +1,179 @@
+/* GOV.UK Service Navigation Component */
+
+.nhsuk-service-navigation {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #b1b4b6;
+  background-color: #f3f2f1;
+}
+
+.nhsuk-service-navigation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.nhsuk-service-navigation__item,
+.nhsuk-service-navigation__service-name {
+  position: relative;
+  margin: 10px 0;
+  border: 0 solid #0b5694;
+}
+
+.nhsuk-service-navigation__link {
+  color: #0b5694;
+  text-decoration: none;
+}
+
+.nhsuk-service-navigation__link:hover {
+  text-decoration: underline;
+}
+
+.nhsuk-service-navigation__link:focus {
+  outline: 3px solid #ffdd00;
+  outline-offset: 0;
+  background-color: #ffdd00;
+}
+
+.nhsuk-service-navigation__service-name {
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.nhsuk-service-navigation__service-name .nhsuk-service-navigation__link {
+  color: inherit;
+}
+
+.nhsuk-service-navigation__toggle {
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.25;
+  display: inline-flex;
+  margin: 10px 0;
+  padding: 0;
+  border: 0;
+  color: #0b5694;
+  background: none;
+  word-break: break-all;
+  cursor: pointer;
+  align-items: center;
+}
+
+.nhsuk-service-navigation__toggle:focus {
+  outline: 3px solid #ffdd00;
+  outline-offset: 0;
+  background-color: #ffdd00;
+}
+
+.nhsuk-service-navigation__toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: currentColor transparent transparent transparent;
+  margin-left: 5px;
+}
+
+.nhsuk-service-navigation__toggle[aria-expanded="true"]::after {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent currentColor transparent;
+}
+
+.nhsuk-service-navigation__toggle[hidden] {
+  display: none;
+}
+
+.nhsuk-service-navigation__service-name + .nhsuk-service-navigation__wrapper .nhsuk-service-navigation__toggle {
+  margin-top: 0;
+}
+
+.nhsuk-service-navigation__list {
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.nhsuk-service-navigation__active-fallback {
+  font-weight: inherit;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .nhsuk-service-navigation__item--active {
+    margin-left: -15px;
+    padding-left: 10px;
+    border-left-width: 5px;
+  }
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+  .nhsuk-service-navigation__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nhsuk-service-navigation__item,
+  .nhsuk-service-navigation__service-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px 0;
+  }
+
+  .nhsuk-service-navigation__item:not(:last-child),
+  .nhsuk-service-navigation__service-name:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .nhsuk-service-navigation__item--active {
+    padding-bottom: calc(20px - 5px);
+    border-bottom-width: 5px;
+  }
+
+  .nhsuk-service-navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+}
+
+/* IE11 hack */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .nhsuk-service-navigation__list {
+    display: block;
+  }
+}
+
+/* Rebrand styles */
+@media (min-width: 768px) {
+  .nhsuk-service-navigation__item,
+  .nhsuk-service-navigation__service-name {
+    padding: 15px 0;
+    line-height: 1.5;
+  }
+
+  .nhsuk-service-navigation__item--active {
+    padding-bottom: calc(15px - 5px);
+  }
+}
+
+/* Additional CSS for icons */
+
+/* No need for extra CSS classes as we're using inline styles for the icons */
+/* This approach ensures compatibility with the existing GOV.UK Service Navigation Component */
+
+/* You can add this if you want to change the active icon color to match NHS branding */
+.nhsuk-service-navigation__item--active svg {
+  stroke: #005eb8; /* NHS blue color */
+}
+
+/* If you need to adjust icon appearance on hover */
+.nhsuk-service-navigation__link:hover svg {
+  text-decoration: none; /* Prevents underline from affecting the icon */
+}
