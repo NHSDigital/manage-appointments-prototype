@@ -2,6 +2,29 @@
  
 // nhsuk calendar styles //
 
+// CSS
+
+$color-nhsuk-blue: #005eb8;
+$color-nhsuk-white: #ffffff;
+$color-nhsuk-black: #212b32;
+$color-nhsuk-green: #007f3b;
+$color-nhsuk-red: #d5281b;
+$color-nhsuk-yellow: #ffeb3b;
+$color-nhsuk-warm-yellow: #ffb81C;
+$color-nhsuk-orange: #ED8B00;
+$color-nhsuk-purple: #330072;
+$color-nhsuk-grey-1: #4c6272;
+$color-nhsuk-grey-2: #768692;
+$color-nhsuk-grey-3: #aeb7bd;
+$color-nhsuk-grey-4: #d8dde0;
+$color-nhsuk-grey-5: #f0f4f5;
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+
 
 .nhsuk-calendar-header {
   width: 14%;
@@ -41,6 +64,7 @@
     margin-bottom: 0;
     padding: 0;
     width: 14%;
+    
   }
   @media (max-width: 48.0525em) {
     .nhsuk-calendar-group__item {
@@ -127,3 +151,15 @@
     white-space: nowrap;
     width: 1px
   }}
+
+    .available{
+    background-color: $color-nhsuk-white;
+
+  }
+  .occupied{
+background-color: $color-nhsuk-grey-2;
+color: $color-nhsuk-white;
+  }
+  .selected{
+    background-color:$color_nhsuk-pale-yellow;
+  }
