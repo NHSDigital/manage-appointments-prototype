@@ -7,7 +7,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'current/layouts/layout-top-nav-sites.html' %}
+{% extends 'current/layouts/layout-top-nav-regions.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -112,37 +112,22 @@ View site
         </thead>
         <tbody class="nhsuk-table__body">
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Lloyds Pharmacy</td>
-            <td class="nhsuk-table__cell">North East and North Cumbria </td>
-            <td class="nhsuk-table__cell">5PLE9</td>
-            
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Boots Pharmacy</td>
-            <td class="nhsuk-table__cell">North East and North Cumbria </td>
-            <td class="nhsuk-table__cell">6FBP3</td>
-           
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Phillips Pharmacy</td>
-            <td class="nhsuk-table__cell">South Yorkshire </td>
-            <td class="nhsuk-table__cell">4PLP7</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Wellcare Chemist</td>
-            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
-            <td class="nhsuk-table__cell">3WLC2</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Sutton Pharmacy</td>
+            <td class="nhsuk-table__cell">Cohens Pharmacy</td>
             <td class="nhsuk-table__cell">West Yorkshire </td>
-            <td class="nhsuk-table__cell">2STP5</td>
+            <td class="nhsuk-table__cell">7CHP3</td>
             <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
           </tr>
+      
+          
+        
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Day Lewis Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">2DLP8</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+        
+            
           <tr class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Healthwise Chemist</td>
             <td class="nhsuk-table__cell">North East and North Cumbria </td>
@@ -150,100 +135,21 @@ View site
             <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
           </tr>
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Green Cross Pharmacy</td>
+            <td class="nhsuk-table__cell">{{site}}</td>
             <td class="nhsuk-table__cell">South Yorkshire </td>
-            <td class="nhsuk-table__cell">9GCP1</td>
+            <td class="nhsuk-table__cell">{{ods}}</td>
             <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Superdrug Pharmacy</td>
+
+            <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sutton Pharmacy</td>
             <td class="nhsuk-table__cell">West Yorkshire </td>
-            <td class="nhsuk-table__cell">8SDP4</td>
+            <td class="nhsuk-table__cell">2STP5</td>
             <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Village Pharmacy</td>
-            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
-            <td class="nhsuk-table__cell">1VLP6</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Rowlands Pharmacy</td>
-            <td class="nhsuk-table__cell">North East and North Cumbria </td>
-            <td class="nhsuk-table__cell">6RLP5</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Morrisons Pharmacy</td>
-            <td class="nhsuk-table__cell">West Yorkshire </td>
-            <td class="nhsuk-table__cell">3MRP7</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Tesco Pharmacy</td>
-            <td class="nhsuk-table__cell">South Yorkshire </td>
-            <td class="nhsuk-table__cell">4TCP2</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Asda Pharmacy</td>
-            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
-            <td class="nhsuk-table__cell">5ADP9</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Day Lewis Pharmacy</td>
-            <td class="nhsuk-table__cell">North East and North Cumbria </td>
-            <td class="nhsuk-table__cell">2DLP8</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Cohens Pharmacy</td>
-            <td class="nhsuk-table__cell">West Yorkshire </td>
-            <td class="nhsuk-table__cell">7CHP3</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Hornsey Central Pharmacy</td>
-            <td class="nhsuk-table__cell">South Yorkshire </td>
-            <td class="nhsuk-table__cell">9MPC4</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Cornerstone Pharmacy</td>
-            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
-            <td class="nhsuk-table__cell">1CSP6</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Abbey Pharmacy</td>
-            <td class="nhsuk-table__cell">North East and North Cumbria </td>
-            <td class="nhsuk-table__cell">3ABP2</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Park View Pharmacy</td>
-            <td class="nhsuk-table__cell">West Yorkshire </td>
-            <td class="nhsuk-table__cell">8PVP7</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Hillside Pharmacy</td>
-            <td class="nhsuk-table__cell">South Yorkshire </td>
-            <td class="nhsuk-table__cell">4HSP1</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Sunrise Pharmacy</td>
-            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
-            <td class="nhsuk-table__cell">5SRP8</td>
-            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
-          </tr>
-          <tr class="nhsuk-table__row no-results-row" style="display: none;">
-            <td class="nhsuk-table__cell" colspan="5">
-              No sites match your search criteria
-            </td>
-          </tr>
+          
+
+          
         </tbody>
       </table>
 
@@ -270,144 +176,16 @@ View site
           
           </li>
           
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=2&amp;q=" aria-label="Page 2">
-              2
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=3&amp;q=" aria-label="Page 3">
-              3
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item nhsuk-pagination--numbered__item--current">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=4&amp;q=" aria-label="Page 4" aria-current="page">
-              4
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=5&amp;q=" aria-label="Page 5">
-              5
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=6&amp;q=" aria-label="Page 6">
-              6
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=7&amp;q=" aria-label="Page 7">
-              7
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=8&amp;q=" aria-label="Page 8">
-              8
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=9&amp;q=" aria-label="Page 9">
-              9
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=10&amp;q=" aria-label="Page 10">
-              10
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=11&amp;q=" aria-label="Page 11">
-              11
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=12&amp;q=" aria-label="Page 12">
-              12
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=13&amp;q=" aria-label="Page 13">
-              13
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=14&amp;q=" aria-label="Page 14">
-              14
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=15&amp;q=" aria-label="Page 15">
-              15
-            </a>
-          
-          </li>
-          
-            <li class="nhsuk-pagination--numbered__item">
-          
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=16&amp;q=" aria-label="Page 16">
-              16
-            </a>
-          
-          </li>
-          
           </ul>
       
           
-            
-        
+
         <div class="nhsuk-pagination--numbered__next">
           <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=5&amp;q=" rel="next">Next<span class="nhsuk-u-visually-hidden"> page</span><svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
           <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
         </svg></a>
         </div>
-      
-          
       </nav>
-
-
-
-
-
     </div>
   </div>
 {% endblock %}
