@@ -45,6 +45,56 @@
        <span class="nhsuk-caption-l">{{site}}</span>
       <h1 class="nhsuk-heading-xl"> 1 {{ date({month: 'long'}) }} to 7 {{ date({month: 'long'}) }} </h1>
   
+
+
+      
+    <!-- CARD / CAL SWITCHER -->
+<div class="nhsuk-service-navigation"
+  data-module="nhsuk-service-navigation">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-service-navigation__container">
+      <nav style="display: flex;align-items:baseline;" aria-label="Menu" class="nhsuk-service-navigation__wrapper">
+        <button type="button" class="nhsuk-service-navigation__toggle nhsuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="nhsuk-service-navigation__list" id="navigation">
+          <li class="nhsuk-service-navigation__item nhsuk-service-navigation__item--active">
+            <a class="nhsuk-service-navigation__link" href="#" aria-current="true">
+              <!-- Card Icon SVG (Max size: 32px x 32px) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- First list item -->
+  <line x1="3" y1="6" x2="5" y2="6"></line>
+  <line x1="8" y1="6" x2="21" y2="6"></line>
+  
+  <!-- Second list item -->
+  <line x1="3" y1="12" x2="5" y2="12"></line>
+  <line x1="8" y1="12" x2="21" y2="12"></line>
+  
+  <!-- Third list item -->
+  <line x1="3" y1="18" x2="5" y2="18"></line>
+  <line x1="8" y1="18" x2="21" y2="18"></line>
+</svg>
+              <span> <strong class="nhsuk-service-navigation__active-fallback">List view</strong></span>
+            </a>
+          </li>
+          <li class="nhsuk-service-navigation__item">
+            <a class="nhsuk-service-navigation__link" href="calendar">
+              <!-- Calendar Icon SVG (Max size: 32px x 32px) -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span> <strong class="nhsuk-service-navigation__active-fallback">Calendar view</strong></span>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 
@@ -102,14 +152,7 @@
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
               
-                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
-                            <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-        <li>RSV adult (incl pregnancy)</li>
-        <li>Covid 5-11</li>
-        <li>Covid 12-17</li>
-        <li>Covid 18+</li>
-        </ul>
-                </td>
+                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked<br>200 booked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
@@ -117,14 +160,7 @@
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
              
-                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">   <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-        <li>RSV adult (incl pregnancy)</li>
-        
-        <li>Flu 18-65</li>
-        <li>Flu and Covid 18-65</li>
-        <li>Flu and Covid 65+</li>
-        <li>Flu and Covid 75+</li>
-      </ul></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">7 unbooked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>
@@ -198,12 +234,7 @@
               <tr role="row" class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
               
-                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
-          <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-        <li>RSV adult (incl pregnancy)</li>
-        <li>Covid 5-11</li>
-        <li>Covid 12-17</li>
-        <li>Covid 18+</li></ul></td>
+                <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked<br>200 booked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
                 <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;"><a class="nhsuk-link" href="edit-session">Change</a></td>

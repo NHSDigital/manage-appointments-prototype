@@ -25,6 +25,8 @@
 
       <p class="nhsuk-body">You are about to close this site. Please confirm the date of closure.</p>
       <p class="nhsuk-body">This will remove the site from the list of available sites for patients to book appointments, and cannot be undone.</p>
+
+      <form method="post" action="check-and-close">
       
       
       {% from 'date-input/macro.njk' import dateInput %}
@@ -58,11 +60,13 @@
 }) }}
 
 
-<form method="post" action="check-and-close">
+
   {{ button({
-    text: "Close site",
-    classes: "nhsuk-button--warning"
+    text: "Continue",
+    classes: "nhsuk-button"
   }) }}
+
+  <input type="hidden" name="site-closed" value="yes">
 
 </form>
 
@@ -71,26 +75,5 @@
 {% endblock %}
 
 {% block bodyEnd %}
-<!-- Include the accessible-autocomplete JS from CDN -->
-<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (typeof accessibleAutocomplete !== 'undefined') {
-      // Initialize the autocomplete directly
-      accessibleAutocomplete({
-        element: document.getElementById('location-container'),
-        id: 'location',
-        source: ['London', 'Manchester', 'Birmingham', 'Hornsea Central Pharmacy', 'Leeds', 'Liverpool'],
-        displayMenu: 'overlay',
-        confirmOnBlur: true,
-        onConfirm: function(selectedItem) {
-          document.getElementById('location-hidden').value = selectedItem;
-        }
-      });
-    } else {
-      console.error('Accessible Autocomplete library not loaded');
-    }
-  });
-</script>
 {% endblock %}

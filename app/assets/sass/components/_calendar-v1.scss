@@ -2,7 +2,7 @@
  
 // nhsuk calendar styles //
 
-// CSS
+// CSS Jo's version
 
 $color-nhsuk-blue: #005eb8;
 $color-nhsuk-white: #ffffff;
@@ -153,14 +153,5 @@ $color-nhsuk-grey-5: #f0f4f5;
     width: 1px
   }}
 
-    .available{
-    background-color: $color-nhsuk-white;
 
-  }
-  .occupied{
-background-color: $color-nhsuk-grey-2;
-color: $color-nhsuk-white;
-  }
-  .selected{
-    background-color:$color_nhsuk-pale-yellow;
-  }
+  

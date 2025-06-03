@@ -18,10 +18,11 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:history.back()",
-    text: "Back"
-  }) }}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,15 +37,20 @@
     <div class="nhsuk-grid-column-full">
 
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Create weekly session</span>
-            
+            <span class="nhsuk-caption-l">Remove services</span>
+            <h1 class="nhsuk-heading-l">Remove services for Monday 1 {{ date({month: 'long'}) }} </h1>
 
 
-      <form action="check-days" class="form" method="post">
-    
-{% include "../includes/services.html" %}
+  
+      <form action="cancel-services" class="form">
+        <div class="nhsuk-form-group">
 
-           
+          {% include "../includes/services.html" %}
+
+
+
+      </div>
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>

@@ -176,6 +176,9 @@ router.get(/editSession/, function (req, res) {
     else  if (req.query.radioGroup === "remove" ) {
         res.redirect('edit-single-session');
     }
+     else  if (req.query.radioGroup === "remove-service" ) {
+        res.redirect('edit-single-session-service');
+    }
     else {
         res.redirect('cancel-sure');
     }
