@@ -34,18 +34,19 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Create availability</span>
-            <h1 class="nhsuk-heading-l">What type of session do you want to create?</h1>
-            <div class="nhsuk-hint" id="contact-hint">
-              You can create weekly or single date sessions, to cover: <br><br>
-              <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>Vaccinator availability</li>
-                <li>Type of vaccines available</li>
-           </div>
+            <span class="nhsuk-caption-l">Remove services</span>
+            <h1 class="nhsuk-heading-l">This will cancel 200 appointments</h1>
+            <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+              
+                <p>We'll notify people that their appointment has been cancelled</p>
+              </div>
+  
      
 
-      <form action="addSessionType" method="get" class="form">
+      <form action="affectedBookings" method="get" class="form">
           
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
@@ -54,22 +55,22 @@
                 <div class="nhsuk-radios">
             
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="Repeat">
+                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
                     <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                      Weekly sessions
+                    Cancel the appointments
                     </label>
                     <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                      Sessions that run at the same times every week
+                      Cancel 200 appointments
                     </div>
                   </div>
             
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="Single">
+                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="keep">
                     <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      Single date session
+                      Don't want to cancel the appointments
                     </label>
                     <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                      Sessions that run on one day and don't repeat
+                      We'll remove the capacity, but these appointments will still be booked
                     </div>
                  </div>
             

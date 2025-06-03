@@ -51,6 +51,7 @@ Check and close this site
          Date of closure
         </dt>
         <dd class="nhsuk-summary-list__value">
+
           {{data['day']}}   {{data['month']}}   {{data['year']}}
         </dd>
   
@@ -68,10 +69,10 @@ Check and close this site
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Email address
+          Site name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{data['email']}}
+          {{site}}
         </dd>
   
         <dd class="nhsuk-summary-list__actions">
@@ -86,24 +87,6 @@ Check and close this site
   
   
   
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Roles
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          {{data['roles']}}
-        </dd>
-  
-        <dd class="nhsuk-summary-list__actions">
-  
-          <a href="/user-admin/add-user">
-            Change<span class="nhsuk-u-visually-hidden"> clinical role</span>
-          </a>
-  
-        </dd>
-  
-      </div>
-  
   
   
   
@@ -114,18 +97,18 @@ Check and close this site
   
   
   
-    <p>  {{data['first-name']}} will be sent a site closure confirmation email.</p>
+    <p>  {{site}} will be sent a site closure confirmation email, and no more bookings will be taken for the site.</p>
   
 
   
   
     <form action="manage-sites" method="post">
   
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Confirm and send
+      <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+        Confirm and close
       </button>
 
-      <input type="hidden" name="user-added" value="yes">
+   <input type="hidden" name="site-closed" value="yes">
   
   
   

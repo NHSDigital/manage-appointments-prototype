@@ -30,19 +30,19 @@ Site overview Hornsey Central Pharmacy
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <div class="moj-page-header-actions">
-      <div class="moj-page-header-actions__title">
+    <div class="nhs-page-header-actions">
+      <div class="nhs-page-header-actions__title">
         <h1 class="nhsuk-heading-xl">Manage staff roles</h1>
       </div>
       
-      <div class="moj-page-header-actions__actions">
-        <div class="moj-button-group">
+      <div class="nhs-page-header-actions__actions">
+        <div class="nhs-button-group">
           {% from 'button/macro.njk' import button %}
 
           {{ button({
             text: "Add user",
-            href: "new-user",
-            classes: "app-button--small"
+            href: "new-user"
+            
           }) }}
 
         </div>

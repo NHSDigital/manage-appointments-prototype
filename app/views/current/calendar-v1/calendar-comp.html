@@ -28,10 +28,13 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
+  
+
+
+   <div class="nhsuk-grid-row nhsuk-u-margin-top-5">
     <div class="nhsuk-grid-column-full">
 
-      <div class="nhsuk-calendar-month">
+     <div class="nhsuk-calendar-month">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Monday</h2></div>
         <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Tuesday</h2></div>
@@ -48,9 +51,9 @@
       <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
         <div class="nhsuk-calendar-day__content">
           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>26</a>      
+            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>26</a>      
           </h3>
-          <p>3 Sessions<br>275 booked<br>25 free</p>
+         <p>275 booked<br>25 unbooked</p>
         </div>
       </div>
       </li>
@@ -58,9 +61,9 @@
         <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
           <div class="nhsuk-calendar-day__content">
             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>27</a>      
+              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>27</a>      
             </h3>
-            <p>3 Sessions<br>275 booked<br>25 free</p>
+           <p>275 booked<br>25 unbooked</p>
           </div>
         </div>
         </li>
@@ -68,9 +71,9 @@
           <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
             <div class="nhsuk-calendar-day__content">
               <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>28</a>      
+                <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>28</a>      
               </h3>
-              <p>3 Sessions<br>275 booked<br>25 free</p>
+             <p>275 booked<br>25 unbooked</p>
             </div>
           </div>
           </li>
@@ -78,9 +81,9 @@
             <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>29</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>29</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -88,9 +91,9 @@
               <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>30</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>30</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -98,9 +101,9 @@
                 <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>31</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>31</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -108,9 +111,9 @@
                   <div class="nhsuk-calendar-day">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>1</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>1</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -123,9 +126,9 @@
       <div class="nhsuk-calendar-day">
         <div class="nhsuk-calendar-day__content">
           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>2</a>      
+            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>2</a>      
           </h3>
-          <p>3 Sessions<br>275 booked<br>25 free</p>
+         <p>275 booked<br>25 unbooked</p>
         </div>
       </div>
       </li>
@@ -133,9 +136,9 @@
         <div class="nhsuk-calendar-day">
           <div class="nhsuk-calendar-day__content">
             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>3</a>      
+              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>3</a>      
             </h3>
-            <p>3 Sessions<br>275 booked<br>25 free</p>
+           <p>275 booked<br>25 unbooked</p>
           </div>
         </div>
         </li>
@@ -143,9 +146,9 @@
           <div class="nhsuk-calendar-day">
             <div class="nhsuk-calendar-day__content">
               <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>4</a>      
+                <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>4</a>      
               </h3>
-              <p>3 Sessions<br>275 booked<br>25 free</p>
+             <p>275 booked<br>25 unbooked</p>
             </div>
           </div>
           </li>
@@ -153,9 +156,9 @@
             <div class="nhsuk-calendar-day">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>5</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>5</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -163,9 +166,9 @@
               <div class="nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>6</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>6</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -173,9 +176,9 @@
                 <div class="nhsuk-calendar-day">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>7</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>7</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -183,9 +186,9 @@
                   <div class="nhsuk-calendar-day">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>8</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>8</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -198,9 +201,9 @@
       <div class="nhsuk-calendar-day">
         <div class="nhsuk-calendar-day__content">
           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>9</a>      
+            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>9</a>      
           </h3>
-          <p>3 Sessions<br>275 booked<br>25 free</p>
+         <p>275 booked<br>25 unbooked</p>
         </div>
       </div>
       </li>
@@ -208,9 +211,9 @@
         <div class="nhsuk-calendar-day">
           <div class="nhsuk-calendar-day__content">
             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>10</a>      
+              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>10</a>      
             </h3>
-            <p>3 Sessions<br>275 booked<br>25 free</p>
+           <p>275 booked<br>25 unbooked</p>
           </div>
         </div>
         </li>
@@ -218,9 +221,9 @@
           <div class="nhsuk-calendar-day">
             <div class="nhsuk-calendar-day__content">
               <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>11</a>      
+                <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>11</a>      
               </h3>
-              <p>3 Sessions<br>275 booked<br>25 free</p>
+             <p>275 booked<br>25 unbooked</p>
             </div>
           </div>
           </li>
@@ -228,9 +231,9 @@
             <div class="nhsuk-calendar-day">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>12</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>12</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -238,9 +241,9 @@
               <div class="nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>13</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>13</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -248,9 +251,9 @@
                 <div class="nhsuk-calendar-day">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>14</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>14</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -258,9 +261,9 @@
                   <div class="nhsuk-calendar-day">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>15</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>15</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -272,9 +275,9 @@
       <div class="nhsuk-calendar-day">
         <div class="nhsuk-calendar-day__content">
           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>16</a>      
+            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>16</a>      
           </h3>
-          <p>3 Sessions<br>275 booked<br>25 free</p>
+         <p>275 booked<br>25 unbooked</p>
         </div>
       </div>
       </li>
@@ -282,9 +285,9 @@
         <div class="nhsuk-calendar-day">
           <div class="nhsuk-calendar-day__content">
             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>17</a>      
+              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>17</a>      
             </h3>
-            <p>3 Sessions<br>275 booked<br>25 free</p>
+           <p>275 booked<br>25 unbooked</p>
           </div>
         </div>
         </li>
@@ -292,9 +295,9 @@
           <div class="nhsuk-calendar-day">
             <div class="nhsuk-calendar-day__content">
               <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>18</a>      
+                <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>18</a>      
               </h3>
-              <p>3 Sessions<br>275 booked<br>25 free</p>
+             <p>275 booked<br>25 unbooked</p>
             </div>
           </div>
           </li>
@@ -302,9 +305,9 @@
             <div class="nhsuk-calendar-day">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>19</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>19</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -312,9 +315,9 @@
               <div class="nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>20</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>20</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -322,9 +325,9 @@
                 <div class="nhsuk-calendar-day">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>21</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>21</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -332,9 +335,9 @@
                   <div class="nhsuk-calendar-day">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>22</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>22</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -346,9 +349,9 @@
             <div class="nhsuk-calendar-day">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>23</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>23</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -356,9 +359,9 @@
               <div class="nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>24</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>24</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -366,9 +369,9 @@
                 <div class="nhsuk-calendar-day">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>25</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>25</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -376,9 +379,9 @@
                   <div class="nhsuk-calendar-day">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>26</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>26</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -386,9 +389,9 @@
                     <div class="nhsuk-calendar-day">
                       <div class="nhsuk-calendar-day__content">
                         <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                          <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>27</a>      
+                          <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>27</a>      
                         </h3>
-                        <p>3 Sessions<br>275 booked<br>25 free</p>
+                       <p>275 booked<br>25 unbooked</p>
                       </div>
                     </div>
                     </li>
@@ -396,9 +399,9 @@
                       <div class="nhsuk-calendar-day">
                         <div class="nhsuk-calendar-day__content">
                           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>28</a>      
+                            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>28</a>      
                           </h3>
-                          <p>3 Sessions<br>275 booked<br>25 free</p>
+                         <p>275 booked<br>25 unbooked</p>
                         </div>
                       </div>
                       </li>
@@ -406,9 +409,9 @@
                         <div class="nhsuk-calendar-day">
                           <div class="nhsuk-calendar-day__content">
                             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>29</a>      
+                              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>29</a>      
                             </h3>
-                            <p>3 Sessions<br>275 booked<br>25 free</p>
+                           <p>275 booked<br>25 unbooked</p>
                           </div>
                         </div>
                         </li>
@@ -421,9 +424,9 @@
             <div class="nhsuk-calendar-day">
               <div class="nhsuk-calendar-day__content">
                 <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                  <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>30</a>      
+                  <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Monday </span>30</a>      
                 </h3>
-                <p>3 Sessions<br>275 booked<br>25 free</p>
+               <p>275 booked<br>25 unbooked</p>
               </div>
             </div>
             </li>
@@ -431,9 +434,9 @@
               <div class="nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>31</a>      
+                    <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Tuesday </span>31</a>      
                   </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                 <p>275 booked<br>25 unbooked</p>
                 </div>
               </div>
               </li>
@@ -441,9 +444,9 @@
                 <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                   <div class="nhsuk-calendar-day__content">
                     <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                      <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>1</a>      
+                      <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Wednesday </span>1</a>      
                     </h3>
-                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                   <p>275 booked<br>25 unbooked</p>
                   </div>
                 </div>
                 </li>
@@ -451,9 +454,9 @@
                   <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                     <div class="nhsuk-calendar-day__content">
                       <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                        <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>2</a>      
+                        <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Thursday </span>2</a>      
                       </h3>
-                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                     <p>275 booked<br>25 unbooked</p>
                     </div>
                   </div>
                   </li>
@@ -461,9 +464,9 @@
                     <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                       <div class="nhsuk-calendar-day__content">
                         <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                          <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>3</a>      
+                          <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Friday </span>3</a>      
                         </h3>
-                        <p>3 Sessions<br>275 booked<br>25 free</p>
+                       <p>275 booked<br>25 unbooked</p>
                       </div>
                     </div>
                     </li>
@@ -471,9 +474,9 @@
                       <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                         <div class="nhsuk-calendar-day__content">
                           <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                            <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>5</a>      
+                            <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Saturday </span>5</a>      
                           </h3>
-                          <p>3 Sessions<br>275 booked<br>25 free</p>
+                         <p>275 booked<br>25 unbooked</p>
                         </div>
                       </div>
                       </li>
@@ -481,9 +484,9 @@
                         <div class="nhsuk-calendar-day nhsuk-calendar-day__inactive">
                           <div class="nhsuk-calendar-day__content">
                             <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                              <a class="nhsuk-link" href="#"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>6</a>      
+                              <a class="nhsuk-link" href="cal-day"><span class="nhsuk-u-visually-hidden-calendar">Sunday </span>6</a>      
                             </h3>
-                            <p>3 Sessions<br>275 booked<br>25 free</p>
+                           <p>275 booked<br>25 unbooked</p>
                           </div>
                         </div>
                         </li>

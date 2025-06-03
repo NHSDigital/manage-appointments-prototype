@@ -1,0 +1,61 @@
+
+  {{ checkboxes({
+    idPrefix: "services",
+    name: "services",
+    fieldset: {
+      legend: {
+        text: "Add services",
+        classes: "nhsuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    },
+    hint: {
+      text: "Select all options that are relevant to you."
+    },
+    items: [
+      {
+        value: "rsv",
+        text: "RSV adult"
+      },
+      {
+        value: "Covid 5-11",
+        text: "Covid 5-11"
+      },
+      {
+        value: "Covid 12-15",
+        text: "Covid 12-15"
+      },
+        {
+        value: "Covid 12-17",
+        text: "Covid 12-17"
+      },
+      {
+        value: "Covid 18+",
+        text: "Covid 18+"
+      },
+        {
+        value: "Covid 75+",
+        text: "Covid 75+"
+      },
+      {
+        value: "Flu and Covid 18-65",
+        text: "Flu and Covid 18-65"
+      },
+      {
+        value: "Flu and Covid 65+",
+        text: "Flu and Covid 65+"
+      },
+      {
+        value: "Flu and Covid 75+",
+        text: "Flu and Covid 75+"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "all",
+        text: "Select all vaccines",
+        exclusive: true
+      }
+    ]
+  }) }}
