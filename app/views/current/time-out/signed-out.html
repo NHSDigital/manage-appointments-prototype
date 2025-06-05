@@ -1,0 +1,62 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-signed-out.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!--<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-overview">Hornsey Central Pharmacy</a></li>
+          
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+          <a class="nhsuk-breadcrumb__backlink" href="#">
+            <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            Level three
+          </a>
+        </p>
+      </nav>-->
+            <!-- Change the page title here -->
+            
+            <h1 class="nhsuk-heading-xl">Manage your appointments</h1>
+
+            <p class="nhsuk-body-l">You are currently not signed in. You must sign in to access this service.</p>
+
+              
+
+    <p><a class="nhsuk-button" href="">Sign in with NHS Mail</a></p>
+    <p><a href="">Sign in another way</a></p>
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

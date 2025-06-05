@@ -1,0 +1,51 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-signed-out.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      
+            
+            <h1 class="nhsuk-heading-xl">You have been signed out</h1>
+
+            <p class="nhsuk-body-l">For security and clinical safety, you have been sign out.</p>
+
+              
+
+    <p><a class="nhsuk-button" href="">Sign in with NHS email</a></p>
+    <p><a href="">Sign in another way</a></p>
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

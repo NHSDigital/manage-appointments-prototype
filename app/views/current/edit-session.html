@@ -38,7 +38,7 @@
 
     
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <span class="nhsuk-caption-l">{{site}}</span>
             <h1 class="nhsuk-heading-l">Change availability for Monday 1 {{ date({month: 'long'}) }}</h1>
 
         
@@ -156,7 +156,7 @@
         </dl>
         <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>You can only reduce time and/or capacity from this screen. If you want to increase availability for this day, you must create a new session.</p>
+            <p>You can only reduce time, capacity or services from this screen. If you want to increase availability for this day, you must create a new session.</p>
 <!--           
             <p>420 booked appointments in this session.<br>
               0 unbooked appointments in this session.</p> -->
@@ -172,7 +172,7 @@
               <div class="nhsuk-form-group">
                   <div class="nhsuk-radios">
               
-                    <div class="nhsuk-radios__item">
+                 <!-- NOT FOR AW MVP    <div class="nhsuk-radios__item">
                       <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="stop">
                       <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
                         Stop taking bookings for this session
@@ -180,7 +180,7 @@
                       <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                         Remove unbooked appointments for this session
                       </div>
-                    </div>
+                    </div> -->
 
               
                     <div class="nhsuk-radios__item">
@@ -196,7 +196,7 @@
                     <div class="nhsuk-radios__item">
                       <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="remove-service">
                       <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                        Remove a service from this session
+                        Remove services from this session
                       </label>
                       <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                         Will remove all booked appointments for this service

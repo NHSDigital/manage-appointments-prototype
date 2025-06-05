@@ -13,7 +13,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Site overview Hornsey Central Pharmacy
+View bookings
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -25,7 +25,7 @@ Site overview Hornsey Central Pharmacy
 
 {% block outerContent %}
 
-{% include '../../current/org-switch/includes/org-switcher.html' %}
+
 
 
 {% endblock %}
@@ -124,7 +124,7 @@ Site overview Hornsey Central Pharmacy
       
 
 <div class="calendar-header">
-                <h2 class="nhsuk-heading-m">December 2024</h2>
+                <h2 class="nhsuk-heading-m">{{ date({month: 'long', year: 'numeric'}) }}</h2>
                 <div class="calendar-nav">
                     <button class="nhsuk-button nhsuk-buttons--small nhsuk-button--reverse" id="prev-month">← Previous</button>
                     <button class="nhsuk-button nhsuk-buttons--small nhsuk-button--reverse" id="next-month">Next →</button>
