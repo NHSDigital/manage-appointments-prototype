@@ -18,11 +18,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
-{{ backLink({
-  href: "javascript:history.back()",
-  text: "Back"
-}) }}
+  
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,65 +32,30 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
+      <!--<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-selector">Site list</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="site-overview">Hornsey Central Pharmacy</a></li>
+          
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+          <a class="nhsuk-breadcrumb__backlink" href="#">
+            <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            Level three
+          </a>
+        </p>
+      </nav>-->
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">Remove services for Monday 1 {{ date({month: 'long'}) }} </h1>
+            <h1 class="nhsuk-heading-xl">Sign out warning</h1>
 
-            <p></p>
+            <p class="nhsuk-body-l">For security and clinical safety, you will be signed out in <strong>10 minutes</strong>.</p>
 
+              
 
-  
-      <form action="cancel-services" class="form" method="post">
-        <div class="nhsuk-form-group">
+    <p><a class="nhsuk-button" href="">Stay signed in</a></p>
+    <p><a href="">Sign out</a></p>
 
-  {{ checkboxes({
-    idPrefix: "services",
-    name: "services",
-
- 
-   
-    items: [
-      {
-        value: "rsv",
-        text: "RSV adult"
-      },
-      {
-        value: "Covid 5-11",
-        text: "Covid 5-11"
-      },
-
-        {
-        value: "Covid 12-17",
-        text: "Covid 12-17"
-      },
-      {
-        value: "Covid 18+",
-        text: "Covid 18+"
-      },
-        {
-        value: "Covid 75+",
-        text: "Covid 75+"
-      },
-      {
-        divider: "or"
-      },
-      {
-        value: "all",
-        text: "Select all vaccines",
-        exclusive: true
-      }
-    ]
-  }) }}
-
-
-
-      </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
-      
 
       <!-- End of content -->
 

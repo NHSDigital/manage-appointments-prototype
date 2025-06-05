@@ -30,6 +30,9 @@ $color-nhsuk-grey-5: #f0f4f5;
     @else if $point == small {
       @media (min-width: 628px)  { @content; }
     }
+       @else if $point == smaller {
+      @media (min-width: 320px)  { @content; }
+    }
   }
 
    .calendar-header {
@@ -72,9 +75,6 @@ $color-nhsuk-grey-5: #f0f4f5;
       clear:both;
     
   
-    
-
-  
       .weekdays,
       .footer-weekdays{
           display: none;
@@ -85,6 +85,10 @@ $color-nhsuk-grey-5: #f0f4f5;
            padding:0;
            list-style-image: none;
            display: flex;
+   @include breakpoint(smaller) {
+    display: block;
+   }
+
        }
   
     li{
