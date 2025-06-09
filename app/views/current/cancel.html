@@ -47,7 +47,7 @@
                       Date and time
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                      26 August 2024<br>8:30am
+                  1 Monday  {{ date({month: 'long', year: 'numeric'}) }}<br>8:30am
                     </dd>
                 
                 
@@ -111,7 +111,7 @@
 
       <form action="cancelBooking" method="get" class="form">
           
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+         <!--<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
             </legend>
             <div class="nhsuk-form-group">
@@ -133,7 +133,56 @@
             
                 </div>
                 </div>
-          </fieldset>
+          </fieldset> -->
+
+          {% set yesHtml %}
+ 
+
+{{ radios({
+  idPrefix: "radioGroup",
+  name: "radioGroup",
+  fieldset: {
+    legend: {
+      text: "Select a reason",
+      classes: "nhsuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      name: "radioGroup",
+      text: "Cancelled by citizen"
+    },
+    {
+      value: "Yes",
+      name:'radioGroup',
+      text: "Cancelled by site"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ radios({
+  idPrefix: "radioGroup",
+  name: "radioGroup",
+
+  items: [
+    {
+      value: "Yes",
+      name:"radioGroup",
+      text: "Yes, I want to cancel the appointments",
+      conditional: {
+        html: yesHtml
+      }
+    },
+    {
+      value: "No",
+      name: "radioGroup",
+      text: "  No, I don't want to cancel the appointments"
+    }
+  ]
+}) }}
         
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
