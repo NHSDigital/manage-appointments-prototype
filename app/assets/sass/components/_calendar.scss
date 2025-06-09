@@ -96,7 +96,7 @@ $color-nhsuk-grey-5: #f0f4f5;
       width: 100%;
       padding: 10px;
       max-height: 80px;
-      border:1px solid $nhsuk-border-color;
+      
       margin: 2px;
       min-height: 94px;
       .day,
@@ -155,11 +155,13 @@ $color-nhsuk-grey-5: #f0f4f5;
   }
   .available{
     background-color:#cce5d8;
+    border-left: 4px solid $color-nhsuk-green;
 
   }
   .occupied{
 background-color: $color-nhsuk-grey-4;
 color: $color-nhsuk-white;
+border-left: 4px solid $color-nhsuk-grey-1;
   }
   .selected{
     background-color:$color_nhsuk-pale-yellow;
