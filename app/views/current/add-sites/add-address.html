@@ -1,0 +1,221 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions-v2/layout-top-nav-regions.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Check and add site
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Add an address for this site</h1>
+  
+    <dl class="nhsuk-summary-list">
+  
+  
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Site name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{data['site-picker']}} 
+        </dd>
+  
+        <dd class="nhsuk-summary-list__actions">
+  
+  
+        </dd>
+  
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         ODS
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+         {{ods}}
+          
+        </dd>
+  
+        <dd class="nhsuk-summary-list__actions">
+  
+          
+  
+        </dd>
+  
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          ICB
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{icb}} 
+        </dd>
+  
+        <dd class="nhsuk-summary-list__actions">
+         
+  
+         
+  
+        </dd>
+  
+      </div>
+  
+  
+  
+  
+    </dl>
+  
+  
+  
+  
+
+  {% from 'fieldset/macro.njk' import fieldset %}
+{% from "input/macro.njk" import input %}
+
+{% call fieldset({
+  legend: {
+    text: "New address",
+    classes: "nhsuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ input({
+    label: {
+      html: 'Building and street <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
+    },
+    id: "address-line-1",
+    name: "address-line-1"
+  }) }}
+
+  {{ input({
+    label: {
+      html: '<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "address-line-2"
+  }) }}
+
+  {{ input({
+    label: {
+      text: "Town or city"
+    },
+    classes: "nhsuk-u-width-two-thirds",
+    id: "address-town",
+    name: "address-town"
+  }) }}
+
+  {{ input({
+    label: {
+      text: "County"
+    },
+    classes: "nhsuk-u-width-two-thirds",
+    id: "address-county",
+    name: "address-county"
+  }) }}
+
+  {{ input({
+    label: {
+      text: "Postcode"
+    },
+    classes: "nhsuk-input--width-10",
+    id: "address-postcode",
+    name: "address-postcode"
+  }) }}
+
+{% endcall %}
+
+
+{% from 'fieldset/macro.njk' import fieldset %}
+{% from "input/macro.njk" import input %}
+
+{% call fieldset({
+  legend: {
+    text: "Add geographic coordinates",
+    classes: "nhsuk-fieldset__legend--m",
+    isPageHeading: true
+    
+  }
+}) %}
+
+
+
+ 
+
+  {{ input({
+    label: {
+      text: "Latitude"
+    },
+    classes: "nhsuk-u-width-two-thirds",
+    id: "address-town",
+    name: "address-town"
+  }) }}
+
+  {{ input({
+    label: {
+      text: "Longitude"
+    },
+    classes: "nhsuk-u-width-two-thirds",
+    id: "address-county",
+    name: "address-county"
+  }) }}
+
+
+
+{% endcall %}
+
+  
+  
+    <form action="search-user" method="post">
+  
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <input type="hidden" name="user-added" value="yes">
+  
+  
+  
+    </form>
+  
+  
+  </div>
+</div>
+
+{% endblock %}

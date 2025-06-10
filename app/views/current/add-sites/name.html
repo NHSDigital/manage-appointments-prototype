@@ -1,0 +1,85 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-sites.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Enter name
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Enter the name</h1>
+
+
+<form action="new-user" method="post">
+
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="first-name">
+      First name
+    </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
+  </div> 
+  
+  
+          
+  
+  
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="last-name">
+      Last name
+    </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="surname" type="text">
+  </div> 
+
+
+
+
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  text: "Continue"
+}) }}
+
+{{ button({
+  text: "Cancel",
+  classes: "nhsuk-button--secondary"
+}) }}
+
+
+
+</form>
+
+    </div>
+</div>
+
+    {% endblock %}

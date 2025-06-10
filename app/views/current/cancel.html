@@ -140,7 +140,7 @@
 
 {{ radios({
   idPrefix: "radioGroup",
-  name: "radioGroup",
+  
   fieldset: {
     legend: {
       text: "Select a reason",
@@ -149,13 +149,15 @@
   },
   items: [
     {
-      value: "Yes",
-      name: "radioGroup",
+      value: "citizen",
+      name:"citizen",
+      
       text: "Cancelled by citizen"
     },
     {
-      value: "Yes",
-      name:'radioGroup',
+      value: "site",
+      name:'site',
+      
       text: "Cancelled by site"
     }
   ]
@@ -170,7 +172,7 @@
   items: [
     {
       value: "Yes",
-      name:"radioGroup",
+      
       text: "Yes, I want to cancel the appointments",
       conditional: {
         html: yesHtml
