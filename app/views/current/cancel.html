@@ -109,7 +109,7 @@
               </dl>
 
 
-      <form action="cancelBooking" method="get" class="form">
+      <form action="bookings-cancelled" method="get" class="form">
           
          <!--<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
@@ -135,59 +135,39 @@
                 </div>
           </fieldset> -->
 
-          {% set yesHtml %}
+   
  
 
+{% from 'radios/macro.njk' import radios %}
+
 {{ radios({
-  idPrefix: "radioGroup",
-  
+  idPrefix: "reason",
+  name: "reason",
   fieldset: {
     legend: {
       text: "Select a reason",
-      classes: "nhsuk-fieldset__legend--m"
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
     }
   },
   items: [
     {
       value: "citizen",
-      name:"citizen",
-      
-      text: "Cancelled by citizen"
+      text: "Cancelled by the citizen"
     },
     {
       value: "site",
-      name:'site',
-      
-      text: "Cancelled by site"
+      text: "Cancelled by the site"
     }
   ]
 }) }}
-{% endset -%}
 
 
-{{ radios({
-  idPrefix: "radioGroup",
-  name: "radioGroup",
+<input type="hidden" name="cancelled" value="Yes">
 
-  items: [
-    {
-      value: "Yes",
-      
-      text: "Yes, I want to cancel the appointments",
-      conditional: {
-        html: yesHtml
-      }
-    },
-    {
-      value: "No",
-      name: "radioGroup",
-      text: "  No, I don't want to cancel the appointments"
-    }
-  ]
-}) }}
         
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
+          Cancel appointment
         </button>
       </form>
       

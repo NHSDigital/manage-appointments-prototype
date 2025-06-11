@@ -155,7 +155,7 @@ $color-nhsuk-grey-5: #f0f4f5;
   }
   .available{
     background-color:#cce5d8;
-    border-left: 4px solid $color-nhsuk-green;
+    border-left: 4px solid $color-nhsuk-green !important;
 
   }
   .occupied{
