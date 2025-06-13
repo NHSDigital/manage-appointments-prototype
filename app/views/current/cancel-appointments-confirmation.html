@@ -1,0 +1,151 @@
+<!-- Cancel Appointments Confirmation Page -->
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Cancel appointments - {{site}}
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+ href: "javascript:history.back()",
+ text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Cancel selected appointments</h1>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="nhsuk-body-l">
+      Once you cancel these appointments, they will no longer be available for patients to attend.
+      
+    </p>
+  </div>
+</div>
+        
+        
+        
+        <h2 class="nhsuk-heading-m">Appointments to be cancelled</h2>
+        
+        <div class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Number of appointments</dt>
+                <dd class="nhsuk-summary-list__value" id="appointmentCount">
+                    <!-- Will be populated by JavaScript -->
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Date</dt>
+                <dd class="nhsuk-summary-list__value">1 Monday {{date({month:'long'})}}</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Site</dt>
+                <dd class="nhsuk-summary-list__value">{{site}}</dd>
+            </div>
+        </div>
+        
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    View appointment details
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <div class="nhsuk-table-responsive">
+                    <table class="nhsuk-table">
+                        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+                            Details of appointments to be cancelled
+                        </caption>
+                        <thead class="nhsuk-table__head">
+                            <tr class="nhsuk-table__row">
+                                <th class="nhsuk-table__header" scope="col">Time</th>
+                                <th class="nhsuk-table__header" scope="col">Patient name</th>
+                                <th class="nhsuk-table__header" scope="col">NHS number</th>
+                                <th class="nhsuk-table__header" scope="col">Service</th>
+                            </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body" id="appointmentsList">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </details>
+        
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>All selected appointments will be cancelled immediately</li>
+            <li>Patients will receive cancellation notifications by email or SMS</li>
+            <li>The appointment slots will become available for rebooking</li>
+            <li>You will see a confirmation message on the appointments page</li>
+        </ul>
+        
+        <form action="bookings-cancelled" method="post">
+    
+            
+            <!-- Hidden field to store selected appointment data -->
+            <input type="hidden" name="selected-appointments" id="selectedAppointmentsData">
+            <input type="hidden" name="appointment-count" id="appointmentCountData">
+            
+            <div class="nhsuk-button-group">
+                <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+                    Continue
+                </button>
+                <a class="nhsuk-link nhsuk-link--no-visited-state" href="bookings-scheduled">
+                    Cancel and return to appointments
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get selected appointments from session storage
+    const selectedAppointments = JSON.parse(sessionStorage.getItem('selectedAppointments') || '[]');
+    const selectedCount = parseInt(sessionStorage.getItem('selectedCount') || '0');
+    
+    // Update appointment count
+    document.getElementById('appointmentCount').textContent = `${selectedCount} appointment${selectedCount === 1 ? '' : 's'}`;
+    
+    // Populate appointments list
+    const appointmentsList = document.getElementById('appointmentsList');
+    selectedAppointments.forEach(appointment => {
+        const row = document.createElement('tr');
+        row.className = 'nhsuk-table__row';
+        row.innerHTML = `
+            <td class="nhsuk-table__cell">${appointment.time}</td>
+            <td class="nhsuk-table__cell">${appointment.name}</td>
+            <td class="nhsuk-table__cell">${appointment.nhs}</td>
+            <td class="nhsuk-table__cell">${appointment.service}</td>
+        `;
+        appointmentsList.appendChild(row);
+    });
+    
+    // Store data in hidden form fields
+    document.getElementById('selectedAppointmentsData').value = JSON.stringify(selectedAppointments);
+    document.getElementById('appointmentCountData').value = selectedCount.toString();
+    
+    // Handle form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        const confirmRadio = document.querySelector('input[name="confirm-cancellation"]:checked');
+        if (confirmRadio && confirmRadio.value === 'no') {
+            e.preventDefault();
+            window.location.href = 'bookings-cancelled';
+        }
+    });
+});
+</script>
+{% endblock %}

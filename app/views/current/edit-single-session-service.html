@@ -40,7 +40,15 @@
             <span class="nhsuk-caption-l">{{site}}</span>
             <h1 class="nhsuk-heading-l">Remove services for Monday 1 {{ date({month: 'long'}) }} </h1>
 
-            <p></p>
+
+<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>If you need to remove all services, cancel the session instead.</p>
+<!--           
+            <p>420 booked appointments in this session.<br>
+              0 unbooked appointments in this session.</p> -->
+          </div>
+            
 
 
   
@@ -50,6 +58,7 @@
   {{ checkboxes({
     idPrefix: "services",
     name: "services",
+
 
  
    
@@ -74,14 +83,6 @@
         {
         value: "Covid 75+",
         text: "Covid 75+"
-      },
-      {
-        divider: "or"
-      },
-      {
-        value: "all",
-        text: "Select all vaccines",
-        exclusive: true
       }
     ]
   }) }}
