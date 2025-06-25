@@ -1,0 +1,73 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Enter name
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Single or multi site upload</h1>
+
+        <form action="/site-answer" method="post">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          </legend>
+          <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="site-single" name="site" type="radio" value="single">
+          <label class="nhsuk-label nhsuk-radios__label" for="site-single">
+           Single
+          </label>
+          </div>
+          <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="site-multiple" name="site" type="radio" value="multiple">
+          <label class="nhsuk-label nhsuk-radios__label" for="site-multiple">
+           Multiple
+          </label>
+          </div>
+          </div>
+          </div>
+          </fieldset>
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+           Continue
+          </button>
+          </form>
+
+
+    </div>
+</div>
+
+    {% endblock %}

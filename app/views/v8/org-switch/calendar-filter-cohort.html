@@ -1,0 +1,134 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../../current/view-availability/layout.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l">Find vaccination bookings</h1>
+    </h1>
+
+
+
+  </div>
+</div>
+
+
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-5">
+
+
+
+
+  <div class="nhsuk-grid-column-one-third" style="border-right:solid lightgray 1px">
+    {{ radios({
+    idPrefix: "cohort",
+    name: "cohort",
+    fieldset: {
+    legend: {
+    text: "Cohort group",
+    classes: "nhsuk-fieldset__legend--m",
+    isPageHeading: true
+    }
+    },
+
+    items: [
+    {
+    value: "rsv-75",
+    text: "75 years rolling"
+    },
+    {
+    value: "rsv-75-79",
+    text: "75-79 years"
+    },
+    {
+    value: "pregnant",
+    text: "Pregnant"
+    }
+    ]
+    }) }}
+
+  </div>
+
+  
+
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+
+    {% from 'button/macro.njk' import button %}
+
+    {{ button({
+    text: "Find bookings",
+    href:'calendar'
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+
+<!-- END SERVICES-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-06-01";
+console.log(dateControl.value); // prints "2017-06-01"
+console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
+
+</script>
+
+{% endblock %}

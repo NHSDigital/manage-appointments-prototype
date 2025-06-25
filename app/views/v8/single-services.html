@@ -1,0 +1,116 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:history.back()",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Create single date sessionss</span>
+        
+
+
+      <form action="check-day" class="form" method="post">
+      
+
+  {{ checkboxes({
+    idPrefix: "services",
+    name: "services",
+    fieldset: {
+      legend: {
+        text: "Add services to your session",
+        classes: "nhsuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    },
+    hint: {
+      text: "Select all options that are relevant to you."
+    },
+    items: [
+      {
+        value: "rsv",
+        text: "RSV adult"
+      },
+      {
+        value: "Covid 5-11",
+        text: "Covid 5-11"
+      },
+      {
+        value: "Covid 12-15",
+        text: "Covid 12-15"
+      },
+        {
+        value: "Covid 12-17",
+        text: "Covid 12-17"
+      },
+      {
+        value: "Covid 18+",
+        text: "Covid 18+"
+      },
+        {
+        value: "Covid 75+",
+        text: "Covid 75+"
+      },
+      {
+        value: "Flu and Covid 18-65",
+        text: "Flu and Covid 18-65"
+      },
+      {
+        value: "Flu and Covid 65+",
+        text: "Flu and Covid 65+"
+      },
+      {
+        value: "Flu and Covid 75+",
+        text: "Flu and Covid 75+"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "all",
+        text: "Select all vaccines",
+        exclusive: true
+      }
+    ]
+  }) }}
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

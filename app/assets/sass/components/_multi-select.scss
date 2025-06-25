@@ -1,21 +1,23 @@
+/* NHS Appointments Multi-Select Styling */
 
 .bulk-actions {
     background-color: #f0f4f5;
-    margin-top: 32px;;
     
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .bulk-actions-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-}
-
-.selection-info {
-    font-weight: bold;
-    
+    width: 100%;
 }
 
 .bulk-buttons {
@@ -38,8 +40,15 @@
     vertical-align: top;
 }
 
+.appointments-table th {
+    background-color: #f0f4f5;
+    font-weight: 600;
+    font-size: 16px;
+}
 
-
+.appointments-table td {
+    font-size: 16px;
+}
 
 .appointments-table tr.selected {
     background-color: #e8f4f8;
@@ -109,15 +118,48 @@
 
 /* Button disabled states */
 .nhsuk-button:disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
-    pointer-events: none;
+    background-color: #768692 !important;
+    border-color: #768692 !important;
 }
 
+.nhsuk-button--warning:disabled {
+    background-color: #a04560 !important;
+    border-color: #a04560 !important;
+    opacity: 0.6;
+}
+
+.nhsuk-button--secondary:disabled {
+    background-color: #768692 !important;
+    border-color: #768692 !important;
+    opacity: 0.6;
+}
+
+/* Cancel appointment links */
+.cancel-appointment-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cancel-appointment-link:hover {
+    text-decoration: none;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .bulk-actions-content {
+        justify-content: center;
+    }
+    
+    .bulk-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .bulk-buttons .nhsuk-button {
+        width: 100%;
+        margin-bottom: 8px;
     }
     
     .appointments-table {
@@ -128,4 +170,32 @@
     .appointments-table td {
         padding: 8px 4px;
     }
+    
+    .checkbox-cell {
+        width: 40px;
+    }
+}
+
+
+
+.nhsuk-button--warning {
+    background-color: #d5281b;
+    border-color: #d5281b;
+}
+
+.nhsuk-button--secondary {
+    background-color: #4c6272;
+    border-color: #4c6272;
+}
+
+.nhsuk-button:hover {
+    background-color: #00692f;
+}
+
+.nhsuk-button--warning:hover {
+    background-color: #b02617;
+}
+
+.nhsuk-button--secondary:hover {
+    background-color: #3f525f;
 }

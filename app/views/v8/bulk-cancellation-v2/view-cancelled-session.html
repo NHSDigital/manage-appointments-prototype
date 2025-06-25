@@ -1,0 +1,142 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-top-nav-v5.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="week-session-bookings-cancelled">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+         Back to week view</a>
+      </div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-l">Cancelled session for 26 August 2024</h1>
+
+        
+
+
+        
+
+
+        <dl class="nhsuk-summary-list">
+
+        
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              09:00 - 17:00
+            </dd>
+        
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Breaks
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              12:00 - 13:00
+            </dd>
+        
+        
+          </div>
+        
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Vaccinators or spaces available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length in minutes
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Covid 18-75+
+            </dd>
+        
+        
+          </div>
+          
+        </dl>
+
+        <p>We've automatically cancelled 486 appointments.  </p>
+
+        <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>12 people didn't give a mobile number or email, and we could not automatically cancel their appointments.</p> 
+        
+        <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+        </div>-->
+
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Some appointments could not be cancelled
+            </span>
+          </h3>
+          <p>12 people did not provide a mobile number or email, and we could not automatically cancel their appointments.</p> 
+        
+          <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+          </div>
+        <!--<a class="nhsuk-button" href="week-session-bookings-cancelled">Finish</a>-->
+
+          
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

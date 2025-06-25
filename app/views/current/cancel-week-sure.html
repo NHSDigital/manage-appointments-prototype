@@ -38,115 +38,85 @@
 
     
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Cancel     1 {{ date({month: 'long'}) }} to 7 {{ date({month: 'long'}) }} </span>
-            <h1 class="nhsuk-heading-l">Are you sure you want to cancel this week?</h1>
+            <span class="nhsuk-caption-l">{{site}} </span>
 
-            <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Sessions this week</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Date
-                  </th>
-               
-                  <th role="columnheader" class="" scope="col">
-                    Services
-                  </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Booked
-                  </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Unbooked
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Sun 1 {{ date({month: 'long'}) }}</td>
-               
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Mon 2 {{ date({month: 'long'}) }}</td>
-                  
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">7 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Tues 3 {{ date({month: 'long'}) }}</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Weds 4 {{ date({month: 'long'}) }}</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Thurs 5 {{ date({month: 'long'}) }}</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Fri 6 {{ date({month: 'long'}) }}</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">Sat 7 {{ date({month: 'long'}) }}</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">3 unbooked</td>
-                </tr>
-              </tbody>
-            </table>
+            <h1 class="nhsuk-heading-l">Cancel week</h1>
 
-            <div class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-              
-                <p>600 booked appointments will be cancelled. They will be sent a text message or an email to confirm cancellation..</p>
-              </div>
-  
+
+            {% from 'inset-text/macro.njk' import insetText %}
+
+{{ insetText({
+  html: "<p>All cancelled appointments will receive a notification</p>"
+}) }}
+
+            
             
 
 
-      <form action="cancelWeekSure" method="get" class="form">
+            <form action="cancel-week-confirmation" method="post" novalidate>
+
+  <div class="nhsuk-form-group">
+
+    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+    
+      
+      <div class="nhsuk-checkboxes">
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+            Monday 30 June
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+            Tuesday 1 July
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+            Wednesday 2 July
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-4" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+            Thursday 3 July
+          </label>
+
+      </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-5" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-5">
+            Friday 4 July
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-6" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-6">
+            Saturday 5 July
+          </label>
+      </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-7" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-7">
+            Sunday 6 July
+          </label>
+        </div>
+    </fieldset>
+
+    <button class="nhsuk-button nhsuk-u-margin-top-5">Continue</button>
+  </div>
+
+</form>
+
           
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            </legend>
-            <div class="nhsuk-form-group">
-                <div class="nhsuk-radios">
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                     Yes, I want to cancel the appointments
-                    </label>
-                  </div>
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="keep">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      No, I don't want to cancel the appointments
-                    </label>
-                 </div>
-            
-                </div>
-                </div>
-          </fieldset>
-        
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
+
+          
       
 
       <!-- End of content -->
