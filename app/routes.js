@@ -242,13 +242,17 @@ router.get(/cancelWeekSure/, function (req, res) {
     }
 });
 
-
-router.get(/cancelServices/, function (req, res) {
-    if (req.query.radioGroup === "session" ) {
-        res.redirect('cancel-confirmation');
-    }
-    else {
-        res.redirect('cancel-services');
+router.get('/CancelServices', function (req, res) {
+    var choice = req.query.radioGroup;
+    
+    console.log('Choice received:', choice); // Debug - remove this later
+    
+    if (choice === "session") {
+        res.redirect('/current/cancel-confirmation'); // Works fine
+    } else if (choice === "services") {
+        res.redirect('/current/cancel-services'); // Fixed - goes to different page
+    } else {
+        res.redirect('/'); // No choice made
     }
 });
 

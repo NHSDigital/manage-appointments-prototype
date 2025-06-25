@@ -1,0 +1,54 @@
+<!-- Simplified version for debugging -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <span class="nhsuk-caption-l">{{site}}</span>
+      <h1 class="nhsuk-heading-l">Remove services for Monday 1 {{ date({month: 'long'}) }} </h1>
+
+      <p class="nhsuk-body-l">Do you want to cancel the session or remove a service or multiple services?</p>
+
+      <form action="/CancelServices" method="get">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <div class="nhsuk-radios">
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="session" name="radioGroup" type="radio" value="session">
+                <label class="nhsuk-label nhsuk-radios__label" for="session">
+                  Cancel the session
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="services" name="radioGroup" type="radio" value="services">
+                <label class="nhsuk-label nhsuk-radios__label" for="services">
+                  Remove a service or multiple services
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
