@@ -38,62 +38,59 @@
 
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-l">Cancelled day for 26 August 2024</h1>
+            <h1 class="nhsuk-heading-l">Day cancelled for {{date()}}</h1>
 
-        
-
-
-        
 
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Sessions cancelled</caption>
+              <caption class="nhsuk-table__caption">Sessions for Monday 1 {{date({month:'long'})}}</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
                     Time
                   </th>
-                  <th role="columnheader" class="" scope="col">
-                    Break
-                  </th>
+                  
                   <th role="columnheader" class="" scope="col">
                     Services
                   </th>
-
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Booked
+                  </th>
+                  
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
+                
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked<br>200 booked</td>
+                
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
+                
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 5-17</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">80 booked</td>
+              
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">13:00 - 17:00</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">No break</td>
+                
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">RSV</td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">100 booked</td>
+                
                 </tr>
               </tbody>
             </table>
 
-        <p>We've automatically cancelled 588 of 600 booked appointments.  </p>
+  
 
-        <!--<div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>12 people didn't give a mobile number or email, and we could not automatically cancel their appointments.</p> 
-        
-        <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
-        </div>-->
 
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>12 people did not provide a mobile number or email, and we could not automatically cancel these appointments</p>
+          <p>Some booked aapointments may be impacted by this change. If so, you'll need to cancel these appointments manually.</p>
 
-            <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+            <p><a class="nhsuk-link" href="bookings-scheduled">Cancel these appointments</a></p>
         </div>
 
         <!-- <div class="nhsuk-warning-callout">

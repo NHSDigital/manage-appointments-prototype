@@ -33,40 +33,38 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-column-two-thirds">
 
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">Cancel session</span>
-            <h1 class="nhsuk-heading-l">Are you sure you want to cancel this session?</h1>
+            <span class="nhsuk-caption-l">{{site}}</span>
+            <h1 class="nhsuk-heading-l">Cancel session for {{date()}}</h1>
+
+          
 
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Monday 26 August</caption>
+              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Session details</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
                     Time
                   </th>
-                  <th role="columnheader" class="" scope="col">
-                    Break
-                  </th>
+                  
                   <th role="columnheader" class="" scope="col">
                     Services
                   </th>
                   <th role="columnheader" class="" scope="col" style="text-align: right;">
                     Booked
                   </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Unbooked
-                  </th>
+                
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>
+                  
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 18-75+<br>RSV</td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">220 booked<br>200 booked</td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">0 unbooked</td>
+                
                 </tr>
               </tbody>
             </table>
@@ -74,11 +72,11 @@
             <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
               
-                <p>420 booked appointments will be cancelled.</p>
+                <p>125 booked appointments will be cancelled. We'll notify people that their appointment has been cancelled</p>
               </div>
   
-              <p>We'll notify people that their appointment has been cancelled</p>
-
+            
+  <p class="nhsuk-body-l">Do you want to cancel this session?</p>
 
       <form action="cancelSure" method="get" class="form">
           

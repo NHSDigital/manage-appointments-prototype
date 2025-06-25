@@ -1,0 +1,56 @@
+<!-- File: app/views/test-page.html -->
+{% extends 'layout.html' %}
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <form action="check-and-add-file" mathod="post">
+      <h1 class="nhsuk-heading-l">Upload a file</h1>
+      <p class="nhsuk-body">Upload a file containing all sites to be added.</p>
+      <p class="nhsuk-body nhsuk-hint">The file should be in CSV format with the following columns: Site Name, Address, Postcode, Phone Number.</p>
+      
+      <div class="govuk-form-group">
+  <label class="govuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+    Upload a file
+  </label>
+  <div
+    class="govuk-drop-zone"
+    data-module="govuk-file-upload">
+    <input class="govuk-file-upload" id="fileName" name="fileName" type="file">
+  </div>
+</div>
+<button class="nhsuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#site-picker')
+  })
+</script>
+
+
+{% endblock %}

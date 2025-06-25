@@ -40,61 +40,102 @@
             <span class="nhsuk-caption-l">{{site}}</span>
             <h1 class="nhsuk-heading-l">Remove services for Monday 1 {{ date({month: 'long'}) }} </h1>
 
+            <p class="nhsuk-body-l">Do you want to cancel the session or remove a service or multiple services?</p>
 
-<div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>If you need to remove all services, cancel the session instead.</p>
-<!--           
-            <p>420 booked appointments in this session.<br>
-              0 unbooked appointments in this session.</p> -->
-          </div>
+
+
+ <form action="cancelServices" class="form" method="post">
+
+            <div class="nhsuk-form-group">
+
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+  
+  
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="session" aria-controls="conditional-session" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="session-radio">
+          Cancel the session
+        </label>
+      </div>
+
+        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-session">
+         <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="session">
+          
+        <label class="nhsuk-label nhsuk-radios__label" for="session-radio">
+        Cancel appointments for this session
+        </label>
+      </div>
+        <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="session">
+        <label class="nhsuk-label nhsuk-radios__label" for="session-radio">
+        Don't cancel appointments for this session
+        </label>
+      </div>
+        </div>
+      
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="services" aria-controls="conditional-contact-2" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="session-radio">
+          Remove a service or multiple services
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+      
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="session-radio" name="radioGroup" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="session-radio">
+          RSV adult
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="session-radio" name="radioGroup" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="session-radio">
+          Covid 5-11
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="session-radio" name="radioGroup" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="session-radio">
+            Covid 12-17
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="session-radio" name="radioGroup" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="session-radio">
+            Covid 18+
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="session-radio" name="radioGroup" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="session-radio">
+            Covid 75+
+          </label>
+        </div>
+
+      </div>
+      
+    
+    </div>
+  </fieldset>
+</div>
+
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+              Continue
+            </button>
+</form>
+
+
+
             
 
 
-  
-      <form action="cancel-services" class="form" method="post">
-        <div class="nhsuk-form-group">
-
-  {{ checkboxes({
-    idPrefix: "services",
-    name: "services",
-
-
- 
-   
-    items: [
-      {
-        value: "rsv",
-        text: "RSV adult"
-      },
-      {
-        value: "Covid 5-11",
-        text: "Covid 5-11"
-      },
-
-        {
-        value: "Covid 12-17",
-        text: "Covid 12-17"
-      },
-      {
-        value: "Covid 18+",
-        text: "Covid 18+"
-      },
-        {
-        value: "Covid 75+",
-        text: "Covid 75+"
-      }
-    ]
-  }) }}
-
-
-
-      </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
       
 
       <!-- End of content -->

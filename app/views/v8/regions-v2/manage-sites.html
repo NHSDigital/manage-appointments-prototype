@@ -1,0 +1,558 @@
+<!-- Use this page as the index for your project -->
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+View site
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% if data['site-added'] == 'yes' %}
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      The site has been added successfully
+    </h3>
+  
+  </div>
+</div>
+      {% endif %}
+
+
+
+      <div class="nhsuk-page-header-actions">
+        <div class="nhsuk-page-header-actions__title">
+          <span class="nhsuk-hint">Viewing sites for</span>
+          <h1 class="nhsuk-heading-xl">{{region}}</h1>
+        </div>
+      
+        <div class="nhsuk-page-header-actions__actions">
+          <div class="nhsuk-button-group nhsuk-button-group--inline">
+      
+            <!-- <form method="post" action="single-site">
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Add a site
+              </button>
+              </form> -->
+      
+      
+          </div>
+        </div>
+      
+      </div>
+
+      <!-- SEARCH -->
+
+      <div class="app-filters nhsuk-u-margin-top-5">
+        <form method="post" action="" novalidate="">
+          <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+            <label class="nhsuk-label" for="q">
+              Search active sites by name, ICB or ODS code
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="q" name="q" type="search" value="">
+            
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-2 app-button--small nhsuk-u-margin-bottom-0" 
+                    data-module="nhsuk-button" 
+                    type="submit"
+                    id="search-button">
+              Search
+            </button>
+            
+            <!-- Added clear button directly in HTML -->
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-2 app-button--small nhsuk-u-margin-bottom-0" 
+                    data-module="nhsuk-button" 
+                    type="button"
+                    id="clear-button">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+      <!-- END SEARCH -->
+
+    
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Listing all sites in your region</caption>
+        <thead class="nhsuk-table__head">
+          <tr>
+            <th scope="col" class="nhsuk-table__header">Name</th>
+            <th scope="col" class="nhsuk-table__header">ICB</th>
+            <th scope="col" class="nhsuk-table__header">ODS</th>
+            
+            <th scope="col" class="nhsuk-table__header"><span>Action</span></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Lloyds Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">5PLE9</td>
+            
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Boots Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">6FBP3</td>
+           
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Phillips Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire </td>
+            <td class="nhsuk-table__cell">4PLP7</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Wellcare Chemist</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
+            <td class="nhsuk-table__cell">3WLC2</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sutton Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire </td>
+            <td class="nhsuk-table__cell">2STP5</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Healthwise Chemist</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">7HWC8</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Green Cross Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire </td>
+            <td class="nhsuk-table__cell">9GCP1</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Superdrug Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire </td>
+            <td class="nhsuk-table__cell">8SDP4</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Village Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
+            <td class="nhsuk-table__cell">1VLP6</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Rowlands Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">6RLP5</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Morrisons Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire </td>
+            <td class="nhsuk-table__cell">3MRP7</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Tesco Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire </td>
+            <td class="nhsuk-table__cell">4TCP2</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Asda Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
+            <td class="nhsuk-table__cell">5ADP9</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Day Lewis Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">2DLP8</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cohens Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire </td>
+            <td class="nhsuk-table__cell">7CHP3</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Hornsey Central Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire </td>
+            <td class="nhsuk-table__cell">9MPC4</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cornerstone Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
+            <td class="nhsuk-table__cell">1CSP6</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Abbey Pharmacy</td>
+            <td class="nhsuk-table__cell">North East and North Cumbria </td>
+            <td class="nhsuk-table__cell">3ABP2</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Park View Pharmacy</td>
+            <td class="nhsuk-table__cell">West Yorkshire </td>
+            <td class="nhsuk-table__cell">8PVP7</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Hillside Pharmacy</td>
+            <td class="nhsuk-table__cell">South Yorkshire </td>
+            <td class="nhsuk-table__cell">4HSP1</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sunrise Pharmacy</td>
+            <td class="nhsuk-table__cell">Humber and North Yorkshire </td>
+            <td class="nhsuk-table__cell">5SRP8</td>
+            <td class="nhsuk-table__cell"><a href="site-overview">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row no-results-row" style="display: none;">
+            <td class="nhsuk-table__cell" colspan="5">
+              No sites match your search criteria
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination">
+    
+      
+  
+        <div class="nhsuk-pagination--numbered__prev">
+          <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=3&amp;q=" rel="prev"><svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+          <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+        </svg>Previous<span class="nhsuk-u-visually-hidden"> page</span>
+            </a>
+        </div>
+      
+          
+      
+          <ul class="nhsuk-pagination__list--numbered">
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=1&amp;q=" aria-label="Page 1">
+              1
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=2&amp;q=" aria-label="Page 2">
+              2
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=3&amp;q=" aria-label="Page 3">
+              3
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item nhsuk-pagination--numbered__item--current">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=4&amp;q=" aria-label="Page 4" aria-current="page">
+              4
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=5&amp;q=" aria-label="Page 5">
+              5
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=6&amp;q=" aria-label="Page 6">
+              6
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=7&amp;q=" aria-label="Page 7">
+              7
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=8&amp;q=" aria-label="Page 8">
+              8
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=9&amp;q=" aria-label="Page 9">
+              9
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=10&amp;q=" aria-label="Page 10">
+              10
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=11&amp;q=" aria-label="Page 11">
+              11
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=12&amp;q=" aria-label="Page 12">
+              12
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=13&amp;q=" aria-label="Page 13">
+              13
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=14&amp;q=" aria-label="Page 14">
+              14
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=15&amp;q=" aria-label="Page 15">
+              15
+            </a>
+          
+          </li>
+          
+            <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=16&amp;q=" aria-label="Page 16">
+              16
+            </a>
+          
+          </li>
+          
+          </ul>
+      
+          
+            
+        
+        <div class="nhsuk-pagination--numbered__next">
+          <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=5&amp;q=" rel="next">Next<span class="nhsuk-u-visually-hidden"> page</span><svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+          <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+        </svg></a>
+        </div>
+      
+          
+      </nav>
+
+
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#site-picker')
+  })
+</script>
+
+<!-- Add this script for the search filtering -->
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the search input and button elements
+    const searchInput = document.getElementById('q');
+    const searchButton = document.getElementById('search-button');
+    const clearButton = document.getElementById('clear-button');
+    
+    // Exit if we can't find the required elements
+    if (!searchInput || !searchButton || !clearButton) return;
+    
+    // Get all table rows
+    const tableRows = Array.from(document.querySelectorAll('.nhsuk-table__body .nhsuk-table__row')).filter(
+      row => !row.classList.contains('no-results-row')
+    );
+    if (!tableRows.length) return;
+    
+    // Get the no results row
+    const noResultsRow = document.querySelector('.no-results-row');
+    if (!noResultsRow) return;
+    
+    // Get the table caption to update with search results info
+    const tableCaption = document.querySelector('.nhsuk-table__caption');
+    const originalCaptionText = tableCaption ? tableCaption.textContent : '';
+    
+    // Get the form element to prevent default submission
+    const searchForm = searchInput.closest('form');
+    if (searchForm) {
+      // Keep the method as post but prevent the actual submission
+      searchForm.addEventListener('submit', function(e) {
+        // Prevent the form from submitting and refreshing the page
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Trigger the search filter
+        filterTable();
+        
+        return false;
+      });
+    }
+    
+    // Function to filter the table rows based on search input
+    function filterTable() {
+      const searchText = searchInput.value.trim();
+      
+      // Get just the first 3 letters from the search text (if there are at least 3)
+      const searchValue = searchText.length >= 3 ? 
+                          searchText.substring(0, 3).toLowerCase() : 
+                          searchText.toLowerCase();
+      
+      // If search is empty, show all rows
+      if (searchValue === '') {
+        tableRows.forEach(row => row.style.display = '');
+        if (tableCaption) tableCaption.textContent = originalCaptionText;
+        noResultsRow.style.display = 'none';
+        return;
+      }
+      
+      // Only proceed with filtering if we have at least 1 character to match against
+      let matchCount = 0;
+      
+      tableRows.forEach(row => {
+        // Get the text content from all cells we want to search
+        const name = row.cells[0].textContent.toLowerCase();
+        const icb = row.cells[1].textContent.toLowerCase();
+        const ods = row.cells[2].textContent.toLowerCase();
+        
+        // Check if the search value matches the first 3 letters of any field
+        const nameMatch = name.startsWith(searchValue);
+        const icbMatch = icb.startsWith(searchValue);
+        const odsMatch = ods.startsWith(searchValue);
+        
+        // Show or hide the row based on the match
+        const isMatch = nameMatch || icbMatch || odsMatch;
+        row.style.display = isMatch ? '' : 'none';
+        
+        if (isMatch) {
+          matchCount++;
+        }
+      });
+      
+      // Update the table caption
+      if (tableCaption) {
+        if (searchValue) {
+          const displayText = searchText.length > 3 ? 
+                            `"${searchText.substring(0, 3)}" (first 3 letters of "${searchText}")` : 
+                            `"${searchText}"`;
+          tableCaption.textContent = `Found ${matchCount} site${matchCount !== 1 ? 's' : ''} matching ${displayText}`;
+        } else {
+          tableCaption.textContent = originalCaptionText;
+        }
+      }
+      
+      // Show or hide the no results row
+      noResultsRow.style.display = (matchCount === 0) ? '' : 'none';
+    }
+    
+    // Add click event listener to the search button
+    searchButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      filterTable();
+    });
+    
+    // Clear search when clear button is clicked
+    clearButton.addEventListener('click', function() {
+      searchInput.value = '';
+      // Reset all table rows to be visible
+      tableRows.forEach(row => row.style.display = '');
+      // Reset caption
+      if (tableCaption) tableCaption.textContent = originalCaptionText;
+      // Hide the no results row
+      noResultsRow.style.display = 'none';
+      
+      searchInput.focus();
+    });
+  });
+</script>
+{% endblock %}

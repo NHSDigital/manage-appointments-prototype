@@ -1,0 +1,149 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-l">Availability for 26 August 2024</h1>
+
+
+
+        
+      <form action="week-session-added" class="form">
+
+        <dl class="nhsuk-summary-list">
+
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              17:00 - 18:00
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> session time</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Vaccinators or spaces available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> maximum simultaneous appointments</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5 minutes
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> appointment length</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+ 
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              RSV Adult
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> services availability</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+        </dl>
+        <p>[number] appointments available <br>[number] appointments per hour</p>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+        
+          <p>Saving will allow people to book appointments for the availability you've created. Make sure the information is accurate before saving.</p>
+        </div>
+        
+
+          <a class="nhsuk-button" href="week-session-added">
+            Save session
+          </a>
+          <!-- <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
+          Save without publishing
+        </a> -->
+          
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

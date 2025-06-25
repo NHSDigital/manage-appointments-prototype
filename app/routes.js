@@ -242,6 +242,16 @@ router.get(/cancelWeekSure/, function (req, res) {
     }
 });
 
+
+router.get(/cancelServices/, function (req, res) {
+    if (req.query.radioGroup === "session" ) {
+        res.redirect('cancel-confirmation');
+    }
+    else {
+        res.redirect('cancel-services');
+    }
+});
+
 // Add to your routes.js file
 router.get('/test-filters', function (req, res) {
     // Add some test data
@@ -328,9 +338,9 @@ router.get('/clear-data', function (req, res) {
 router.post('/site-answer', function(request, response) {
   var site = request.session.data['site']
   if (site == "single"){
-    response.redirect("/current/regions/single-site")
+    response.redirect("/current/add-sites/single-site")
   } else {
-    response.redirect("/current/regions/multiple-site")
+    response.redirect("/current/add-sites/multiple-site")
   }
 })
 // END
