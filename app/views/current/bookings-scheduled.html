@@ -38,7 +38,7 @@ Manage appointments - {{site}} - 11 June 2025
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <span class="nhsuk-hint">{{site}}</span>
-        <h1 class="nhsuk-heading-l">All appointments for {{date()}}</h1>
+        <h1 class="nhsuk-heading-l">All appointments for Monday 1 {{date({month:'long'})}}</h1>
         
         <!-- Print button -->
        
@@ -163,7 +163,7 @@ Manage appointments - {{site}} - 11 June 2025
                         <td class="nhsuk-table__cell">{{appointment.contact | safe}}</td>
                         <td class="nhsuk-table__cell">{{appointment.service}}</td>
                         <td class="nhsuk-table__cell">
-                            <a href="#" class="nhsuk-link cancel-appointment-link"
+                            <a href="#" class="nhsuk-link"
                                data-name="{{appointment.name}}"
                                data-time="{{appointment.time}}"
                                data-nhs="{{appointment.nhs}}"
@@ -194,11 +194,27 @@ Manage appointments - {{site}} - 11 June 2025
           
             <li class="nhsuk-pagination--numbered__item">
           
-            <a class="nhsuk-pagination--numbered__link" href="/user-admin?page=1&amp;q=" aria-label="Page 1">
+            <a class="nhsuk-pagination--numbered__link" href="" aria-label="Page 1">
               1
             </a>
           
           </li>
+           <li class="nhsuk-pagination--numbered__item">
+          
+            <a class="nhsuk-pagination--numbered__link" href="" aria-label="Page 1">
+              2
+            </a>
+          
+          </li>
+              <li class="nhsuk-pagination--numbered__item">
+             
+                <a class="nhsuk-pagination--numbered__link" href="" aria-label="Page 3">
+                  3
+                </a>
+                </li>
+               
+
+
           
           </ul>
       
