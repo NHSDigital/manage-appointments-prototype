@@ -1,0 +1,137 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:history.back()",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      
+
+
+            <!-- Change the page title here -->
+             <span class="nhsuk-caption-l">{{site}}</span>
+            <h1 class="nhsuk-heading-l">Delete availability</h1>
+
+
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+
+  <p>You are about to delete the availability period below. You cannot undo this action and you will need to create a new availability period if you want to offer these appointments again.</p>
+</div>
+        
+
+      <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Dates
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Days
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Services
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Session type
+                  </th>
+                
+                  </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">  1 {{ date({month: 'long'}) }} to 30 {{ date({month: 'long'}) }} </td>
+                  <td class="nhsuk-table__cell">Mon, Wed, Fri</td>
+                  <td class="nhsuk-table__cell">RSV adult (incl pregnancy), Covid 5-11, Covid 12-17, Covid 18+, Covid 75+, Flu 18-65, Flu and Covid 18-65, Flu and Covid 65+, Flu and Covid 75+  </td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Repeat</td>
+                
+                </tr>
+              </tbody>
+            </table>  
+        
+
+
+<form action="delete-done" method="post" class="nhsuk-form">
+  
+{{ button({
+  "text": "Delete availability",
+  "classes": "nhsuk-button--warning"
+}) }}
+
+  {{ button({
+  text: "Cancel",
+  classes: "nhsuk-button--secondary",
+  href: "availability-overview"
+
+}) }}
+  <input type="hidden" name="availability-created" value="yes">
+</form>
+
+          <!-- <a class="nhsuk-button nhsuk-button--secondary" href="availability-overview-unpublished">
+          Save without publishing
+        </a> -->
+          
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the close link
+    const closeLink = document.querySelector('.govuk-notification-banner__link');
+    
+    // Find the entire notification banner
+    const notificationBanner = document.querySelector('.govuk-notification-banner');
+    
+    // Add click event listener to the close link
+    if (closeLink && notificationBanner) {
+      closeLink.addEventListener('click', function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+        
+        // Hide the notification banner
+        notificationBanner.style.display = 'none';
+        
+        // Alternative: remove the element completely from the DOM
+        // notificationBanner.remove();
+      });
+    }
+  });
+</script>
+{% endblock %}

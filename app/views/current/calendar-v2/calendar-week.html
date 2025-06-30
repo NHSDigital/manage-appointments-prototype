@@ -1,0 +1,105 @@
+<!-- Converted from daily to weekly view -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+{% block pageTitle %}Manage appointments - {{site}} - Week View{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/appointments-week.css">
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption">{{site}}</span>
+    <h1 class="nhsuk-heading-l">View and manage bookings (Week View)</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+    <h2 class="nhsuk-heading-m">Select week</h2>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="week-start">Week starting</label>
+      <input class="nhsuk-input" id="week-start" name="week-start" type="date" value="{{ date() }}">
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    {{ radios({
+      idPrefix: "view",
+      name: "view",
+      fieldset: {
+        legend: {
+          text: "View appointments by",
+          classes: "nhsuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        { value: "day", text: "Day" },
+        { value: "week", text: "Week", checked: true },
+        { value: "month", text: "Month" }
+      ]
+    }) }}
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    {{ radios({
+      idPrefix: "service",
+      name: "service",
+      fieldset: {
+        legend: {
+          text: "Service type",
+          classes: "nhsuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        { value: "rsv", text: "RSV adult" },
+        { value: "covid", text: "Covid" },
+        { value: "flu", text: "Flu" }
+      ]
+    }) }}
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {{ button({ text: "View bookings" }) }}
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table week-view-table">
+        <caption class="nhsuk-table__caption">Appointments for the week</caption>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set times = ["08:30", "08:45", "09:00", "09:15", "09:30"] %}
+          {% for time in times %}
+          <tr>
+            <td><strong>{{ time }}</strong></td>
+            <td>John Smith<br><span class="nhsuk-body-s">RSV</span></td>
+            <td>Ava Ng</td>
+            <td>—</td>
+            <td>Sarah Liu</td>
+            <td>Mike Jones</td>
+            <td><span class="nhsuk-tag nhsuk-tag--green">Available</span></td>
+            <td><span class="nhsuk-tag nhsuk-tag--green">Available</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
