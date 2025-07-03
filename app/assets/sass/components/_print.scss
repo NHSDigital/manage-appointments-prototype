@@ -8,9 +8,21 @@
     .x-govuk-secondary-navigation,
     .moj-button-group,
     .govuk-pagination,
-    nav {
-      display: none !important;
-    }
+    nav,
+  .nhsuk-back-link, 
+  .x-govuk-secondary-navigation, 
+  .govuk-pagination, 
+  nav,
+  .no-print,
+  .nhsuk-table__cell a,
+  button,
+  .pagination,
+  a[href="cancel"],
+  a[class="Cancel"],
+  header,
+  footer {
+    display: none !important;
+  }
     
     /* Ensure the whole page prints well */
     body {
@@ -38,12 +50,12 @@
       padding: 10px;
       font-weight: bold;
       text-align: left;
-      border: 1px solid #d8dde0;
+      border: none;
     }
     
     .nhsuk-table__body td {
       padding: 10px;
-      border: 1px solid #d8dde0;
+      border: none;
     }
     
     /* Format the joint appointment styling for print */

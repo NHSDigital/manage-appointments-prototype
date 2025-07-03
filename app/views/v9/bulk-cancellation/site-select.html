@@ -1,0 +1,82 @@
+<!-- File: app/views/test-page.html -->
+{% extends '../../current/bulk-cancellation/layout.html' %}
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="main-content">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1>Site selection</h1>
+        
+        <form method="post" action="site-overview">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="location">
+              Enter your location
+            </label>
+            
+            <div class="nhsuk-hint" id="location-hint">
+              Start typing to see suggestions
+            </div>
+            
+            <div id="location-container"></div>
+            <input type="hidden" name="location" id="location-hidden">
+          </div>
+          
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof accessibleAutocomplete !== 'undefined') {
+      // Initialize the autocomplete directly
+      accessibleAutocomplete({
+        element: document.getElementById('location-container'),
+        id: 'location',
+        source: [
+  'Highland Health Pharmacy',
+  'Wellness Corner Chemist',
+  'City Centre Dispensary',
+  'Oakridge Family Pharmacy',
+  'Royal Care Apothecary',
+  'Bridgeview Medical Supplies',
+  'Greenleaf Prescription Center',
+  'Riverside Healthcare Pharmacy',
+  'Sunrise Community Chemist',
+  'Parkside Wellness Dispensary',
+  'Heritage Health Solutions',
+  'Meadowbrook Family Pharmacy',
+  'Lakeview Prescription Services',
+  'Northside Healthcare Center',
+  'Unity Medical Pharmacy',
+  'Guardian Health Dispensary',
+  'Harmony Wellness Chemist',
+  'Westfield Care Pharmacy',
+  'Landmark Medical Supplies',
+  'Crescent Health Apothecary'
+],
+        displayMenu: 'overlay',
+        confirmOnBlur: true,
+        onConfirm: function(selectedItem) {
+          document.getElementById('location-hidden').value = selectedItem;
+        }
+      });
+    } else {
+      console.error('Accessible Autocomplete library not loaded');
+    }
+  });
+</script>
+{% endblock %}

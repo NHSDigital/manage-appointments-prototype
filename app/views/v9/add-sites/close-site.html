@@ -1,0 +1,92 @@
+<!-- File: app/views/test-page.html -->
+{% extends 'current/regions-v2/layout-top-nav-regions.html' %}
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">Close this site</h1>
+      
+      {% from 'date-input/macro.njk' import dateInput %}
+
+{{ dateInput({
+  id: "close-site-date",
+  name: "close-site-date",
+  namePrefix: "close-site-date",
+  fieldset: {
+    legend: {
+      text: "Enter a date for closing this site",
+      classes: "nhsuk-label--m",
+      isPageHeading:false
+    }
+  },
+  
+  items: [
+    {
+      name: "day",
+      classes: "nhsuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "nhsuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "nhsuk-input--width-4"
+    }
+  ]
+}) }}
+
+
+<form method="post" action="check-and-close">
+  {{ button({
+    text: "Close site",
+    classes: "nhsuk-button--warning"
+  }) }}
+
+</form>
+
+
+</div>
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof accessibleAutocomplete !== 'undefined') {
+      // Initialize the autocomplete directly
+      accessibleAutocomplete({
+        element: document.getElementById('location-container'),
+        id: 'location',
+        source: ['London', 'Manchester', 'Birmingham', 'Hornsea Central Pharmacy', 'Leeds', 'Liverpool'],
+        displayMenu: 'overlay',
+        confirmOnBlur: true,
+        onConfirm: function(selectedItem) {
+          document.getElementById('location-hidden').value = selectedItem;
+        }
+      });
+    } else {
+      console.error('Accessible Autocomplete library not loaded');
+    }
+  });
+</script>
+{% endblock %}

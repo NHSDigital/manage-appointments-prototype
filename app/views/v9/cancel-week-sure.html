@@ -1,0 +1,126 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">{{site}} </span>
+
+            <h1 class="nhsuk-heading-l">Cancel week</h1>
+
+
+            {% from 'inset-text/macro.njk' import insetText %}
+
+{{ insetText({
+  html: "<p>All cancelled appointments will receive a notification</p>"
+}) }}
+
+            
+            
+
+
+            <form action="cancel-week-confirmation" method="post" novalidate>
+
+  <div class="nhsuk-form-group">
+
+    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+    
+      
+      <div class="nhsuk-checkboxes">
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+            Monday 30 June
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+            Tuesday 1 July
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+            Wednesday 2 July
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-4" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+            Thursday 3 July
+          </label>
+
+      </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-5" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-5">
+            Friday 4 July
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-6" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-6">
+            Saturday 5 July
+          </label>
+      </div>
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-7" name="example" type="checkbox" value="letter">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-7">
+            Sunday 6 July
+          </label>
+        </div>
+    </fieldset>
+
+    <button class="nhsuk-button nhsuk-u-margin-top-5">Continue</button>
+  </div>
+
+</form>
+
+          
+
+          
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-calendar-week">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Monday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Tuesday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Wednesday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Thursday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Friday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Saturday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Sunday</h2></div>
+        </div>
+  
+
+        <ul class="nhsuk-grid-column-one-quarter nhsuk-calendar-group">
+          <li class="nhsuk-calendar-group__item">
+            <div class="nhsuk-calendar-day">
+                <div class="nhsuk-calendar-day__content">
+                  <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+                    <a class="nhsuk-link" href="#">26</a>      
+                  </h3>
+                  <p>3 Sessions<br>275 booked<br>25 free</p>
+                </div>
+            </div>
+            </li>
+
+        </ul>
+        </div>
+  
+
+      <!-- Change the page title here -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

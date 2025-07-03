@@ -1,0 +1,151 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Manual cancellations</span>
+            <h1 class="nhsuk-heading-l">What would you like to do with this appointment?</h1>
+
+             <p class="nhsuk-body-l">We could not automatically cancel this appointment as we could not send this as the person did not provide an email or mobile number.</p>
+
+     
+            <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Date and time
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                     1 {{ date({month: 'long'}) }}<br>8:35am
+                    </dd>
+                
+                
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Martin Lincoln
+                  </dd>
+              
+              
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    NHS number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                   999 123 4568
+                  </dd>
+              
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                   7 June 1958
+                  </dd>
+              
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Contact information
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                   {{phone}}
+                  </dd>
+              
+              
+                </div>
+            
+                
+              
+              </dl>
+
+
+      <form action="affected-bookings-cancel-session" method="get" class="form">
+          
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            </legend>
+            <div class="nhsuk-form-group">
+                <div class="nhsuk-radios">
+            
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
+                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
+                      Cancel this appointment
+                    </label>
+                  </div>
+            
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="no-contact">
+                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
+                      Unable to contact this person
+                    </label>
+                 </div>
+
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="reschedule">
+                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
+                      Reschedule this appointment
+                    </label>
+                 </div>
+            
+                </div>
+                </div>
+          </fieldset>
+
+            <input type="hidden" name="could-contact" value="no" novalidate>
+        
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

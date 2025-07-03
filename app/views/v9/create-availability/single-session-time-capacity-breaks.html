@@ -1,0 +1,389 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<script>
+
+  // (1) show item 2
+  
+    function showitem2() {
+    var x = document.getElementById("item-2");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  
+  //  (2) hide item 2
+  
+  function hideitem2() {
+  var x = document.getElementById("item-2");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+  }
+  
+  // (3) hide add another on item 1
+  
+  function hideadd1() {
+    var x = document.getElementById("add-2");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "none";
+    }
+    }
+  
+  // (4) show add another on item 1
+    function showadd1() {
+      var x = document.getElementById("add-2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "block";
+      }
+      }
+  
+  // (5) show item 3
+  function showitem3() {
+  var x = document.getElementById("item-3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "block";
+  }
+  }
+  
+  // (6) hide item 3
+  function hideitem3() {
+  var x = document.getElementById("item-3");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+  }
+  
+  // (7) hide add another on item 2
+  
+  function hideadd2() {
+    var x = document.getElementById("add-3");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "none";
+    }
+    }
+  
+  // (8) show add another on item 2
+    function showadd2() {
+      var x = document.getElementById("add-3");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "block";
+      }
+      }
+
+  // (9) show item 4
+  function showitem4() {
+  var x = document.getElementById("item-4");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "block";
+  }
+  }
+  
+  // (10) hide item 4
+  function hideitem4() {
+  var x = document.getElementById("item-4");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+  }
+
+    // (7) hide add another on item 3
+  
+    function hideadd3() {
+    var x = document.getElementById("add-4");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "none";
+    }
+    }
+
+  // (8) show add another on item 3
+  function showadd3() {
+      var x = document.getElementById("add-4");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "block";
+      }
+      }
+  
+  </script>
+
+  <style>
+
+.items {
+  display: none;
+}
+
+.list-item-wrapper-vertical {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.list-item-wrapper-vertical input {
+width: 80%;
+}
+
+.list-item-wrapper-vertical .remove-list-item-vertical {
+margin-top: 4.4em;
+display: block;
+}
+
+.list-item-wrapper-vertical .heading-medium {
+margin-top: 0;
+}
+
+.button-add-another-vertical {
+background-color: #eee;
+color: #000;
+box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another-vertical:hover {
+background-color: #ccc;
+color: #000;
+box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another-vertical:focus {
+background-color: #ccc;
+color: #000;
+box-shadow: 0 2px 0 #666;
+}
+
+@media (max-width: 640px) {
+.list-item-wrapper-vertical inpit {
+width: 100%;
+}
+
+.button-add-another-vertical {
+width: 90%;
+margin: auto;
+display: block;
+}
+}
+
+</style>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">Create single date session</span>
+            <h1 class="nhsuk-heading-l">Set time and capacity for your session</h1>
+
+      <form action="single-services" class="form">
+
+                <!-- session times -->
+                
+                
+                        <legend class="nhsuk-heading-s">Session times </legend>
+                
+                        <div class="nhsuk-hint" id="contact-hint">
+                            For example, 14:30
+                          </div>
+                          <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                            <label class="nhsuk-label" for="startTime">Start time</label>
+                            <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+                          </div>
+                          <div class="nhsuk-grid-column-one-half" style="padding: 0;">
+                            <label class="nhsuk-label">End time</label>
+                            <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time">
+                            </div>
+                                
+                <div class="nhsuk-grid-column-full" style="padding: 0;"><br>
+                    <div id="add-2" style="display: block;">
+                        <p><a class="nhsuk-link" href="javascript:showitem2(); hideadd1()">Add a break</a></p>
+                    </div>
+                </div>
+                
+                <!-- 1st break -->
+                
+                         <div id="item-2" class="items" style="display: none;">
+                            <br><br><br><div class="grid-row">
+                               <div class="column-one-third" style="float: left;">
+                                <legend class="nhsuk-heading-s">Break 1 </legend>
+                            </div>
+                            <div class="column-one-third">
+                                <div class="form-group">
+                                     <p style="text-align: right"><a href="javascript: hideitem2(); showadd1();">Remove</a></p>
+                                  </div>
+                               </div>
+                            </div>
+                            <br>
+                            <div class="form-group ">
+                                <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                                    <label class="nhsuk-label">Start time</label>
+                                    <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start" name="break-start"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+                                  </div>
+                                  <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                                    <label class="nhsuk-label">End time</label>
+                                    <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="break-end" name="break-end"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time">
+                                    </div>
+                                    </div>
+                
+                                    <div class="nhsuk-grid-column-full" style="padding: 0;"><br>
+                                        <div id="add-3" class="form-group" style="display: block;">
+                               <p><a class="nhsuk-link" href="javascript: showitem3(); hideadd2();">Add another break</a></p>
+                            </div></div>
+                         </div>
+                
+                <!-- 2nd break -->
+                
+                <div id="item-3" class="items" style="display: none;">
+                    <br><br><br><div class="grid-row">
+                       <div class="column-one-third" style="float: left;">
+                        <legend class="nhsuk-heading-s">Break 2 </legend>
+                    </div>
+                    <div class="column-one-third">
+                        <div class="form-group">
+                             <p style="text-align: right"><a href="javascript: hideitem3(); showadd2();">Remove</a></p>
+                          </div>
+                       </div>
+                    </div>
+                    <br>
+                    <div class="form-group ">
+                        <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                            <label class="nhsuk-label" for="startTime">Start time</label>
+                            <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start-2" name="break-start-2"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+                          </div>
+                          <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                            <label class="nhsuk-label">End time</label>
+                            <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="break-end-2" name="break-end-2"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time">
+                            </div>
+                            </div>
+        
+                            <div class="nhsuk-grid-column-full" style="padding: 0;"><br>
+                                <div id="add-3" class="form-group" style="display: block;">
+                       <p><a class="nhsuk-link" href="javascript: showitem4(); hideadd3();">Add another break</a></p>
+                    </div></div>
+                 </div>
+
+                                <!-- 3rd break -->
+                
+                                <div id="item-4" class="items" style="display: none;">
+                                    <br><br><br><div class="grid-row">
+                                       <div class="column-one-third" style="float: left;">
+                                        <legend class="nhsuk-heading-s">Break 3 </legend>
+                                    </div>
+                                       <div class="column-one-third">
+                                          <div class="form-group">
+                                             <p style="text-align: right"><a href="javascript: hideitem4(); showadd3();">Remove</a></p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group ">
+                                        <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                                            <label class="nhsuk-label" for="startTime">Start time</label>
+                                            <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="break-start-3" name="break-start-3"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+                                          </div>
+                                          <div class="nhsuk-grid-column-one-quarter" style="padding: 0;">
+                                            <label class="nhsuk-label">End time</label>
+                                            <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="break-end-3" name="break-end-3"> : <input class="nhsuk-input  nhsuk-input--width-2" label="End time" id="end-time" name="end-time">
+                                            </div>
+                                            </div>
+                        
+                                            <div class="nhsuk-grid-column-full" style="padding: 0;"><br>
+                                                <div id="add-3" class="form-group" style="display: block;">
+                                       <p><a class="nhsuk-link" href="javascript: showitem3(); hideadd2();">Add another break</a></p>
+                                    </div></div>
+                                 </div>
+                            
+     
+
+        <br><br><br><div class="nhsuk-form-group">
+          
+
+
+        <h5 class="nhsuk-heading-m" style="margin-bottom: 8px;">Capacity</h5>
+        <div class="nhsuk-hint" id="contact-hint">
+          Enter your capacity to calculate appointment numbers for this session.
+        </div>
+        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How many vaccinators or vaccination spaces do you have?</h5>
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <div class="nhsuk-form-group">
+          <input class="nhsuk-input nhsuk-input--width-3" id="simultaneous-appointments" name="simultaneous-appointments" type="text">
+        </div>
+
+        <h5 class="nhsuk-heading-s" style="margin-bottom: 8px;">How long are your appointments?</h5>
+        <div class="nhsuk-form-group">
+          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Minutes</div>
+        </div>
+        </fieldset>
+
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <strong><p style="margin-bottom: 0px;">Capacity calculator</p></strong>
+        <span class="nhsuk-u-visually-hidden">Information: </span><p><strong>0</strong> total appointments in the session<br>
+          <strong>0</strong> appointments per hour<br>
+
+        </p></div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+      
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
