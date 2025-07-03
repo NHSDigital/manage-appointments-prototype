@@ -1,0 +1,57 @@
+<!-- File: app/views/test-page.html -->
+{% extends 'current/regions/layout-top-nav-regions.html' %}
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Site selection</h1>
+        
+        <form method="post" action="check-and-add-site">
+          <div class="nhsuk-form-group">
+          
+
+            
+            {% include "current/regions/includes/sites.html" %}
+
+
+            
+            <div id="location-container"></div>
+            <input type="hidden" name="location" id="location-hidden">
+          </div>
+          
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#site-picker')
+  })
+</script>
+
+
+{% endblock %}

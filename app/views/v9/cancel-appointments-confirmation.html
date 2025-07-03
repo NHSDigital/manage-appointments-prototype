@@ -1,0 +1,90 @@
+<!-- Cancel Appointments Confirmation Page -->
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Cancel appointments - {{site}}
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+ href: "javascript:history.back()",
+ text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        
+        <span class="nhsuk-caption-l">{{site}}</span>
+        <h1 class="nhsuk-heading-l">Cancel appointments for Monday 1 {{date({month:'long'})}}</h1>
+
+
+        <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+              
+                <p>125 appointments will be cancelled. We'll notify people that their appointment has been cancelled.</p>
+              </div>
+
+
+        
+        <form action="bookings-cancelled" method="post">
+    
+            
+            <!-- Hidden field to store selected appointment data -->
+            <input type="hidden" name="selected-appointments" id="selectedAppointmentsData">
+            <input type="hidden" name="appointment-count" id="appointmentCountData">
+            <input type="hidden" name="cancelled" value="Yes">
+            
+            <div class="nhsuk-button-group">
+            
+                <button class="nhsuk-button nhsuk-button--warning">
+                    Cancel appointments
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get selected appointments from session storage
+    const selectedAppointments = JSON.parse(sessionStorage.getItem('selectedAppointments') || '[]');
+    const selectedCount = parseInt(sessionStorage.getItem('selectedCount') || '0');
+    
+    // Update appointment count
+    document.getElementById('appointmentCount').textContent = `${selectedCount} appointment${selectedCount === 1 ? '' : 's'}`;
+    
+    // Populate appointments list
+    const appointmentsList = document.getElementById('appointmentsList');
+    selectedAppointments.forEach(appointment => {
+        const row = document.createElement('tr');
+        row.className = 'nhsuk-table__row';
+        row.innerHTML = `
+            <td class="nhsuk-table__cell">${appointment.time}</td>
+            <td class="nhsuk-table__cell">${appointment.name}</td>
+            <td class="nhsuk-table__cell">${appointment.nhs}</td>
+            <td class="nhsuk-table__cell">${appointment.service}</td>
+        `;
+        appointmentsList.appendChild(row);
+    });
+    
+    // Store data in hidden form fields
+    document.getElementById('selectedAppointmentsData').value = JSON.stringify(selectedAppointments);
+    document.getElementById('appointmentCountData').value = selectedCount.toString();
+    
+    // Handle form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        const confirmRadio = document.querySelector('input[name="confirm-cancellation"]:checked');
+        if (confirmRadio && confirmRadio.value === 'no') {
+            e.preventDefault();
+            window.location.href = 'bookings-cancelled';
+        }
+    });
+});
+</script>
+{% endblock %}

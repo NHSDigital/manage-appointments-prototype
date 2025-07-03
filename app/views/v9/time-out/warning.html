@@ -1,0 +1,91 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+
+  <!-- The Modal -->
+<div id="nhsuk-modal" class="nhsuk-modal-wrapper">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+      <a class="nhsuk-link close">close</a>
+    <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+     <h1 class="nhsuk-heading-l">Sign out warning</h1>
+
+        <p class="nhsuk-body-l">For security and clinical safety, you will be signed out in <strong>10 minutes</strong>.</p>
+
+              
+
+    <p><a class="nhsuk-button" href="">Stay signed in</a></p>
+    <p><a href="signed-out">Sign out</a></p>
+  </div>
+
+</div>
+            
+           
+
+
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+<!-- Adding custom JavaScript -->
+{% block pageScripts %}
+<script>
+// Get the modal
+var modal = document.getElementById("nhsuk-modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+var a = document.getElementsByClassName("close")[0];
+
+
+
+// When the user clicks on <span> (x), close the modal
+a.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+{% endblock %}

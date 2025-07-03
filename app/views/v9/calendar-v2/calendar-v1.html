@@ -1,0 +1,583 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../../current/view-availability/layout.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %} 
+
+
+{% endblock %}
+
+{% block outerContent %}
+
+{% include '../../current/org-switch/includes/org-switcher.html' %}
+
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+
+    
+      <h1 class="nhsuk-heading-l">View bookings for  {{ date({month: 'long'}) }} 2025</h1>
+    </h1>
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Filter again
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+    
+        <div class="nhsuk-grid-row">
+  
+ 
+          <div class="nhsuk-grid-column-one-quarter">
+          
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="date">
+                Date from
+              </label>
+              <div id="date-hint" class="nhsuk-hint">
+                For example, 17/05/2024.
+              </div>
+      
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value=" {{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+      
+      
+          
+            </div>
+
+
+          </div>
+          
+          <div class="nhsuk-grid-column-one-quarter">
+          
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="date">
+                Date from
+              </label>
+              <div id="date-hint" class="nhsuk-hint">
+                For example, 17/05/2024.
+              </div>
+      
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value=" {{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+      
+      
+          
+            </div>
+            
+            
+              
+            
+            </div>
+          
+          
+          </div>
+          
+          
+          
+          <div class="nhsuk-grid-row">
+            
+           
+            <div class="nhsuk-grid-column-one-quarter">
+          
+          
+          
+            {{ radios({
+              idPrefix: "example",
+              name: "example",
+              fieldset: {
+                legend: {
+                  text: "Services",
+                  classes: "nhsuk-fieldset__legend--m",
+                  isPageHeading: true
+                }
+              },
+          
+              items: [
+                {
+                  value: "rsv",
+                  text: "RSV adult"
+                },
+                {
+                  value: "rsv adult",
+                  text: "Covid"
+                },
+                {
+                  value: "flu",
+                  text: "Flu"
+                }
+              ]
+            }) }}
+          
+          
+          
+          {% from 'button/macro.njk' import button %}
+          
+          {{ button({
+            text: "Apply filters"
+          }) }}
+          
+          </div>
+          </div>
+      </div>
+    </details>
+
+
+
+
+<!-- INFO BANNER -->
+
+<div class="nhsuk-grid-row">
+  
+ 
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+
+<h3 class="nhsuk-heading-m">223 bookings for this period</h3>
+    </div>
+</div>
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+       Calendar key
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+    
+        <div class="calendar">
+  
+          <ul class="days">
+          <!-- add filler at beginning of month -->
+              <li class="out_of_range calendar-day available">
+                
+                  <div class="date day_cell">Availability</div>
+              </li>
+              <li class="out_of_range calendar-day occupied">
+              
+                <div class="date day_cell">Full</div>
+              </li>            
+              <li class="calendar-day selected">
+                  <div class="date day_cell">Selected</div>
+                  
+              </li>
+              </ul>
+              </div>
+    
+      </div>
+    </details>
+
+    <div class="moj-scrollable-pane">
+
+    
+
+          <h2 class="nhsuk-heading-m">Sunday 23 {{ date({month: 'long'}, {'month': -1}) }}  to Monday 30 {{ date({month: 'long'}) }}</h2>
+
+
+          <div class="calendar"  style="display: flex;justify-content: space-between">
+
+
+          
+
+
+            <button class="nhsuk-button nhsuk-button--reverse nhsuk-buttons--small">
+          
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M15,4 L7,12 L15,20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Prev
+            </button>
+
+            <button class="nhsuk-button nhsuk-button--reverse nhsuk-buttons--small">
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9,4 L17,12 L9,20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+
+
+
+
+            </div>
+        
+
+          <div class="calendar">
+            <ul class="days">
+              <li>Monday</li>
+            </ul>
+            <ul class="days">
+            <!-- add filler at beginning of month -->
+                <li class="out_of_range calendar-day occupied">
+                  <div class="date day_cell">25</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">26</div>
+                  <div class="show-info">22 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">27</div>
+                  <div class="show-info">18 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day occupied">
+                  <div class="date day_cell">28</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">29</div>
+                  <div class="show-info">23 bookings</div>
+                </li>
+                <li class="out_of_range calendar-day available">
+                  <div class="date day_cell">30</div>
+                  <div class="show-info">12 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">1</div>
+                  <div class="show-info">40 bookings</div>
+                </li>
+                </ul>
+                <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">2</div>
+                  <div class="show-info">29 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">3</div>
+                  <div class="show-info">65 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">4</div>
+                  <div class="show-info">11 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">5</div>
+                  <div class="show-info">14 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">6</div>
+                  <div class="show-info">52 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">7</div>
+                  <div class="show-info">65 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">8</div>
+                  <div class="show-info">42 bookings</div>
+                </li>
+                </ul>
+
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">9</div>
+                  <div class="show-info">22 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">10</div>
+                  <div class="show-info">10 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">11</div>
+                  <div class="show-info">43 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">12</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">13</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">14</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+              
+              
+            
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">15</div>
+                  <div class="show-info">44 bookings</div>
+                </li>
+                </ul>
+
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">16</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">17</div>
+                  <div class="show-info">16 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">18</div>
+                  <div class="show-info">17 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">19</div>
+                  <div class="show-info">10 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">20</div>
+                  <div class="show-info">16 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">21</div>
+                  <div class="show-info">3 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">22</div>
+                  <div class="show-info">55 bookings</div>
+                </li>
+                </ul>
+
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day available">
+                  <div class="date day_cell">23</div>
+                  <div class="show-info">11 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">24</div>
+                  <div class="show-info">19 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">25</div>
+                  <div class="show-info">18 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">26</div>
+                  <div class="show-info">56 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">27</div>
+                  <div class="show-info">32 bookings</div>
+                </li>
+                <li class="calendar-day available">
+                  <div class="date day_cell">28</div>
+                  <div class="show-info">0 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">29</div>
+                  <div class="show-info">54 bookings</div>
+                </li>
+                </ul>
+                   <!-- -->
+                <ul class="days">
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">30</div>
+                  <div class="show-info">57 bookings</div>
+                </li>
+                <li class="calendar-day occupied">
+                  <div class="date day_cell">31</div>
+                  <div class="show-info">58 bookings</div>
+                </li>
+            </ul>
+          </div>
+
+
+
+  </div>
+</div>
+</div>
+  
+ 
+
+    
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+document.addEventListener('DOMContentLoaded', function() {
+  const datePicker = {
+    inputElement: document.querySelector('.moj-js-datepicker-input'),
+    datePickerElement: document.getElementById('datepicker'),
+    monthSelectorElement: document.querySelector('.datepicker-month-selector'),
+    gridElement: document.querySelector('.datepicker-grid'),
+    prevButton: document.querySelector('.prev-month'),
+    nextButton: document.querySelector('.next-month'),
+    availableDate: null,
+    currentMonth: new Date().getMonth(),
+    currentYear: new Date().getFullYear(),
+    dayNames: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    monthNames: [
+      'January', 'February', 'March', 'April', 'May', 'June', 
+      'July', 'August', 'September', 'October', 'November', 'March'
+    ],
+    
+    init: function() {
+      this.renderCalendar();
+      this.attachEventListeners();
+    },
+    
+    renderCalendar: function() {
+      // Clear grid
+      this.gridElement.innerHTML = '';
+      
+      // Add day headers
+      this.dayNames.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'datepicker-day-header';
+        dayHeader.textContent = day;
+        this.gridElement.appendChild(dayHeader);
+      });
+      
+      // Update month and year display
+      this.monthSelectorElement.textContent = `${this.monthNames[this.currentMonth]} ${this.currentYear}`;
+      
+      // Get first day of month and total days
+      const firstDay = new Date(this.currentYear, this.currentMonth, 1).getDay();
+      const daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
+      
+      // Previous month days
+      const prevMonthDays = new Date(this.currentYear, this.currentMonth, 0).getDate();
+      for (let i = firstDay - 1; i >= 0; i--) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell inactive';
+        dayCell.textContent = prevMonthDays - i;
+        this.gridElement.appendChild(dayCell);
+      }
+      
+      // Current month days
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell';
+        dayCell.textContent = i;
+        
+        // Check if this date is available
+        if (this.availableDate && 
+            this.availableDate.getDate() === i && 
+            this.availableDate.getMonth() === this.currentMonth && 
+            this.availableDate.getFullYear() === this.currentYear) {
+          dayCell.classList.add('available');
+        }
+        
+        dayCell.addEventListener('click', () => this.selectDate(i));
+        this.gridElement.appendChild(dayCell);
+      }
+      
+      // Fill remaining slots with next month days
+      const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+      let nextMonthDay = 1;
+      for (let i = firstDay + daysInMonth; i < totalCells; i++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'datepicker-cell inactive';
+        dayCell.textContent = nextMonthDay++;
+        this.gridElement.appendChild(dayCell);
+      }
+    },
+    
+    attachEventListeners: function() {
+      // Handle input field focus
+      this.inputElement.addEventListener('focus', () => {
+        this.datePickerElement.classList.add('active');
+      });
+      
+      // Handle clicking outside the datepicker
+      document.addEventListener('click', (e) => {
+        if (!this.datePickerElement.contains(e.target) && 
+            e.target !== this.inputElement) {
+          this.datePickerElement.classList.remove('active');
+        }
+      });
+      
+      // Handle month navigation
+      this.prevButton.addEventListener('click', () => {
+        this.currentMonth--;
+        if (this.currentMonth < 0) {
+          this.currentMonth = 11;
+          this.currentYear--;
+        }
+        this.renderCalendar();
+      });
+      
+      this.nextButton.addEventListener('click', () => {
+        this.currentMonth++;
+        if (this.currentMonth > 11) {
+          this.currentMonth = 0;
+          this.currentYear++;
+        }
+        this.renderCalendar();
+      });
+      
+      // Parse date from input if already has value
+      if (this.inputElement.value) {
+        this.parseInputDate();
+      }
+    },
+    
+    selectDate: function(day) {
+      this.availableDate = new Date(this.currentYear, this.currentMonth, day);
+      this.inputElement.value = this.formatDate(this.availableDate);
+      this.datePickerElement.classList.remove('active');
+      this.renderCalendar(); // Re-render to show selection
+    },
+    
+    formatDate: function(date) {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    },
+    
+    parseInputDate: function() {
+      const value = this.inputElement.value;
+      const parts = value.split('/');
+      
+      if (parts.length === 3) {
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        
+        if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+          this.availableDate = new Date(year, month, day);
+          this.currentMonth = month;
+          this.currentYear = year;
+          this.renderCalendar();
+        }
+      }
+    }
+  };
+  
+  // Initialize the date picker
+  datePicker.init();
+});
+
+</script>
+
+{% endblock %}

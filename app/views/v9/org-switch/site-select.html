@@ -1,0 +1,81 @@
+<!-- File: app/views/test-page.html -->
+{% extends 'layout.html' %}
+
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="main-content">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1>Site selection</h1>
+        
+        <form method="post" action="site-overview">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="location">
+              Enter your location
+            </label>
+            <div class="nhsuk-hint" id="location-hint">
+              Start typing to see suggestions
+            </div>
+            <div id="location-container"></div>
+            <input type="hidden" name="location" id="location-hidden">
+          </div>
+          
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+{% block bodyEnd %}
+<!-- Include the accessible-autocomplete JS from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof accessibleAutocomplete !== 'undefined') {
+      // NHS site data
+      const nhsSites = [
+        'Hornsey Central Pharmacy',
+        'St Ann\'s Hospital',
+        'North Middlesex University Hospital',
+        'Finchley Memorial Hospital',
+        'Barnet Hospital',
+        'Royal Free Hospital',
+        'University College Hospital',
+        'Whittington Hospital',
+        'Chase Farm Hospital',
+        'Edgware Community Hospital',
+        'Central Middlesex Hospital',
+        'Barnet Community Clinic',
+        'East Barnet Health Centre',
+        'Crouch End Health Centre',
+        'Wood Green Community Clinic'
+      ];
+      
+      // Initialize the autocomplete in the container div
+      accessibleAutocomplete({
+        element: document.querySelector('#location-container'),
+        id: 'location',
+        source: nhsSites,
+        name: 'location-autocomplete',
+        defaultValue: '',
+        onConfirm: function(selectedValue) {
+          // Update the hidden field with the selected value
+          document.querySelector('#location-hidden').value = selectedValue;
+        }
+      });
+    } else {
+      console.error('Accessible autocomplete is not defined');
+    }
+  });
+</script>
+{% endblock %}

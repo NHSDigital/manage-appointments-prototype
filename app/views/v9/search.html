@@ -1,0 +1,232 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+{% extends 'current/layouts/layout-top-nav-regions.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Select the dates and service type
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+
+{% endblock %}
+
+{% block outerContent %}
+{
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l">Select the dates and service type</h1>
+    </h1>
+
+
+
+  </div>
+</div>
+
+
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-5">
+
+
+  <div class="nhsuk-grid-column-one-third" style="border-right:solid lightgray 1px">
+
+    <h2 class="nhsuk-heading-m">Dates</h2>
+
+
+  
+
+  
+
+ 
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="date">
+         Start date
+        </label>
+        <div id="date-hint" class="nhsuk-hint">
+          For example, 17/05/2024.
+        </div>
+
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value=" {{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+
+
+    
+      </div>
+
+    
+
+ 
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="date">
+        End date
+      </label>
+      <div id="date-hint" class="nhsuk-hint">
+        For example, 17/05/2024.
+      </div>
+
+      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-8" id="start" name="start[month]" type="date" value="date()" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+
+
+  
+    </div>
+
+  
+
+
+
+  </div>
+
+
+  <!-- Sites not needed
+
+  <div class="nhsuk-grid-column-one-third" style="border-right:solid lightgray 1px">
+
+    {{ checkboxes({
+    idPrefix: "sites",
+    name: "sites",
+    fieldset: {
+    legend: {
+    text: "Sites",
+    classes: "nhsuk-fieldset__legend--m",
+    isPageHeading: true
+    }
+    },
+
+    items: [
+    {
+    value: "current",
+    text: "Current"
+    },
+  
+    {
+    value: "",
+    text: "North Middlesex Hospital"
+    },
+    {
+    value: "flu",
+    text: "Finchley Memorial Hospital"
+    }
+    ]
+    }) }}
+
+  </div>
+
+  -->
+
+
+  <div class="nhsuk-grid-column-one-third">
+
+
+
+
+
+    <form method="post" action="results">
+      {{ checkboxes({
+        idPrefix: "vaccines",
+        name: "vaccines",
+        fieldset: {
+        legend: {
+        text: "Service type",
+        classes: "nhsuk-fieldset__legend--m",
+        isPageHeading: true
+        }
+        },
+    
+        items: [
+        {
+        value: "rsv",
+        text: "RSV adult"
+        },
+        {
+        value: "rsv adult",
+        text: "Covid"
+        },
+        {
+        value: "flu",
+        text: "Flu"
+        }
+        ]
+        }) }}
+    </form>
+  </div>
+
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+
+    {% from 'button/macro.njk' import button %}
+
+    {{ button({
+    text: "Create report",
+    href:'results'
+    }) }}
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+<!-- END SERVICES-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-06-01";
+console.log(dateControl.value); // prints "2017-06-01"
+console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
+
+</script>
+
+{% endblock %}

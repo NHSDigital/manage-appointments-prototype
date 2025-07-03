@@ -1,0 +1,80 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../../current/view-availability/layout.html' %}
+
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Site overview Hornsey Central Pharmacy
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+{% include '../../current/org-switch/includes/org-switcher.html' %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">  
+        <h1 class="nhsuk-heading-l">Download the report</h1>
+    </h1>
+    <p class="govuk-body--l">Download data for 3 sites, 3 vaccines between {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} and {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }}</p>
+
+
+        
+    <form method="post">
+      <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+        Export data
+      </button>
+
+      </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- END SERVICES-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+
+  </script>
+{% endblock %}
