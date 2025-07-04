@@ -1,4 +1,32 @@
-/* Add this to your CSS file or within a <style> tag in the head section */
+@media print {
+  /* Hide all checkboxes and their labels */
+  input[type="checkbox"],
+  .nhsuk-checkboxes,
+  .nhsuk-checkboxes__item,
+  .nhsuk-checkboxes__input,
+  .nhsuk-checkboxes__label,
+  .govuk-checkboxes,
+  .govuk-checkboxes__item,
+  .govuk-checkboxes__input,
+  .govuk-checkboxes__label,
+  /* Generic checkbox selectors */
+  .checkbox,
+  .checkbox-container,
+  .form-check,
+  .form-check-input,
+  /* Hide any elements with checkbox-related classes */
+  [class*="checkbox"],
+  [class*="check-box"] {
+    display: none !important;
+  }
+  
+  /* Hide any parent containers that only contain checkboxes */
+  .checkbox-group,
+  .selection-controls,
+  .form-checkboxes {
+    display: none !important;
+  }
+}
 
 /* Print-specific styles */
 @media print {
@@ -26,15 +54,15 @@
     
     /* Ensure the whole page prints well */
     body {
-      font-size: 12pt;
-      color: #000;
+      font-size: 1rem;
+      color:nhsuk-text-black;
       background-color: #fff;
     }
     
     /* Style the table for printing */
     .nhsuk-table-responsive {
       width: 100%;
-      border-collapse: collapse;
+      
     }
     
     /* Blue header for the table */
@@ -56,6 +84,13 @@
     .nhsuk-table__body td {
       padding: 10px;
       border: none;
+      text-align: left;
+    }
+
+        .nhsuk-table__body row {
+      padding: 10px;
+      border: none;
+      text-align: left;
     }
     
     /* Format the joint appointment styling for print */
