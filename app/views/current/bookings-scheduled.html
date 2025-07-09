@@ -48,7 +48,7 @@ Manage appointments - {{site}} - 11 June 2025
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <span class="nhsuk-hint">{{site}}</span>
-        <h1 class="nhsuk-heading-l">All appointments for Monday 1 {{date({month:'long'})}}</h1>
+        <h1 class="nhsuk-heading-l">Monday 1 {{date({month:'long'})}}</h1>
         
         <!-- Print button -->
         <button class="nhsuk-button nhsuk-button--secondary" onclick="window.print()">
@@ -59,10 +59,36 @@ Manage appointments - {{site}} - 11 June 2025
         
         <!-- Bulk Actions Bar - Always Visible -->
         <div class="bulk-actions" id="bulkActions">
+            {% from 'select/macro.njk' import select %}
+
+{{ select({
+  id: "select-1",
+  name: "select-1",
+  label: {
+    text: "Filter by service"
+  },
+  items: [
+    {
+      value: 1,
+      text: "RSV",
+       selected: true
+    },
+    {
+      value: 2,
+      text: "Covid"
+     
+    },
+    {
+      value: 3,
+      text: "Flu"
+      
+    }
+  ]
+}) }}
             <div class="bulk-actions-content">
                 <div class="bulk-buttons">
                     <button class="nhsuk-button nhsuk-button--warning" id="cancelButton" onclick="goToCancelConfirmation()" disabled>
-                        Cancel appointments
+                        Cancel selected appointments
                     </button>
                     <button class="nhsuk-button nhsuk-button--secondary" id="clearButton" onclick="clearSelection()" disabled>
                         Clear
