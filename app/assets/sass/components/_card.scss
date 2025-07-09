@@ -1,0 +1,27 @@
+// NHS.UK Card Actions
+
+.nhsuk-summary-card__title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 15px 0;
+}
+
+.nhsuk-summary-card__title{
+    margin-bottom: 5px;
+}
+
+.nhsuk-summary-card__actions{
+    justify-content: right;
+    text-align: right;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    :first-child {
+  border-right: 2px solid #bfc1c3;
+    padding-right: 10px;
+}
+}
+.nhsuk-summary-card__actions a{
+    margin-left: 10px;
+
+}
