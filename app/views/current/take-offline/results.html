@@ -2,7 +2,8 @@
 
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-{% extends 'current/regions/layout-top-nav-sites.html' %}
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../../current/view-availability/layout.html' %}
 
 <!--
   In /views/layout.html you can:
@@ -12,16 +13,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Results
+Site overview Hornsey Central Pharmacy
 {% endblock %}
-<!-- Backlink -->
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
-{{ backLink({
-  href: "javascript:history.back()",
-  text: "Back"
-}) }}
-
 {% endblock %}
 
 {% block outerContent %}
@@ -36,7 +33,7 @@ Results
   <div class="nhsuk-grid-column-two-thirds">  
         <h1 class="nhsuk-heading-l">Download the report</h1>
     </h1>
-    <p class="govuk-body--l">Download all data between {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} and {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }}</p>
+    <p class="govuk-body--l">Download data for 3 sites, 3 vaccines between {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} and {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }}</p>
 
 
         
