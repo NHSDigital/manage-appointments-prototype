@@ -1,0 +1,182 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Edit site details (citizen)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+      <!-- Change the page title here -->
+    
+      <span class="nhsuk-caption-l">{{site}}</span>
+      <h1 class="nhsuk-heading-xl">Edit site details</h1>
+
+
+      <dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Status
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <span class="nhsuk-tag nhsuk-tag--green">Online</span>
+    </dd>
+    <dd class="nhsuk-summary-list__actions">
+    
+    </dd>
+  </div>
+  
+
+</dl>
+
+
+
+
+
+      <h3>Site name</h3><div class="nhsuk-form-group">
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="Hornsey Central Pharmacy">
+      </div>
+
+
+      <div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="site-address-textarea">
+    <h3 class="nhsuk-u-margin-bottom-3">Site address</h3>
+  </label>
+  <!-- <div class="nhsuk-hint" id="site-address-hint">
+    Does the user need to be given instruction given that the structural bits are gone?
+  </div> -->
+  <textarea class="nhsuk-textarea nhsuk-input--width-20" id="site-address-textarea" name="site-address-textarea" rows="4" aria-describedby="example-hint">
+151 Park Road,
+London,
+Greater London,
+N8 8JB</textarea>
+</div>
+
+
+
+
+      <!-- <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Address line 1
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="151 Park road">
+
+      <label class="nhsuk-label" for="input-width-20">
+        Address line 2 (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+
+    <label class="nhsuk-label" for="input-width-10">
+        Town or city
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="London">
+
+    <label class="nhsuk-label" for="input-width-10">
+        County (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text" value="Greater London">
+
+    <label class="nhsuk-label" for="input-width-5">
+        Postcode
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="test-width-5" type="text" value="N8 8JB">
+    </div> -->
+
+
+    <h3>Latitude and longitude</h3>
+    <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Latitude
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="51.58437455856056">
+
+      <label class="nhsuk-label" for="input-width-20" style="margin-top:20px">
+        Longitude
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text" value="-0.1310363693114145">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="phone-number">
+        <h3 class="nhsuk-u-margin-bottom-3">Phone number</h3>
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="phone-number" name="phoneNumber" type="tel" autocomplete="tel" value="0208 889 8056">
+    </div>
+
+
+  
+  <h3 class="nhsuk-heading-m">Change your site's status to offline</h3>
+  <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="date">
+         Start date
+        </label>
+        <div id="date-hint" class="nhsuk-hint">
+          For example, 17/05/2025.
+        </div>
+
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-10" id="start" name="start[month]" type="date" value="{{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+       </div>
+       <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="startTime">Start time</label>
+          <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+            </div>
+            
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="date">
+        End date
+      </label>
+      <div id="date-hint" class="nhsuk-hint">
+        For example, 17/05/2025.
+      </div>
+
+      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-10" id="start" name="start[month]" type="date" value="{{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
+    </div>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="startTime">End time</label>
+          <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
+            </div>
+            <button class="nhsuk-button nhsuk-u-margin-top-6" href="site-details">Save and continue</button>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-06-01";
+console.log(dateControl.value); // prints "2017-06-01"
+console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
+
+</script>
+
+{% endblock %}

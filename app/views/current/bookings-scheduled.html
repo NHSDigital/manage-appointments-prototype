@@ -10,7 +10,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Manage appointments - {{site}} - 11 June 2025
+Manage appointments - {{site}} - 21 July
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -29,16 +29,17 @@ Manage appointments - {{site}} - 11 June 2025
 
 <!-- Link to external CSS file -->
 {% block head %}
-<link rel="stylesheet" href="/css/appointments-multiselect.css">
 <style>
-.disabled-link {
-    color: #768692 !important;
-    text-decoration: none !important;
-    cursor: not-allowed !important;
-    pointer-events: none;
+.hidden-row {
+    display: none !important;
 }
-
-
+.filter-info {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #005eb8;
+    display: none;
+}
 </style>
 {% endblock %}
 
@@ -48,7 +49,7 @@ Manage appointments - {{site}} - 11 June 2025
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <span class="nhsuk-hint">{{site}}</span>
-        <h1 class="nhsuk-heading-l">Monday 1 {{date({month:'long'})}}</h1>
+        <h1 class="nhsuk-heading-l">Monday 21 {{date({month:'long'})}}</h1>
         
         <!-- Print button -->
         <button class="nhsuk-button nhsuk-button--secondary" onclick="window.print()">
@@ -69,33 +70,38 @@ Manage appointments - {{site}} - 11 June 2025
   },
   items: [
     {
-      value: 1,
-      text: "RSV",
+      value: "all",
+      text: "Select a service",
        selected: true
     },
     {
-      value: 2,
-      text: "Covid"
-     
+      value: "RSV",
+      text: "RSV"
     },
     {
-      value: 3,
+      value: "Covid",
+      text: "Covid"
+    },
+    {
+      value: "Flu",
       text: "Flu"
-      
     }
   ]
 }) }}
             <div class="bulk-actions-content">
                 <div class="bulk-buttons">
+                     <button class="nhsuk-button nhsuk-button--secondary" id="filterButton" onclick="filterAppointments()">
+                       Filter appointments
+                    </button>
                     <button class="nhsuk-button nhsuk-button--warning" id="cancelButton" onclick="goToCancelConfirmation()" disabled>
                         Cancel selected appointments
                     </button>
-                    <button class="nhsuk-button nhsuk-button--secondary" id="clearButton" onclick="clearSelection()" disabled>
-                        Clear
-                    </button>
+            
                 </div>
             </div>
         </div>
+        
+       
         
         <!-- Appointments Table -->
         <div class="nhsuk-table-responsive">
@@ -105,36 +111,38 @@ Manage appointments - {{site}} - 11 June 2025
                 </caption>
                 <thead class="nhsuk-table__head">
                     <tr class="nhsuk-table__row">
+                    
                         <th class="nhsuk-table__header checkbox-cell" scope="col">
                             <input type="checkbox" class="select-all-checkbox" id="selectAll" onchange="toggleSelectAll()" aria-label="Select all appointments">
                         </th>
+                    
                         <th class="nhsuk-table__header" scope="col">Time</th>
                         <th class="nhsuk-table__header" scope="col">Name and NHS number</th>
                         <th class="nhsuk-table__header" scope="col">Date of birth</th>
                         <th class="nhsuk-table__header" scope="col">Contact details</th>
-                        <th class="nhsuk-table__header" scope="col">Services</th>
-                        <th class="nhsuk-table__header" scope="col">Action</th>
+                        <th class="nhsuk-table__header" scope="col">Service</th>
+                        
                     </tr>
                 </thead>
                 <tbody class="nhsuk-table__body">
                     {% set appointments = [
                         {time: "8:30", name: "John Smith", nhs: "999 123 4567", dob: "1 January 1954", contact: "07712345678<br>john.smith@email.com", service: "RSV"},
-                        {time: "8:35", name: "Martin Lincoln", nhs: "999 123 4568", dob: "7 June 1958", contact: "martin.lincoln@email.com", service: "RSV"},
-                        {time: "8:45", name: "Mike Jones", nhs: "999 123 4569", dob: "15 October 1950", contact: "07712345678", service: "RSV"},
+                        {time: "8:35", name: "Martin Lincoln", nhs: "999 123 4568", dob: "7 June 1958", contact: "martin.lincoln@email.com", service: "Covid"},
+                        {time: "8:45", name: "Mike Jones", nhs: "999 123 4569", dob: "15 October 1950", contact: "07712345678", service: "Flu"},
                         {time: "8:50", name: "Clive Lochan", nhs: "999 123 4571", dob: "4 June 1947", contact: "07712345678<br>Clive1@email.com", service: "RSV"},
-                        {time: "8:45", name: "Norma Davies", nhs: "999 123 4570", dob: "26 August 1978", contact: "norma.davies78@email.com", service: "RSV"},
+                        {time: "8:45", name: "Norma Davies", nhs: "999 123 4570", dob: "26 August 1978", contact: "norma.davies78@email.com", service: "Covid"},
                         {time: "8:50", name: "Dylan Barton", nhs: "999 123 4572", dob: "25 May 1950", contact: "07712345678", service: "RSV"},
+                        {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "Flu"},
                         {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "RSV"},
-                        {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "RSV"},
-                        {time: "9:00", name: "Tobias Boehm", nhs: "999 123 4574", dob: "1 February 1950", contact: "07712345678", service: "RSV"},
+                        {time: "9:00", name: "Tobias Boehm", nhs: "999 123 4574", dob: "1 February 1950", contact: "07712345678", service: "Covid"},
                         {time: "9:05", name: "Jonathan Carroll", nhs: "999 123 4575", dob: "29 January 1940", contact: "07712345678", service: "RSV"},
-                        {time: "9:05", name: "Connie Corkery", nhs: "999 123 4576", dob: "1 September 1950", contact: "07712345678", service: "RSV"},
+                        {time: "9:05", name: "Connie Corkery", nhs: "999 123 4576", dob: "1 September 1950", contact: "07712345678", service: "Flu"},
                         {time: "9:15", name: "Mohamed Bartoletti", nhs: "999 123 4577", dob: "6 November 1950", contact: "07712345678", service: "RSV"},
-                        {time: "9:15", name: "Elijah Anderson", nhs: "999 123 4578", dob: "4 July 1958", contact: "07712345678<br>ea58@email.co.uk", service: "RSV"}
+                        {time: "9:15", name: "Elijah Anderson", nhs: "999 123 4578", dob: "4 July 1958", contact: "07712345678<br>ea58@email.co.uk", service: "Covid"}
                     ] %}
                     
                     {% for appointment in appointments %}
-                    <tr class="nhsuk-table__row">
+                    <tr class="nhsuk-table__row appointment-row" data-service="{{appointment.service}}">
                         <td class="nhsuk-table__cell checkbox-cell">
                             <input type="checkbox" class="row-checkbox" onchange="updateSelection()" aria-label="Select appointment for {{appointment.name}}">
                         </td>
@@ -146,9 +154,7 @@ Manage appointments - {{site}} - 11 June 2025
                         <td class="nhsuk-table__cell">{{appointment.dob}}</td>
                         <td class="nhsuk-table__cell">{{appointment.contact | safe}}</td>
                         <td class="nhsuk-table__cell">{{appointment.service}}</td>
-                        <td class="nhsuk-table__cell">
-                            <span class="disabled-link">Cancel</span>
-                        </td>
+                        
                     </tr>
                     {% endfor %}
                     
@@ -160,17 +166,17 @@ Manage appointments - {{site}} - 11 June 2025
                     </tr>
                     
                     {% set moreAppointments = [
-                        {time: "10:00", name: "Hattie Beer", nhs: "999 123 4579", dob: "8 August 1951", contact: "07712345678", service: "RSV"},
+                        {time: "10:00", name: "Hattie Beer", nhs: "999 123 4579", dob: "8 August 1951", contact: "07712345678", service: "Flu"},
                         {time: "10:05", name: "Felicity Bergstrom", nhs: "999 123 4580", dob: "17 April 1949", contact: "07712345678", service: "RSV"},
-                        {time: "10:05", name: "Ibrahim Hessel", nhs: "999 123 4581", dob: "3 April 1950", contact: "07712345678", service: "RSV"},
+                        {time: "10:05", name: "Alex Pearce", nhs: "999 123 4581", dob: "3 April 1950", contact: "07712345678", service: "Covid"},
                         {time: "10:10", name: "Syed Johnson", nhs: "999 123 4582", dob: "9 February 1950", contact: "07712345678", service: "RSV"},
-                        {time: "10:15", name: "Jakob Marquardt-Runolfsdottir", nhs: "999 123 4583", dob: "7 February 1950", contact: "07712345678", service: "RSV"},
+                        {time: "10:15", name: "Jakob Marquardt-Runolfsdottir", nhs: "999 123 4583", dob: "7 February 1950", contact: "07712345678", service: "Flu"},
                         {time: "10:15", name: "Violet Mocicki", nhs: "999 123 4584", dob: "26 October 1954", contact: "07712345678", service: "RSV"},
-                        {time: "10:20", name: "David Anderson", nhs: "999 123 4585", dob: "15 December 1951", contact: "07712345678", service: "RSV"}
+                        {time: "10:20", name: "David Anderson", nhs: "999 123 4585", dob: "15 December 1951", contact: "07712345678", service: "Covid"}
                     ] %}
                     
                     {% for appointment in moreAppointments %}
-                    <tr class="nhsuk-table__row">
+                    <tr class="nhsuk-table__row appointment-row" data-service="{{appointment.service}}">
                         <td class="nhsuk-table__cell checkbox-cell">
                             <input type="checkbox" class="row-checkbox" onchange="updateSelection()" aria-label="Select appointment for {{appointment.name}}">
                         </td>
@@ -182,9 +188,7 @@ Manage appointments - {{site}} - 11 June 2025
                         <td class="nhsuk-table__cell">{{appointment.dob}}</td>
                         <td class="nhsuk-table__cell">{{appointment.contact | safe}}</td>
                         <td class="nhsuk-table__cell">{{appointment.service}}</td>
-                        <td class="nhsuk-table__cell">
-                            <span class="disabled-link">Cancel</span>
-                        </td>
+                    
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -220,32 +224,26 @@ Manage appointments - {{site}} - 11 June 2025
     </div>
 </div>
 
-<!-- JavaScript for bulk actions only - individual cancel links disabled -->
+<!-- JavaScript for bulk actions and filtering -->
 <script>
 let selectedCount = 0;
 
 function updateSelection() {
-    const checkboxes = document.querySelectorAll('.row-checkbox');
+    const checkboxes = document.querySelectorAll('.row-checkbox:not(.hidden-row .row-checkbox)');
+    const visibleCheckboxes = Array.from(checkboxes).filter(cb => !cb.closest('tr').classList.contains('hidden-row'));
     const selectAllCheckbox = document.getElementById('selectAll');
     const cancelButton = document.getElementById('cancelButton');
-    const clearButton = document.getElementById('clearButton');
     
-    selectedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+    selectedCount = visibleCheckboxes.filter(cb => cb.checked).length;
     
     // Update button states
-    if (selectedCount > 0) {
-        cancelButton.disabled = false;
-        clearButton.disabled = false;
-    } else {
-        cancelButton.disabled = true;
-        clearButton.disabled = true;
-    }
+    cancelButton.disabled = selectedCount === 0;
     
     // Update select all checkbox state
     if (selectedCount === 0) {
         selectAllCheckbox.indeterminate = false;
         selectAllCheckbox.checked = false;
-    } else if (selectedCount === checkboxes.length) {
+    } else if (selectedCount === visibleCheckboxes.length) {
         selectAllCheckbox.indeterminate = false;
         selectAllCheckbox.checked = true;
     } else {
@@ -268,7 +266,10 @@ function toggleSelectAll() {
     const checkboxes = document.querySelectorAll('.row-checkbox');
     
     checkboxes.forEach(checkbox => {
-        checkbox.checked = selectAllCheckbox.checked;
+        const row = checkbox.closest('tr');
+        if (!row.classList.contains('hidden-row')) {
+            checkbox.checked = selectAllCheckbox.checked;
+        }
     });
     
     updateSelection();
@@ -286,6 +287,65 @@ function clearSelection() {
     updateSelection();
 }
 
+// NEW: Filter appointments function
+function filterAppointments() {
+    const select = document.getElementById('select-1');
+    const selectedService = select.value;
+    const appointmentRows = document.querySelectorAll('.appointment-row');
+    const filterInfo = document.getElementById('filterInfo');
+    const filterText = document.getElementById('filterText');
+    
+    let visibleCount = 0;
+    
+    appointmentRows.forEach(row => {
+        const rowService = row.getAttribute('data-service');
+        
+        if (selectedService === 'all' || rowService === selectedService) {
+            row.classList.remove('hidden-row');
+            visibleCount++;
+        } else {
+            row.classList.add('hidden-row');
+            // Uncheck hidden rows
+            const checkbox = row.querySelector('.row-checkbox');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+        }
+    });
+    
+    // Update filter info display
+    if (selectedService === 'all') {
+        filterInfo.style.display = 'none';
+    } else {
+        filterInfo.style.display = 'block';
+        filterText.textContent = `Showing ${visibleCount} appointments for ${selectedService} service`;
+    }
+    
+    // Update selection state after filtering
+    updateSelection();
+}
+
+// NEW: Clear filter function
+function clearFilter() {
+    const select = document.getElementById('select-1');
+    const appointmentRows = document.querySelectorAll('.appointment-row');
+    const filterInfo = document.getElementById('filterInfo');
+    
+    // Reset dropdown to "Select a service"
+    select.value = 'all';
+    
+    // Show all rows
+    appointmentRows.forEach(row => {
+        row.classList.remove('hidden-row');
+    });
+    
+    // Hide filter info
+    filterInfo.style.display = 'none';
+    
+    // Update selection state
+    updateSelection();
+}
+
 function goToCancelConfirmation() {
     if (selectedCount > 0) {
         // Store selected appointments in session storage or send via POST
@@ -294,15 +354,17 @@ function goToCancelConfirmation() {
         
         checkboxes.forEach(checkbox => {
             const row = checkbox.closest('tr');
-            const appointmentData = {
-                time: row.cells[1].textContent,
-                name: row.cells[2].querySelector('strong').textContent,
-                nhs: row.cells[2].textContent.split('\n')[1]?.trim(),
-                dob: row.cells[3].textContent,
-                contact: row.cells[4].textContent,
-                service: row.cells[5].textContent
-            };
-            selectedAppointments.push(appointmentData);
+            if (!row.classList.contains('hidden-row')) {
+                const appointmentData = {
+                    time: row.cells[1].textContent,
+                    name: row.cells[2].querySelector('strong').textContent,
+                    nhs: row.cells[2].textContent.split('\n')[1]?.trim(),
+                    dob: row.cells[3].textContent,
+                    contact: row.cells[4].textContent,
+                    service: row.cells[5].textContent
+                };
+                selectedAppointments.push(appointmentData);
+            }
         });
         
         // Store in session storage for the confirmation page
@@ -317,7 +379,7 @@ function goToCancelConfirmation() {
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     updateSelection(); // Set initial button states
-    console.log('NHS Appointments page loaded - Individual cancel links disabled, bulk actions enabled');
+    console.log('NHS Appointments page loaded - Filter functionality enabled');
 });
 </script>
 {% endblock %}
