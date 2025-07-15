@@ -135,21 +135,68 @@ Manage appointments
     <span class="nhsuk-caption-l">{{site}}</span>
 
 
-    <h1 class="nhsuk-heading-l">Selected appointments for  Monday 1 {{date({month:'long'})}} cancelled</h1>
+    <h1 class="nhsuk-heading-l">Appointments cancelled for  Monday 1 {{date({month:'long'})}} cancelled</h1>
 
 
 
     <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible nhsuk-u-margin-bottom-3 nhsuk-u-margin-top-1">
 
-    <p class="nhsuk-body nhsuk-body-l">We've automatically cancelled 125 appointments and sent an email or a text message with a link to rebook their appointments</p>
+    <p class="nhsuk-body nhsuk-body-l">You have cancelled  <span id="appointmentCount"></span> appointments and we've notified the citizens with a link to rebook their appointments.</p>
 
     <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
 
-     <p>12 people did not provide a mobile number or email and we could not automatically notify them.</p>
-      <p><a href="bookings-scheduled">Manually cancel appointments</a></p>
+     <p>1 person did not provide a mobile number or email and we could not notify them.</p>
+    
 
 </div>
+
+
+   <!-- Appointments Table -->
+        <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table appointments-table">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+                    Scheduled appointments for {{site}} on {{date()}}.
+                </caption>
+                <thead class="nhsuk-table__head">
+                    <tr class="nhsuk-table__row">
+                    
+                       
+                    
+                        <th class="nhsuk-table__header" scope="col">Time</th>
+                        <th class="nhsuk-table__header" scope="col">Name and NHS number</th>
+                        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                        <th class="nhsuk-table__header" scope="col">Contact details</th>
+                        <th class="nhsuk-table__header" scope="col">Service</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                    {% set appointments = [
+                        {time: "8:30", name: "John Smith", nhs: "999 123 4567", dob: "1 January 1954", contact: "07712345678<br>john.smith@email.com", service: "RSV"}
+                      
+                    ] %}
+                    
+                    {% for appointment in appointments %}
+                    <tr class="nhsuk-table__row">
+                    
+                        <td class="nhsuk-table__cell">{{appointment.time}}</td>
+                        <td class="nhsuk-table__cell">
+                            <strong>{{appointment.name}}</strong><br>
+                            {{appointment.nhs}}
+                        </td>
+                        <td class="nhsuk-table__cell">{{appointment.dob}}</td>
+                        <td class="nhsuk-table__cell">{{appointment.contact | safe}}</td>
+                        <td class="nhsuk-table__cell">{{appointment.service}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                    
+                   
+   
+                </tbody>
+            </table>
+        </div>
     
 
 
@@ -161,18 +208,43 @@ Manage appointments
 {% endblock %}
 
 {% block bodyEnd %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Get the print button
-    const printButton = document.querySelector('button.nhsuk-button--secondary');
 
-    // Add click event listener to the print button
-    if (printButton) {
-      printButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default button behavior
-        window.print();
-      });
-    }
-  });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get selected appointments from session storage
+    const selectedAppointments = JSON.parse(sessionStorage.getItem('selectedAppointments') || '[]');
+    const selectedCount = parseInt(sessionStorage.getItem('selectedCount') || '0');
+    
+    // Update appointment count
+    document.getElementById('appointmentCount').textContent = `${selectedCount} appointment${selectedCount === 1 ? '' : 's'}`;
+    
+    // Populate appointments list
+    const appointmentsList = document.getElementById('appointmentsList');
+    selectedAppointments.forEach(appointment => {
+        const row = document.createElement('tr');
+        row.className = 'nhsuk-table__row';
+        row.innerHTML = `
+            <td class="nhsuk-table__cell">${appointment.time}</td>
+            <td class="nhsuk-table__cell">${appointment.name}</td>
+            <td class="nhsuk-table__cell">${appointment.nhs}</td>
+            <td class="nhsuk-table__cell">${appointment.service}</td>
+        `;
+        appointmentsList.appendChild(row);
+    });
+    
+    // Store data in hidden form fields
+    document.getElementById('selectedAppointmentsData').value = JSON.stringify(selectedAppointments);
+    document.getElementById('appointmentCountData').value = selectedCount.toString();
+    
+    // Handle form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        const confirmRadio = document.querySelector('input[name="confirm-cancellation"]:checked');
+        if (confirmRadio && confirmRadio.value === 'no') {
+            e.preventDefault();
+            window.location.href = 'manage-appointments';
+        }
+    });
+});
 </script>
 {% endblock %}

@@ -1,0 +1,65 @@
+<!-- File: app/views/test-page.html -->
+{% extends 'layout-email.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+NHSIK Email
+{% endblock %}
+
+
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %} 
+
+
+{% endblock %}
+
+{% block outerContent %}
+
+{% include 'current/org-switch/includes/org-switcher.html' %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Email inbox</h1>
+
+      <div class="app-email-preview">
+        <p>From: mya@england.nhs.uk<br>
+        Subject: Cancelled vaccine appointments for Monday 21 {{ date({month: 'long'}) }}<br>
+        Date: {{ date({day: 'numeric', month: 'long', year: 'numeric'}) }}<br>
+        </p>
+        <hr>
+
+        <p>Dear Mr {{firstName}} {{surname}}</p>
+
+        <p>The Pharmacy will be closed for staff training on Monday 21 {{ date({month: 'long'}) }}. As a result, we have cancelled all appointments for that day.</p>
+       
+
+        
+
+     
+        <p>To rebook your appointment either telephone: 0121 611 0187<br>Monday to Friday: 8am to 6pm. Weekends 8am to 4pm or <a href="https://www.nhs.uk/nhs-services/vaccination-and-booking-services/">book online</a></p>
+
+        <p>Kind Regards,</p>
+
+        <p>{{site}}</p>
+
+      </div>
+
+
+      <hr>
+
+      <p><a href="/okta-email">Next email</a></p>
+
+    </div>
+  </div>
+
+
+{% endblock %}

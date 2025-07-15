@@ -27,7 +27,7 @@ Cancel appointments - {{site}}
         <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
               
-                <p> <span id="appointmentCount"></span> will be cancelled. We'll notify people that their appointment has been cancelled.</p>
+                <p> <span id="appointmentCount"></span> appointments will be cancelled. We'll notify people that their appointment has been cancelled.</p>
               </div>
         
     
@@ -51,8 +51,8 @@ Cancel appointments - {{site}}
                         <thead class="nhsuk-table__head">
                             <tr class="nhsuk-table__row">
                                 <th class="nhsuk-table__header" scope="col">Time</th>
-                                <th class="nhsuk-table__header" scope="col">Name and NHS number</th>
-                            
+                                <th class="nhsuk-table__header" scope="col">Patient name</th>
+                                <th class="nhsuk-table__header" scope="col">NHS number</th>
                                 <th class="nhsuk-table__header" scope="col">Service</th>
                             </tr>
                         </thead>
@@ -67,26 +67,11 @@ Cancel appointments - {{site}}
 
 
         
-        <form action="bookings-cancelled" method="post">
-
-            <div class="nhsuk-radios">
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="confirm-cancellation-yes" name="confirm-cancellation" type="radio" value="yes" checked>
-                    <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-yes">
-                        Cancel but keep the slots available
-                    </label>
-                </div>
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="confirm-cancellation-no" name="confirm-cancellation" type="radio" value="no">
-                    <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-no">
-                        Cancel and remove the slots from the system
-                    </label>
-                </div>
-            </div>
+        <form action="process-cancel-appointments" method="post">
 
             
-            <div class="nhsuk-button-group nhsuk-u-margin-top-4">
-                <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+            <div class="nhsuk-button-group">
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                    Confirm cancellation
                 </button>
     
@@ -111,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         row.className = 'nhsuk-table__row';
         row.innerHTML = `
             <td class="nhsuk-table__cell">${appointment.time}</td>
-            <td class="nhsuk-table__cell">${appointment.name} <br> 999 123 4567</td>
-        
+            <td class="nhsuk-table__cell">${appointment.name}</td>
+            <td class="nhsuk-table__cell">${appointment.nhs}</td>
             <td class="nhsuk-table__cell">${appointment.service}</td>
         `;
         appointmentsList.appendChild(row);

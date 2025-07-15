@@ -28,10 +28,34 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+
+
+
+
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+
+
+  {% if data ['offline'] == 'true' %}
+    
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The site is now offline
+        </h3>
+           
+
+        <p>The site is now offline and will not be available for appointments</p>
+        <p><a class="govuk-notification-banner__link" href="">Close this message</a></p>
+      
+      </div>
+    </div>
+
+{% endif %}
       <!-- Change the page title here -->
-      <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+      <span class="nhsuk-caption-l">{{site}}</span>
       <h1 class="nhsuk-heading-xl">Manage site</h1>
 
       <!-- <div class="nhsuk-inset-text">
@@ -43,11 +67,39 @@
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading">
-            Site details
-
-          </h3>
+             <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Site details
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="edit-site-details">Edit site details</a>
+          </a>
+          
+          <a class="nhsuk-link" href="edit-site-status">
+            Change site status
+          </a>
+        </div>
+      
+      </div>
       <dl class="nhsuk-summary-list">
+
+         <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Status
+          </dt>
+           {% if data ['offline'] == 'true' %}
+            <dd class="nhsuk-summary-list__value">
+            <span class="nhsuk-tag nhsuk-tag--red">Offline</span>
+          </dd>
+
+         
+          {% else %}
+           <dd class="nhsuk-summary-list__value">
+            <span class="nhsuk-tag nhsuk-tag--green">Online</span>
+          </dd>
+          {% endif %}
+        </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -97,16 +149,25 @@ N8 8JD
 
 
       </dl>
-      <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>
+      <!-- <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>-->
       </div></div>
 
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading">
-           Access needs
-
-          </h3>
+           <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Access needs
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="edit-site-details">Edit access needs</a>
+          </a>
+          
+          
+        </div>
+      
+      </div>
       <dl class="nhsuk-summary-list">
 
         <div class="nhsuk-summary-list__row">
@@ -186,18 +247,29 @@ N8 8JD
 
 
       </dl>
-      <p><a class="nhsuk-link" href="#">Edit access needs</a></p>
+    
       </div></div>
 
 
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
-          <h3 class="nhsuk-card__heading">
-           Information for citizens
 
-          </h3>
+            <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Information for citizens
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="week">Edit information for citizens</a>
+          </a>
+          
+          
+        </div>
+      
+      </div>
+         
           <p>Information for people visiting the site</p>
-      <p><a class="nhsuk-link" href="#">Edit information for citizens</a></p>
+    
       </div></div>
 
 
@@ -205,4 +277,19 @@ N8 8JD
 
     </div>
   </div>
+  <script>
+    document.addEventListener('click', function(event) {
+    // Check if the clicked element is the close link
+    if (event.target.classList.contains('govuk-notification-banner__link')) {
+        event.preventDefault();
+        
+        // Find the closest notification banner parent
+        const notificationBanner = event.target.closest('.govuk-notification-banner');
+        
+        if (notificationBanner) {
+            notificationBanner.style.display = 'none';
+        }
+    }
+});
+  </script>
 {% endblock %}
