@@ -39,7 +39,7 @@
     
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">Change availability for Monday 21 {{ date({month: 'long'}) }}</h1>
+            <h1 class="nhsuk-heading-l">Change availability for Tuesday 22 {{ date({month: 'long'}) }}</h1>
 
         
 
@@ -63,25 +63,20 @@
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</th>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</th>
                   <!--<td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>-->
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
                     <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-        <li>RSV adult (incl pregnancy)</li>
-        <li>Covid 5-11</li>
-        <li>Covid 12-17</li>
-        <li>Covid 18+</li>
-        <li>Covid 75+</li>
+      
+        <li>Covid 5-17</li>
+        
         
     </ul>
   </td>
                   <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">
                       <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
                         <li>100 booked</li>
-                        <li>200</li>
-                        <li>100</li>
-                        <li>80</li>
-                        <li>80</li>
+                      
                       </ul>
                   </td>
                 
@@ -257,40 +252,15 @@
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-services">
       
 
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="service-rsv" name="services-to-remove" type="checkbox" value="rsv-adult">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="service-rsv">
-          RSV adult
-          </label>
-        </div>
 
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="service-covid-5-11" name="services-to-remove" type="checkbox" value="covid-5-11">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="service-covid-5-11">
-          Covid 5-11
+          Covid 5-17
           </label>
         </div>
 
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="service-covid-12-17" name="services-to-remove" type="checkbox" value="covid-12-17">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="service-covid-12-17">
-            Covid 12-17
-          </label>
-        </div>
-
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="service-covid-18" name="services-to-remove" type="checkbox" value="covid-18">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="service-covid-18">
-            Covid 18+
-          </label>
-        </div>
-
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="service-covid-75" name="services-to-remove" type="checkbox" value="covid-75">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="service-covid-75">
-            Covid 75+
-          </label>
-        </div>
+       
 
       </div>
       
