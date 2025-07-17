@@ -367,20 +367,12 @@ function goToCancelConfirmation() {
             }
         });
         
-        // Check if "Norma Davies" is among the selected appointments
-        const normaDaviesSelected = selectedAppointments.some(appointment => appointment.name === "Norma Davies");
+        // Store in session storage for the confirmation page
+        sessionStorage.setItem('selectedAppointments', JSON.stringify(selectedAppointments));
+        sessionStorage.setItem('selectedCount', selectedCount.toString());
         
-        if (normaDaviesSelected) {
-            // Store in session storage for the confirmation page
-            sessionStorage.setItem('selectedAppointments', JSON.stringify(selectedAppointments));
-            sessionStorage.setItem('selectedCount', selectedCount.toString());
-            
-            // Navigate to confirmation page
-            window.location.href = 'cancel-appointments-confirmation';
-        } else {
-            // Show alert if Norma Davies is not selected
-            alert('You can only proceed to cancellation if "Norma Davies" is selected among the appointments.');
-        }
+        // Navigate to confirmation page
+        window.location.href = 'cancel-appointments-confirmation';
     }
 }
 
