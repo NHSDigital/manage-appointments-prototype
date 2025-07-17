@@ -31,21 +31,32 @@ NHSIK Email
       <h1 class="nhsuk-heading-l">Email inbox</h1>
 
       <div class="app-email-preview">
-        <p>From: mya@england.nhs.uk<br>
-        Subject: Cancelled vaccine appointments for Monday 21 {{ date({month: 'long'}) }}<br>
+        <p>From: Nation Booking Service<br>
+        Subject: Cancelled booking - Covid vaccine appointment<br>
         Date: {{ date({day: 'numeric', month: 'long', year: 'numeric'}) }}<br>
         </p>
         <hr>
 
-        <p>Dear Mr {{firstName}} {{surname}}</p>
+        <p>Hello Mr {{firstName}}</p>
 
-        <p>The Pharmacy will be closed for staff training on Monday 21 {{ date({month: 'long'}) }}. As a result, we have cancelled all appointments for that day.</p>
-       
+        <p>Your vaccination appointment has been cancelled. </p>
 
-        
+        <h2 class="nhsuk-heading-m">Your cancelled appointment</h2>
 
-     
-        <p>To rebook your appointment either telephone: 0121 611 0187<br>Monday to Friday: 8am to 6pm. Weekends 8am to 4pm or <a href="https://www.nhs.uk/nhs-services/vaccination-and-booking-services/">book online</a></p>
+        <p>Booking reference: {{booking}}
+            <br>
+    {{site}}
+    <br>
+    Address: {{address}}
+    <br>
+    Date: {{date({day: 'numeric', month: 'long', year: 'numeric'})}}
+    <br>
+    Time: {{time}}
+</p>
+
+          <h2 class="nhsuk-heading-m">To rebook your appointment</h2>
+
+          <p>Visit <a href="">National Booking Service</a></p>
 
         <p>Kind Regards,</p>
 
@@ -54,9 +65,7 @@ NHSIK Email
       </div>
 
 
-      <hr>
-
-      <p><a href="/okta-email">Next email</a></p>
+    
 
     </div>
   </div>

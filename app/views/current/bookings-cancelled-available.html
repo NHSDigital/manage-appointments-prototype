@@ -135,7 +135,7 @@ Manage appointments
     <span class="nhsuk-caption-l">{{site}}</span>
 
 
-    <h1 class="nhsuk-heading-l">Appointment cancelled for  Monday 21 {{date({month:'long'})}}</h1>
+    <h1 class="nhsuk-heading-l">Appointments cancelled for  Monday 1 {{date({month:'long'})}} cancelled</h1>
 
 
 
@@ -143,18 +143,60 @@ Manage appointments
 
     <p class="nhsuk-body nhsuk-body-l">You have cancelled  <span id="appointmentCount"></span> appointments and we've notified the citizens with a link to rebook their appointments.</p>
 
-    {% if data['keep-available'] == 'Yes' %}
+    <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
 
-      <p class="nhsuk-body nhsuk-body-l">The availability has been kept in NBS.</p>
+     <p>1 person did not provide a mobile number or email and we could not notify them.</p>
+    
 
+</div>
+
+
+   <!-- Appointments Table -->
+        <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table appointments-table">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+                    Scheduled appointments for {{site}} on {{date()}}.
+                </caption>
+                <thead class="nhsuk-table__head">
+                    <tr class="nhsuk-table__row">
+                    
+                       
+                    
+                        <th class="nhsuk-table__header" scope="col">Time</th>
+                        <th class="nhsuk-table__header" scope="col">Name and NHS number</th>
+                        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                        <th class="nhsuk-table__header" scope="col">Contact details</th>
+                        <th class="nhsuk-table__header" scope="col">Service</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                    {% set appointments = [
+                        {time: "8:30", name: "John Smith", nhs: "999 123 4567", dob: "1 January 1954", contact: "07712345678<br>john.smith@email.com", service: "RSV"}
+                      
+                    ] %}
+                    
+                    {% for appointment in appointments %}
+                    <tr class="nhsuk-table__row">
+                    
+                        <td class="nhsuk-table__cell">{{appointment.time}}</td>
+                        <td class="nhsuk-table__cell">
+                            <strong>{{appointment.name}}</strong><br>
+                            {{appointment.nhs}}
+                        </td>
+                        <td class="nhsuk-table__cell">{{appointment.dob}}</td>
+                        <td class="nhsuk-table__cell">{{appointment.contact | safe}}</td>
+                        <td class="nhsuk-table__cell">{{appointment.service}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                    
+                   
    
-
-    {% else %}
-     <p class="nhsuk-body nhsuk-body-l">The availability has also been removed from NBS.</p>
-
-    {% endif %}
-
-
+                </tbody>
+            </table>
+        </div>
     
 
 

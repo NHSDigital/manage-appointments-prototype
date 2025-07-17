@@ -20,7 +20,9 @@ Cancel appointments - {{site}}
     <div class="nhsuk-grid-column-two-thirds">
         
         <span class="nhsuk-caption-l">{{site}}</span>
-        <h1 class="nhsuk-heading-l">Cancel appointments for Monday 1 {{date({month:'long'})}}</h1>
+        <h1 class="nhsuk-heading-l">Cancel appointments for Monday 21 {{date({month:'long'})}}</h1>
+
+        <p></p>
 
 
 
@@ -30,7 +32,7 @@ Cancel appointments - {{site}}
                 <p> <span id="appointmentCount"></span> will be cancelled. We'll notify people that their appointment has been cancelled.</p>
               </div>
         
-    
+    <!--
         
         <h2 class="nhsuk-heading-m">Appointments to be cancelled</h2>
         
@@ -57,13 +59,15 @@ Cancel appointments - {{site}}
                             </tr>
                         </thead>
                         <tbody class="nhsuk-table__body" id="appointmentsList">
-                            <!-- Will be populated by JavaScript -->
+                            
                         </tbody>
                     </table>
                 </div>
             </div>
-        </details>
+        </details> -->
 
+
+          <h2 class="nhsuk-heading-m">What do you want to do?</h2>
 
 
         
@@ -71,21 +75,21 @@ Cancel appointments - {{site}}
 
             <div class="nhsuk-radios">
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="confirm-cancellation-yes" name="confirm-cancellation" type="radio" value="yes" checked>
+                    <input class="nhsuk-radios__input" id="keep-available-yes" name="keep-available" type="radio" value="Yes">
                     <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-yes">
-                        Cancel but keep the slots available
+                       Keep the availability and cancel the appointments
                     </label>
                 </div>
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="confirm-cancellation-no" name="confirm-cancellation" type="radio" value="no">
+                    <input class="nhsuk-radios__input" id="keep-available-no" name="keep-available" type="radio" value="No">
                     <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-no">
-                        Cancel and remove the slots from the system
+                       Remove the availability and cancel the appointments
                     </label>
                 </div>
             </div>
 
             
-            <div class="nhsuk-button-group nhsuk-u-margin-top-4">
+            <div class="nhsuk-button-group nhsuk-u-margin-top-6">
                 <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
                    Confirm cancellation
                 </button>

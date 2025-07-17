@@ -63,7 +63,7 @@
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</td>
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 17:00</th>
                   <!--<td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>-->
                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
                     <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
@@ -166,18 +166,39 @@
           </div>
           <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="editSession" method="get" class="form">
+        <!-- Add error handling if redirected back with error -->
+        {% if error %}
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+              <li>
+                <a href="#radioGroup">Please select whether to cancel appointments or not</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+
+        <form action="editSessionCurrent" method="post" novalidate>
           
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">What do you want to do?
               </legend>
               <!-- <div class="nhsuk-hint">You can only reduce time and/or capacity from this screen. If you want to increase availability for this day, you must create a new session.</div> -->
-              <div class="nhsuk-form-group">
+              <div class="nhsuk-form-group {% if error %}nhsuk-form-group--error{% endif %}" id="radioGroup">
+                {% if error %}
+                <span class="nhsuk-error-message">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Please select whether to cancel appointments or not
+                </span>
+                {% endif %}
                   <div class="nhsuk-radios">
               
                  <!-- NOT FOR AW MVP    <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="stop">
-                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
+                      <input class="nhsuk-radios__input" id="session-radio-stop" name="radioGroup" type="radio" value="stop">
+                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-stop">
                         Stop taking bookings for this session
                       </label>
                       <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
@@ -185,13 +206,15 @@
                       </div>
                     </div> -->
 
+
+
               
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="remove">
-                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
+                      <input class="nhsuk-radios__input" id="session-radio-change" name="radioGroup" type="radio" value="change">
+                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-change">
                         Change the length or capacity of this session
                       </label>
-                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-change-hint">
                         Shorten session length or remove capacity
                       </div>
                    </div>
@@ -202,22 +225,22 @@
                    <div class="nhsuk-radios nhsuk-radios--conditional">
       <div class="nhsuk-radios__item">
         
-         <input class="nhsuk-radios__input" id="session" name="radioGroup" type="radio" value="session" aria-controls="conditional-session" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="session">
+         <input class="nhsuk-radios__input" id="session-radio-cancel" name="radioGroup" type="radio" value="cancel" aria-controls="conditional-session" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="session-radio-cancel">
                   Cancel the session
                 </label>
       </div>
 
         <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-session">
          <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="cancel-appointments-yes" name="cancel-appointments" type="radio" value="yes">
+        <input class="nhsuk-radios__input" id="cancel-appointments-yes" name="cancel-session" type="radio" value="cancel-yes">
           
         <label class="nhsuk-label nhsuk-radios__label" for="cancel-appointments-yes">
         Cancel appointments for this session
         </label>
       </div>
         <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="cancel-appointments-no" name="cancel-appointments" type="radio" value="no">
+        <input class="nhsuk-radios__input" id="cancel-appointments-no" name="cancel-session" type="radio" value="cancel-no">
         <label class="nhsuk-label nhsuk-radios__label" for="cancel-appointments-no">
         Don't cancel appointments for this session
         </label>
@@ -226,8 +249,8 @@
       
       <div class="nhsuk-radios__item">
       
-         <input class="nhsuk-radios__input" id="services" name="radioGroup" type="radio" value="services" aria-controls="conditional-services" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="services">
+         <input class="nhsuk-radios__input" id="session-radio-services" name="radioGroup" type="radio" value="services" aria-controls="conditional-services" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="session-radio-services">
                   Remove a service or multiple services
                 </label>
       </div>
