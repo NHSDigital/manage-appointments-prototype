@@ -233,6 +233,39 @@ router.get(/cancelAffectedBooking/, function (req, res) {
 
 // /Current routes //
 
+router.post(/editSessionCurrent/, function (req, res) {
+  if (req.body.radioGroup === "change") {
+    res.redirect('edit-single-session');
+  }
+  else if (req.body.radioGroup === "cancel") {
+    res.redirect('session-cancelled');
+  }
+
+  else if (req.body.radioGroup === "services") {
+    res.redirect('services-cancelled');
+  }
+  else if (req.body.radioGroup === "session") {
+    // User selected "Cancel the session" but didn't choose yes/no for appointments
+    // Redirect back to form with error or validation message
+    res.redirect('editSessionCurrent?error=incomplete');
+  }
+  else {
+    // Fallback for any unexpected values
+    res.redirect('editSessionCurrent');
+  }
+});
+
+
+router.get(/BookingsCancelled/, function (req, res) {
+    if (req.query.radioGroup === "Yes" ) {
+        res.redirect('/current/bookings-cancelled-available');
+    }
+    else {
+        res.redirect('/current/bookings-cancelled-notavailable');
+    }
+});
+
+
 router.get(/cancelWeekSure/, function (req, res) {
     if (req.query.radioGroup === "cancel" ) {
         res.redirect('cancel-week-confirmation');
