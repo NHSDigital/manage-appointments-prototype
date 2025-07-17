@@ -29,8 +29,11 @@ Cancel appointments - {{site}}
         <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
               
-                <p> <span id="appointmentCount"></span> will be cancelled. We'll notify people that their appointment has been cancelled.</p>
+                <p> <span id="appointmentCount"></span> will be cancelled. We'll notify them that their appointment has been cancelled.</p>
               </div>
+
+
+           
         
     <!--
         
@@ -67,26 +70,12 @@ Cancel appointments - {{site}}
         </details> -->
 
 
-          <h2 class="nhsuk-heading-m">What do you want to do?</h2>
 
 
         
         <form action="bookings-cancelled" method="post">
 
-            <div class="nhsuk-radios">
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="keep-available-yes" name="keep-available" type="radio" value="Yes">
-                    <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-yes">
-                       Keep the availability and cancel the appointments
-                    </label>
-                </div>
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="keep-available-no" name="keep-available" type="radio" value="No">
-                    <label class="nhsuk-label nhsuk-radios__label" for="confirm-cancellation-no">
-                       Remove the availability and cancel the appointments
-                    </label>
-                </div>
-            </div>
+            
 
             
             <div class="nhsuk-button-group nhsuk-u-margin-top-6">
