@@ -133,7 +133,7 @@ Manage appointments - {{site}} - 21 July
                         {time: "8:45", name: "Norma Davies", nhs: "999 123 4570", dob: "26 August 1978", contact: "0207 765 234", service: "Covid"},
                         {time: "8:50", name: "Dylan Barton", nhs: "999 123 4572", dob: "25 May 1950", contact: "07712345678", service: "RSV"},
                         {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "Flu"},
-                        {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "RSV"},
+                        
                         {time: "9:00", name: "Tobias Boehm", nhs: "999 123 4574", dob: "1 February 1950", contact: "07712345678", service: "Covid"},
                         {time: "9:05", name: "Jonathan Carroll", nhs: "999 123 4575", dob: "29 January 1940", contact: "07712345678", service: "RSV"},
                         {time: "9:05", name: "Connie Corkery", nhs: "999 123 4576", dob: "1 September 1950", contact: "07712345678", service: "Flu"},
@@ -367,12 +367,20 @@ function goToCancelConfirmation() {
             }
         });
         
-        // Store in session storage for the confirmation page
-        sessionStorage.setItem('selectedAppointments', JSON.stringify(selectedAppointments));
-        sessionStorage.setItem('selectedCount', selectedCount.toString());
+        // Check if "Norma Davies" is among the selected appointments
+        const normaDaviesSelected = selectedAppointments.some(appointment => appointment.name === "Norma Davies");
         
-        // Navigate to confirmation page
-        window.location.href = 'cancel-appointments-confirmation';
+        if (normaDaviesSelected) {
+            // Store in session storage for the confirmation page
+            sessionStorage.setItem('selectedAppointments', JSON.stringify(selectedAppointments));
+            sessionStorage.setItem('selectedCount', selectedCount.toString());
+            
+            // Navigate to confirmation page
+            window.location.href = 'cancel-appointments-confirmation';
+        } else {
+            // Show alert if Norma Davies is not selected
+            alert('You can only proceed to cancellation if "Norma Davies" is selected among the appointments.');
+        }
     }
 }
 
