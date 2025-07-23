@@ -1,0 +1,295 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage site (citizen)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+  {% if data ['offline'] == 'true' %}
+    
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The site is now offline
+        </h3>
+           
+
+        <p>The site is now offline and will not be available for appointments</p>
+        <p><a class="govuk-notification-banner__link" href="">Close this message</a></p>
+      
+      </div>
+    </div>
+
+{% endif %}
+      <!-- Change the page title here -->
+      <span class="nhsuk-caption-l">{{site}}</span>
+      <h1 class="nhsuk-heading-xl">Manage site</h1>
+
+      <!-- <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+
+        <p>151 Park road, <br>London, <br>Greater London, <br>N8 8JD</p>
+      </div> -->
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+             <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Site details
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="edit-site-details-v2">Edit site details</a>
+          </a>
+          
+          <a class="nhsuk-link" href="edit-site-status-v2">
+            Change site status
+          </a>
+        </div>
+      
+      </div>
+      <dl class="nhsuk-summary-list">
+
+         <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Status
+          </dt>
+           {% if data ['offline'] == 'true' %}
+            <dd class="nhsuk-summary-list__value">
+            <span class="nhsuk-tag nhsuk-tag--red">Offline</span>
+          </dd>
+
+         
+          {% else %}
+           <dd class="nhsuk-summary-list__value">
+            <span class="nhsuk-tag nhsuk-tag--green">Online</span>
+          </dd>
+          {% endif %}
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+151 Park road,<BR>
+London,<BR>
+Greater London,<BR>
+N8 8JD
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row" styl>
+          <dt class="nhsuk-summary-list__key">
+            Latitude<BR>Longitude
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            51.58437455856056<BR>-0.1310363693114145
+          </dd>
+
+        </div>
+
+        <!-- <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Longitude
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            -0.1310363693114145
+          </dd>
+        </div> -->
+
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            0208 889 8056
+          </dd>
+        </div>
+
+
+
+
+
+
+
+      </dl>
+      <!-- <p><a class="nhsuk-link" href="edit-site-details">Edit site details</a></p>-->
+      </div></div>
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+           <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Access needs
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="edit-site-details">Edit access needs</a>
+          </a>
+          
+          
+        </div>
+      
+      </div>
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accessible toilet
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Braille translation service
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Disabled car parking
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Car parking
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+           Yes
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Induction loop
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Sign language service
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Step free access
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+             Text relay
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Wheelchair access
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              No
+            </dd>
+          </div>
+
+
+
+
+      </dl>
+    
+      </div></div>
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+
+            <div class="nhsuk-summary-card__title-wrapper">
+        <h2 class="nhsuk-summary-card__title nhsuk-heading-m">
+        Information for citizens
+            
+        </h2>
+        <div class="nhsuk-summary-card__actions">
+            <a class="nhsuk-link nhsuk-u-" href="week">Edit information for citizens</a>
+          </a>
+          
+          
+        </div>
+      
+      </div>
+         
+          <p>Information for people visiting the site</p>
+    
+      </div></div>
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+  <script>
+    document.addEventListener('click', function(event) {
+    // Check if the clicked element is the close link
+    if (event.target.classList.contains('govuk-notification-banner__link')) {
+        event.preventDefault();
+        
+        // Find the closest notification banner parent
+        const notificationBanner = event.target.closest('.govuk-notification-banner');
+        
+        if (notificationBanner) {
+            notificationBanner.style.display = 'none';
+        }
+    }
+});
+  </script>
+{% endblock %}

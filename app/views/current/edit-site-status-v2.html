@@ -1,0 +1,123 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Edit site details (citizen)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+      <!-- Change the page title here -->
+    
+      <span class="nhsuk-caption-l">{{site}}</span>
+      <h1 class="nhsuk-heading-l">Manage site visibility</h1>
+
+
+      <dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Current site status
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <span class="nhsuk-tag nhsuk-tag--green">Online</span>
+    </dd>
+    <dd class="nhsuk-summary-list__actions">
+    
+    </dd>
+  </div>
+  
+
+</dl>
+
+<p>Patients can currently book appointments at this site</p>
+
+
+
+{{ radios({
+  idPrefix: "example",
+  name: "example",
+  fieldset: {
+    legend: {
+      text: "What do you want to do?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  items: [
+    {
+      value: "offline",
+      text: "Take site offline"
+    },
+    {
+      value: "online",
+      text: "Keep site online"
+    }
+  ]
+}) }}
+
+{% from 'inset-text/macro.njk' import insetText %}
+
+{{ insetText({
+  html: "<p>The change will take effect immediately. Taking your site offline will mean patients can no longer book appointments until the site is online again.</p>"
+}) }}
+
+
+
+
+  
+  <h3 class="nhsuk-heading-m">How long should this last?</h3>
+   <form action="site-details" method="post" novalidate>
+  <div class="nhsuk-form-group">
+
+
+    <div class="nhsuk-form-group">
+          <input class="nhsuk-input nhsuk-input--width-3" id="appointment-length" name="appointment-length" type="text"><div class="nhsuk-input__suffix" aria-hidden="true">Days</div>
+        </div>
+        
+            <button class="nhsuk-button nhsuk-u-margin-top-6" href="site-details">Save and continue</button>
+            <input type="hidden" name="offline" value="true">
+            </form>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-06-01";
+console.log(dateControl.value); // prints "2017-06-01"
+console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
+
+</script>
+
+{% endblock %}
