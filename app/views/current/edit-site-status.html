@@ -37,13 +37,13 @@
       <!-- Change the page title here -->
     
       <span class="nhsuk-caption-l">{{site}}</span>
-      <h1 class="nhsuk-heading-xl">Edit site status</h1>
+      <h1 class="nhsuk-heading-l">Manage site visibility</h1>
 
 
       <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Status
+      Current site status
     </dt>
     <dd class="nhsuk-summary-list__value">
       <span class="nhsuk-tag nhsuk-tag--green">Online</span>
@@ -56,69 +56,49 @@
 
 </dl>
 
+<p>Patients can currently book appointments at this site</p>
+
+
+
+{{ radios({
+  idPrefix: "example",
+  name: "example",
+  fieldset: {
+    legend: {
+      text: "What do you want to do?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  items: [
+    {
+      value: "offline",
+      text: "Take site offline"
+    },
+    {
+      value: "online",
+      text: "Keep site online"
+    }
+  ]
+}) }}
+
+{% from 'inset-text/macro.njk' import insetText %}
+
+{{ insetText({
+  html: "<p>The change will take effect immediately. Taking your site offline will mean patients can no longer book appointments until the site is online again.</p>"
+}) }}
+
 
 
 
   
-  <h3 class="nhsuk-heading-m">Enter a start date and time</h3>
+
    <form action="site-details" method="post" novalidate>
-
   <div class="nhsuk-form-group">
 
-    <fieldset class="nhsuk-fieldset" aria-describedby="symptoms-hint">
-      
-   
-      <div class="nhsuk-checkboxes">
 
-      
-
-      
-
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="Immediately" name="Immediately" type="checkbox" value="Immediately" data-checkbox-exclusive-group="symptoms-list">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-3">
-            Immediately
-          </label>
-        </div>
-        <div class="nhsuk-checkboxes__divider">or</div>
-      
-      </div>
-    </fieldset>
-  </div>
-
-
-  <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="date">
-         Start date
-        </label>
-        <div id="date-hint" class="nhsuk-hint">
-          For example, 17/05/2025.
-        </div>
-
-       
-
-        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-10" id="start" name="start[month]" type="date" value="{{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
-       </div>
-       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="startTime">Start time</label>
-          <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
-            </div>
-            
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="date">
-        End date
-      </label>
-      <div id="date-hint" class="nhsuk-hint">
-        For example, 17/05/2025.
-      </div>
-
-      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-10" id="start" name="start[month]" type="date" value="{{ date() }}" min="2025-03-01" max="2025-12-31" inputmode="numeric" aria-describedby="date-hint" autocomplete="off">
-    </div>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="startTime">End time</label>
-          <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time"> : <input class="nhsuk-input  nhsuk-input--width-2" label="Start time" id="start-time" name="start-time">
-            </div>
-            <button class="nhsuk-button nhsuk-u-margin-top-6" href="site-details">Save and continue</button>
+        
+            <button class="nhsuk-button nhsuk-u-margin-top-4" href="site-details">Save and continue</button>
             <input type="hidden" name="offline" value="true">
             </form>
 
@@ -129,12 +109,6 @@
 {% endblock %}
 
 {% block pageScripts %}
-<script>
-  const dateControl = document.querySelector('input[type="date"]');
-dateControl.value = "2025-06-01";
-console.log(dateControl.value); // prints "2017-06-01"
-console.log(dateControl.valueAsNumber); // prints 1496275200000, a JavaScript timestamp (ms)
 
-</script>
 
 {% endblock %}
