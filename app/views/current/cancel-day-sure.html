@@ -38,12 +38,12 @@
       
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">Cancel Monday 1 {{date({month:'long'})}}</h1>
+            <h1 class="nhsuk-heading-l">Cancel Monday 21 {{date({month:'long'})}}</h1>
 
        
 
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Sessions for Monday 1 {{date({month:'long'})}}</caption>
+              <caption class="nhsuk-table__caption">Sessions for Monday 21 {{date({month:'long'})}}</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
@@ -93,31 +93,9 @@
                   <p class="nhsuk-body-l">Are you sure you want to cancel this day?</p>
 
 
-      <form action="cancelDaySure" method="get" class="form">
+      <form action="cancel-day-confirmation" method="get" class="form">
           
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            </legend>
-            <div class="nhsuk-form-group">
-                <div class="nhsuk-radios">
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                     Yes, I want to cancel the appointments
-                    </label>
-                  </div>
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="keep">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      No, I don't want to cancel the appointments
-                    </label>
-                 </div>
-            
-                </div>
-                </div>
-          </fieldset>
+        
 
 
 
