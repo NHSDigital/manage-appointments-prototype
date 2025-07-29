@@ -18,10 +18,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:history.back()",
-    text: "Back"
-  }) }}
+  
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -38,11 +35,11 @@
 
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
-            <h1 class="nhsuk-heading-l">Day cancelled for Monday 1 {{date({month:'long'})}}</h1>
+            <h1 class="nhsuk-heading-l">Day cancelled for Monday 21 {{date({month:'long'})}}</h1>
 
 
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Sessions for Monday 1 {{date({month:'long'})}}</caption>
+              <caption class="nhsuk-table__caption">Sessions for Monday 21 {{date({month:'long'})}}</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
@@ -88,9 +85,9 @@
 
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>Some booked aapointments may be impacted by this change. If so, you'll need to cancel these appointments manually.</p>
+          <p>Some booked appointments may be impacted by this change. If so, you'll need to cancel these appointments manually.</p>
 
-            <p><a class="nhsuk-link" href="bookings-scheduled">Cancel these appointments</a></p>
+            <p><a href="week-day-cancelled">View all bookings for this week</a></p>
         </div>
 
         <!-- <div class="nhsuk-warning-callout">
