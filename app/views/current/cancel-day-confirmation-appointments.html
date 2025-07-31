@@ -18,10 +18,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:history.back()",
-    text: "Back"
-  }) }}
+  
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -33,14 +30,13 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
+    <!-- <div class="nhsuk-grid-column-two-thirds"> -->
     <div class="nhsuk-grid-column-two-thirds">
 
-      
             <!-- Change the page title here -->
-            <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">Cancel Monday 21 {{date({month:'long'})}}</h1>
+            <span class="nhsuk-caption-l">Hornsey Central Pharmacy</span>
+            <h1 class="nhsuk-heading-l">Day cancelled for Monday 21 {{date({month:'long'})}}</h1>
 
-       
 
             <table class="nhsuk-table">
               <caption class="nhsuk-table__caption">Sessions for Monday 21 {{date({month:'long'})}}</caption>
@@ -84,59 +80,30 @@
               </tbody>
             </table>
 
-            <div class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-              
-                <p>600 booked appointments will be cancelled. We'll notify people that their appointment has been cancelled</p>
-              </div>
   
-                  <p class="nhsuk-body-l">Are you sure you want to cancel this day?</p>
 
 
-                     <form action="cancelSure" method="get" class="form">
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>Some people could not be contacted or notified as they did not provide a mobile number or email.</p>
+
+            <p><a href="bookings-status-cancelled">View all bookings and contact these people</a></p>
+        </div>
+
+        <!-- <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Some appointments could not be cancelled
+            </span>
+          </h3>
+          <p>12 people did not provide a mobile number or email, and we could not automatically cancel their appointments.</p> 
+        
+          <p><a class="nhsuk-link" href="affected-bookings-cancel-session">Cancel these appointments manually</a></p>
+          </div> -->
+        <!--<a class="nhsuk-button" href="week-session-bookings-cancelled">Finish</a>-->
+
           
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            </legend>
-            <div class="nhsuk-form-group">
-                <div class="nhsuk-radios">
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="cancel">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-repeat">
-                     Yes, I want to cancel this day
-                    </label>
-                  </div>
-            
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="session-radio" name="radioGroup" type="radio" value="keep">
-                    <label class="nhsuk-label nhsuk-radios__label" for="session-radio-single">
-                      No, I don't want to cancel this day
-                    </label>
-                 </div>
-            
-                </div>
-                </div>
-          </fieldset>
-        
-        
-      </form>
-
-
-      <form action="cancel-day-confirmation" method="get" class="form">
-          
-        
-
-
-
-
-
-        
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
-      
 
       <!-- End of content -->
 
