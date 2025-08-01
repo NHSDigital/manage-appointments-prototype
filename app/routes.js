@@ -289,6 +289,17 @@ router.get('/CancelServices', function (req, res) {
     }
 });
 
+// Cancel Day Sure route
+
+router.get('/CancelDay', function (req, res) {
+    if (req.query.radioGroup === "cancel" ) {
+        res.redirect('/current/cancel-day-confirmation');
+    }
+    else {
+        res.redirect('/current/week');
+    }
+});
+
 // Add to your routes.js file
 router.get('/test-filters', function (req, res) {
     // Add some test data
