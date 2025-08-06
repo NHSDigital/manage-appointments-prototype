@@ -2,6 +2,11 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!--
+ In /views/layout.html you can:
+ - change the header and footer
+ - add custom CSS and JavaScript
+-->
 
 <!-- Set the page title -->
 {% block pageTitle %}
@@ -9,6 +14,7 @@ Manage appointments - {{site}} - 21 July
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 {{ backLink({
  href: "javascript:history.back()",
@@ -16,35 +22,69 @@ Manage appointments - {{site}} - 21 July
 }) }}
 {% endblock %}
 
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
 {% endblock %}
 
 <!-- Link to external CSS file -->
 {% block head %}
-
+<style>
+.hidden-row {
+    display: none !important;
+}
+.filter-info {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #005eb8;
+    display: none;
+}
+</style>
 {% endblock %}
 
 <!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <span class="nhsuk-hint">{{site}}</span>
         <h1 class="nhsuk-heading-l">Monday 21 {{date({month:'long'})}}</h1>
         
-        <!-- Print header (only visible when printing) -->
-        <div class="print-header" style="display: none;">
-          <h1>NHS</h1>
-          <h2>{{site}}</h2>
-          <h2>Monday 21 {{date({month:'long'})}}</h2>
-          <p>Printed on: <span id="print-date"></span></p>
-        </div>
-        
-        <!-- Print button - FIXED to call printAppointments() -->
-        <button class="nhsuk-button nhsuk-button--secondary" onclick="printAppointments()">
+        <!-- Print button -->
+        <button class="nhsuk-button nhsuk-button--secondary" onclick="window.print()">
             Print page
         </button>
         
         <hr class="nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-1">
+
+        <!-- Search and filter section -->
+
+           <div class="app-filters nhsuk-u-margin-top-5">
+        <form method="post" action="" novalidate="">
+          <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+            <label class="nhsuk-label" for="q">
+              Search bookings by name or NHS number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="q" name="q" type="search" value="">
+            
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-2 app-button--small nhsuk-u-margin-bottom-0" 
+                    data-module="nhsuk-button" 
+                    type="submit"
+                    id="search-button">
+              Search
+            </button>
+            
+            <!-- Added clear button directly in HTML -->
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-2 app-button--small nhsuk-u-margin-bottom-0" 
+                    data-module="nhsuk-button" 
+                    type="button"
+                    id="clear-button">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
         
         <!-- Bulk Actions Bar - Always Visible -->
         <div class="bulk-actions" id="bulkActions">
@@ -88,6 +128,8 @@ Manage appointments - {{site}} - 21 July
                 </div>
             </div>
         </div>
+        
+       
         
         <!-- Appointments Table -->
         <div class="nhsuk-table-responsive">
@@ -273,6 +315,7 @@ function clearSelection() {
     updateSelection();
 }
 
+// NEW: Filter appointments function
 function filterAppointments() {
     const select = document.getElementById('select-1');
     const selectedService = select.value;
@@ -310,6 +353,7 @@ function filterAppointments() {
     updateSelection();
 }
 
+// NEW: Clear filter function
 function clearFilter() {
     const select = document.getElementById('select-1');
     const appointmentRows = document.querySelectorAll('.appointment-row');
@@ -360,125 +404,118 @@ function goToCancelConfirmation() {
     }
 }
 
-// PRINT FUNCTIONS
-function printAppointments() {
-  // Set the current date for the print header
-  const now = new Date();
-  const printDateElement = document.getElementById('print-date');
-  if (printDateElement) {
-    printDateElement.textContent = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
-  }
-  
-  // Format data for printing
-  formatTableForPrinting();
-  
-  // Show the print header before printing
-  const printHeader = document.querySelector('.print-header');
-  if (printHeader) {
-    printHeader.style.display = 'block';
-  }
-  
-  // Print the page
-  window.print();
-  
-  // Hide the print header after printing
-  setTimeout(function() {
-    if (printHeader) {
-      printHeader.style.display = 'none';
-    }
-    // Restore original table
-    restoreOriginalTable();
-  }, 1000);
-}
-
-function formatTableForPrinting() {
-  // Store original table for restoration later
-  const originalTable = document.querySelector('.nhsuk-table-responsive').innerHTML;
-  
-  // Create hidden storage element if it doesn't exist
-  let storageElement = document.getElementById('original-table-store');
-  if (!storageElement) {
-    storageElement = document.createElement('div');
-    storageElement.id = 'original-table-store';
-    storageElement.style.display = 'none';
-    document.body.appendChild(storageElement);
-  }
-  storageElement.innerHTML = originalTable;
-  
-  // Get all appointment rows (skip header and available slot rows)
-  const appointmentRows = document.querySelectorAll('.appointment-row');
-  
-  // Create new table structure for printing
-  let newTableHTML = `
-    <table class="print-formatted-table">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Name and NHS number</th>
-          <th>Date of birth</th>
-          <th>Contact details</th>
-          <th>Service</th>
-        </tr>
-      </thead>
-      <tbody>
-  `;
-  
-  // Process each appointment row
-  appointmentRows.forEach(row => {
-    // Skip hidden rows (filtered out appointments)
-    if (row.classList.contains('hidden-row')) {
-      return;
-    }
-    
-    // Extract data from current row (accounting for checkbox column)
-    const timeCell = row.cells[1] ? row.cells[1].innerText.trim() : '';
-    const nameCell = row.cells[2] ? row.cells[2].innerText.trim() : '';
-    const dobCell = row.cells[3] ? row.cells[3].innerText.trim() : '';
-    const contactCell = row.cells[4] ? row.cells[4].innerText.trim() : '';
-    const serviceCell = row.cells[5] ? row.cells[5].innerText.trim() : '';
-    
-    // Clean up the data
-    const appointmentTime = timeCell;
-    const nameAndNHS = nameCell;
-    const dateOfBirth = dobCell;
-    const contactDetails = contactCell;
-    const service = serviceCell;
-    
-    // Add the formatted row to the new table
-    newTableHTML += `
-      <tr>
-        <td>${appointmentTime}</td>
-        <td>${nameAndNHS}</td>
-        <td>${dateOfBirth}</td>
-        <td>${contactDetails}</td>
-        <td>${service}</td>
-      </tr>
-    `;
-  });
-  
-  // Close the table
-  newTableHTML += `
-      </tbody>
-    </table>
-  `;
-  
-  // Replace the original table with the formatted one
-  document.querySelector('.nhsuk-table-responsive').innerHTML = newTableHTML;
-}
-
-function restoreOriginalTable() {
-  // Restore the original table after printing
-  const storageElement = document.getElementById('original-table-store');
-  if (storageElement) {
-    const originalHTML = storageElement.innerHTML;
-    document.querySelector('.nhsuk-table-responsive').innerHTML = originalHTML;
-  }
-}
-
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     updateSelection(); // Set initial button states
     console.log('NHS Appointments page loaded - Filter functionality enabled');
 });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get the search input and button elements
+    const searchInput = document.getElementById('q');
+    const searchButton = document.getElementById('search-button');
+    const clearButton = document.getElementById('clear-button');
+    
+    // Exit if we can't find the required elements
+    if (!searchInput || !searchButton || !clearButton) return;
+    
+    // Get all appointment table rows (exclude available-slot rows)
+    const tableRows = Array.from(document.querySelectorAll('.appointment-row'));
+    if (!tableRows.length) return;
+    
+    // Get the table caption to update with search results info
+    const tableCaption = document.querySelector('.nhsuk-table__caption');
+    const originalCaptionText = tableCaption ? tableCaption.textContent : '';
+    
+    // Get the form element to prevent default submission
+    const searchForm = searchInput.closest('form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            filterTable();
+            return false;
+        });
+    }
+    
+    // Function to filter the table rows based on search input
+    function filterTable() {
+        const searchText = searchInput.value.trim().toLowerCase();
+        
+        // If search is empty, show all rows
+        if (searchText === '') {
+            tableRows.forEach(row => {
+                row.style.display = '';
+                row.classList.remove('hidden-row');
+            });
+            if (tableCaption) tableCaption.textContent = originalCaptionText;
+            updateSelection(); // Update checkbox states
+            return;
+        }
+        
+        let matchCount = 0;
+        
+        tableRows.forEach(row => {
+            // Get the name and NHS number from the correct cell (index 2)
+            const nameAndNHS = row.cells[2].textContent.toLowerCase();
+            
+            // Check if search text is found in name or NHS number
+            const isMatch = nameAndNHS.includes(searchText);
+            
+            if (isMatch) {
+                row.style.display = '';
+                row.classList.remove('hidden-row');
+                matchCount++;
+            } else {
+                row.style.display = 'none';
+                row.classList.add('hidden-row');
+                // Uncheck hidden rows
+                const checkbox = row.querySelector('.row-checkbox');
+                if (checkbox) {
+                    checkbox.checked = false;
+                }
+            }
+        });
+        
+        // Update the table caption (though it's visually hidden)
+        if (tableCaption) {
+            tableCaption.textContent = `Found ${matchCount} appointment${matchCount !== 1 ? 's' : ''} matching "${searchText}"`;
+        }
+        
+        // Update selection state after filtering
+        updateSelection();
+    }
+    
+    // Add click event listener to the search button
+    searchButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterTable();
+    });
+    
+    // Add real-time search as user types
+    searchInput.addEventListener('input', function() {
+        filterTable();
+    });
+    
+    // Clear search when clear button is clicked
+    clearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        // Reset all table rows to be visible
+        tableRows.forEach(row => {
+            row.style.display = '';
+            row.classList.remove('hidden-row');
+        });
+        // Reset caption
+        if (tableCaption) tableCaption.textContent = originalCaptionText;
+        
+        // Update selection state
+        updateSelection();
+        searchInput.focus();
+    });
+});
+</script>
+
+
 {% endblock %}
