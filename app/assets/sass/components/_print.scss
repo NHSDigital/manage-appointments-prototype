@@ -1,147 +1,163 @@
+
+.hidden-row {
+    display: none !important;
+}
+.filter-info {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #005eb8;
+    display: none;
+}
+
+/* Print styles */
 @media print {
-  /* Hide all checkboxes and their labels */
+  @page {
+    size: A4 landscape;
+    margin: 0.4in 0.6in;
+  }
+  
+  /* Hide everything except the table and print header */
+  .nhsuk-back-link,
+  .bulk-actions,
+  .nhsuk-pagination,
+  .nhsuk-form-group,
+  nav,
+  button,
   input[type="checkbox"],
-  .nhsuk-checkboxes,
-  .nhsuk-checkboxes__item,
-  .nhsuk-checkboxes__input,
-  .nhsuk-checkboxes__label,
-  .govuk-checkboxes,
-  .govuk-checkboxes__item,
-  .govuk-checkboxes__input,
-  .govuk-checkboxes__label,
-  /* Generic checkbox selectors */
-  .checkbox,
-  .checkbox-container,
-  .form-check,
-  .form-check-input,
-  /* Hide any elements with checkbox-related classes */
-  [class*="checkbox"],
-  [class*="check-box"] {
+  .checkbox-cell,
+  .nhsuk-button,
+  select,
+  .nhsuk-select,
+  .available-slot,
+  hr,
+  .nhsuk-header,
+  header,
+  .nhsuk-header__container,
+  .nhsuk-header__logo,
+  .nhsuk-header__navigation {
     display: none !important;
   }
   
-  /* Hide any parent containers that only contain checkboxes */
-  .checkbox-group,
-  .selection-controls,
-  .form-checkboxes {
-    display: none !important;
+  body {
+    font-size: 12pt;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .nhsuk-grid-column-full {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nhsuk-grid-row {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Site name and date styling */
+  .nhsuk-hint {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+    font-size: 14pt;
+    font-weight: bold;
+    display: block !important;
+  }
+  
+  .nhsuk-heading-l {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    font-size: 18pt;
+    display: block !important;
+  }
+  
+  /* Print header styling */
+  .print-header {
+    text-align: center;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+    display: block !important;
+  }
+  
+  .print-header h1 {
+    color: #005eb8;
+    font-size: 20pt;
+    margin: 0 0 5px 0;
+  }
+  
+  .print-header h2 {
+    font-size: 16pt;
+    margin: 0 0 3px 0;
+  }
+  
+  .print-header p {
+    font-size: 11pt;
+    margin: 0 0 10px 0;
+  }
+  
+  /* Print table styling */
+  .print-formatted-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 !important;
+    font-size: 10pt;
+    table-layout: fixed;
+  }
+  
+  .print-formatted-table th,
+  .print-formatted-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+  
+  .print-formatted-table th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .print-formatted-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Column widths */
+  .print-formatted-table th:nth-child(1),
+  .print-formatted-table td:nth-child(1) {
+    width: 12%;
+  }
+  
+  .print-formatted-table th:nth-child(2),
+  .print-formatted-table td:nth-child(2) {
+    width: 28%;
+  }
+  
+  .print-formatted-table th:nth-child(3),
+  .print-formatted-table td:nth-child(3) {
+    width: 18%;
+  }
+  
+  .print-formatted-table th:nth-child(4),
+  .print-formatted-table td:nth-child(4) {
+    width: 28%;
+  }
+  
+  .print-formatted-table th:nth-child(5),
+  .print-formatted-table td:nth-child(5) {
+    width: 14%;
+  }
+  
+  .nhsuk-table-responsive {
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
-
-/* Print-specific styles */
-@media print {
-    /* Hide elements not needed in print version */
-    .nhsuk-header, 
-    .nhsuk-back-link, 
-    .x-govuk-secondary-navigation,
-    .moj-button-group,
-    .govuk-pagination,
-    nav,
-  .nhsuk-back-link, 
-  .x-govuk-secondary-navigation, 
-  .govuk-pagination, 
-  nav,
-  .no-print,
-  .nhsuk-table__cell a,
-  button,
-  .pagination,
-  a[href="cancel"],
-  a[class="Cancel"],
-  header,
-  footer {
-    display: none !important;
-  }
-    
-    /* Ensure the whole page prints well */
-    body {
-      font-size: 1rem;
-      color:nhsuk-text-black;
-      background-color: #fff;
-    }
-    
-    /* Style the table for printing */
-    .nhsuk-table-responsive {
-      width: 100%;
-      
-    }
-    
-    /* Blue header for the table */
-    .nhsuk-table__head {
-      background-color: #005eb8 !important;
-      color: white !important;
-      print-color-adjust: exact; /* For Chrome */
-      -webkit-print-color-adjust: exact; /* For Safari */
-    }
-    
-    .nhsuk-table__head th {
-      color: white !important;
-      padding: 10px;
-      font-weight: bold;
-      text-align: left;
-      border: none;
-    }
-    
-    .nhsuk-table__body td {
-      padding: 10px;
-      border: none;
-      text-align: left;
-    }
-
-        .nhsuk-table__body row {
-      padding: 10px;
-      border: none;
-      text-align: left;
-    }
-    
-    /* Format the joint appointment styling for print */
-    .jointTopBot, .jointMid {
-      border-color: #768692 !important;
-      print-color-adjust: exact;
-      -webkit-print-color-adjust: exact;
-    }
-    
-    /* Make sure the "Joint" tag is visible */
-    .nhsuk-tag {
-      background-color: #1d70b8 !important;
-      color: white !important;
-      padding: 2px 5px;
-      font-size: 10pt;
-      font-weight: bold;
-      print-color-adjust: exact;
-      -webkit-print-color-adjust: exact;
-    }
-    
-    /* Hide cancel links in print view */
-    .nhsuk-link[href*="cancel"] {
-      display: none;
-    }
-    
-    /* Add a heading at the top of the print */
-    .nhsuk-heading-xl::before {
-      content: "Hornsey Central Pharmacy - Appointments";
-      display: block;
-      font-size: 18pt;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
-    
-    /* Add page break control */
-    .nhsuk-table__row {
-      page-break-inside: avoid;
-    }
-    
-    /* Hide responsive table headers that are only for mobile */
-    .nhsuk-table-responsive__heading {
-      display: none !important;
-    }
-    
-    /* Add footer with page numbers */
-    @page {
-      margin: 2cm;
-    }
-    
-    @page :footer {
-      content: "Page " counter(page) " of " counter(pages);
-    }
-  }
