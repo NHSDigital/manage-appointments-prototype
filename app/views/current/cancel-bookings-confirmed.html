@@ -37,7 +37,7 @@
 
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">New time and capacity for Tuesday 22 {{ date({month: 'long'}) }}</h1>
+            <h1 class="nhsuk-heading-l">Time and capacity changed for Tuesday 22 {{ date({month: 'long'}) }}</h1>
 
 
             <table class="nhsuk-table">
@@ -81,20 +81,16 @@
               </tbody>
             </table>
 
-            <p class="nhsuk-body-l">Are you sure you want to change the session?</p>
+           <p>x of appointments have been cancelled. x people will be sent a text message or email confirming their appointment has been cancelled.</p>
+           <p>X of people did not provide contact details so they will not receive a notification.</p>
+           <p><a href="bookings-scheduled-status">View bookings without contact details</a></p>
+           <p><a href="week">View all bookings for this week</a></p>
+
           
   
      
 
-      <form action="cancel-bookings-confirmed" method="get" class="form">
-          
-          
-        
-        <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
-          Change session
-        </button>
-      </form>
-      <p><a href="">No, go back</a></p>
+
       
 
       <!-- End of content -->
