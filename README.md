@@ -1,4 +1,4 @@
-# Manage your appointments prototype
+# NHS prototype kit
 
 Visit the <a href="https://prototype-kit.service-manual.nhs.uk">NHS prototype kit site</a> to download the latest version and read the documentation.
 
