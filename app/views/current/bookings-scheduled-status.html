@@ -117,19 +117,13 @@ Manage appointments - {{site}} - 21 July
                 </thead>
                 <tbody class="nhsuk-table__body">
                     {% set appointments = [
-                        {time: "8:30", name: "John Smith", nhs: "999 123 4567", dob: "1 January 1954", contact: "07712345678<br>john.smith@email.com", service: "RSV", status: "Booked"},
-                        {time: "8:35", name: "Martin Lincoln", nhs: "999 123 4568", dob: "7 June 1958", contact: "martin.lincoln@email.com", service: "Covid", status: "Pending"},
-                        {time: "8:45", name: "Mike Jones", nhs: "999 123 4569", dob: "15 October 1950", contact: "07712345678", service: "Flu", status: "Booked"},
-                        {time: "8:50", name: "Clive Lochan", nhs: "999 123 4571", dob: "4 June 1947", contact: "07712345678<br>Clive1@email.com", service: "RSV", status: "Cancelled"},
-                        {time: "8:45", name: "Norma Davies", nhs: "999 123 4570", dob: "26 August 1978", contact: "0207 765 234", service: "Covid", status: "Booked"},
-                        {time: "8:50", name: "Dylan Barton", nhs: "999 123 4572", dob: "25 May 1950", contact: "07712345678", service: "RSV", status: "Pending"},
-                        {time: "8:55", name: "Jacob Blick", nhs: "999 123 4573", dob: "3 May 1950", contact: "07712345678", service: "Flu", status: "Booked"},
+                       
+                        {time: "8:50", name: "Clive Lochan", nhs: "999 123 4571", dob: "4 June 1947", contact: "01905 666 882", service: "RSV", status: "Cancelled"},
+                     
+                       
                         
-                        {time: "9:00", name: "Tobias Boehm", nhs: "999 123 4574", dob: "1 February 1950", contact: "07712345678", service: "Covid", status: "Cancelled"},
-                        {time: "9:05", name: "Jonathan Carroll", nhs: "999 123 4575", dob: "29 January 1940", contact: "07712345678", service: "RSV", status: "Booked"},
-                        {time: "9:05", name: "Connie Corkery", nhs: "999 123 4576", dob: "1 September 1950", contact: "07712345678", service: "Flu", status: "Pending"},
-                        {time: "9:15", name: "Mohamed Bartoletti", nhs: "999 123 4577", dob: "6 November 1950", contact: "07712345678", service: "RSV", status: "Booked"},
-                        {time: "9:15", name: "Elijah Anderson", nhs: "999 123 4578", dob: "4 July 1958", contact: "07712345678<br>ea58@email.co.uk", service: "Covid", status: "Booked"}
+                        {time: "9:00", name: "Tobias Boehm", nhs: "999 123 4574", dob: "1 February 1950", contact: "01905 222 765", service: "Covid", status: "Cancelled"}
+                        
                     ] %}
                     
                     {% for appointment in appointments %}
@@ -168,13 +162,9 @@ Manage appointments - {{site}} - 21 July
                     </tr>
                     
                     {% set moreAppointments = [
-                        {time: "10:00", name: "Hattie Beer", nhs: "999 123 4579", dob: "8 August 1951", contact: "07712345678", service: "Flu", status: "Booked"},
-                        {time: "10:05", name: "Felicity Bergstrom", nhs: "999 123 4580", dob: "17 April 1949", contact: "07712345678", service: "RSV", status: "Pending"},
-                        {time: "10:05", name: "Alex Pearce", nhs: "999 123 4581", dob: "3 April 1950", contact: "07712345678", service: "Covid", status: "Booked"},
-                        {time: "10:10", name: "Syed Johnson", nhs: "999 123 4582", dob: "9 February 1950", contact: "07712345678", service: "RSV", status: "Cancelled"},
-                        {time: "10:15", name: "Jakob Marquardt-Runolfsdottir", nhs: "999 123 4583", dob: "7 February 1950", contact: "07712345678", service: "Flu", status: "Booked"},
-                        {time: "10:15", name: "Violet Mocicki", nhs: "999 123 4584", dob: "26 October 1954", contact: "07712345678", service: "RSV", status: "Pending"},
-                        {time: "10:20", name: "David Anderson", nhs: "999 123 4585", dob: "15 December 1951", contact: "07712345678", service: "Covid", status: "Booked"}
+                        
+                        {time: "10:10", name: "Syed Johnson", nhs: "999 123 4582", dob: "9 February 1950", contact: "01905 334 642", service: "RSV", status: "Cancelled"}
+                        
                     ] %}
                     
                     {% for appointment in moreAppointments %}

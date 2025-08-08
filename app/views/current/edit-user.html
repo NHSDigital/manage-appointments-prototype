@@ -68,7 +68,7 @@ text: "Users"
 
 
 <h2 class="nhsuk-heading-m">Email</h2>
-<p>{{data['email']}}</p>
+<p>{{email}}</p>
 
 
 {% from 'checkboxes/macro.njk' import checkboxes %}
@@ -88,6 +88,7 @@ text: "Users"
       {
         value: "appointment-manager",
         text: "Appointment manager",
+        checked: true,
         hint: {
           text: "A user can view and cancel appointments"
         }
