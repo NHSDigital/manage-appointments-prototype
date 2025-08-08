@@ -2,16 +2,13 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-
-const govukPrototypeKit = require('govuk-prototype-kit')
-const { getPDUs } = require('./helpers')
-const router = govukPrototypeKit.requests.setupRouter()
+const express = require('express')
+const router = express.Router()
 
 // Add your routes here
 
-
-
-router.get('*', function (req, res, next) {
+// Use middleware instead of router.get('*', ...) to avoid path-to-regexp errors
+router.use(function (req, res, next) {
   // These functions are available on all pages in the prototype.
   // To use call the function inside curly brackets, for example {{ example_function() }}
 
@@ -79,9 +76,6 @@ router.get('*', function (req, res, next) {
 // Add your routes here
 // Search routes
 
-
-
-
 // STANDARD BRANCHING  
 router.post('/country-answer', function(request, response) {
 
@@ -93,9 +87,7 @@ router.post('/country-answer', function(request, response) {
   }
 })
 
-
 // MULTI QUESTION REDIRECT
-
 router.post('/redirect-test', function(request, response) {
 
   var hso = request.session.data['hso'];//
@@ -119,160 +111,178 @@ router.post('/redirect-test', function(request, response) {
 })
 // END 
 
+// Pattern-based routes using middleware to avoid regex parsing errors
 
-router.get(/addSessionType/, function (req, res) {
-    if (req.query.radioGroup === "Repeat" ) {
-        res.redirect('availability-date-range');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('addSessionType')) {
+        if (req.query.radioGroup === "Repeat") {
+            return res.redirect('availability-date-range');
+        } else {
+            return res.redirect('session-date');
+        }
     }
-    else {
-        res.redirect('session-date');
-    }
+    next();
 });
 
-router.get(/siteOpen/, function (req, res) {
-    if (req.query.radioGroup === "yes" ) {
-        res.redirect('session-time-capacity2');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('siteOpen')) {
+        if (req.query.radioGroup === "yes") {
+            return res.redirect('session-time-capacity2');
+        } else {
+            return res.redirect('check-days4');
+        }
     }
-    else {
-        res.redirect('check-days4');
-    }
+    next();
 });
 
 // V3 routes //
 
-router.get(/cancelBooking/, function (req, res) {
-    if (req.query.radioGroup === "Yes" ) {
-        res.redirect('bookings-scheduled-cancelled');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('cancelBooking')) {
+        if (req.query.radioGroup === "Yes") {
+            return res.redirect('bookings-scheduled-cancelled');
+        } else {
+            return res.redirect('bookings-scheduled');
+        }
     }
-    else {
-        res.redirect('bookings-scheduled');
-    }
+    next();
 });
 
-router.get(/deleteSession/, function (req, res) {
-    if (req.query.radioGroup === "Yes" ) {
-        res.redirect('week-session-bookings-cancelled');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('deleteSession')) {
+        if (req.query.radioGroup === "Yes") {
+            return res.redirect('week-session-bookings-cancelled');
+        } else {
+            return res.redirect('week-session-bookings-honoured');
+        }
     }
-    else {
-        res.redirect('week-session-bookings-honoured');
-    }
+    next();
 });
 
-router.get(/deleteDay/, function (req, res) {
-    if (req.query.radioGroup === "Yes" ) {
-        res.redirect('week-day-bookings-cancelled');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('deleteDay')) {
+        if (req.query.radioGroup === "Yes") {
+            return res.redirect('week-day-bookings-cancelled');
+        } else {
+            return res.redirect('week-day-bookings-honoured');
+        }
     }
-    else {
-        res.redirect('week-day-bookings-honoured');
-    }
+    next();
 });
 
 // v4 routes //
 
-router.get(/editSession/, function (req, res) {
-    if (req.query.radioGroup === "stop" ) {
-        res.redirect('week-session-bookings-honoured');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('editSession')) {
+        if (req.query.radioGroup === "stop") {
+            return res.redirect('week-session-bookings-honoured');
+        } else if (req.query.radioGroup === "remove") {
+            return res.redirect('edit-single-session');
+        } else if (req.query.radioGroup === "remove-service") {
+            return res.redirect('edit-single-session-service');
+        } else {
+            return res.redirect('cancel-sure');
+        }
     }
-    else  if (req.query.radioGroup === "remove" ) {
-        res.redirect('edit-single-session');
-    }
-     else  if (req.query.radioGroup === "remove-service" ) {
-        res.redirect('edit-single-session-service');
-    }
-    else {
-        res.redirect('cancel-sure');
-    }
+    next();
 });
 
-router.get(/removeAvailability/, function (req, res) {
-    if (req.query.radioGroup === "shorten" ) {
-        res.redirect('edit-session-length');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('removeAvailability')) {
+        if (req.query.radioGroup === "shorten") {
+            return res.redirect('edit-session-length');
+        } else {
+            return res.redirect('edit-session-capacity');
+        }
     }
-    else {
-        res.redirect('edit-session-capacity');
-    }
+    next();
 });
 
-router.get(/affectedBookings/, function (req, res) {
-    if (req.query.radioGroup === "cancel" ) {
-        res.redirect('remove-confirmation');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('affectedBookings')) {
+        if (req.query.radioGroup === "cancel") {
+            return res.redirect('remove-confirmation');
+        } else {
+            return res.redirect('week');
+        }
     }
-    else {
-        res.redirect('week');
-    }
+    next();
 });
 
-router.get(/cancelSure/, function (req, res) {
-    if (req.query.radioGroup === "cancel" ) {
-        res.redirect('cancel-confirmation');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('cancelSure')) {
+        if (req.query.radioGroup === "cancel") {
+            return res.redirect('cancel-confirmation');
+        } else {
+            return res.redirect('edit-session');
+        }
     }
-    else {
-        res.redirect('edit-session');
-    }
+    next();
 });
 
 // v5 routes //
 
-router.get(/cancelDaySure/, function (req, res) {
-    if (req.query.radioGroup === "cancel" ) {
-        res.redirect('cancel-day-confirmation');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('cancelDaySure')) {
+        if (req.query.radioGroup === "cancel") {
+            return res.redirect('cancel-day-confirmation');
+        } else {
+            return res.redirect('week');
+        }
     }
-    else {
-        res.redirect('week');
-    }
+    next();
 });
 
-router.get(/cancelAffectedBooking/, function (req, res) {
-    if (req.query.radioGroup === "Yes" ) {
-        res.redirect('bookings-cancelled3');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('cancelAffectedBooking')) {
+        if (req.query.radioGroup === "Yes") {
+            return res.redirect('bookings-cancelled3');
+        } else {
+            return res.redirect('bookings-list-manual-cancellation');
+        }
     }
-    else {
-        res.redirect('bookings-list-manual-cancellation');
-    }
+    next();
 });
 
 // /Current routes //
 
-router.post(/editSessionCurrent/, function (req, res) {
-  if (req.body.radioGroup === "change") {
-    res.redirect('edit-single-session');
-  }
-  else if (req.body.radioGroup === "cancel") {
-    res.redirect('session-cancelled');
-  }
-
-  else if (req.body.radioGroup === "services") {
-    res.redirect('services-cancelled');
-  }
-  else if (req.body.radioGroup === "session") {
-    // User selected "Cancel the session" but didn't choose yes/no for appointments
-    // Redirect back to form with error or validation message
-    res.redirect('editSessionCurrent?error=incomplete');
-  }
-  else {
-    // Fallback for any unexpected values
-    res.redirect('editSessionCurrent');
-  }
+router.use(function(req, res, next) {
+    if (req.method === 'POST' && req.url.includes('editSessionCurrent')) {
+        if (req.body.radioGroup === "change") {
+            return res.redirect('edit-single-session');
+        } else if (req.body.radioGroup === "cancel") {
+            return res.redirect('session-cancelled');
+        } else if (req.body.radioGroup === "services") {
+            return res.redirect('services-cancelled');
+        } else if (req.body.radioGroup === "session") {
+            return res.redirect('editSessionCurrent?error=incomplete');
+        } else {
+            return res.redirect('editSessionCurrent');
+        }
+    }
+    next();
 });
 
-
-router.get(/BookingsCancelled/, function (req, res) {
-    if (req.query.radioGroup === "Yes" ) {
-        res.redirect('/current/bookings-cancelled-available');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('BookingsCancelled')) {
+        if (req.query.radioGroup === "Yes") {
+            return res.redirect('/current/bookings-cancelled-available');
+        } else {
+            return res.redirect('/current/bookings-cancelled-notavailable');
+        }
     }
-    else {
-        res.redirect('/current/bookings-cancelled-notavailable');
-    }
+    next();
 });
 
-
-router.get(/cancelWeekSure/, function (req, res) {
-    if (req.query.radioGroup === "cancel" ) {
-        res.redirect('cancel-week-confirmation');
+router.use(function(req, res, next) {
+    if (req.method === 'GET' && req.url.includes('cancelWeekSure')) {
+        if (req.query.radioGroup === "cancel") {
+            return res.redirect('cancel-week-confirmation');
+        } else {
+            return res.redirect('week');
+        }
     }
-    else {
-        res.redirect('week');
-    }
+    next();
 });
 
 router.get('/CancelServices', function (req, res) {
@@ -290,7 +300,6 @@ router.get('/CancelServices', function (req, res) {
 });
 
 // Cancel Day Sure route
-
 router.get('/CancelDay', function (req, res) {
     if (req.query.radioGroup === "cancel" ) {
         res.redirect('/current/cancel-day-confirmation');
@@ -315,7 +324,6 @@ router.get('/current/index', (req, res) => {
     res.redirect('/'); // Redirect to the home page
   });
 
-
   // Add this to your routes.js file
 router.get('/test-page', function (req, res) {
     res.render('test-page.html');
@@ -327,9 +335,6 @@ router.get('/test-page', function (req, res) {
       submittedData: req.body
     });
   });
-  
-
-
 
 // GET route for the first page (add user form)
 router.get('/add-user', function (req, res) {
@@ -353,10 +358,7 @@ router.post('/check-and-add', function (req, res) {
   res.redirect('/confirmation') // Or wherever you want to go next
 })
 
-
-//
 // ADD DATES REDIRECT
-
 router.post('/add-breaks', function(request, response) {
 
   var hso = request.session.data['hso'];//
@@ -381,7 +383,6 @@ router.get('/clear-data', function (req, res) {
   res.redirect('/clear-data-confirmation')
 })
 
-
 // ADD DATES REDIRECT
 router.post('/site-answer', function(request, response) {
   var site = request.session.data['site']
@@ -394,4 +395,3 @@ router.post('/site-answer', function(request, response) {
 // END
 
 module.exports = router;
-
