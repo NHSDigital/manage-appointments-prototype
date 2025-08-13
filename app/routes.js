@@ -109,6 +109,7 @@ router.post('/redirect-test', function(request, response) {
   }
   
 })
+
 // END 
 
 // Pattern-based routes using middleware to avoid regex parsing errors
@@ -246,6 +247,19 @@ router.use(function(req, res, next) {
 
 // /Current routes //
 
+
+router.post('/CancelBookings', function(request, response) {
+
+	var cancel = request.session.data['cancel']
+	if (cancel == "Yes"){
+		response.redirect("/current/cancel-bookings-check")
+	} else {
+		response.redirect("/current/cancel-bookings-confirmed")
+	}
+})
+
+///
+
 router.use(function(req, res, next) {
     if (req.method === 'POST' && req.url.includes('editSessionCurrent')) {
         if (req.body.radioGroup === "change") {
@@ -308,6 +322,8 @@ router.get('/CancelDay', function (req, res) {
         res.redirect('/current/week');
     }
 });
+
+
 
 // Add to your routes.js file
 router.get('/test-filters', function (req, res) {

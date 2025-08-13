@@ -80,45 +80,27 @@
                 </tr>
               </tbody>
             </table>
-            <p>Changing the time and capacity will affect xxx appointments</p>
-            <p>xx of appointments can be reallocated</p>
-            <p>xx of appointments may have to be cancelled</p>
 
-            <p class="nhsuk-body-l">Do you want to cancel affected appointments?</p>
+           <p>Changing the time and capacity will affect xx appointments.</p>
+           <p>xx of appointments will be cancelled</p>
+          
+           <p class="nhsuk-body-l">Are you sure you want to cancel the appointments?</p>
+
+           <form action="cancel-bookings-changed" method="get" class="form">
+               <button class="nhsuk-button nhsuk-button--warning">Cancel appointments</button>
 
 
-                <form action="/CancelBookings" method="post" class="form">
+           </form>
 
         
 
-{{ radios({
-  idPrefix: "cancel",
-  name: "cancel",
-  
-  items: [
-    {
-      value: "Yes",
-      text: "Yes, cancel the appointments"
-    },
-    {
-      value: "No",
-      text: "No, do not cancel the appointments"
-    }
-  ]
-}) }}
+           <p><a href="">No, go back</a></p>
+
           
   
      
 
-  
-          
-          
-        
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
-     
+
       
 
       <!-- End of content -->
