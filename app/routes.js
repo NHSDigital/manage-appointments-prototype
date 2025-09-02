@@ -248,6 +248,18 @@ router.use(function(req, res, next) {
 // /Current routes //
 
 
+
+router.post('/ChangeSession', function(request, response) {
+
+	var change = request.session.data['change']
+	if (change == "Yes"){
+		response.redirect("/current/change-session/change-session-reallocated")
+	} else {
+		response.redirect("/current/change-session/change-session")
+	}
+})
+
+
 router.post('/CancelBookings', function(request, response) {
 
 	var cancel = request.session.data['cancel']

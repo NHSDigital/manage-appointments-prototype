@@ -22,6 +22,8 @@
     href: "javascript:history.back()",
     text: "Back"
   }) }}
+
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -33,12 +35,18 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
+    <!-- <div class="nhsuk-grid-column-two-thirds"> -->
     <div class="nhsuk-grid-column-two-thirds">
 
+      
             <!-- Change the page title here -->
             <span class="nhsuk-caption-l">{{site}}</span>
-            <h1 class="nhsuk-heading-l">Time and capacity changed for Tuesday 22 {{ date({month: 'long'}) }}</h1>
+            <h1 class="nhsuk-heading-l">Time and capacity changed for Tuesday 22 {{date({month:'long'})}}</h1>
 
+        
+
+
+        
 
             <table class="nhsuk-table">
               <thead role="rowgroup" class="nhsuk-table__head">
@@ -46,49 +54,52 @@
                   <th role="columnheader" class="" scope="col">
                     Time
                   </th>
-                 <!-- <th role="columnheader" class="" scope="col">
-                    Break
-                  </th> -->
                   <th role="columnheader" class="" scope="col">
                     Services
                   </th>
-                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                  <th role="columnheader" class="" scope="col">
                     Booked
                   </th>
-                
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 15:00</th>
-                  <!--<td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>-->
-                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
-                    <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-      
-        <li>Covid 75+</li>
-        
-        
-    </ul>
-  </td>
-                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">
-                      <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
-                        <li>0 booked</li>
-                      
-                      </ul>
-                  </td>
-                
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 15:00</td>
+                  
+                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">Covid 75+</td>
+                   <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">xx booked</td>
                 </tr>
               </tbody>
             </table>
-            <p>The session has been updated and the new time and capacity has been saved</p>
 
-            <p><a href="week">View all bookings for this week</a></p>
-            
-     
+       
+        
+          
+
+           <p>This session has been updated and the new time and capacity has been saved.</p>
+
+           <!-- CARDS -->
+
+
+           <ul class="nhsuk-grid-row nhsuk-card-group">
+
+    
+
+     <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
       
+        <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">30</p>
+        Bookings reallocated to another session
+  </div>
+</div>
 
-      <!-- End of content -->
+    </li>
 
+</ul>
+<p>29 bookings have not been cancelled </p>
+
+<p><a href="week">View all bookings for this week</a></p>
     </div>
   </div>
 {% endblock %}

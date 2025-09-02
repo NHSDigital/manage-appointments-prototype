@@ -1,0 +1,287 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'current/layouts/layout-top-nav-sites.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Manage appointments
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    
+            <!-- Change the page title here -->
+            <span class="nhsuk-caption-l">{{site}}</span>
+            <h1 class="nhsuk-heading-l">Change availability for Tuesday 22 {{ date({month: 'long'}) }}</h1>
+
+        
+
+            <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Time
+                  </th>
+                 <!-- <th role="columnheader" class="" scope="col">
+                    Break
+                  </th> -->
+                  <th role="columnheader" class="" scope="col">
+                    Services
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="text-align: right;">
+                    Booked
+                  </th>
+                
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row" style="padding: 8px 24px 8px 1px;">09:00 - 12:00</th>
+                  <!--<td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">12:00 - 13:00</td>-->
+                  <td class="nhsuk-table__cell" style="padding: 8px 24px 8px 1px;">
+                    <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
+      
+        <li>Covid 5-17</li>
+        
+        
+    </ul>
+  </td>
+                  <td class="nhsuk-table__cell" style="padding: 8px 1px 8px 24px; text-align: right;">
+                      <ul class="nhsuk-list" style="margin: 0; padding-left: 24px;">
+                        <li>100 booked</li>
+                      
+                      </ul>
+                  </td>
+                
+                </tr>
+              </tbody>
+            </table>
+        
+
+
+        <!-- <dl class="nhsuk-summary-list">
+
+        
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              09:00 - 17:00
+            </dd>
+        
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Breaks
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              12:00 - 13:00
+            </dd>
+        
+        
+          </div>
+        
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Vaccinators or spaces available
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Appointment length in minutes
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5
+            </dd>
+        
+        
+          </div>
+          
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Services
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Covid 18-75+
+            </dd>
+        
+        
+          </div> -->
+          
+        </dl>
+        </div>
+        </div>
+
+         <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Cancel a service in this session and remove booked appointments.</p>
+           
+            <p>420 booked appointments in this session.<br>
+              0 unbooked appointments in this session.</p> -->
+          </div>
+          <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Add error handling if redirected back with error -->
+        {% if error %}
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+              <li>
+                <a href="#radioGroup">Please select whether to cancel appointments or not</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+
+        <form action="editSessionCurrent" method="post" novalidate>
+          
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">What do you want to do?
+              </legend>
+              <!-- <div class="nhsuk-hint">You can only reduce time and/or capacity from this screen. If you want to increase availability for this day, you must create a new session.</div> -->
+              <div class="nhsuk-form-group {% if error %}nhsuk-form-group--error{% endif %}" id="radioGroup">
+                {% if error %}
+                <span class="nhsuk-error-message">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Please select whether to cancel appointments or not
+                </span>
+                {% endif %}
+                  <div class="nhsuk-radios">
+              
+                 <!-- NOT FOR AW MVP    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="session-radio-stop" name="radioGroup" type="radio" value="stop">
+                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-stop">
+                        Stop taking bookings for this session
+                      </label>
+                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                        Remove unbooked appointments for this session
+                      </div>
+                    </div> -->
+
+
+
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="session-radio-change" name="radioGroup" type="radio" value="change">
+                      <label class="nhsuk-label nhsuk-radios__label" for="session-radio-change">
+                        Change the length or capacity of this session
+                      </label>
+                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-change-hint">
+                        Shorten session length or remove capacity
+                      </div>
+                   </div>
+
+                 
+
+
+                   <div class="nhsuk-radios nhsuk-radios--conditional">
+      <div class="nhsuk-radios__item">
+        
+         <input class="nhsuk-radios__input" id="session-radio-cancel" name="radioGroup" type="radio" value="cancel" aria-controls="conditional-session" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="session-radio-cancel">
+                  Cancel the session
+                </label>
+      </div>
+
+        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-session">
+         <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="cancel-appointments-yes" name="cancel-session" type="radio" value="cancel-yes">
+          
+        <label class="nhsuk-label nhsuk-radios__label" for="cancel-appointments-yes">
+        Cancel appointments for this session
+        </label>
+      </div>
+        <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="cancel-appointments-no" name="cancel-session" type="radio" value="cancel-no">
+        <label class="nhsuk-label nhsuk-radios__label" for="cancel-appointments-no">
+        Don't cancel appointments for this session
+        </label>
+      </div>
+        </div>
+      
+      <div class="nhsuk-radios__item">
+      
+         <input class="nhsuk-radios__input" id="session-radio-services" name="radioGroup" type="radio" value="services" aria-controls="conditional-services" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="session-radio-services">
+                  Remove a service or multiple services
+                </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-services">
+      
+
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="service-covid-5-11" name="services-to-remove" type="checkbox" value="covid-5-11">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="service-covid-5-11">
+          Covid 5-17
+          </label>
+        </div>
+
+       
+
+      </div>
+      
+    
+    </div>
+            
+                  </div>
+                  </div>
+            </fieldset>
+          
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </form>
+      </div>
+  
+
+          
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
