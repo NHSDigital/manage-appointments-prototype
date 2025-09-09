@@ -270,6 +270,27 @@ router.post('/CancelBookings', function(request, response) {
 	}
 })
 
+
+router.post('/CancelSession', function(request, response) {
+
+	var cancel = request.session.data['cancel']
+	if (cancel == "Yes"){
+		response.redirect("/current/cancel-session/cancel-reallocate-some")
+	} else {
+		response.redirect("/current/cancel-session/cancel-reallocate-some")
+	}
+})
+
+router.post('/CancelReallocate', function(request, response) {
+
+	var cancel = request.session.data['cancel']
+	if (cancel == "Yes"){
+		response.redirect("/current/cancel-session/cancel-session-reallocated")
+	} else {
+		response.redirect("/current/cancel-session/cancel-session-confirm")
+	}
+})
+
 ///
 
 router.use(function(req, res, next) {
