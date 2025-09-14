@@ -76,38 +76,65 @@
         
           
 
-           <p>Changing the time and capacity will affect 29 bookings.</p>
+           <p>Cancelling the session will affect 29 bookings.</p>
 
            <!-- CARDS -->
 
 
            <ul class="nhsuk-grid-row nhsuk-card-group">
 
-    
+  
 
      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+
+      
+
+
+
 <div class="nhsuk-card">
   <div class="nhsuk-card__content">
       
         <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">29</p>
-        Bookings will have to be cancelled
+        Bookings may have to be cancelled
+      
+  
   </div>
 </div>
 
     </li>
 
 </ul>
-<p>People will be sent a text message or email confirming their appointment has been cancelled.</p>
-
-<p class="nhsuk-body-l">Are you sure you want to cancel the appointments?</p>
 
 
+<form action="/CancelReallocateSome" method="post" class="form">
 
-<form action="change-session-cancelled" method="post" class="form">
+{{ radios({
+  idPrefix: "cancel",
+  name: "cancel",
+  fieldset: {
+    legend: {
+      text: "Do you want to cancel this session?",
+      classes: "nhsuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes, cancel the appointments and cancel the session"
+    },
+    {
+      value: "No",
+      text: "No, do not cancel the appointments but cancel the session"
+    }
+  ]
+}) }}
 
 
-<button class="nhsuk-button nhsuk-button--warning">Cancel appointments</button>
-<p><a href="#" onclick="history.back(); return false;">No, go back</a></p>
+
+
+
+<button class="nhsuk-button">Continue</button>
 </form>
     </div>
   </div>

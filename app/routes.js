@@ -291,6 +291,17 @@ router.post('/CancelReallocate', function(request, response) {
 	}
 })
 
+
+router.post('/CancelReallocateSome', function(request, response) {
+
+	var cancel = request.session.data['cancel']
+	if (cancel == "Yes"){
+		response.redirect("/current/cancel-session/cancel-reallocate-none-sure")
+	} else {
+		response.redirect("/current/cancel-session/cancel-reallocate-none-not-concelled")
+	}
+})
+
 ///
 
 router.use(function(req, res, next) {

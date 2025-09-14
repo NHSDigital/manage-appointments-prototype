@@ -122,9 +122,9 @@
     </li>
 
 </ul>
-<p>People will be sent a text message or email confirming their appointment has been cancelled.</p>
 
-<form action="/CancelReallocate" method="post" class="form">
+
+<form action="/CancelReallocateSome" method="post" class="form">
 
 {{ radios({
   idPrefix: "cancel",
@@ -138,11 +138,11 @@
   items: [
     {
       value: "Yes",
-      text: "Yes, cancel the appointments and change the session"
+      text: "Yes, cancel the appointments and cancel the session"
     },
     {
       value: "No",
-      text: "No, do cancel the appointments but change the session"
+      text: "No, do not cancel the appointments but cancel the session"
     }
   ]
 }) }}
