@@ -44,10 +44,20 @@
             <p class="nhsuk-body">You have cancelled 100 appointments and we've notified the citizens with a link to rebook their appointments.</p>
 
 
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>1 person did not provide a mobile number and we could not notify them</p>
+
+            
+            </div>
+
+            {% if data['keep-available'] == 'cancel-yes' %}
+<p class="nhsuk-body">The availability has also been removed from NBS</p>
+            {% else %}
+<p class="nhsuk-body">The availability has been kept in NBS</p>
+            {% endif %}
+
             <p><a href="week">View all bookings for this week</a></p>
-
-
-
 
 
 </div>
